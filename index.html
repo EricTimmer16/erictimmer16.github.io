@@ -333,6 +333,12 @@ footer .wrap { display: grid; gap: 8px; }
 .j-note { margin-top: 14px; font-size: 14px; color: var(--panel-muted); }
 .j-note b { color: var(--panel-fg); font-weight: 600; user-select: all; word-break: break-all; }
 #pay { margin-top: 8px; font-size: 16px; color: var(--panel-fg); line-height: 1.55; }
+.payrow { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding-block: 12px; border-bottom: 1px solid rgba(255,255,255,.1); }
+@media (max-width: 520px) { .payrow { grid-template-columns: minmax(0, 1fr) auto; row-gap: 2px; } .payrow .pk { grid-column: 1 / -1; font-size: 13px; } }
+.payrow .pk { font-size: 14px; color: var(--panel-muted); }
+.payrow .pv { font-weight: 600; font-variant-numeric: tabular-nums; user-select: all; }
+.payrow .cp { border: 0; cursor: pointer; background: rgba(255,255,255,.12); color: var(--panel-fg); font: 500 13px var(--text); padding: 6px 12px; border-radius: 980px; white-space: nowrap; transition: background .2s; }
+.payrow .cp:hover { background: rgba(255,255,255,.22); }
 .btn[aria-disabled="true"] { opacity: .4; pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -682,7 +688,13 @@ footer .wrap { display: grid; gap: 8px; }
         </div>
         <div>
           <div class="j-k">Bezahlen</div>
-          <div id="pay"><span>Die Zahlungsangaben für TWINT und Überweisung erhältst du nach der Anmeldung per E-Mail.</span></div>
+          <div id="pay">
+            <div class="payrow"><span class="pk">TWINT</span><b class="pv">078&nbsp;856&nbsp;80&nbsp;67</b><button type="button" class="cp" data-copy="0788568067">Kopieren</button></div>
+            <div class="payrow"><span class="pk">IBAN</span><b class="pv">CH09&nbsp;0027&nbsp;4274 2058&nbsp;45M1&nbsp;D</b><button type="button" class="cp" data-copy="CH0900274274205845M1D">Kopieren</button></div>
+            <div class="payrow"><span class="pk">Bank</span><b class="pv">UBS</b></div>
+            <div class="payrow"><span class="pk">Kontoinhaber</span><b class="pv">Eric Timmer</b></div>
+            <p class="j-note">Vermerk: «Gönnerclub» und dein Name.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -904,7 +916,9 @@ footer .wrap { display: grid; gap: 8px; }
     'Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.': ['Include your name and address so I can send you the autograph card.', 'Indiquez votre nom et votre adresse pour que je puisse vous envoyer la carte autographe.'],
     'Oder direkt an': ['Or write directly to', 'Ou directement à'],
     'Bezahlen': ['Payment', 'Paiement'],
-    'Die Zahlungsangaben für TWINT und Überweisung erhältst du nach der Anmeldung per E-Mail.': ['You’ll receive the payment details for TWINT and bank transfer by email after signing up.', 'Vous recevrez les coordonnées de paiement pour TWINT et le virement par e-mail après l’inscription.'],
+    'Bank': ['Bank', 'Banque'],
+    'Kontoinhaber': ['Account holder', 'Titulaire du compte'],
+    'Vermerk: «Gönnerclub» und dein Name.': ['Reference: “Supporters’ Club” and your name.', 'Communication : « Club des supporters » et votre nom.'],
     'Werde Teil des Teams.': ['Join the team.', 'Rejoignez l’équipe.'],
     'Ich suche Partner, die den Weg in die Weltspitze mitgehen wollen. Dafür biete ich echte Sichtbarkeit und eine Geschichte, die Menschen berührt.': ['I’m looking for partners who want to join me on the way to the world’s top. In return I offer real visibility and a story that moves people.', 'Je cherche des partenaires prêts à m’accompagner jusqu’au sommet mondial. En retour, j’offre une vraie visibilité et une histoire qui touche les gens.'],
     "12'400": ['12,400', '12 400'],
@@ -1106,6 +1120,15 @@ footer .wrap { display: grid; gap: 8px; }
       tiers.forEach(function (o) { o.setAttribute('aria-pressed', o === t ? 'true' : 'false'); });
       curTier = t;
       refreshJoin();
+    });
+  });
+
+  document.querySelectorAll('.payrow .cp').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var val = b.getAttribute('data-copy'), row = b.parentNode.querySelector('.pv');
+      var ok = function () { b.textContent = T('copied'); setTimeout(function () { b.textContent = tr('Kopieren'); }, 1800); };
+      var fb = function () { var rg = document.createRange(); rg.selectNodeContents(row); var s = window.getSelection(); s.removeAllRanges(); s.addRange(rg); b.textContent = T('selected'); };
+      try { navigator.clipboard.writeText(val).then(ok, fb); } catch (e) { fb(); }
     });
   });
 
