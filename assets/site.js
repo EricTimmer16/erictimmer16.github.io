@@ -256,7 +256,12 @@
     "Lokale Speicherung": ["Local storage", "Stockage local"],
     "Deine gewählte Sprache wird in deinem Browser gespeichert (Local Storage), damit sie beim nächsten Besuch erhalten bleibt. Das ist kein Cookie und wird nicht an mich übermittelt.": ["Your chosen language is stored in your browser (local storage) so that it is kept for your next visit. This is not a cookie and is not sent to me.", "La langue choisie est enregistrée dans ton navigateur (stockage local) afin d’être conservée lors de ta prochaine visite. Ce n’est pas un cookie et elle ne m’est pas transmise."],
     "Deine Rechte": ["Your rights", "Tes droits"],
-    "Du kannst jederzeit Auskunft über deine Daten verlangen sowie deren Berichtigung oder Löschung. Schreib mir dazu an <a href=\"mailto:e.timmer@gmx.ch\">e.timmer@gmx.ch</a>.": ["You can request information about your data at any time, as well as its correction or deletion. Write to me at <a href=\"mailto:e.timmer@gmx.ch\">e.timmer@gmx.ch</a>.", "Tu peux à tout moment demander des informations sur tes données, ainsi que leur rectification ou leur suppression. Écris-moi à <a href=\"mailto:e.timmer@gmx.ch\">e.timmer@gmx.ch</a>."]
+    "Du kannst jederzeit Auskunft über deine Daten verlangen sowie deren Berichtigung oder Löschung. Schreib mir dazu an <a href=\"mailto:e.timmer@gmx.ch\">e.timmer@gmx.ch</a>.": ["You can request information about your data at any time, as well as its correction or deletion. Write to me at <a href=\"mailto:e.timmer@gmx.ch\">e.timmer@gmx.ch</a>.", "Tu peux à tout moment demander des informations sur tes données, ainsi que leur rectification ou leur suppression. Écris-moi à <a href=\"mailto:e.timmer@gmx.ch\">e.timmer@gmx.ch</a>."],
+    "Stufe wählen": ["Choose a tier", "Choisis un niveau"],
+    "Dein Beitrag zählt.": ["Every contribution counts.", "Chaque contribution compte."],
+    "Danke, dass du mich auf diesem Weg unterstützt.": ["Thank you for supporting me on this journey.", "Merci de me soutenir sur ce chemin."],
+    "Du führst ein Unternehmen?": ["Do you run a company?", "Tu diriges une entreprise ?"],
+    "Dann schau dir an, wie du mich als Partner unterstützen kannst.": ["Then take a look at how you can support me as a partner.", "Alors découvre comment tu peux me soutenir en tant que partenaire."]
   };
   var UI = {
     statement: {

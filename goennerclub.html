@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202610212122">
+<link rel="stylesheet" href="assets/site.css?v=202610212128">
 </head>
 <body data-page="Gönnerclub">
 <nav class="top" aria-label="Hauptnavigation">
@@ -57,19 +57,38 @@
 
 <main id="top">
 
-<!-- GÖNNERCLUB -->
+<!-- GÖNNERCLUB: Einstieg -->
+  <section class="band gc-intro">
+    <div class="wrap">
+      <figure class="gc-banner r">
+        <img src="images/basel-open-masters-2026/04.jpg" width="1800" height="1200" alt="Hoher Fusstritt von Eric" decoding="async" fetchpriority="high">
+        <figcaption>Foto: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a></figcaption>
+      </figure>
+      <div class="gc-letter">
+        <img class="gc-portrait r" src="images/portrait/eric-portrait-sm.jpg" width="640" height="960" alt="Eric Timmer im Dress der Swiss Karate Federation" loading="lazy" decoding="async">
+        <div class="gc-text">
+          <div class="eyebrow r">Gönnerclub</div>
+          <h1 class="h-sec r" style="--d:.05s">Werde Teil meines Gönnerclubs.</h1>
+          <blockquote class="gc-quote r" style="--d:.1s"><p>Weltcups, Trainingslager und Ausrüstung kosten viel. Neben meiner Lehre ist jeder Beitrag eine echte Hilfe auf dem Weg an die Weltspitze. Mit deiner Unterstützung bist du Teil dieses Wegs.</p></blockquote>
+          <p class="gc-thanks r" style="--d:.14s">Danke, dass du mich auf diesem Weg unterstützt.</p>
+          <p class="gc-sign r" style="--d:.16s">Eric Timmer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- GÖNNERCLUB: Stufen und Bezahlen -->
   <section class="band dark" id="goenner">
     <div class="wrap">
-      <div class="eyebrow r">Gönnerclub</div>
-      <h1 class="h-sec r" style="--d:.05s">Werde Teil meines Gönnerclubs.</h1>
-      <p class="lead r" style="--d:.1s">Weltcups, Trainingslager und Ausrüstung kosten viel. Neben meiner Lehre ist jeder Beitrag eine echte Hilfe auf dem Weg an die Weltspitze. Mit deiner Unterstützung bist du Teil dieses Wegs.</p>
+      <div class="eyebrow r">Stufe wählen</div>
+      <h2 class="h-sec r" style="--d:.05s">Dein Beitrag zählt.</h2>
       <div class="tiers" role="group" aria-label="Stufe wählen">
-        <button type="button" class="tier" data-tier="zustupf" aria-pressed="false"><span class="t-name">Kleiner Zustupf</span><span class="t-price">CHF 50</span><span class="t-per">einmalig</span><span class="t-perk">Ein persönliches Dankeschön von mir</span><span class="t-pick">Auswählen</span></button>
-        <button type="button" class="tier" data-tier="bronze" aria-pressed="false"><span class="t-name">Bronze</span><span class="t-price">CHF 100</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
-        <button type="button" class="tier" data-tier="silber" aria-pressed="false"><span class="t-name">Silber</span><span class="t-price">CHF 250</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
-        <button type="button" class="tier" data-tier="gold" aria-pressed="false"><span class="t-name">Gold</span><span class="t-price">CHF 500</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="zustupf" aria-pressed="false"><span class="t-photo"><img src="images/skl-gossau-2026/05-sm.jpg" width="820" height="547" alt="Eric umarmt einen Karateka nach dem Kampf" loading="lazy" decoding="async"></span><span class="t-name">Kleiner Zustupf</span><span class="t-price">CHF 50</span><span class="t-per">einmalig</span><span class="t-perk">Ein persönliches Dankeschön von mir</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="bronze" aria-pressed="false"><span class="t-photo"><img src="images/skl-gossau-2026/01-sm.jpg" width="820" height="541" alt="Eric mit seiner Medaille an der Swiss Karate League" loading="lazy" decoding="async"></span><span class="t-name">Bronze</span><span class="t-price">CHF 100</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="silber" aria-pressed="false"><span class="t-photo"><img src="images/basel-open-masters-2026/07-sm.jpg" width="820" height="547" alt="Eric mit dem Siegerpokal vor dem Basler Rheinpanorama" loading="lazy" decoding="async"></span><span class="t-name">Silber</span><span class="t-price">CHF 250</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="gold" aria-pressed="false"><span class="t-photo"><img src="images/em-frankfurt-2026/09-sm.jpg" width="820" height="547" alt="Eric jubelt nach einem Treffer" loading="lazy" decoding="async"></span><span class="t-name">Gold</span><span class="t-price">CHF 500</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
       </div>
-      <div class="join">
+            <div class="join">
         <div>
           <div class="j-k">Deine Wahl</div>
           <div class="j-v" id="jsel">Wähle oben eine Stufe.</div>
@@ -88,6 +107,15 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+<!-- GÖNNERCLUB: Firmen -->
+  <section class="band alt gc-cta">
+    <div class="wrap">
+      <h2 class="h-sec r">Du führst ein Unternehmen?</h2>
+      <p class="lead r" style="--d:.06s">Dann schau dir an, wie du mich als Partner unterstützen kannst.</p>
+      <div class="r" style="--d:.1s; margin-top: 26px"><a class="btn" href="partner.html">Partner werden</a></div>
     </div>
   </section>
 
@@ -134,6 +162,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202610212122"></script>
+<script src="assets/site.js?v=202610212128"></script>
 </body>
 </html>

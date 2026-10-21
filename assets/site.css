@@ -437,3 +437,27 @@ nav.top.open .menu-btn .x { display: block; }
 .prose .pr-p a { color: var(--link); }
 .flegal { border-bottom: 0; padding-bottom: 0; margin-bottom: 14px; }
 footer .fnav + .fnav { margin-top: -6px; }
+
+/* ---------- Gönnerclub: Einstieg wie ein persönlicher Brief ---------- */
+.gc-intro { padding-bottom: 56px; }
+.gc-banner { margin: 0; position: relative; }
+.gc-banner img { display: block; width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 40%; border-radius: 28px; background: var(--bg-alt); }
+.gc-banner figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); text-align: right; }
+.gc-banner figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.gc-letter { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; margin-top: clamp(36px, 6vw, 64px); }
+.gc-portrait { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; border-radius: 24px; box-shadow: 0 24px 50px -28px rgba(0,0,0,.4); }
+.gc-quote { margin: 22px 0 0; padding: 0 0 0 20px; border-left: 3px solid var(--red); }
+.gc-quote p { margin: 0; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.45; letter-spacing: -0.01em; }
+.gc-thanks { margin: 22px 0 0; color: var(--muted); font-size: 17px; }
+.gc-sign { margin: 6px 0 0; font-family: var(--font); font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
+@media (max-width: 760px) {
+  .gc-banner img { aspect-ratio: 16 / 10; border-radius: 22px; }
+  .gc-letter { grid-template-columns: 1fr; }
+  .gc-portrait { max-width: 200px; }
+}
+/* Stufen mit Foto */
+.tier .t-photo { display: block; margin: -26px -22px 18px; height: 150px; overflow: hidden; border-radius: 20px 20px 0 0; }
+.tier .t-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform .6s var(--ease); }
+.tier:hover .t-photo img { transform: scale(1.05); }
+.gc-cta { text-align: center; }
+.gc-cta .lead { margin-inline: auto; text-align: center; }
