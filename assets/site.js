@@ -14,7 +14,7 @@
     'Kontakt': ['Contact', 'Contact'],
     'Karate · Kumite −60 kg · Schweizer Nationalkader': ['Karate · Kumite −60 kg · Swiss National Team', 'Karaté · Kumité −60 kg · Équipe nationale suisse'],
     'Präzision statt Kraft.': ['Precision over power.', 'La précision avant la force.'],
-    'Viertelfinal an der Europameisterschaft 2026. Nummer 52 der Welt. Das nächste Ziel: <b>die Top 32</b>.': ['Quarter-finalist at the 2026 European Championships. World number 52. Next goal: <b>the top 32</b>.', 'Quart de finale aux Championnats d’Europe 2026. Numéro 52 mondial. Prochain objectif : <b>le top 32</b>.'],
+    'Ich bin Eric, Karateka aus Sisseln. Viertelfinal an der Europameisterschaft 2026, Nummer 52 der Welt. Mein nächstes Ziel: <b>die Top 32</b>.': ['I’m Eric, a karateka from Sisseln. Quarter-finalist at the 2026 European Championships, world number 52. My next goal: <b>the top 32</b>.', 'Je suis Eric, karatéka de Sisseln. Quart de finale aux Championnats d’Europe 2026, numéro 52 mondial. Mon prochain objectif : <b>le top 32</b>.'],
     'Highlights ansehen': ['See the highlights', 'Voir les temps forts'],
     'Partner werden': ['Become a partner', 'Devenir partenaire'],
     'WKF-Weltrangliste · Elite Kumite −60 kg': ['WKF World Ranking · Senior Kumite −60 kg', 'Classement mondial WKF · Kumité Elite −60 kg'],
@@ -225,7 +225,10 @@
     'WKF-Profil': ['WKF profile', 'Profil WKF'],
     'Eric Timmer · Sisseln AG · Jahrgang 2003': ['Eric Timmer · Sisseln, Switzerland · born 2003', 'Eric Timmer · Sisseln (AG), Suisse · né en 2003'],
     'Ranglistendaten: WKF-Athletenprofil (Stand Oktober 2026). Weitere Resultate: Swiss Karate Federation, Stiftung Schweizer Sporthilfe.': ['Ranking data: WKF athlete profile (as of October 2026). Other results: Swiss Karate Federation, Stiftung Schweizer Sporthilfe.', 'Données de classement : profil d’athlète WKF (état octobre 2026). Autres résultats : Swiss Karate Federation, Aide sportive suisse.'],
-    'Fotos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.': ['Photos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.', 'Photos : Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.']
+    'Fotos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.': ['Photos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.', 'Photos : Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.'],
+    'Sisseln AG · Jahrgang 2003 · Kaufmann EFZ in Ausbildung': ['Sisseln AG · born 2003 · commercial apprentice (KV)', 'Sisseln AG · né en 2003 · apprenti employé de commerce'],
+    'Eric Timmer im Dress der Swiss Karate Federation': ['Eric Timmer in the Swiss Karate Federation team jacket', 'Eric Timmer dans la veste de la Swiss Karate Federation'],
+    'Foto: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a>': ['Photo: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a>', 'Photo : <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a>']
   };
   var UI = {
     statement: {
