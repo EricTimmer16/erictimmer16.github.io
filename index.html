@@ -226,9 +226,11 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
 @media (max-width: 560px) { .tile.wide { grid-column: auto; } }
 
 /* ---------- partner ---------- */
-.partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 56px; background: var(--faint); border-radius: 22px; overflow: hidden; }
+.partners { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 56px; }
+.partners .partner { flex: 1 1 220px; max-width: 250px; border-radius: 20px; }
 .partner { background: var(--bg); padding: 30px 22px 24px; display: grid; gap: 6px; min-height: 190px; align-content: center; justify-items: center; text-align: center; color: var(--fg); text-decoration: none; transition: background .3s var(--ease); }
-a.partner:hover { text-decoration: none; background: var(--bg-alt); }
+.partners .partner { transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+a.partner:hover { text-decoration: none; transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.10); }
 .partner .logo { height: 72px; display: flex; align-items: center; justify-content: center; }
 .partner .logo img { max-height: 72px; max-width: 170px; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .75; transition: filter .4s var(--ease), opacity .4s, transform .4s var(--ease); }
 a.partner:hover .logo img, a.partner:focus-visible .logo img { filter: none; opacity: 1; transform: scale(1.05); }
@@ -236,7 +238,7 @@ a.partner:hover .logo img, a.partner:focus-visible .logo img { filter: none; opa
 .partner .visit::after { content: " ↗"; }
 a.partner:hover .visit, a.partner:focus-visible .visit { opacity: 1; transform: none; }
 @media (hover: none) { .partner .visit { opacity: 1; transform: none; } }
-@media (max-width: 760px) { .partners { grid-template-columns: repeat(2, 1fr); } .partner { min-height: 160px; padding-inline: 12px; } .partner .nm { font-size: 18px; } }
+@media (max-width: 760px) { .partners .partner { flex-basis: calc(50% - 6px); max-width: calc(50% - 6px); min-height: 160px; padding-inline: 12px; } .partner .nm { font-size: 18px; } }
 .partner .nm { font-family: var(--font); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
 .partner .ds { color: var(--muted); font-size: 14px; }
 .offer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px; }
@@ -608,7 +610,8 @@ footer .wrap { display: grid; gap: 8px; }
         <a class="partner" href="https://sporthilfe.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Schweizer Sporthilfe</span></span><span class="ds">Förderung</span><span class="visit">sporthilfe.ch</span></a>
         <a class="partner" href="https://www.swissolympic.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Swiss Olympic</span></span><span class="ds">Swiss Olympic Card Bronze</span><span class="visit">swissolympic.ch</span></a>
         <a class="partner" href="https://www.tokaidojapan.com" target="_blank" rel="noopener"><span class="logo"><span class="nm">Tokaido</span></span><span class="ds">Ausrüstung</span><span class="visit">tokaidojapan.com</span></a>
-        <div class="partner"><span class="logo"><span class="nm">Chirogun</span></span><span class="ds">Markenbotschafter</span></div>
+        <a class="partner" href="https://www.budosport.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Budo Sport</span></span><span class="ds">Kampfsport-Fachhandel</span><span class="visit">budosport.ch</span></a>
+        <a class="partner" href="https://www.chirogun.ch/" target="_blank" rel="noopener"><span class="logo"><span class="nm">Chirogun</span></span><span class="ds">Markenbotschafter</span><span class="visit">chirogun.ch</span></a>
         <a class="partner" href="https://www.physiohenrich.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Physio Henrich</span></span><span class="ds">Physiotherapie</span><span class="visit">physiohenrich.ch</span></a>
         <a class="partner" href="https://sport-academy.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Sport Academy Zurich</span></span><span class="ds">Ausbildung</span><span class="visit">sport-academy.ch</span></a>
       </div>
@@ -819,6 +822,7 @@ footer .wrap { display: grid; gap: 8px; }
     'Förderung': ['Funding', 'Soutien'],
     'Ausrüstung': ['Equipment', 'Équipement'],
     'Markenbotschafter': ['Brand ambassador', 'Ambassadeur de marque'],
+    'Kampfsport-Fachhandel': ['Martial arts retailer', 'Magasin spécialisé en arts martiaux'],
     'Werde Teil des Teams.': ['Join the team.', 'Rejoignez l’équipe.'],
     'Ich suche Partner, die den Weg in die Weltspitze mitgehen wollen. Dafür biete ich echte Sichtbarkeit und eine Geschichte, die Menschen berührt.': ['I’m looking for partners who want to join me on the way to the world’s top. In return I offer real visibility and a story that moves people.', 'Je cherche des partenaires prêts à m’accompagner jusqu’au sommet mondial. En retour, j’offre une vraie visibilité et une histoire qui touche les gens.'],
     "12'400": ['12,400', '12 400'],
