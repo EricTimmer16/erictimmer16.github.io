@@ -308,6 +308,33 @@ footer .wrap { display: grid; gap: 8px; }
   .lb figure { padding-bottom: 84px; }
 }
 
+/* ---------- Gönnerclub ---------- */
+.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; }
+@media (max-width: 960px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .tiers { grid-template-columns: 1fr; } }
+.tier { --tc: #a1a1a6; text-align: left; font: inherit; color: var(--panel-fg); background: rgba(255,255,255,.06); border: 2px solid transparent; border-radius: 22px; padding: 26px 22px 22px; display: flex; flex-direction: column; gap: 4px; cursor: pointer; min-height: 270px; min-width: 0; transition: transform .4s var(--ease), border-color .3s, background .3s; }
+.tier[data-tier="bronze"] { --tc: #d09466; }
+.tier[data-tier="silber"] { --tc: #c4c8cf; }
+.tier[data-tier="gold"] { --tc: #e8bd5f; }
+.tier:hover { transform: translateY(-4px); background: rgba(255,255,255,.09); }
+.tier[aria-pressed="true"] { border-color: #2997ff; background: rgba(41,151,255,.14); }
+.tier .t-name { font-size: 15px; font-weight: 600; color: var(--tc); }
+.tier .t-price { font-family: var(--font); font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tier .t-per { font-size: 14px; color: var(--panel-muted); }
+.tier .t-perk { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.12); font-size: 15px; line-height: 1.5; }
+.tier .t-pick { margin-top: 14px; font-size: 15px; color: #2997ff; }
+.tier .t-pick::after { content: " ›"; }
+.tier[aria-pressed="true"] .t-pick::before { content: "✓ "; }
+.join { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; background: rgba(255,255,255,.06); border-radius: 22px; padding: 30px; }
+@media (max-width: 760px) { .join { grid-template-columns: 1fr; padding: 24px; } }
+.join > div { min-width: 0; }
+.j-k { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--panel-muted); }
+.j-v { font-family: var(--font); font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin: 6px 0 18px; }
+.j-note { margin-top: 14px; font-size: 14px; color: var(--panel-muted); }
+.j-note b { color: var(--panel-fg); font-weight: 600; user-select: all; word-break: break-all; }
+#pay { margin-top: 8px; font-size: 16px; color: var(--panel-fg); line-height: 1.55; }
+.btn[aria-disabled="true"] { opacity: .4; pointer-events: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -326,6 +353,7 @@ footer .wrap { display: grid; gap: 8px; }
       <a href="#karriere">Karriere</a>
       <a href="#team">Team</a>
       <a href="#partner">Partner</a>
+      <a href="#goenner">Gönnerclub</a>
     </div>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Sprache · Language · Langue">
@@ -632,6 +660,34 @@ footer .wrap { display: grid; gap: 8px; }
     </div>
   </section>
 
+  <!-- GÖNNERCLUB -->
+  <section class="band dark" id="goenner">
+    <div class="wrap">
+      <div class="eyebrow r">Gönnerclub</div>
+      <h2 class="h-sec r" style="--d:.05s">Werde Teil meines Gönnerclubs.</h2>
+      <p class="lead r" style="--d:.1s">Weltcups, Trainingslager und Ausrüstung kosten viel. Neben meiner Lehre ist jeder Beitrag eine echte Hilfe auf dem Weg an die Weltspitze. Mit deiner Unterstützung bist du Teil dieses Wegs.</p>
+      <div class="tiers" role="group" aria-label="Stufe wählen">
+        <button type="button" class="tier" data-tier="zustupf" aria-pressed="false"><span class="t-name">Kleiner Zustupf</span><span class="t-price">CHF 50</span><span class="t-per">einmalig</span><span class="t-perk">Ein persönliches Dankeschön von mir</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="bronze" aria-pressed="false"><span class="t-name">Bronze</span><span class="t-price">CHF 100</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="silber" aria-pressed="false"><span class="t-name">Silber</span><span class="t-price">CHF 250</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="gold" aria-pressed="false"><span class="t-name">Gold</span><span class="t-price">CHF 500</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+      </div>
+      <div class="join">
+        <div>
+          <div class="j-k">Deine Wahl</div>
+          <div class="j-v" id="jsel">Wähle oben eine Stufe.</div>
+          <a class="btn" id="jmail" href="mailto:e.timmer@gmx.ch" aria-disabled="true">Anmeldung per E-Mail senden</a>
+          <p class="j-note">Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.</p>
+          <p class="j-note"><span>Oder direkt an</span> <b>e.timmer@gmx.ch</b></p>
+        </div>
+        <div>
+          <div class="j-k">Bezahlen</div>
+          <div id="pay"><span>Die Zahlungsangaben für TWINT und Überweisung erhältst du nach der Anmeldung per E-Mail.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- KONTAKT -->
   <section class="band contact" id="kontakt">
     <div class="wrap">
@@ -830,6 +886,25 @@ footer .wrap { display: grid; gap: 8px; }
     'Markenbotschafter': ['Brand ambassador', 'Ambassadeur de marque'],
     'Kampfsport-Fachhandel': ['Martial arts retailer', 'Magasin spécialisé en arts martiaux'],
     'Mentaltraining': ['Mental training', 'Préparation mentale'],
+    'Gönnerclub': ['Supporters’ Club', 'Club des supporters'],
+    'Werde Teil meines Gönnerclubs.': ['Join my supporters’ club.', 'Rejoignez mon club des supporters.'],
+    'Weltcups, Trainingslager und Ausrüstung kosten viel. Neben meiner Lehre ist jeder Beitrag eine echte Hilfe auf dem Weg an die Weltspitze. Mit deiner Unterstützung bist du Teil dieses Wegs.': ['World series events, training camps and equipment cost a lot. Alongside my apprenticeship, every contribution is a real help on the way to the top of the world. With your support, you become part of that journey.', 'Les tournois du circuit mondial, les camps d’entraînement et l’équipement coûtent cher. En parallèle de mon apprentissage, chaque contribution m’aide vraiment sur le chemin du sommet mondial. Avec votre soutien, vous faites partie de ce parcours.'],
+    'Stufe wählen': ['Choose a level', 'Choisir un niveau'],
+    'Kleiner Zustupf': ['Small boost', 'Petit coup de pouce'],
+    'einmalig': ['one-off', 'une fois'],
+    'pro Jahr': ['per year', 'par an'],
+    'Ein persönliches Dankeschön von mir': ['A personal thank-you from me', 'Un remerciement personnel de ma part'],
+    'Mitglied im Gönnerclub<br>Signierte Autogrammkarte': ['Member of the supporters’ club<br>Signed autograph card', 'Membre du club des supporters<br>Carte autographe signée'],
+    'Silber': ['Silver', 'Argent'],
+    'Gold': ['Gold', 'Or'],
+    'Auswählen': ['Select', 'Choisir'],
+    'Deine Wahl': ['Your choice', 'Votre choix'],
+    'Wähle oben eine Stufe.': ['Choose a level above.', 'Choisissez un niveau ci-dessus.'],
+    'Anmeldung per E-Mail senden': ['Sign up by email', 'S’inscrire par e-mail'],
+    'Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.': ['Include your name and address so I can send you the autograph card.', 'Indiquez votre nom et votre adresse pour que je puisse vous envoyer la carte autographe.'],
+    'Oder direkt an': ['Or write directly to', 'Ou directement à'],
+    'Bezahlen': ['Payment', 'Paiement'],
+    'Die Zahlungsangaben für TWINT und Überweisung erhältst du nach der Anmeldung per E-Mail.': ['You’ll receive the payment details for TWINT and bank transfer by email after signing up.', 'Vous recevrez les coordonnées de paiement pour TWINT et le virement par e-mail après l’inscription.'],
     'Werde Teil des Teams.': ['Join the team.', 'Rejoignez l’équipe.'],
     'Ich suche Partner, die den Weg in die Weltspitze mitgehen wollen. Dafür biete ich echte Sichtbarkeit und eine Geschichte, die Menschen berührt.': ['I’m looking for partners who want to join me on the way to the world’s top. In return I offer real visibility and a story that moves people.', 'Je cherche des partenaires prêts à m’accompagner jusqu’au sommet mondial. En retour, j’offre une vraie visibilité et une histoire qui touche les gens.'],
     "12'400": ['12,400', '12 400'],
@@ -851,6 +926,12 @@ footer .wrap { display: grid; gap: 8px; }
       fr: 'À six ans, je suis monté pour la première fois sur le tatami. Aujourd’hui, je combats pour la *Suisse* contre les meilleurs du monde. En parallèle de mon apprentissage commercial, avec une dizaine d’entraînements par semaine. Mon objectif est clair : devenir *champion* *d’Europe* et *du* *monde.*'
     },
     foto: { de: 'Foto', en: 'Photo', fr: 'Photo' },
+    mailSubject: { de: 'Gönnerclub: ', en: 'Supporters’ Club: ', fr: 'Club des supporters : ' },
+    mailBody: {
+      de: 'Hallo Eric\n\nIch möchte deinem Gönnerclub beitreten: {t}.\n\nName:\nAdresse:\n\nLiebe Grüsse',
+      en: 'Hi Eric\n\nI would like to join your supporters’ club: {t}.\n\nName:\nAddress:\n\nBest regards',
+      fr: 'Bonjour Eric\n\nJe souhaite rejoindre ton club des supporters : {t}.\n\nNom :\nAdresse :\n\nMeilleures salutations'
+    },
     copied: { de: 'Kopiert', en: 'Copied', fr: 'Copié' },
     selected: { de: 'Markiert', en: 'Selected', fr: 'Sélectionné' },
     desc: {
@@ -1010,6 +1091,24 @@ footer .wrap { display: grid; gap: 8px; }
     try { navigator.clipboard.writeText(mail.textContent).then(done, fallback); } catch (e) { fallback(); }
   });
 
+  /* Gönnerclub */
+  var tiers = Array.prototype.slice.call(document.querySelectorAll('.tier'));
+  var jsel = document.getElementById('jsel'), jmail = document.getElementById('jmail'), curTier = null;
+  function refreshJoin() {
+    if (!curTier) return;
+    var label = curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')';
+    jsel.textContent = label;
+    jmail.href = 'mailto:e.timmer@gmx.ch?subject=' + encodeURIComponent(T('mailSubject') + label) + '&body=' + encodeURIComponent(T('mailBody').replace('{t}', label));
+    jmail.setAttribute('aria-disabled', 'false');
+  }
+  tiers.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tiers.forEach(function (o) { o.setAttribute('aria-pressed', o === t ? 'true' : 'false'); });
+      curTier = t;
+      refreshJoin();
+    });
+  });
+
   /* Sprache wechseln */
   var metaDesc = document.querySelector('meta[name="description"]');
   var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang button'));
@@ -1023,6 +1122,7 @@ footer .wrap { display: grid; gap: 8px; }
     onScroll();
     if (curPanel) galsub.innerHTML = curPanel.getAttribute('data-sub');
     if (!lb.hidden) show(cur);
+    refreshJoin();
     if (metaDesc) metaDesc.setAttribute('content', T('desc'));
     langBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
     if (remember) {
