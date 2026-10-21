@@ -324,7 +324,9 @@
     "Eric mit einem Teamkollegen in der Aufwärmhalle, beide mit geballten Fäusten": ["Eric with a teammate in the warm-up hall, both with clenched fists", "Eric avec un coéquipier dans la salle d’échauffement, tous deux poings serrés"],
     "Eric übt in der Aufwärmhalle einen Fusstritt mit einem Trainingspartner": ["Eric practising a kick with a training partner in the warm-up hall", "Eric s’entraîne à un coup de pied avec un partenaire dans la salle d’échauffement"],
     "Eric trainiert in der Aufwärmhalle mit seinem Coach": ["Eric training with his coach in the warm-up hall", "Eric s’entraîne avec son coach dans la salle d’échauffement"],
-    "Eric hebt in der Aufwärmhalle den Arm, auf dem Trikot sein Name und die Nummer 6": ["Eric raising his arm in the warm-up hall, his name and the number 6 on his jersey", "Eric lève le bras dans la salle d’échauffement, son nom et le numéro 6 sur le maillot"]
+    "Eric hebt in der Aufwärmhalle den Arm, auf dem Trikot sein Name und die Nummer 6": ["Eric raising his arm in the warm-up hall, his name and the number 6 on his jersey", "Eric lève le bras dans la salle d’échauffement, son nom et le numéro 6 sur le maillot"],
+    "Wappen der Gemeinde Sisseln": ["Coat of arms of the municipality of Sisseln", "Armoiries de la commune de Sisseln"],
+    "Gemeinde": ["Municipality", "Commune"]
   };
   var UI = {
     statement: {
