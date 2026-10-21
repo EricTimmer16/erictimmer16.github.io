@@ -245,7 +245,13 @@ footer .wrap { display: grid; gap: 8px; }
 .band.dark { background: var(--panel); color: var(--panel-fg); }
 .band.dark .lead { color: var(--panel-muted); }
 .band.dark .lead b { color: var(--panel-fg); }
-.masonry { columns: 3 300px; column-gap: 14px; margin-top: 56px; }
+.masonry { columns: 3 300px; column-gap: 14px; margin-top: 28px; }
+.tabs { display: inline-flex; gap: 4px; padding: 4px; margin-top: 44px; border-radius: 980px; background: rgba(255,255,255,.1); max-width: 100%; overflow-x: auto; }
+.tab { border: 0; cursor: pointer; white-space: nowrap; font: 500 15px var(--text); color: var(--panel-muted); background: transparent; padding: 9px 18px; border-radius: 980px; transition: background .3s var(--ease), color .3s; }
+.tab:hover { color: var(--panel-fg); }
+.tab[aria-selected="true"] { background: var(--panel-fg); color: var(--panel); }
+.gal-sub { margin-top: 18px; font-size: 15px; color: var(--panel-muted); }
+.masonry.fade { animation: lbIn .5s var(--ease); }
 .gi {
   display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0; cursor: zoom-in;
   border-radius: 16px; overflow: hidden; background: #111; break-inside: avoid; position: relative;
@@ -365,6 +371,13 @@ footer .wrap { display: grid; gap: 8px; }
         <a class="go chev" href="#galerie">Fotos ansehen</a>
       </article>
       <article class="hcard red">
+        <div class="when">August 2026 · Basel</div>
+        <h3>Sieg an den Basel Open Masters</h3>
+        <p>Turniersieg im Kumite in Basel, der Stadt meines Vereins. Ganz oben auf dem Podest.</p>
+        <div class="big">1.<small>Platz Kumite</small></div>
+        <a class="go chev" href="#galerie" data-tab="tab-bom">Fotos ansehen</a>
+      </article>
+      <article class="hcard red">
         <div class="when">Juli 2026 · Guadalajara, Mexiko</div>
         <h3>Karate 1 Series A</h3>
         <p>Drei Siege auf der Weltserie und mit 275 Punkten mein punktestärkstes Turnier bei der Elite.</p>
@@ -408,9 +421,14 @@ footer .wrap { display: grid; gap: 8px; }
   <section class="band dark" id="galerie">
     <div class="wrap">
       <div class="eyebrow r">Galerie</div>
-      <h2 class="h-sec r" style="--d:.05s">EM Frankfurt 2026.</h2>
-      <p class="lead r" style="--d:.1s">61. Europameisterschaft, Mai 2026. Viertelfinal in der Kategorie −60 kg. <b>Zum Vergrössern auf ein Foto tippen.</b></p>
-      <div class="masonry" id="emgal">
+      <h2 class="h-sec r" style="--d:.05s">Ganz nah dran.</h2>
+      <p class="lead r" style="--d:.1s">Fotos von meinen Turnieren. <b>Zum Vergrössern auf ein Foto tippen.</b></p>
+      <div class="tabs" role="tablist" aria-label="Turnier wählen">
+        <button type="button" role="tab" class="tab" id="tab-em" aria-selected="true" aria-controls="emgal">EM Frankfurt</button>
+        <button type="button" role="tab" class="tab" id="tab-bom" aria-selected="false" aria-controls="bomgal">Basel Open Masters</button>
+      </div>
+      <p class="gal-sub" id="galsub">61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg</p>
+      <div class="masonry" id="emgal" role="tabpanel" aria-labelledby="tab-em" data-sub="61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg">
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/01-sm.jpg" width="547" height="820" loading="lazy" decoding="async" alt="Eric Timmer konzentriert vor dem Kampf, Kopfhörer im Ohr"></button>
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/02-sm.jpg" width="547" height="820" loading="lazy" decoding="async" alt="Eric fixiert seinen Gegner auf der Matte"></button>
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/03-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric in Kampfstellung, die Hand auf Distanz zum Gegner"></button>
@@ -428,6 +446,15 @@ footer .wrap { display: grid; gap: 8px; }
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/15-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric und sein Coach nach dem Kampf"></button>
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/16-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Stirn an Stirn mit dem Coach"></button>
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/17-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Der Coach hält Erics Gesicht in beiden Händen"></button>
+      </div>
+      <div class="masonry" id="bomgal" role="tabpanel" aria-labelledby="tab-bom" hidden data-sub="Basel Open Masters, August 2026 · 1. Platz Kumite">
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/01-sm.jpg" width="547" height="820" loading="lazy" decoding="async" alt="Eric mit dem Pokal für den 1. Platz Kumite"></button>
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/02-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric im Angriff gegen seinen Gegner"></button>
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/03-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric punktet mit einem Fauststoss und schreit"></button>
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/04-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Hoher Fusstritt von Eric"></button>
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/05-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Fusstritt zum Kopf im Halbfinal"></button>
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/06-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Siegerehrung mit den Medaillengewinnern"></button>
+        <button type="button" class="gi"><img src="images/basel-open-masters-2026/07-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric mit dem Siegerpokal vor dem Basler Rheinpanorama"></button>
       </div>
       <p class="credit">Alle Fotos: Kjetil Waber · <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">foto-kjetil.ch</a> · <a href="https://www.instagram.com/foto.kjetil/" target="_blank" rel="noopener">@foto.kjetil</a></p>
     </div>
@@ -481,7 +508,8 @@ footer .wrap { display: grid; gap: 8px; }
         <div class="yr r"><div class="y now">2026</div><ul>
           <li>Viertelfinal an der Europameisterschaft in Frankfurt <span>· bestes Elite-Resultat</span></li>
           <li>Karate 1 Series A in Guadalajara, Mexiko <span>· 3 Siege</span></li>
-          <li>Basel Open Masters und Swiss Karate League</li>
+          <li>Sieg an den Basel Open Masters <span>· 1. Platz Kumite</span></li>
+          <li>Swiss Karate League</li>
           <li>Karate 1 Series A in Tbilisi, A Coruña und Salzburg</li>
         </ul></div>
         <div class="yr r"><div class="y">2025</div><ul>
@@ -659,8 +687,36 @@ footer .wrap { display: grid; gap: 8px; }
   window.addEventListener('resize', gal);
   gal();
 
+  /* Galerie-Tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var galsub = document.getElementById('galsub');
+  var thumbs = [];
+  function useGallery(panel) {
+    thumbs = Array.prototype.slice.call(panel.querySelectorAll('.gi'));
+    galsub.textContent = panel.getAttribute('data-sub');
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (o) {
+        var on = o === t, p = document.getElementById(o.getAttribute('aria-controls'));
+        o.setAttribute('aria-selected', on ? 'true' : 'false');
+        p.hidden = !on;
+        if (on) { p.classList.remove('fade'); void p.offsetWidth; p.classList.add('fade'); useGallery(p); }
+      });
+    });
+  });
+  document.querySelectorAll('.masonry .gi').forEach(function (b) {
+    b.addEventListener('click', function () { openLb(thumbs.indexOf(b)); });
+  });
+  useGallery(document.getElementById('emgal'));
+  document.querySelectorAll('[data-tab]').forEach(function (a) {
+    a.addEventListener('click', function () { document.getElementById(a.getAttribute('data-tab')).click(); });
+  });
+  document.querySelectorAll('.hcard .go:not([data-tab])').forEach(function (a) {
+    a.addEventListener('click', function () { document.getElementById('tab-em').click(); });
+  });
+
   /* Foto-Lightbox */
-  var thumbs = Array.prototype.slice.call(document.querySelectorAll('#emgal .gi'));
   var lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), lbcap = document.getElementById('lbcap'), lbcount = document.getElementById('lbcount');
   var cur = 0, lastFocus = null;
   function show(i) {
@@ -674,7 +730,6 @@ footer .wrap { display: grid; gap: 8px; }
   }
   function openLb(i) { lastFocus = document.activeElement; show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; document.getElementById('lbx').focus(); }
   function closeLb() { lb.hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
-  thumbs.forEach(function (b, i) { b.addEventListener('click', function () { openLb(i); }); });
   document.getElementById('lbx').addEventListener('click', closeLb);
   document.getElementById('lbp').addEventListener('click', function () { show(cur - 1); });
   document.getElementById('lbn').addEventListener('click', function () { show(cur + 1); });
