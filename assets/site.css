@@ -248,7 +248,7 @@ a.partner:hover .visit, a.partner:focus-visible .visit { opacity: 1; transform: 
 .mailrow { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 12px 12px 12px 22px; border-radius: 980px; background: var(--bg-alt); flex-wrap: wrap; justify-content: center; }
 .mailrow code { font-family: var(--font); font-size: 21px; font-weight: 600; user-select: all; }
 .mailrow button { border: 0; cursor: pointer; background: var(--link); color: #fff; font: 500 15px var(--text); padding: 9px 18px; border-radius: 980px; }
-.socials { display: flex; justify-content: center; gap: 28px; margin-top: 28px; font-size: 19px; flex-wrap: wrap; }
+.socials { display: flex; justify-content: center; gap: 16px; margin-top: 30px; flex-wrap: wrap; }
 
 footer { border-top: 1px solid var(--faint); padding-block: 22px 40px; font-size: 12px; color: var(--muted); }
 footer .wrap { display: grid; gap: 8px; }
@@ -496,3 +496,9 @@ footer .fnav + .fnav { margin-top: -6px; }
 .tl-logo { height: 120px; margin-bottom: 12px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 14px 18px; }
 .tl-logo img { max-width: 78%; max-height: 90px; width: auto; height: auto; object-fit: contain; }
 .tl-logo .txt { font-family: var(--font); font-weight: 700; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; text-align: center; color: #8e8e93; }
+
+/* Social-Icons */
+.sico { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--card); color: var(--fg); box-shadow: 0 1px 2px rgba(0,0,0,.06); transition: transform .3s var(--ease), background .3s, color .3s; }
+.band:not(.alt) .sico { background: var(--bg-alt); }
+.sico svg { width: 24px; height: 24px; }
+.sico:hover, .sico:focus-visible, .band:not(.alt) .sico:hover, .band:not(.alt) .sico:focus-visible { text-decoration: none; transform: translateY(-3px); background: var(--red); color: #fff; }
