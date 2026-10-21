@@ -239,6 +239,7 @@
     foto: { de: 'Foto', en: 'Photo', fr: 'Photo' },
     formMissing: { de: 'Bitte fülle Name, eine gültige E-Mail-Adresse und deine Nachricht aus.', en: 'Please fill in your name, a valid email address and your message.', fr: 'Veuillez indiquer votre nom, une adresse e-mail valide et votre message.' },
     formFailed: { de: 'Das hat leider nicht geklappt. Schreib mir direkt an e.timmer@gmx.ch.', en: 'Sorry, that didn’t work. Please write to me directly at e.timmer@gmx.ch.', fr: 'Désolé, cela n’a pas fonctionné. Écrivez-moi directement à e.timmer@gmx.ch.' },
+    formMail: { de: 'Stattdessen im E-Mail-Programm öffnen', en: 'Open in your email app instead', fr: 'Ouvrir dans votre application e-mail' },
     sending: { de: 'Wird gesendet …', en: 'Sending …', fr: 'Envoi …' },
     mailBody: {
       de: 'Hallo Eric\n\nIch möchte deinem Gönnerclub beitreten: {t}.\n\nName:\nAdresse:\n\nLiebe Grüsse',
@@ -463,9 +464,14 @@
         cform.hidden = true; cdone.hidden = false; cform.reset();
       } else { throw new Error((d && d.message) || 'failed'); }
     }).catch(function (err) {
-      var why = (err && err.message && err.message !== 'failed') ? ' (' + String(err.message).slice(0, 160) + ')' : '';
       try { console.warn('Kontaktformular:', err); } catch (e) {}
-      cErr.textContent = T('formFailed') + why; cErr.hidden = false;
+      var subj = 'Webseite: ' + fTopic.value + ' von ' + name;
+      var body = msg + '\n\n' + name + ' <' + mail + '>';
+      cErr.textContent = T('formFailed') + ' ';
+      var a = document.createElement('a');
+      a.href = 'mailto:e.timmer@gmx.ch?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+      a.textContent = T('formMail');
+      cErr.appendChild(a); cErr.hidden = false;
     }).then(function () { cSend.disabled = false; cSend.textContent = tr('Nachricht senden'); });
   });
   tiers.forEach(function (t) {
