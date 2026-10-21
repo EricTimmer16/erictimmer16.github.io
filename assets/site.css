@@ -527,3 +527,76 @@ footer .fnav + .fnav { margin-top: -6px; }
 .cal-note { margin-top: 28px; font-size: 14px; color: var(--muted); }
 #calnext .cal-note { margin-top: 24px; }
 @media (max-width: 560px) { .ce { grid-template-columns: 62px 1fr; gap: 14px; padding: 16px 18px; } .ce .go { grid-column: 2; } .ce-d b { font-size: 22px; } }
+
+/* ---------- Farbe: Schweizer Rot mit warmem Verlauf, sonst unverändert ruhig ---------- */
+:root {
+  --red-2: #ff6a3d;
+  --tint: color-mix(in srgb, var(--red) 6%, var(--bg));
+  --tint-2: color-mix(in srgb, var(--red) 7%, var(--bg-alt));
+  --grad: linear-gradient(100deg, var(--red) 0%, var(--red-2) 100%);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --red-2: #ff9f0a; --tint: color-mix(in srgb, var(--red) 4%, var(--bg)); --tint-2: color-mix(in srgb, var(--red) 5%, var(--bg-alt)); } }
+:root[data-theme="dark"] { --red-2: #ff9f0a; --tint: color-mix(in srgb, var(--red) 4%, var(--bg)); --tint-2: color-mix(in srgb, var(--red) 5%, var(--bg-alt)); }
+
+/* Hero: warmes Licht hinter dem Porträt */
+.hero-split { position: relative; isolation: isolate; overflow: clip; }
+.hero-split::before {
+  content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(34% 46% at 76% 38%, color-mix(in srgb, var(--red) 26%, transparent), transparent 72%),
+    radial-gradient(26% 36% at 94% 62%, color-mix(in srgb, var(--red-2) 22%, transparent), transparent 72%),
+    radial-gradient(30% 40% at 6% 68%, color-mix(in srgb, var(--red-2) 12%, transparent), transparent 72%);
+}
+.hero .sub, .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.hs-photo img { box-shadow: 0 34px 80px -18px color-mix(in srgb, var(--red) 45%, transparent); }
+
+/* Weltrang-Panel: Glut statt reines Schwarz */
+.panel {
+  background:
+    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--red) 42%, transparent), transparent 62%),
+    radial-gradient(50% 60% at 0% 100%, color-mix(in srgb, var(--red-2) 18%, transparent), transparent 70%),
+    var(--panel);
+}
+.rank-big .count { background: linear-gradient(180deg, #fff 35%, #ffb09f 130%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.pf { border-top-color: color-mix(in srgb, var(--red-2) 55%, transparent); }
+
+/* Statement: hervorgehobene Wörter im Verlauf */
+.statement .w.hl.on { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+
+/* Flächen: sanfte Rot-Tönung statt reinem Grau */
+.band.alt { background: linear-gradient(180deg, var(--tint-2) 0, var(--bg-alt) 480px); }
+#turniere { background: linear-gradient(180deg, var(--bg) 0, var(--tint-2) 100%); }
+#turniere .ce, #turniere .ce:hover { background: var(--card); box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 10px 30px -18px color-mix(in srgb, var(--red) 40%, transparent); }
+.band.dark {
+  background:
+    radial-gradient(60% 50% at 88% 0%, color-mix(in srgb, var(--red) 30%, transparent), transparent 70%),
+    radial-gradient(46% 40% at 0% 100%, color-mix(in srgb, var(--red-2) 14%, transparent), transparent 70%),
+    var(--panel);
+}
+
+/* Highlight-Karten */
+.hcard.dark { background: radial-gradient(90% 70% at 100% 100%, color-mix(in srgb, var(--red) 50%, transparent), transparent 70%), var(--panel); }
+.hcard.red:nth-child(even) { background: linear-gradient(150deg, #c40018 0%, #ff4a3a 100%); color: #fff; }
+.hcard.red:nth-child(even) p, .hcard.red:nth-child(even) .when, .hcard.red:nth-child(even) .big small { color: rgba(255,255,255,.86); -webkit-text-fill-color: currentColor; }
+.hcard.red:nth-child(even) .big { color: #fff; }
+.hcard.red:nth-child(even) .go, .hcard.red:nth-child(even) .go::after { color: #fff; }
+.hcard.red:nth-child(odd) { background: linear-gradient(160deg, color-mix(in srgb, var(--red) 12%, var(--card)), var(--card) 85%); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--red) 14%, transparent); }
+.hcard.red:nth-child(odd) .big { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.hcard.red:nth-child(odd) .big small { -webkit-text-fill-color: var(--muted); }
+.pt-row .bar i { background: var(--grad); }
+
+/* Kontakt: farbiger Abschluss */
+.band.contact {
+  color: #fff;
+  background:
+    radial-gradient(70% 110% at 0% 0%, rgba(255,120,70,.75), transparent 60%),
+    linear-gradient(135deg, #9c000f 0%, #d70015 55%, #ff3b30 100%);
+}
+.band.contact .eyebrow { color: rgba(255,255,255,.82); }
+.band.contact .lead { color: rgba(255,255,255,.88); }
+.band.contact .btn, .band.contact .mailrow button { background: #fff; color: #b00012; }
+.band.contact .mailrow { background: rgba(255,255,255,.16); }
+.band.contact .mailrow code { color: #fff; }
+.band.contact .sico { background: rgba(255,255,255,.18); color: #fff; box-shadow: none; }
+.band.contact .sico:hover, .band.contact .sico:focus-visible { background: #fff; color: #b00012; }
+.band.contact a:focus-visible, .band.contact button:focus-visible { outline-color: #fff; }
