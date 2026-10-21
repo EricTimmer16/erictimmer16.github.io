@@ -174,7 +174,7 @@
     'Alles über mich.': ['All about me.', 'Tout sur moi.'],
     'Highlights, Weltrangliste und Karriere': ['Highlights, world ranking and career', 'Temps forts, classement mondial et carrière'],
     'Fotos von der EM, den Basel Open Masters und der SKL': ['Photos from the Euros, the Basel Open Masters and the SKL', 'Photos de l’Euro, des Basel Open Masters et de la SKL'],
-    'Trainer, Mentalcoach, Physio und Verein': ['Coaches, mental coach, physio and club', 'Entraîneurs, coach mental, physio et club'],
+    'Mentalcoach, Physio und Verein': ['Mental coach, physio and club', 'Coach mental, physio et club'],
     'Die Firmen und Institutionen hinter mir': ['The companies and institutions behind me', 'Les entreprises et institutions qui me soutiennent'],
     'Unterstütze mich ab CHF 50': ['Support me from CHF 50', 'Soutenez-moi dès CHF 50'],
     'Ansehen': ['View', 'Voir'],
