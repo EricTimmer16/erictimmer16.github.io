@@ -471,3 +471,9 @@ footer .fnav + .fnav { margin-top: -6px; }
 .donors { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .donors li { padding: 10px 18px; border-radius: 980px; background: var(--card); font-size: 17px; }
 .gc-thanks-list[hidden] { display: none; }
+
+/* Vier Stufen (ohne Platin): gleich breit nebeneinander */
+.tiers:not(:has(.tier:nth-child(5))) { grid-template-columns: repeat(4, 1fr); }
+.tiers:not(:has(.tier:nth-child(5))) .tier, .tiers:not(:has(.tier:nth-child(5))) .tier:nth-child(n+4) { grid-column: span 1; }
+@media (max-width: 1000px) { .tiers:not(:has(.tier:nth-child(5))) { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .tiers:not(:has(.tier:nth-child(5))) { grid-template-columns: 1fr; } }
