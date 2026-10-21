@@ -285,6 +285,22 @@
     "Eric in der Umarmung nach dem Kampf": ["Eric in an embrace after the bout", "Eric dans une étreinte après le combat"],
     "Porträt von Eric im Schweizer Gi": ["Portrait of Eric in the Swiss gi", "Portrait d’Eric dans le kimono suisse"],
     "Eric dehnt sich beim Aufwärmen, hinter ihm das Team": ["Eric stretching during the warm-up, the team behind him", "Eric s’étire à l’échauffement, l’équipe derrière lui"],
+    "Sponsoring-Spezial": ["Sponsoring special", "Spécial sponsoring"],
+    "Dein Logo reist mit mir.": ["Your logo travels with me.", "Ton logo voyage avec moi."],
+    "Für Unternehmen: Dein Logo kommt auf drei Ausrüstungsstücke, die ich bei jedem Turnier dabeihabe, auf der Matte und unterwegs.": ["For companies: your logo goes on three pieces of equipment I take to every tournament, on the mat and on the road.", "Pour les entreprises : ton logo figure sur trois pièces d’équipement que j’emporte à chaque tournoi, sur le tatami et en déplacement."],
+    "Eric im Gi, am Ärmel das Logo von Physio Henrich": ["Eric in his gi, the Physio Henrich logo on the sleeve", "Eric en kimono, le logo de Physio Henrich sur la manche"],
+    "Beispiel: Ärmel-Logo von Physio Henrich": ["Example: sleeve logo by Physio Henrich", "Exemple : logo de Physio Henrich sur la manche"],
+    "Auf dem Gi": ["On the gi", "Sur le kimono"],
+    "Dein Logo am Wettkampf-Gi. Zu sehen bei jedem Kampf, auf jedem Foto und in jedem Video.": ["Your logo on my competition gi. Visible in every bout, every photo and every video.", "Ton logo sur mon kimono de compétition. Visible à chaque combat, sur chaque photo et dans chaque vidéo."],
+    "Skizze einer Sporttasche mit Platz für dein Logo": ["Sketch of a sports bag with room for your logo", "Croquis d’un sac de sport avec de la place pour ton logo"],
+    "Dein Logo": ["Your logo", "Ton logo"],
+    "Auf der Nationalkader-Tasche": ["On the national team bag", "Sur le sac de l’équipe nationale"],
+    "Dein Logo auf meiner Tasche des Schweizer Nationalkaders. Sie ist an jedem Flughafen, in jeder Halle und auf jeder Reise dabei.": ["Your logo on my Swiss national team bag. It comes along to every airport, every arena and every trip.", "Ton logo sur mon sac de l’équipe nationale suisse. Il m’accompagne dans chaque aéroport, chaque salle et chaque voyage."],
+    "Skizze eines Rucksacks mit Platz für dein Logo": ["Sketch of a backpack with room for your logo", "Croquis d’un sac à dos avec de la place pour ton logo"],
+    "Auf dem Rucksack": ["On the backpack", "Sur le sac à dos"],
+    "Dein Logo auf meinem Rucksack. Im Training, im Alltag und unterwegs.": ["Your logo on my backpack. In training, in everyday life and on the road.", "Ton logo sur mon sac à dos. À l’entraînement, au quotidien et en déplacement."],
+    "Die Details und Konditionen besprechen wir persönlich.": ["We will discuss the details and terms personally.", "Nous discuterons personnellement des détails et des conditions."],
+    "Anfrage senden": ["Send an enquiry", "Envoyer une demande"]
   };
   var UI = {
     statement: {
