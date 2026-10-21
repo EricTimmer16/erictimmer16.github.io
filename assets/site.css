@@ -492,7 +492,7 @@ footer .fnav + .fnav { margin-top: -6px; }
 .eq-note { margin-top: 30px; color: var(--panel-muted); font-size: 17px; }
 @media (max-width: 860px) { .eq { grid-template-columns: 1fr; } }
 
-/* Team-Kacheln mit gebleichten Logos */
+/* Team-Kacheln mit Logos in Farbe */
 .tl-logo { height: 120px; margin-bottom: 12px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 14px 18px; }
-.tl-logo img { max-width: 78%; max-height: 90px; width: auto; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.05) brightness(1.05); opacity: .8; }
+.tl-logo img { max-width: 78%; max-height: 90px; width: auto; height: auto; object-fit: contain; }
 .tl-logo .txt { font-family: var(--font); font-weight: 700; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; text-align: center; color: #8e8e93; }
