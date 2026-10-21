@@ -232,8 +232,13 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
 .partners .partner { transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
 a.partner:hover { text-decoration: none; transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.10); }
 .partner .logo { height: 72px; display: flex; align-items: center; justify-content: center; }
-.partner .logo img { max-height: 72px; max-width: 170px; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .75; transition: filter .4s var(--ease), opacity .4s, transform .4s var(--ease); }
-a.partner:hover .logo img, a.partner:focus-visible .logo img { filter: none; opacity: 1; transform: scale(1.05); }
+.partner .logo { height: 84px; width: 100%; min-width: 0; }
+.partner .logo img { max-height: 84px; max-width: min(180px, 100%); width: auto; height: auto; object-fit: contain; transition: transform .4s var(--ease); }
+a.partner:hover .logo img, a.partner:focus-visible .logo img { transform: scale(1.06); }
+/* Logo-Kacheln bewusst immer hell, damit alle Logos (auch schwarze) in beiden Modi lesbar sind */
+.partners .partner { background: #ffffff; color: #1d1d1f; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.partners .partner .ds { color: #6e6e73; }
+.partners .partner .visit { color: #0066cc; }
 .partner .visit { font-size: 13px; color: var(--link); opacity: 0; transform: translateY(4px); transition: opacity .3s, transform .3s var(--ease); }
 .partner .visit::after { content: " ↗"; }
 a.partner:hover .visit, a.partner:focus-visible .visit { opacity: 1; transform: none; }
@@ -607,13 +612,13 @@ footer .wrap { display: grid; gap: 8px; }
       <div class="eyebrow r">Partner</div>
       <h2 class="h-sec r" style="--d:.05s">Danke für euren Support.</h2>
       <div class="partners r" style="--d:.1s">
-        <a class="partner" href="https://sporthilfe.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Schweizer Sporthilfe</span></span><span class="ds">Förderung</span><span class="visit">sporthilfe.ch</span></a>
-        <a class="partner" href="https://www.swissolympic.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Swiss Olympic</span></span><span class="ds">Swiss Olympic Card Bronze</span><span class="visit">swissolympic.ch</span></a>
-        <a class="partner" href="https://www.tokaidojapan.com" target="_blank" rel="noopener"><span class="logo"><span class="nm">Tokaido</span></span><span class="ds">Ausrüstung</span><span class="visit">tokaidojapan.com</span></a>
-        <a class="partner" href="https://www.budosport.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Budo Sport</span></span><span class="ds">Kampfsport-Fachhandel</span><span class="visit">budosport.ch</span></a>
-        <a class="partner" href="https://www.chirogun.ch/" target="_blank" rel="noopener"><span class="logo"><span class="nm">Chirogun</span></span><span class="ds">Markenbotschafter</span><span class="visit">chirogun.ch</span></a>
-        <a class="partner" href="https://www.physiohenrich.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Physio Henrich</span></span><span class="ds">Physiotherapie</span><span class="visit">physiohenrich.ch</span></a>
-        <a class="partner" href="https://sport-academy.ch" target="_blank" rel="noopener"><span class="logo"><span class="nm">Sport Academy Zurich</span></span><span class="ds">Ausbildung</span><span class="visit">sport-academy.ch</span></a>
+        <a class="partner" href="https://sporthilfe.ch" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/sporthilfe.png" alt="Schweizer Sporthilfe" loading="lazy" decoding="async"></span><span class="ds">Förderung</span><span class="visit">sporthilfe.ch</span></a>
+        <a class="partner" href="https://www.swissolympic.ch" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/swiss-olympic.png" alt="Swiss Olympic" loading="lazy" decoding="async"></span><span class="ds">Swiss Olympic Card Bronze</span><span class="visit">swissolympic.ch</span></a>
+        <a class="partner" href="https://www.tokaidojapan.com" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/tokaido.png" alt="Tokaido" loading="lazy" decoding="async"></span><span class="ds">Ausrüstung</span><span class="visit">tokaidojapan.com</span></a>
+        <a class="partner" href="https://www.budosport.ch" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/budosport.png" alt="Budo Sport" loading="lazy" decoding="async"></span><span class="ds">Kampfsport-Fachhandel</span><span class="visit">budosport.ch</span></a>
+        <a class="partner" href="https://www.chirogun.ch/" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/chirogun.png" alt="Chirogun" loading="lazy" decoding="async"></span><span class="ds">Markenbotschafter</span><span class="visit">chirogun.ch</span></a>
+        <a class="partner" href="https://www.physiohenrich.ch" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/physio-henrich.png" alt="Physio Henrich" loading="lazy" decoding="async"></span><span class="ds">Physiotherapie</span><span class="visit">physiohenrich.ch</span></a>
+        <a class="partner" href="https://sport-academy.ch" target="_blank" rel="noopener"><span class="logo"><img src="images/partner/sport-academy-zurich.png" alt="Sport Academy Zurich" loading="lazy" decoding="async"></span><span class="ds">Ausbildung</span><span class="visit">sport-academy.ch</span></a>
       </div>
 
       <h2 class="h-sec r" style="margin-top:110px">Werde Teil des Teams.</h2>
