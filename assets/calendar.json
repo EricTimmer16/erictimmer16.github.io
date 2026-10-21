@@ -9,7 +9,8 @@
    "city": "Tbilisi, Georgia",
    "start": "2027-01-08",
    "end": "2027-01-10",
-   "url": "https://www.wkf.net/karate-one/championship/!/459/2027-karate-one-series-a-tbilisi"
+   "url": "https://www.wkf.net/karate-one/championship/!/459/2027-karate-one-series-a-tbilisi",
+   "eric": true
   },
   {
    "id": 449,
@@ -45,7 +46,8 @@
    "city": "Tarragona, Spain",
    "start": "2027-04-16",
    "end": "2027-04-18",
-   "url": "https://www.wkf.net/karate-one/championship/!/452/2027-karate-one-series-a-tarragona"
+   "url": "https://www.wkf.net/karate-one/championship/!/452/2027-karate-one-series-a-tarragona",
+   "eric": true
   },
   {
    "id": 450,
@@ -72,7 +74,8 @@
    "city": "Amman, Jordan",
    "start": "2027-07-23",
    "end": "2027-07-25",
-   "url": "https://www.wkf.net/karate-one/championship/!/453/2027-karate-one-series-a-amman"
+   "url": "https://www.wkf.net/karate-one/championship/!/453/2027-karate-one-series-a-amman",
+   "eric": true
   },
   {
    "id": 454,
@@ -81,7 +84,8 @@
    "city": "Salzburg, Austria",
    "start": "2027-09-17",
    "end": "2027-09-19",
-   "url": "https://www.wkf.net/karate-one/championship/!/454/2027-karate-one-series-a-salzburg"
+   "url": "https://www.wkf.net/karate-one/championship/!/454/2027-karate-one-series-a-salzburg",
+   "eric": true
   },
   {
    "id": 464,

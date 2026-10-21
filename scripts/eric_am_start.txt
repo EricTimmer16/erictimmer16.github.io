@@ -2,3 +2,7 @@
 # Eine Turnier-Nummer pro Zeile: die Zahl in der WKF-Adresse nach «!/»,
 # z. B. https://www.wkf.net/karate-one/championship/!/459/2027-karate-one-series-a-tbilisi -> 459
 # Zeilen mit # sind Kommentare.
+459  # Series A Tbilisi
+452  # Series A Tarragona
+453  # Series A Amman
+454  # Series A Salzburg
