@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Gönnerclub · Eric Timmer</title>
+<meta name="description" content="Eric Timmer, Karateka aus Sisseln (AG). Schweizer Nationalkader, Kumite −60 kg, Nummer 52 der WKF-Weltrangliste.">
+<link rel="alternate" hreflang="de" href="https://erictimmer.ch/goennerclub.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://erictimmer.ch/goennerclub.html?lang=en">
+<link rel="alternate" hreflang="fr" href="https://erictimmer.ch/goennerclub.html?lang=fr">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="Gönnerclub">
+<nav class="top" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a class="brand" href="./">Eric Timmer</a>
+    <div class="nav-links" id="navlinks">
+      <a href="erfolge.html">Erfolge</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="team.html">Team</a>
+      <a href="partner.html">Partner</a>
+      <a href="goennerclub.html" aria-current="page">Gönnerclub</a>
+      <a href="#kontakt" class="only-m" data-contact>Kontakt</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Sprache · Language · Langue">
+        <button type="button" data-lang="de" aria-pressed="true" lang="de" title="Deutsch">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false" lang="fr" title="Français">FR</button>
+      </div>
+      <a class="pill" href="#kontakt" data-contact>Kontakt</a>
+      <button type="button" class="menu-btn" id="menubtn" aria-label="Menü" aria-expanded="false" aria-controls="navlinks"><svg class="bars" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg><svg class="x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- GÖNNERCLUB -->
+  <section class="band dark" id="goenner">
+    <div class="wrap">
+      <div class="eyebrow r">Gönnerclub</div>
+      <h1 class="h-sec r" style="--d:.05s">Werde Teil meines Gönnerclubs.</h1>
+      <p class="lead r" style="--d:.1s">Weltcups, Trainingslager und Ausrüstung kosten viel. Neben meiner Lehre ist jeder Beitrag eine echte Hilfe auf dem Weg an die Weltspitze. Mit deiner Unterstützung bist du Teil dieses Wegs.</p>
+      <div class="tiers" role="group" aria-label="Stufe wählen">
+        <button type="button" class="tier" data-tier="zustupf" aria-pressed="false"><span class="t-name">Kleiner Zustupf</span><span class="t-price">CHF 50</span><span class="t-per">einmalig</span><span class="t-perk">Ein persönliches Dankeschön von mir</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="bronze" aria-pressed="false"><span class="t-name">Bronze</span><span class="t-price">CHF 100</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="silber" aria-pressed="false"><span class="t-name">Silber</span><span class="t-price">CHF 250</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+        <button type="button" class="tier" data-tier="gold" aria-pressed="false"><span class="t-name">Gold</span><span class="t-price">CHF 500</span><span class="t-per">pro Jahr</span><span class="t-perk">Mitglied im Gönnerclub<br>Signierte Autogrammkarte</span><span class="t-pick">Auswählen</span></button>
+      </div>
+      <div class="join">
+        <div>
+          <div class="j-k">Deine Wahl</div>
+          <div class="j-v" id="jsel">Wähle oben eine Stufe.</div>
+          <a class="btn" id="jmail" href="#kontakt" aria-disabled="true">Jetzt anmelden</a>
+          <p class="j-note">Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.</p>
+          <p class="j-note"><span>Oder direkt an</span> <b>e.timmer@gmx.ch</b></p>
+        </div>
+        <div>
+          <div class="j-k">Bezahlen</div>
+          <div id="pay">
+            <div class="payrow"><span class="pk">TWINT</span><b class="pv">078&nbsp;856&nbsp;80&nbsp;67</b><button type="button" class="cp" data-copy="0788568067">Kopieren</button></div>
+            <div class="payrow"><span class="pk">IBAN</span><b class="pv">CH09&nbsp;0027&nbsp;4274 2058&nbsp;45M1&nbsp;D</b><button type="button" class="cp" data-copy="CH0900274274205845M1D">Kopieren</button></div>
+            <div class="payrow"><span class="pk">Bank</span><b class="pv">UBS</b></div>
+            <div class="payrow"><span class="pk">Kontoinhaber</span><b class="pv">Eric Timmer</b></div>
+            <p class="j-note">Vermerk: «Gönnerclub» und dein Name.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<dialog class="cdlg" id="cdlg" aria-labelledby="cdlg-t">
+    <form id="cform" novalidate>
+      <div class="cd-head"><h3 id="cdlg-t">Schreib mir</h3><button type="button" class="cd-x" id="cdx" aria-label="Schliessen">×</button></div>
+      <p class="cd-sub">Ich melde mich so schnell wie möglich bei dir.</p>
+      <label class="fl" for="cf-name"><span>Name</span><input id="cf-name" name="name" autocomplete="name" required></label>
+      <label class="fl" for="cf-email"><span>E-Mail</span><input id="cf-email" name="email" type="email" autocomplete="email" required></label>
+      <label class="fl" for="cf-topic"><span>Thema</span><select id="cf-topic" name="topic"><option value="Sponsoring">Sponsoring</option><option value="Gönnerclub">Gönnerclub</option><option value="Medien">Medien</option><option value="Training">Training</option><option value="Anderes">Anderes</option></select></label>
+      <label class="fl" for="cf-msg"><span>Nachricht</span><textarea id="cf-msg" name="message" rows="6" required></textarea></label>
+      <input type="text" name="_honey" id="cf-honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="cd-err" id="cf-err" role="alert" hidden></p>
+      <button class="btn cd-send" type="submit" id="cf-send">Nachricht senden</button>
+      <p class="cd-priv">Deine Nachricht wird über den Formular-Dienst FormSubmit an mein E-Mail-Postfach weitergeleitet.</p>
+    </form>
+    <div class="cd-done" id="cf-done" hidden>
+      <div class="cd-ok" aria-hidden="true">✓</div>
+      <h3>Danke!</h3>
+      <p>Deine Nachricht ist unterwegs. Ich melde mich bald bei dir.</p>
+      <button type="button" class="btn cd-send" id="cf-close">Schliessen</button>
+    </div>
+  </dialog>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Seiten">
+      <a href="./">Startseite</a>
+      <a href="erfolge.html">Erfolge</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="team.html">Team</a>
+      <a href="partner.html">Partner</a>
+      <a href="goennerclub.html" aria-current="page">Gönnerclub</a>
+      <a href="#kontakt" data-contact>Kontakt</a>
+    </nav>
+    <div>Eric Timmer · Sisseln AG · Jahrgang 2003</div>
+    <div>Ranglistendaten: WKF-Athletenprofil (Stand Oktober 2026). Weitere Resultate: Swiss Karate Federation, Stiftung Schweizer Sporthilfe.</div>
+    <div>Fotos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.</div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
