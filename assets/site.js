@@ -265,7 +265,15 @@
     "Mitglied im Gönnerclub<br>Signierte Autogrammkarte<br>Nennung auf der Webseite (wenn gewünscht)": ["Member of the supporters’ club<br>Signed autograph card<br>Name on the website (if you like)", "Membre du club des supporters<br>Carte autographe signée<br>Nom sur le site (si tu le souhaites)"],
     "Mitglied im Gönnerclub<br>Signierte Autogrammkarte<br>Nennung auf der Webseite (wenn gewünscht)<br>Signiertes Trikot oder Gi-Patch": ["Member of the supporters’ club<br>Signed autograph card<br>Name on the website (if you like)<br>Signed jersey or gi patch", "Membre du club des supporters<br>Carte autographe signée<br>Nom sur le site (si tu le souhaites)<br>Maillot ou patch de gi signé"],
     "Mitglied im Gönnerclub<br>Alles von Gold": ["Member of the supporters’ club<br>Everything from Gold", "Membre du club des supporters<br>Tout ce qu’offre le niveau Or"],
-    "Platin": ["Platinum", "Platine"]
+    "Platin": ["Platinum", "Platine"],
+    "Mitglied im Gönnerclub": ["Member of the supporters’ club", "Membre du club des supporters"],
+    "Signierte Autogrammkarte": ["Signed autograph card", "Carte autographe signée"],
+    "Nennung auf der Webseite (wenn gewünscht)": ["Name on the website (if you like)", "Nom sur le site (si tu le souhaites)"],
+    "Signiertes Trikot oder Gi-Patch": ["Signed jersey or gi patch", "Maillot ou patch de gi signé"],
+    "Alles von Gold": ["Everything from Gold", "Tout ce qu’offre le niveau Or"],
+    "Ein persönliches Dankeschön von mir": ["A personal thank-you from me", "Un remerciement personnel de ma part"],
+    "Danke an": ["Thanks to", "Merci à"],
+    "Diese Menschen unterstützen mich.": ["These people support me.", "Ces personnes me soutiennent."]
   };
   var UI = {
     statement: {
