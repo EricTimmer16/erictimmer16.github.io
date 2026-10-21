@@ -299,13 +299,15 @@ footer .wrap { display: grid; gap: 8px; }
 }
 
 /* ---------- Gönnerclub ---------- */
-.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; }
-@media (max-width: 960px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
+.tiers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 56px; }
+@media (max-width: 1180px) { .tiers { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .tiers { grid-template-columns: 1fr; } }
 .tier { --tc: #a1a1a6; text-align: left; font: inherit; color: var(--panel-fg); background: rgba(255,255,255,.06); border: 2px solid transparent; border-radius: 22px; padding: 26px 22px 22px; display: flex; flex-direction: column; gap: 4px; cursor: pointer; min-height: 270px; min-width: 0; transition: transform .4s var(--ease), border-color .3s, background .3s; }
 .tier[data-tier="bronze"] { --tc: #d09466; }
 .tier[data-tier="silber"] { --tc: #c4c8cf; }
 .tier[data-tier="gold"] { --tc: #e8bd5f; }
+.tier[data-tier="platin"] { --tc: #b9c9ea; }
 .tier:hover { transform: translateY(-4px); background: rgba(255,255,255,.09); }
 .tier[aria-pressed="true"] { border-color: #2997ff; background: rgba(41,151,255,.14); }
 .tier .t-name { font-size: 15px; font-weight: 600; color: var(--tc); }

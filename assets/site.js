@@ -261,7 +261,11 @@
     "Dein Beitrag zählt.": ["Every contribution counts.", "Chaque contribution compte."],
     "Danke, dass du mich auf diesem Weg unterstützt.": ["Thank you for supporting me on this journey.", "Merci de me soutenir sur ce chemin."],
     "Du führst ein Unternehmen?": ["Do you run a company?", "Tu diriges une entreprise ?"],
-    "Dann schau dir an, wie du mich als Partner unterstützen kannst.": ["Then take a look at how you can support me as a partner.", "Alors découvre comment tu peux me soutenir en tant que partenaire."]
+    "Dann schau dir an, wie du mich als Partner unterstützen kannst.": ["Then take a look at how you can support me as a partner.", "Alors découvre comment tu peux me soutenir en tant que partenaire."],
+    "Mitglied im Gönnerclub<br>Signierte Autogrammkarte<br>Nennung auf der Webseite (wenn gewünscht)": ["Member of the supporters’ club<br>Signed autograph card<br>Name on the website (if you like)", "Membre du club des supporters<br>Carte autographe signée<br>Nom sur le site (si tu le souhaites)"],
+    "Mitglied im Gönnerclub<br>Signierte Autogrammkarte<br>Nennung auf der Webseite (wenn gewünscht)<br>Signiertes Trikot oder Gi-Patch": ["Member of the supporters’ club<br>Signed autograph card<br>Name on the website (if you like)<br>Signed jersey or gi patch", "Membre du club des supporters<br>Carte autographe signée<br>Nom sur le site (si tu le souhaites)<br>Maillot ou patch de gi signé"],
+    "Mitglied im Gönnerclub<br>Alles von Gold": ["Member of the supporters’ club<br>Everything from Gold", "Membre du club des supporters<br>Tout ce qu’offre le niveau Or"],
+    "Platin": ["Platinum", "Platine"]
   };
   var UI = {
     statement: {
