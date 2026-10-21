@@ -1,0 +1,105 @@
+{
+ "source": "https://www.wkf.net/calendar",
+ "generated": "2026-10-22",
+ "events": [
+  {
+   "id": 459,
+   "cat": "series-a",
+   "name": "Karate One Series A Tbilisi",
+   "city": "Tbilisi, Georgia",
+   "start": "2027-01-08",
+   "end": "2027-01-10",
+   "url": "https://www.wkf.net/karate-one/championship/!/459/2027-karate-one-series-a-tbilisi"
+  },
+  {
+   "id": 449,
+   "cat": "premier-league",
+   "name": "Karate One Premier League Istanbul",
+   "city": "Istanbul, Türkiye",
+   "start": "2027-01-29",
+   "end": "2027-01-31",
+   "url": "https://www.wkf.net/karate-one/championship/!/449/2027-karate-one-premier-league-istanbul"
+  },
+  {
+   "id": 460,
+   "cat": "premier-league",
+   "name": "Karate One Premier League Rome",
+   "city": "Rome, Italy",
+   "start": "2027-03-12",
+   "end": "2027-03-14",
+   "url": "https://www.wkf.net/karate-one/championship/!/460/2027-karate-one-premier-league-rome"
+  },
+  {
+   "id": 467,
+   "cat": "em",
+   "name": "EKF Senior Championships Marseille",
+   "city": "Marseille, France",
+   "start": "2027-03-24",
+   "end": "2027-03-28",
+   "url": "https://www.wkf.net/continental-championships/championship/!/467/2027-ekf-senior-championships-marseille"
+  },
+  {
+   "id": 452,
+   "cat": "series-a",
+   "name": "Karate One Series A Tarragona",
+   "city": "Tarragona, Spain",
+   "start": "2027-04-16",
+   "end": "2027-04-18",
+   "url": "https://www.wkf.net/karate-one/championship/!/452/2027-karate-one-series-a-tarragona"
+  },
+  {
+   "id": 450,
+   "cat": "premier-league",
+   "name": "Karate One Premier League Astana",
+   "city": "Astana, Kazakhstan",
+   "start": "2027-05-07",
+   "end": "2027-05-09",
+   "url": "https://www.wkf.net/karate-one/championship/!/450/2027-karate-one-premier-league-astana"
+  },
+  {
+   "id": 451,
+   "cat": "premier-league",
+   "name": "Karate One Premier League Rabat",
+   "city": "Rabat, Morocco",
+   "start": "2027-06-04",
+   "end": "2027-06-06",
+   "url": "https://www.wkf.net/karate-one/championship/!/451/2027-karate-one-premier-league-rabat"
+  },
+  {
+   "id": 453,
+   "cat": "series-a",
+   "name": "Karate One Series A Amman",
+   "city": "Amman, Jordan",
+   "start": "2027-07-23",
+   "end": "2027-07-25",
+   "url": "https://www.wkf.net/karate-one/championship/!/453/2027-karate-one-series-a-amman"
+  },
+  {
+   "id": 454,
+   "cat": "series-a",
+   "name": "Karate One Series A Salzburg",
+   "city": "Salzburg, Austria",
+   "start": "2027-09-17",
+   "end": "2027-09-19",
+   "url": "https://www.wkf.net/karate-one/championship/!/454/2027-karate-one-series-a-salzburg"
+  },
+  {
+   "id": 464,
+   "cat": "quali",
+   "name": "Senior World Championships - Qualification Phase Event",
+   "city": "Tangier, Morocco",
+   "start": "2027-10-08",
+   "end": "2027-10-10",
+   "url": "https://www.wkf.net/world-championships/championship/!/464/2027-senior-world-championships-qualification-phase-event"
+  },
+  {
+   "id": 465,
+   "cat": "wm",
+   "name": "World Senior Championships - Final Phase Event",
+   "city": "Milano Bergamo, Italy",
+   "start": "2027-11-11",
+   "end": "2027-11-14",
+   "url": "https://www.wkf.net/world-championships/championship/!/465/2027-world-senior-championships-final-phase-event"
+  }
+ ]
+}

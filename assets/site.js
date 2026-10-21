@@ -225,7 +225,7 @@
     'WKF-Profil': ['WKF profile', 'Profil WKF'],
     'Eric Timmer · Sisseln AG · Jahrgang 2003': ['Eric Timmer · Sisseln, Switzerland · born 2003', 'Eric Timmer · Sisseln (AG), Suisse · né en 2003'],
     'Ranglistendaten: WKF-Athletenprofil (Stand Oktober 2026). Weitere Resultate: Swiss Karate Federation, Stiftung Schweizer Sporthilfe.': ['Ranking data: WKF athlete profile (as of October 2026). Other results: Swiss Karate Federation, Stiftung Schweizer Sporthilfe.', 'Données de classement : profil d’athlète WKF (état octobre 2026). Autres résultats : Swiss Karate Federation, Aide sportive suisse.'],
-    'Fotos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.': ['Photos: Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.', 'Photos : Kjetil Waber, foto-kjetil.ch / Swiss Karate Federation.'],
+    'Fotos: Kjetil Waber, foto-kjetil.ch.': ['Photos: Kjetil Waber, foto-kjetil.ch.', 'Photos : Kjetil Waber, foto-kjetil.ch.'],
     'Sisseln AG · Jahrgang 2003 · Kaufmann EFZ in Ausbildung': ['Sisseln AG · born 2003 · commercial apprentice (KV)', 'Sisseln AG · né en 2003 · apprenti employé de commerce'],
     'Eric Timmer im Dress der Swiss Karate Federation': ['Eric Timmer in the Swiss Karate Federation team jacket', 'Eric Timmer dans la veste de la Swiss Karate Federation'],
     'Foto: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a>': ['Photo: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a>', 'Photo : <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a>'],
@@ -237,7 +237,7 @@
     "Inhalt": ["Content", "Contenu"],
     "Diese Webseite stellt mich als Sportler vor: meine Resultate, mein Team und meine Partner. Ich erstelle die Inhalte mit Sorgfalt, übernehme aber keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität. Ranglistendaten stammen aus dem WKF-Athletenprofil.": ["This website presents me as an athlete: my results, my team and my partners. I create the content with care, but I do not guarantee that it is correct, complete or up to date. Ranking data comes from the WKF athlete profile.", "Ce site me présente en tant que sportif : mes résultats, mon équipe et mes partenaires. Je crée les contenus avec soin, mais je ne garantis ni leur exactitude, ni leur exhaustivité, ni leur actualité. Les données de classement proviennent du profil d’athlète WKF."],
     "Bilder und Marken": ["Images and trademarks", "Images et marques"],
-    "Die Fotos stammen von Kjetil Waber (foto-kjetil.ch) und der Swiss Karate Federation. Sie dürfen ohne Zustimmung nicht weiterverwendet werden. Logos und Namen der Partner gehören den jeweiligen Inhabern.": ["The photos are by Kjetil Waber (foto-kjetil.ch) and the Swiss Karate Federation. They may not be reused without permission. Partner logos and names belong to their respective owners.", "Les photos sont de Kjetil Waber (foto-kjetil.ch) et de la Swiss Karate Federation. Elles ne peuvent pas être réutilisées sans autorisation. Les logos et noms des partenaires appartiennent à leurs propriétaires respectifs."],
+    "Die Fotos stammen von Kjetil Waber (foto-kjetil.ch). Sie dürfen ohne Zustimmung nicht weiterverwendet werden. Logos und Namen der Partner gehören den jeweiligen Inhabern.": ["The photos are by Kjetil Waber (foto-kjetil.ch). They may not be reused without permission. Partner logos and names belong to their respective owners.", "Les photos sont de Kjetil Waber (foto-kjetil.ch). Elles ne peuvent pas être réutilisées sans autorisation. Les logos et noms des partenaires appartiennent à leurs propriétaires respectifs."],
     "Links auf andere Seiten": ["Links to other sites", "Liens vers d’autres sites"],
     "Für Inhalte externer Webseiten, auf die ich verlinke, sind allein deren Betreiber verantwortlich.": ["The operators of the external websites I link to are solely responsible for their content.", "Les exploitants des sites externes vers lesquels je renvoie sont seuls responsables de leur contenu."],
     "Datenschutz": ["Privacy policy", "Protection des données"],
@@ -326,7 +326,23 @@
     "Eric trainiert in der Aufwärmhalle mit seinem Coach": ["Eric training with his coach in the warm-up hall", "Eric s’entraîne avec son coach dans la salle d’échauffement"],
     "Eric hebt in der Aufwärmhalle den Arm, auf dem Trikot sein Name und die Nummer 6": ["Eric raising his arm in the warm-up hall, his name and the number 6 on his jersey", "Eric lève le bras dans la salle d’échauffement, son nom et le numéro 6 sur le maillot"],
     "Wappen der Gemeinde Sisseln": ["Coat of arms of the municipality of Sisseln", "Armoiries de la commune de Sisseln"],
-    "Gemeinde": ["Municipality", "Commune"]
+    "Gemeinde": ["Municipality", "Commune"],
+    "Für Unternehmen: Dein Logo kommt auf Ausrüstung, die ich bei jedem Turnier dabeihabe, auf der Matte und unterwegs.": ["For companies: your logo goes on equipment I take to every tournament, on the mat and on the road.", "Pour les entreprises : ton logo apparaît sur l’équipement que j’emmène à chaque tournoi, sur le tatami et en déplacement."],
+    "<b>Ab CHF 1000</b> kommt dein Logo auf das Gi, den Rucksack oder die Nationalkader-Tasche. Die Details besprechen wir persönlich.": ["<b>From CHF 1000</b>, your logo goes on the gi, the backpack or the national team bag. We will discuss the details personally.", "<b>Dès 1000 CHF</b>, ton logo apparaît sur le gi, le sac à dos ou le sac de l’équipe nationale. Nous discuterons des détails personnellement."],
+    "Diese Partner stehen hinter mir.": ["These partners stand behind me.", "Ces partenaires sont derrière moi."],
+    "Und danke an alle, die mich privat unterstützen.": ["And thank you to everyone who supports me personally.", "Et merci à tous ceux qui me soutiennent à titre personnel."],
+    "Gemeinde Sisseln": ["Municipality of Sisseln", "Commune de Sisseln"],
+    "Kalender": ["Calendar", "Calendrier"],
+    "Turnierkalender": ["Tournament calendar", "Calendrier des tournois"],
+    "Die nächsten Turniere.": ["The next tournaments.", "Les prochains tournois."],
+    "Ganzer Kalender": ["Full calendar", "Calendrier complet"],
+    "Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali.": ["The key tournaments of the WKF season: Series A, Premier League, the European Championships, the World Championships and the worlds qualifier.", "Les tournois clés de la saison WKF : Series A, Premier League, championnats d’Europe, championnats du monde et qualification mondiale."],
+    "Alle": ["All", "Tous"],
+    "Europameisterschaft": ["European Championships", "Championnats d’Europe"],
+    "Weltmeisterschaft": ["World Championships", "Championnats du monde"],
+    "WM-Quali": ["Worlds qualifier", "Qualif. mondiale"],
+    "Quelle: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF-Kalender</a>, wird täglich abgeglichen. Änderungen vorbehalten.": ["Source: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF calendar</a>, checked daily. Subject to change.", "Source : <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">calendrier WKF</a>, mis à jour chaque jour. Sous réserve de modifications."],
+    "Turnierart": ["Tournament type", "Type de tournoi"]
   };
   var UI = {
     statement: {
@@ -336,6 +352,15 @@
     },
     foto: { de: 'Foto', en: 'Photo', fr: 'Photo' },
     ua: { de: 'u. a.', en: 'and others', fr: 'et autres' },
+    catSeriesA: { de: 'Series A', en: 'Series A', fr: 'Series A' },
+    catPremier: { de: 'Premier League', en: 'Premier League', fr: 'Premier League' },
+    catEm: { de: 'Europameisterschaft', en: 'European Championships', fr: 'Championnats d’Europe' },
+    catWm: { de: 'Weltmeisterschaft', en: 'World Championships', fr: 'Championnats du monde' },
+    catQuali: { de: 'WM-Quali', en: 'Worlds qualifier', fr: 'Qualif. mondiale' },
+    calMe: { de: 'Ich bin am Start', en: 'I’m competing', fr: 'Je suis au départ' },
+    calInfo: { de: 'WKF-Info', en: 'WKF info', fr: 'Infos WKF' },
+    calEmpty: { de: 'Im Moment sind keine passenden Turniere im Kalender.', en: 'There are currently no matching tournaments in the calendar.', fr: 'Aucun tournoi correspondant n’est actuellement au calendrier.' },
+    calFail: { de: 'Der Kalender konnte nicht geladen werden. Du findest ihn direkt bei der WKF: wkf.net/calendar', en: 'The calendar could not be loaded. You can find it directly at the WKF: wkf.net/calendar', fr: 'Le calendrier n’a pas pu être chargé. Tu le trouves directement chez la WKF : wkf.net/calendar' },
     formMissing: { de: 'Bitte fülle Name, eine gültige E-Mail-Adresse und deine Nachricht aus.', en: 'Please fill in your name, a valid email address and your message.', fr: 'Veuillez indiquer votre nom, une adresse e-mail valide et votre message.' },
     formFailed: { de: 'Das hat leider nicht geklappt. Schreib mir direkt an e.timmer@gmx.ch.', en: 'Sorry, that didn’t work. Please write to me directly at e.timmer@gmx.ch.', fr: 'Désolé, cela n’a pas fonctionné. Écrivez-moi directement à e.timmer@gmx.ch.' },
     formMail: { de: 'Stattdessen im E-Mail-Programm öffnen', en: 'Open in your email app instead', fr: 'Ouvrir dans votre application e-mail' },
@@ -605,6 +630,73 @@
     });
   });
 
+  /* Turnierkalender (Daten: assets/calendar.json, täglich von der WKF abgeglichen) */
+  var CAL = null, calFail = false, calFilter = 'all';
+  var CAL_LOC = { de: 'de-CH', en: 'en-GB', fr: 'fr-CH' };
+  var CAL_CAT = { 'series-a': 'catSeriesA', 'premier-league': 'catPremier', em: 'catEm', wm: 'catWm', quali: 'catQuali' };
+  function calDate(s) { var a = s.split('-'); return new Date(+a[0], +a[1] - 1, +a[2]); }
+  function calMon(d, style) { return d.toLocaleDateString(CAL_LOC[lang], { month: style }).replace(/\./g, ''); }
+  function calDay(d) { return d.getDate() + (lang === 'de' ? '.' : ''); }
+  function calRange(a, b) {
+    if (a.getTime() === b.getTime()) return calDay(a) + ' ' + calMon(a, 'long') + ' ' + a.getFullYear();
+    if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) return calDay(a) + '–' + calDay(b) + ' ' + calMon(a, 'long') + ' ' + a.getFullYear();
+    return calDay(a) + ' ' + calMon(a, 'short') + ' – ' + calDay(b) + ' ' + calMon(b, 'short') + ' ' + b.getFullYear();
+  }
+  function calEl(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function renderCal() {
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('#cal, #calnext'));
+    if (!boxes.length) return;
+    var t = new Date(), today = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+    boxes.forEach(function (box) {
+      box.innerHTML = '';
+      if (calFail) { box.appendChild(calEl('p', 'cal-note', T('calFail'))); return; }
+      if (!CAL) return;
+      var limit = +box.getAttribute('data-limit') || 0, grouped = !limit;
+      var list = CAL.filter(function (e) { return calDate(e.end) >= today && (calFilter === 'all' || e.cat === calFilter || !grouped); });
+      if (limit) list = list.slice(0, limit);
+      if (!list.length) { box.appendChild(calEl('p', 'cal-note', T('calEmpty'))); return; }
+      var ul = calEl('ul', 'cal-list'), lastKey = '';
+      list.forEach(function (e) {
+        var a = calDate(e.start), b = calDate(e.end);
+        if (grouped) {
+          var key = a.getFullYear() + '-' + a.getMonth();
+          if (key !== lastKey) { lastKey = key; ul.appendChild(calEl('li', 'cal-mh', a.toLocaleDateString(CAL_LOC[lang], { month: 'long', year: 'numeric' }))); }
+        }
+        var li = calEl('li', 'ce' + (e.eric ? ' me' : ''));
+        var d = calEl('div', 'ce-d');
+        d.appendChild(calEl('b', '', a.getTime() === b.getTime() ? String(a.getDate()) : a.getDate() + '–' + b.getDate()));
+        d.appendChild(calEl('span', '', calMon(a, 'short')));
+        var m = calEl('div', 'ce-m');
+        var tags = calEl('div', 'ce-tags');
+        tags.appendChild(calEl('span', 'ce-t c-' + e.cat, T(CAL_CAT[e.cat])));
+        if (e.eric) tags.appendChild(calEl('span', 'ce-t ce-me', T('calMe')));
+        m.appendChild(tags);
+        m.appendChild(calEl('h3', '', e.name));
+        m.appendChild(calEl('p', '', (e.city ? e.city + ' · ' : '') + calRange(a, b)));
+        var go = calEl('a', 'go chev', T('calInfo'));
+        go.href = e.url; go.target = '_blank'; go.rel = 'noopener';
+        go.setAttribute('aria-label', T('calInfo') + ': ' + e.name);
+        li.appendChild(d); li.appendChild(m); li.appendChild(go);
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    });
+  }
+  (function () {
+    var chips = document.getElementById('calchips');
+    if (chips) chips.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button[data-f]'); if (!b) return;
+      calFilter = b.getAttribute('data-f');
+      Array.prototype.forEach.call(chips.querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      renderCal();
+    });
+    if (!document.getElementById('cal') && !document.getElementById('calnext')) return;
+    var day = new Date().toISOString().slice(0, 10);
+    fetch('assets/calendar.json?d=' + day).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { CAL = j.events || []; renderCal(); })
+      .catch(function () { calFail = true; renderCal(); });
+  })();
+
   /* Sprache wechseln */
   var metaDesc = document.querySelector('meta[name="description"]');
   var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang button'));
@@ -619,6 +711,7 @@
     if (curPanel && galsub) galsub.innerHTML = curPanel.getAttribute('data-sub');
     if (lb && !lb.hidden) show(cur);
     refreshJoin();
+    renderCal();
     if (metaDesc) metaDesc.setAttribute('content', T('desc'));
     var pg = document.body.getAttribute('data-page');
     document.title = (pg ? tr(pg) + ' · ' : '') + 'Eric Timmer';

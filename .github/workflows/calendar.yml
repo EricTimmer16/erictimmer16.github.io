@@ -1,0 +1,35 @@
+name: WKF-Kalender abgleichen
+
+# Läuft jeden Tag, holt den WKF-Turnierkalender und speichert die wichtigen Turniere
+# (Series A, Premier League, EM, WM, Quali) in assets/calendar.json.
+on:
+  schedule:
+    - cron: "37 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calendar
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kalender von der WKF holen
+        run: python3 scripts/update_calendar.py
+      - name: Änderungen speichern
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "calendar-bot"
+            git config user.email "calendar-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "Turnierkalender automatisch aktualisiert"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Keine Änderung, Kalender ist aktuell."
+          fi

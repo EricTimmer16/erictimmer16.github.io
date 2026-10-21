@@ -502,3 +502,28 @@ footer .fnav + .fnav { margin-top: -6px; }
 .band:not(.alt) .sico { background: var(--bg-alt); }
 .sico svg { width: 24px; height: 24px; }
 .sico:hover, .sico:focus-visible, .band:not(.alt) .sico:hover, .band:not(.alt) .sico:focus-visible { text-decoration: none; transform: translateY(-3px); background: var(--red); color: #fff; }
+
+/* Turnierkalender */
+.cal-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.cal-chips button { border: 0; cursor: pointer; font: 500 15px var(--text); padding: 9px 16px; border-radius: 980px; background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--fg); transition: background .3s var(--ease), color .3s; }
+.cal-chips button:hover { background: color-mix(in srgb, var(--muted) 26%, transparent); }
+.cal-chips button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.cal-list { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 12px; }
+.cal-mh { margin: 30px 0 0; font: 600 14px var(--text); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.cal-mh:first-child { margin-top: 0; }
+.ce { display: grid; grid-template-columns: 76px 1fr auto; gap: 18px; align-items: center; padding: 18px 24px; border-radius: 20px; background: var(--card); }
+.band:not(.alt) .ce { background: var(--bg-alt); }
+.ce.me { box-shadow: inset 0 0 0 2px var(--red); }
+.ce-d { text-align: center; line-height: 1.05; }
+.ce-d b { display: block; font-size: 26px; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
+.ce-d span { display: block; margin-top: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.ce-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ce-t { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 10px; border-radius: 980px; background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--muted); }
+.ce-t.c-em, .ce-t.c-wm, .ce-t.c-quali { background: color-mix(in srgb, var(--red) 14%, transparent); color: var(--red); }
+.ce-t.ce-me { background: var(--red); color: #fff; }
+.ce h3 { font-size: 19px; font-weight: 600; margin: 8px 0 2px; letter-spacing: -.01em; }
+.ce p { margin: 0; color: var(--muted); font-size: 15px; }
+.ce .go { font-size: 15px; white-space: nowrap; }
+.cal-note { margin-top: 28px; font-size: 14px; color: var(--muted); }
+#calnext .cal-note { margin-top: 24px; }
+@media (max-width: 560px) { .ce { grid-template-columns: 62px 1fr; gap: 14px; padding: 16px 18px; } .ce .go { grid-column: 2; } .ce-d b { font-size: 22px; } }
