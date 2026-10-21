@@ -428,3 +428,12 @@ nav.top.open .menu-btn .x { display: block; }
   .hs-photo { max-width: 200px; }
   .hs-photo img { aspect-ratio: 1 / 1; object-position: 50% 10%; border-radius: 20px; }
 }
+
+/* ---------- Rechtsseiten (Impressum, Datenschutz) und Footer-Links ---------- */
+.prose { max-width: 760px; }
+.prose .h-sec { margin-bottom: 18px; }
+.prose .pr-h { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin: 38px 0 8px; }
+.prose .pr-p { font-size: 17px; line-height: 1.55; color: var(--muted); margin: 0 0 6px; }
+.prose .pr-p a { color: var(--link); }
+.flegal { border-bottom: 0; padding-bottom: 0; margin-bottom: 14px; }
+footer .fnav + .fnav { margin-top: -6px; }

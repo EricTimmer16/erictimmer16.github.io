@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://erictimmer.ch/sitemap.xml
