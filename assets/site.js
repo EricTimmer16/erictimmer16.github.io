@@ -300,7 +300,31 @@
     "Auf dem Rucksack": ["On the backpack", "Sur le sac à dos"],
     "Dein Logo auf meinem Rucksack. Im Training, im Alltag und unterwegs.": ["Your logo on my backpack. In training, in everyday life and on the road.", "Ton logo sur mon sac à dos. À l’entraînement, au quotidien et en déplacement."],
     "Die Details und Konditionen besprechen wir persönlich.": ["We will discuss the details and terms personally.", "Nous discuterons personnellement des détails et des conditions."],
-    "Anfrage senden": ["Send an enquiry", "Envoyer une demande"]
+    "Anfrage senden": ["Send an enquiry", "Envoyer une demande"],
+    "Quali Paris 2025": ["Qualifier Paris 2025", "Qualif. Paris 2025"],
+    "WM-Qualifikationsturnier, Paris, Oktober 2025 · knapp verpasst": ["World Championships qualification tournament, Paris, October 2025 · narrowly missed", "Tournoi de qualification mondiale, Paris, octobre 2025 · manqué de peu"],
+    "Fotos:": ["Photos:", "Photos :"],
+    "u. a.": ["and others", "et autres"],
+    "Eric schreit seinen Kampfgeist heraus, hinter ihm der Schriftzug «Karaté»": ["Eric lets out a battle cry, the word “Karaté” behind him", "Eric pousse un cri de combat, le mot « Karaté » derrière lui"],
+    "Eric schreit voller Energie auf der Matte, die roten Handschuhe in den Händen": ["Eric shouts full of energy on the mat, red gloves in his hands", "Eric crie, plein d’énergie, sur le tatami, les gants rouges dans les mains"],
+    "Eric im Angriff mit einem Fauststoss gegen seinen Gegner": ["Eric attacking his opponent with a punch", "Eric attaque son adversaire d’un coup de poing"],
+    "Schlagabtausch mit einem Gegner aus Rumänien": ["Exchange of blows with an opponent from Romania", "Échange de coups avec un adversaire roumain"],
+    "Eric steht konzentriert auf der Matte, hinter ihm die Anzeige «1 Point»": ["Eric standing focused on the mat, the “1 Point” display behind him", "Eric debout, concentré, sur le tatami, l’affichage « 1 Point » derrière lui"],
+    "Eric von hinten, auf dem Rücken das WM-Schild «SUI»": ["Eric from behind, the World Championships “SUI” bib on his back", "Eric de dos, le dossard « SUI » des championnats du monde dans le dos"],
+    "Eric hält den Handschuh an die Brust, Schwarz-Weiss-Aufnahme": ["Eric holding his glove to his chest, black-and-white shot", "Eric tient son gant contre sa poitrine, photo en noir et blanc"],
+    "Eric geht mit gesenktem Blick über die Matte, Schwarz-Weiss-Aufnahme": ["Eric walking across the mat with lowered eyes, black-and-white shot", "Eric traverse le tatami, le regard baissé, photo en noir et blanc"],
+    "Eric blickt vor dem Kampf nach oben, Schwarz-Weiss-Aufnahme": ["Eric looking up before the bout, black-and-white shot", "Eric lève les yeux avant le combat, photo en noir et blanc"],
+    "Eric und sein Coach sitzen nebeneinander, Eric mit geschlossenen Augen und Kopfhörern": ["Eric and his coach sitting side by side, Eric with closed eyes and earbuds", "Eric et son coach assis côte à côte, Eric les yeux fermés, écouteurs dans les oreilles"],
+    "Der Coach nimmt Eric nach dem Kampf in den Arm": ["The coach puts his arms around Eric after the bout", "Le coach prend Eric dans ses bras après le combat"],
+    "Eric und sein Coach zeigen auf die Kamera, der Coach zwinkert": ["Eric and his coach point at the camera, the coach winks", "Eric et son coach pointent vers l’objectif, le coach fait un clin d’œil"],
+    "Eric hält den Handschuh in die Kamera, sein Coach zeigt mit dem Finger auf den Betrachter": ["Eric holds his glove up to the camera, his coach points a finger at the viewer", "Eric tend son gant vers l’objectif, son coach pointe le doigt vers le spectateur"],
+    "Eric und sein Coach zeigen vor der WM-Wand auf das Schweizer Dress": ["Eric and his coach pointing at the Swiss team jacket in front of the World Championships wall", "Eric et son coach montrent la veste suisse devant le mur des championnats du monde"],
+    "Eric und sein Coach posieren mit geballten Fäusten vor der WM-Wand": ["Eric and his coach posing with clenched fists in front of the World Championships wall", "Eric et son coach posent poings serrés devant le mur des championnats du monde"],
+    "Eric mit einem Teamkollegen vor dem Plakat des Qualifikationsturniers Paris 2025": ["Eric with a teammate in front of the Paris 2025 qualification tournament poster", "Eric avec un coéquipier devant l’affiche du tournoi de qualification Paris 2025"],
+    "Eric mit einem Teamkollegen in der Aufwärmhalle, beide mit geballten Fäusten": ["Eric with a teammate in the warm-up hall, both with clenched fists", "Eric avec un coéquipier dans la salle d’échauffement, tous deux poings serrés"],
+    "Eric übt in der Aufwärmhalle einen Fusstritt mit einem Trainingspartner": ["Eric practising a kick with a training partner in the warm-up hall", "Eric s’entraîne à un coup de pied avec un partenaire dans la salle d’échauffement"],
+    "Eric trainiert in der Aufwärmhalle mit seinem Coach": ["Eric training with his coach in the warm-up hall", "Eric s’entraîne avec son coach dans la salle d’échauffement"],
+    "Eric hebt in der Aufwärmhalle den Arm, auf dem Trikot sein Name und die Nummer 6": ["Eric raising his arm in the warm-up hall, his name and the number 6 on his jersey", "Eric lève le bras dans la salle d’échauffement, son nom et le numéro 6 sur le maillot"]
   };
   var UI = {
     statement: {
@@ -309,6 +333,7 @@
       fr: 'À six ans, je suis monté pour la première fois sur le tatami. Aujourd’hui, je combats pour la *Suisse* contre les meilleurs du monde. En parallèle de mon apprentissage commercial, avec une dizaine d’entraînements par semaine. Mon objectif est clair : devenir *champion* *d’Europe* et *du* *monde.*'
     },
     foto: { de: 'Foto', en: 'Photo', fr: 'Photo' },
+    ua: { de: 'u. a.', en: 'and others', fr: 'et autres' },
     formMissing: { de: 'Bitte fülle Name, eine gültige E-Mail-Adresse und deine Nachricht aus.', en: 'Please fill in your name, a valid email address and your message.', fr: 'Veuillez indiquer votre nom, une adresse e-mail valide et votre message.' },
     formFailed: { de: 'Das hat leider nicht geklappt. Schreib mir direkt an e.timmer@gmx.ch.', en: 'Sorry, that didn’t work. Please write to me directly at e.timmer@gmx.ch.', fr: 'Désolé, cela n’a pas fonctionné. Écrivez-moi directement à e.timmer@gmx.ch.' },
     formMail: { de: 'Stattdessen im E-Mail-Programm öffnen', en: 'Open in your email app instead', fr: 'Ouvrir dans votre application e-mail' },
@@ -420,7 +445,7 @@
     thumbs = Array.prototype.slice.call(panel.querySelectorAll('.gi'));
     if (galsub) galsub.innerHTML = panel.getAttribute('data-sub');
     var cid = panel.getAttribute('data-credit') || 'cr-kw';
-    ['cr-kw', 'cr-skf'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
+    ['cr-kw', 'cr-skf', 'cr-paris'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
   }
   function centerTab(t) {
     var bar = t.parentNode, tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
@@ -446,8 +471,8 @@
   });
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
-  /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#wm': 'tab-wm' }[location.hash];
+  /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
@@ -458,7 +483,7 @@
     var t = thumbs[cur].querySelector('img');
     lbimg.src = t.getAttribute('src').replace('-sm.jpg', '.jpg');
     lbimg.alt = t.alt;
-    lbcap.textContent = t.alt + ' · ' + T('foto') + ': ' + (curPanel && curPanel.getAttribute('data-by') || 'Kjetil Waber');
+    lbcap.textContent = t.alt + ' · ' + T('foto') + ': ' + (curPanel && curPanel.getAttribute('data-by') || 'Kjetil Waber') + (curPanel && curPanel.hasAttribute('data-by-more') ? ' ' + T('ua') : '');
     lbcount.textContent = (cur + 1) + ' / ' + thumbs.length;
     var nx = new Image(); nx.src = thumbs[(cur + 1) % thumbs.length].querySelector('img').getAttribute('src').replace('-sm.jpg', '.jpg');
   }
