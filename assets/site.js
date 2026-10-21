@@ -204,7 +204,7 @@
     'Anderes': ['Other', 'Autre'],
     'Nachricht': ['Message', 'Message'],
     'Nachricht senden': ['Send message', 'Envoyer le message'],
-    'Deine Nachricht wird über den Formular-Dienst FormSubmit an mein E-Mail-Postfach weitergeleitet.': ['Your message is forwarded to my inbox via the form service FormSubmit.', 'Votre message est transmis à ma boîte e-mail via le service de formulaires FormSubmit.'],
+    'Deine Nachricht wird über den Formular-Dienst Web3Forms an mein E-Mail-Postfach weitergeleitet.': ['Your message is forwarded to my inbox via the form service Web3Forms.', 'Votre message est transmis à ma boîte e-mail via le service de formulaires FormSubmit.'],
     'Danke!': ['Thank you!', 'Merci !'],
     'Deine Nachricht ist unterwegs. Ich melde mich bald bei dir.': ['Your message is on its way. I’ll get back to you soon.', 'Votre message est en route. Je vous réponds bientôt.'],
     'Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.': ['Include your name and address so I can send you the autograph card.', 'Indiquez votre nom et votre adresse pour que je puisse vous envoyer la carte autographe.'],
@@ -422,7 +422,7 @@
     return curTier ? curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')' : '';
   }
 
-  /* Kontaktfenster: Nachricht geht über FormSubmit direkt in Erics Postfach */
+  /* Kontaktfenster: Nachricht geht über Web3Forms direkt in Erics Postfach */
   var dlg = document.getElementById('cdlg'), cform = document.getElementById('cform'), cdone = document.getElementById('cf-done');
   var cErr = document.getElementById('cf-err'), cSend = document.getElementById('cf-send');
   var fName = document.getElementById('cf-name'), fMail = document.getElementById('cf-email'), fTopic = document.getElementById('cf-topic'), fMsg = document.getElementById('cf-msg');
@@ -451,13 +451,17 @@
     var name = fName.value.trim(), mail = fMail.value.trim(), msg = fMsg.value.trim();
     if (!name || !msg || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) { cErr.textContent = T('formMissing'); cErr.hidden = false; return; }
     cErr.hidden = true; cSend.disabled = true; cSend.textContent = T('sending');
-    fetch('https://formsubmit.co/ajax/e.timmer@gmx.ch', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        Name: name, 'E-Mail': mail, Thema: fTopic.value, Nachricht: msg, Sprache: lang.toUpperCase(),
-        _replyto: mail, _subject: 'Webseite: ' + fTopic.value + ' von ' + name, _template: 'table',
-        _honey: document.getElementById('cf-honey').value
+        access_key: '23bdc631-34a0-4bd0-be37-fd5a39ea0e4b',
+        subject: 'Webseite: ' + fTopic.value + ' von ' + name,
+        from_name: 'erictimmer.ch',
+        name: name, email: mail, replyto: mail,
+        Thema: fTopic.value, Sprache: lang.toUpperCase(),
+        message: msg,
+        botcheck: document.getElementById('cf-honey').value
       })
     }).then(function (r) { return r.json(); }).then(function (d) {
       if (d && (d.success === true || d.success === 'true')) {
