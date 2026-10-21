@@ -492,13 +492,7 @@ footer .fnav + .fnav { margin-top: -6px; }
 .eq-note { margin-top: 30px; color: var(--panel-muted); font-size: 17px; }
 @media (max-width: 860px) { .eq { grid-template-columns: 1fr; } }
 
-/* Team-Kacheln mit gebleichten Logos, verlinkt */
-.tile.tl { color: inherit; text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
-.tile.tl:hover, .tile.tl:focus-visible { text-decoration: none; transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.10); }
+/* Team-Kacheln mit gebleichten Logos */
 .tl-logo { height: 120px; margin-bottom: 12px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 14px 18px; }
-.tl-logo img { max-width: 78%; max-height: 90px; width: auto; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.05) brightness(1.05); opacity: .8; transition: filter .4s var(--ease), opacity .4s var(--ease); }
-.tl-logo .txt { font-family: var(--font); font-weight: 700; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; text-align: center; color: #8e8e93; transition: color .4s var(--ease); }
-.tile.tl:hover .tl-logo img, .tile.tl:focus-visible .tl-logo img { filter: none; opacity: 1; }
-.tile.tl:hover .tl-logo .txt, .tile.tl:focus-visible .tl-logo .txt { color: #1d1d1f; }
-.tile .visit { font-size: 13px; color: var(--link); margin-top: 4px; }
-.tile .visit::after { content: " ↗"; }
+.tl-logo img { max-width: 78%; max-height: 90px; width: auto; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.05) brightness(1.05); opacity: .8; }
+.tl-logo .txt { font-family: var(--font); font-weight: 700; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; text-align: center; color: #8e8e93; }
