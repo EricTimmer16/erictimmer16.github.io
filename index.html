@@ -341,6 +341,32 @@ footer .wrap { display: grid; gap: 8px; }
 .payrow .cp:hover { background: rgba(255,255,255,.22); }
 .btn[aria-disabled="true"] { opacity: .4; pointer-events: none; }
 
+/* ---------- Kontaktfenster ---------- */
+button.btn { border: 0; cursor: pointer; font: 400 17px var(--text); }
+.cdlg { border: 0; padding: 0; border-radius: 24px; width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); background: var(--bg); color: var(--fg); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+.cdlg::backdrop { background: rgba(0,0,0,.45); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.cdlg[open] { animation: cdIn .35s var(--ease); }
+@keyframes cdIn { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+#cform, .cd-done { padding: 28px; display: grid; gap: 14px; }
+@media (max-width: 520px) { #cform, .cd-done { padding: 22px 18px; } }
+.cd-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.cd-head h3, .cd-done h3 { font-size: 28px; font-weight: 700; }
+.cd-x { border: 0; cursor: pointer; flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--bg-alt); color: var(--fg); font-size: 20px; line-height: 1; }
+.cd-sub { color: var(--muted); margin-top: -6px; }
+.fl { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.fl input, .fl select, .fl textarea { font: 400 17px var(--text); color: var(--fg); background: var(--bg-alt); border: 1px solid var(--faint); border-radius: 12px; padding: 12px 14px; width: 100%; min-width: 0; }
+.fl textarea { resize: vertical; min-height: 130px; }
+.fl input:focus, .fl select:focus, .fl textarea:focus { outline: 2px solid var(--link); outline-offset: 1px; border-color: transparent; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cd-err { color: var(--red); font-size: 14px; }
+.cd-send { justify-self: start; }
+.cd-send[disabled] { opacity: .6; cursor: default; }
+.cd-priv { font-size: 12px; color: var(--muted); }
+.cd-done { text-align: center; justify-items: center; padding-block: 44px; }
+.cd-done .cd-send { justify-self: center; }
+.cd-done p { color: var(--muted); }
+.cd-ok { width: 64px; height: 64px; border-radius: 50%; background: #34c759; color: #fff; font-size: 32px; display: grid; place-items: center; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -367,7 +393,7 @@ footer .wrap { display: grid; gap: 8px; }
         <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
         <button type="button" data-lang="fr" aria-pressed="false" lang="fr" title="Français">FR</button>
       </div>
-      <a class="pill" href="#kontakt">Kontakt</a>
+      <a class="pill" href="#kontakt" data-contact>Kontakt</a>
     </div>
   </div>
 </nav>
@@ -682,7 +708,7 @@ footer .wrap { display: grid; gap: 8px; }
         <div>
           <div class="j-k">Deine Wahl</div>
           <div class="j-v" id="jsel">Wähle oben eine Stufe.</div>
-          <a class="btn" id="jmail" href="mailto:e.timmer@gmx.ch" aria-disabled="true">Anmeldung per E-Mail senden</a>
+          <a class="btn" id="jmail" href="#kontakt" aria-disabled="true">Jetzt anmelden</a>
           <p class="j-note">Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.</p>
           <p class="j-note"><span>Oder direkt an</span> <b>e.timmer@gmx.ch</b></p>
         </div>
@@ -706,6 +732,7 @@ footer .wrap { display: grid; gap: 8px; }
       <div class="eyebrow r">Kontakt</div>
       <h2 class="h-sec r" style="--d:.05s">Lass uns reden.</h2>
       <p class="lead r" style="--d:.1s">Für Sponsoring, Medien oder Trainingskooperationen. Am schnellsten per E-Mail.</p>
+      <div class="r" style="--d:.12s; margin-top: 34px"><button type="button" class="btn cd-open" data-contact>Nachricht schreiben</button></div>
       <div class="mailrow r" style="--d:.15s">
         <code id="mail">e.timmer@gmx.ch</code>
         <button type="button" id="copy">Kopieren</button>
@@ -718,6 +745,27 @@ footer .wrap { display: grid; gap: 8px; }
       </div>
     </div>
   </section>
+
+  <dialog class="cdlg" id="cdlg" aria-labelledby="cdlg-t">
+    <form id="cform" novalidate>
+      <div class="cd-head"><h3 id="cdlg-t">Schreib mir</h3><button type="button" class="cd-x" id="cdx" aria-label="Schliessen">×</button></div>
+      <p class="cd-sub">Ich melde mich so schnell wie möglich bei dir.</p>
+      <label class="fl" for="cf-name"><span>Name</span><input id="cf-name" name="name" autocomplete="name" required></label>
+      <label class="fl" for="cf-email"><span>E-Mail</span><input id="cf-email" name="email" type="email" autocomplete="email" required></label>
+      <label class="fl" for="cf-topic"><span>Thema</span><select id="cf-topic" name="topic"><option value="Sponsoring">Sponsoring</option><option value="Gönnerclub">Gönnerclub</option><option value="Medien">Medien</option><option value="Training">Training</option><option value="Anderes">Anderes</option></select></label>
+      <label class="fl" for="cf-msg"><span>Nachricht</span><textarea id="cf-msg" name="message" rows="6" required></textarea></label>
+      <input type="text" name="_honey" id="cf-honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="cd-err" id="cf-err" role="alert" hidden></p>
+      <button class="btn cd-send" type="submit" id="cf-send">Nachricht senden</button>
+      <p class="cd-priv">Deine Nachricht wird über den Formular-Dienst FormSubmit an mein E-Mail-Postfach weitergeleitet.</p>
+    </form>
+    <div class="cd-done" id="cf-done" hidden>
+      <div class="cd-ok" aria-hidden="true">✓</div>
+      <h3>Danke!</h3>
+      <p>Deine Nachricht ist unterwegs. Ich melde mich bald bei dir.</p>
+      <button type="button" class="btn cd-send" id="cf-close">Schliessen</button>
+    </div>
+  </dialog>
 </main>
 
 <footer>
@@ -912,7 +960,21 @@ footer .wrap { display: grid; gap: 8px; }
     'Auswählen': ['Select', 'Choisir'],
     'Deine Wahl': ['Your choice', 'Votre choix'],
     'Wähle oben eine Stufe.': ['Choose a level above.', 'Choisissez un niveau ci-dessus.'],
-    'Anmeldung per E-Mail senden': ['Sign up by email', 'S’inscrire par e-mail'],
+    'Jetzt anmelden': ['Sign up now', 'S’inscrire maintenant'],
+    'Nachricht schreiben': ['Write a message', 'Écrire un message'],
+    'Schreib mir': ['Write to me', 'Écrivez-moi'],
+    'Ich melde mich so schnell wie möglich bei dir.': ['I’ll get back to you as soon as possible.', 'Je vous réponds dès que possible.'],
+    'Name': ['Name', 'Nom'],
+    'E-Mail': ['Email', 'E-mail'],
+    'Thema': ['Topic', 'Sujet'],
+    'Medien': ['Media', 'Médias'],
+    'Training': ['Training', 'Entraînement'],
+    'Anderes': ['Other', 'Autre'],
+    'Nachricht': ['Message', 'Message'],
+    'Nachricht senden': ['Send message', 'Envoyer le message'],
+    'Deine Nachricht wird über den Formular-Dienst FormSubmit an mein E-Mail-Postfach weitergeleitet.': ['Your message is forwarded to my inbox via the form service FormSubmit.', 'Votre message est transmis à ma boîte e-mail via le service de formulaires FormSubmit.'],
+    'Danke!': ['Thank you!', 'Merci !'],
+    'Deine Nachricht ist unterwegs. Ich melde mich bald bei dir.': ['Your message is on its way. I’ll get back to you soon.', 'Votre message est en route. Je vous réponds bientôt.'],
     'Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.': ['Include your name and address so I can send you the autograph card.', 'Indiquez votre nom et votre adresse pour que je puisse vous envoyer la carte autographe.'],
     'Oder direkt an': ['Or write directly to', 'Ou directement à'],
     'Bezahlen': ['Payment', 'Paiement'],
@@ -940,7 +1002,9 @@ footer .wrap { display: grid; gap: 8px; }
       fr: 'À six ans, je suis monté pour la première fois sur le tatami. Aujourd’hui, je combats pour la *Suisse* contre les meilleurs du monde. En parallèle de mon apprentissage commercial, avec une dizaine d’entraînements par semaine. Mon objectif est clair : devenir *champion* *d’Europe* et *du* *monde.*'
     },
     foto: { de: 'Foto', en: 'Photo', fr: 'Photo' },
-    mailSubject: { de: 'Gönnerclub: ', en: 'Supporters’ Club: ', fr: 'Club des supporters : ' },
+    formMissing: { de: 'Bitte fülle Name, eine gültige E-Mail-Adresse und deine Nachricht aus.', en: 'Please fill in your name, a valid email address and your message.', fr: 'Veuillez indiquer votre nom, une adresse e-mail valide et votre message.' },
+    formFailed: { de: 'Das hat leider nicht geklappt. Schreib mir direkt an e.timmer@gmx.ch.', en: 'Sorry, that didn’t work. Please write to me directly at e.timmer@gmx.ch.', fr: 'Désolé, cela n’a pas fonctionné. Écrivez-moi directement à e.timmer@gmx.ch.' },
+    sending: { de: 'Wird gesendet …', en: 'Sending …', fr: 'Envoi …' },
     mailBody: {
       de: 'Hallo Eric\n\nIch möchte deinem Gönnerclub beitreten: {t}.\n\nName:\nAdresse:\n\nLiebe Grüsse',
       en: 'Hi Eric\n\nI would like to join your supporters’ club: {t}.\n\nName:\nAddress:\n\nBest regards',
@@ -1112,9 +1176,57 @@ footer .wrap { display: grid; gap: 8px; }
     if (!curTier) return;
     var label = curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')';
     jsel.textContent = label;
-    jmail.href = 'mailto:e.timmer@gmx.ch?subject=' + encodeURIComponent(T('mailSubject') + label) + '&body=' + encodeURIComponent(T('mailBody').replace('{t}', label));
     jmail.setAttribute('aria-disabled', 'false');
   }
+  function tierLabel() {
+    return curTier ? curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')' : '';
+  }
+
+  /* Kontaktfenster: Nachricht geht über FormSubmit direkt in Erics Postfach */
+  var dlg = document.getElementById('cdlg'), cform = document.getElementById('cform'), cdone = document.getElementById('cf-done');
+  var cErr = document.getElementById('cf-err'), cSend = document.getElementById('cf-send');
+  var fName = document.getElementById('cf-name'), fMail = document.getElementById('cf-email'), fTopic = document.getElementById('cf-topic'), fMsg = document.getElementById('cf-msg');
+  function openContact(topic, msg) {
+    cform.hidden = false; cdone.hidden = true; cErr.hidden = true;
+    if (topic) fTopic.value = topic;
+    if (typeof msg === 'string') fMsg.value = msg;
+    if (typeof dlg.showModal === 'function') { dlg.showModal(); } else { location.hash = '#kontakt'; return; }
+    setTimeout(function () { (fName.value ? fMsg : fName).focus(); }, 50);
+  }
+  function closeContact() { if (dlg.open) dlg.close(); }
+  document.querySelectorAll('[data-contact]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); openContact(); });
+  });
+  jmail.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (!curTier) return;
+    openContact('Gönnerclub', T('mailBody').replace('{t}', tierLabel()));
+  });
+  document.getElementById('cdx').addEventListener('click', closeContact);
+  document.getElementById('cf-close').addEventListener('click', closeContact);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeContact(); });
+  cform.addEventListener('input', function () { cErr.hidden = true; });
+  cform.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = fName.value.trim(), mail = fMail.value.trim(), msg = fMsg.value.trim();
+    if (!name || !msg || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) { cErr.textContent = T('formMissing'); cErr.hidden = false; return; }
+    cErr.hidden = true; cSend.disabled = true; cSend.textContent = T('sending');
+    fetch('https://formsubmit.co/ajax/e.timmer@gmx.ch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        Name: name, 'E-Mail': mail, Thema: fTopic.value, Nachricht: msg, Sprache: lang.toUpperCase(),
+        _replyto: mail, _subject: 'Webseite: ' + fTopic.value + ' von ' + name, _template: 'table',
+        _honey: document.getElementById('cf-honey').value
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && (d.success === true || d.success === 'true')) {
+        cform.hidden = true; cdone.hidden = false; cform.reset();
+      } else { throw new Error((d && d.message) || 'failed'); }
+    }).catch(function () {
+      cErr.textContent = T('formFailed'); cErr.hidden = false;
+    }).then(function () { cSend.disabled = false; cSend.textContent = tr('Nachricht senden'); });
+  });
   tiers.forEach(function (t) {
     t.addEventListener('click', function () {
       tiers.forEach(function (o) { o.setAttribute('aria-pressed', o === t ? 'true' : 'false'); });
