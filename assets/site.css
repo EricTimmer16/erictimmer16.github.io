@@ -412,7 +412,7 @@ nav.top.open .menu-btn .x { display: block; }
 
 /* ---------- hero: Vorstellung mit Portrait (Text links, Foto rechts) ---------- */
 .hero-split { text-align: left; padding-block: clamp(40px, 7vw, 84px) 24px; }
-.hs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: clamp(32px, 6vw, 96px); align-items: center; justify-content: space-between; }
+.hs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 260px); gap: clamp(32px, 6vw, 96px); align-items: center; justify-content: space-between; }
 .hero-split .eyebrow { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; font-weight: 600; }
 .hero-split h1 { font-size: clamp(52px, 7.6vw, 100px); font-weight: 800; line-height: .98; letter-spacing: -0.05em; }
 .hero-split .sub { font-size: clamp(24px, 3.2vw, 38px); }
@@ -425,6 +425,6 @@ nav.top.open .menu-btn .x { display: block; }
 .hs-photo figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 @media (max-width: 860px) {
   .hs { grid-template-columns: 1fr; gap: 32px; }
-  .hs-photo { max-width: 320px; }
-  .hs-photo img { aspect-ratio: 1 / 1; object-position: 50% 10%; border-radius: 22px; }
+  .hs-photo { max-width: 200px; }
+  .hs-photo img { aspect-ratio: 1 / 1; object-position: 50% 10%; border-radius: 20px; }
 }
