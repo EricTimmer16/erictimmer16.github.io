@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202610212140">
+<link rel="stylesheet" href="assets/site.css?v=202610212146">
 </head>
 <body data-page="Galerie">
 <nav class="top" aria-label="Hauptnavigation">
@@ -67,6 +67,7 @@
         <button type="button" role="tab" class="tab" id="tab-em" aria-selected="true" aria-controls="emgal">EM Frankfurt</button>
         <button type="button" role="tab" class="tab" id="tab-bom" aria-selected="false" aria-controls="bomgal">Basel Open Masters</button>
         <button type="button" role="tab" class="tab" id="tab-skl" aria-selected="false" aria-controls="sklgal">SKL Gossau</button>
+        <button type="button" role="tab" class="tab" id="tab-wm" aria-selected="false" aria-controls="wmgal">WM Venedig 2024</button>
       </div>
       <p class="gal-sub" id="galsub">61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg</p>
       <div class="masonry" id="emgal" role="tabpanel" aria-labelledby="tab-em" data-sub="61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg">
@@ -105,7 +106,19 @@
         <button type="button" class="gi"><img src="images/skl-gossau-2026/05-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric umarmt einen Karateka nach dem Kampf"></button>
         <button type="button" class="gi"><img src="images/skl-gossau-2026/06-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Siegerehrung an der Swiss Karate League Züri Oberland"></button>
       </div>
-      <p class="credit"><span>Alle Fotos:</span> Kjetil Waber · <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">foto-kjetil.ch</a> · <a href="https://www.instagram.com/foto.kjetil/" target="_blank" rel="noopener">@foto.kjetil</a></p>
+      <div class="masonry" id="wmgal" role="tabpanel" aria-labelledby="tab-wm" hidden data-credit="cr-skf" data-by="Swiss Karate Federation" data-sub="U21-Weltmeisterschaft, Jesolo/Venedig, Oktober 2024 · 5. Platz">
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/01-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric jubelt nach einem Yuko, auf der Anzeigetafel zwei rote Flaggen"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/02-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric schreit seinen Kampfgeist heraus, im Hintergrund das WKF-Logo und Venedig"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/03-sm.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Eric in Kampfstellung im Kumite, das Schweizer Wappen auf dem Gi"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/04-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric hebt nach dem Kampf die Faust"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/05-sm.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Eric kniet auf der Matte und streckt beide Hände zum Himmel"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/06-sm.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Der Coach hält Erics Gesicht in beiden Händen"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/07-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric in der Umarmung nach dem Kampf"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/08-sm.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Porträt von Eric im Schweizer Gi"></button>
+        <button type="button" class="gi"><img src="images/wm-venedig-2024/09-sm.jpg" width="626" height="820" loading="lazy" decoding="async" alt="Eric dehnt sich beim Aufwärmen, hinter ihm das Team"></button>
+      </div>
+      <p class="credit" id="cr-kw"><span>Alle Fotos:</span> Kjetil Waber · <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">foto-kjetil.ch</a> · <a href="https://www.instagram.com/foto.kjetil/" target="_blank" rel="noopener">@foto.kjetil</a></p>
+      <p class="credit" id="cr-skf" hidden><span>Alle Fotos:</span> Swiss Karate Federation</p>
     </div>
   </section>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto in gross">
@@ -159,6 +172,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202610212140"></script>
+<script src="assets/site.js?v=202610212146"></script>
 </body>
 </html>

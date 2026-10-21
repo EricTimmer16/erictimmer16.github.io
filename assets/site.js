@@ -273,7 +273,18 @@
     "Alles von Gold": ["Everything from Gold", "Tout ce qu’offre le niveau Or"],
     "Ein persönliches Dankeschön von mir": ["A personal thank-you from me", "Un remerciement personnel de ma part"],
     "Danke an": ["Thanks to", "Merci à"],
-    "Diese Menschen unterstützen mich.": ["These people support me.", "Ces personnes me soutiennent."]
+    "Diese Menschen unterstützen mich.": ["These people support me.", "Ces personnes me soutiennent."],
+    "WM Venedig 2024": ["World Champs Venice 2024", "Mondial Venise 2024"],
+    "U21-Weltmeisterschaft, Jesolo/Venedig, Oktober 2024 · 5. Platz": ["U21 World Championships, Jesolo/Venice, October 2024 · 5th place", "Championnats du monde U21, Jesolo/Venise, octobre 2024 · 5<sup>e</sup> place"],
+    "Eric jubelt nach einem Yuko, auf der Anzeigetafel zwei rote Flaggen": ["Eric celebrates a yuko, two red flags on the scoreboard", "Eric exulte après un yuko, deux drapeaux rouges au tableau"],
+    "Eric schreit seinen Kampfgeist heraus, im Hintergrund das WKF-Logo und Venedig": ["Eric lets out a battle cry, the WKF logo and Venice behind him", "Eric pousse un cri de combat, le logo WKF et Venise en arrière-plan"],
+    "Eric in Kampfstellung im Kumite, das Schweizer Wappen auf dem Gi": ["Eric in fighting stance in kumite, the Swiss crest on his gi", "Eric en garde en kumite, l’écusson suisse sur le kimono"],
+    "Eric hebt nach dem Kampf die Faust": ["Eric raises his fist after the bout", "Eric lève le poing après le combat"],
+    "Eric kniet auf der Matte und streckt beide Hände zum Himmel": ["Eric kneels on the mat, both hands raised to the sky", "Eric à genoux sur le tatami, les deux mains levées vers le ciel"],
+    "Der Coach hält Erics Gesicht in beiden Händen": ["The coach holds Eric’s face in both hands", "Le coach tient le visage d’Eric entre ses mains"],
+    "Eric in der Umarmung nach dem Kampf": ["Eric in an embrace after the bout", "Eric dans une étreinte après le combat"],
+    "Porträt von Eric im Schweizer Gi": ["Portrait of Eric in the Swiss gi", "Portrait d’Eric dans le kimono suisse"],
+    "Eric dehnt sich beim Aufwärmen, hinter ihm das Team": ["Eric stretching during the warm-up, the team behind him", "Eric s’étire à l’échauffement, l’équipe derrière lui"],
   };
   var UI = {
     statement: {
@@ -392,9 +403,20 @@
     curPanel = panel;
     thumbs = Array.prototype.slice.call(panel.querySelectorAll('.gi'));
     if (galsub) galsub.innerHTML = panel.getAttribute('data-sub');
+    var cid = panel.getAttribute('data-credit') || 'cr-kw';
+    ['cr-kw', 'cr-skf'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
   }
+  function centerTab(t) {
+    var bar = t.parentNode, tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
+    bar.scrollLeft += (tr.left + tr.width / 2) - (br.left + br.width / 2);
+  }
+  window.addEventListener('load', function () {
+    var on = document.querySelector('.tab[aria-selected="true"]');
+    if (on) centerTab(on);
+  });
   tabs.forEach(function (t) {
     t.addEventListener('click', function () {
+      centerTab(t);
       tabs.forEach(function (o) {
         var on = o === t, p = document.getElementById(o.getAttribute('aria-controls'));
         o.setAttribute('aria-selected', on ? 'true' : 'false');
@@ -408,8 +430,8 @@
   });
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
-  /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl' }[location.hash];
+  /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #wm */
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#wm': 'tab-wm' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
@@ -420,7 +442,7 @@
     var t = thumbs[cur].querySelector('img');
     lbimg.src = t.getAttribute('src').replace('-sm.jpg', '.jpg');
     lbimg.alt = t.alt;
-    lbcap.textContent = t.alt + ' · ' + T('foto') + ': Kjetil Waber';
+    lbcap.textContent = t.alt + ' · ' + T('foto') + ': ' + (curPanel && curPanel.getAttribute('data-by') || 'Kjetil Waber');
     lbcount.textContent = (cur + 1) + ' / ' + thumbs.length;
     var nx = new Image(); nx.src = thumbs[(cur + 1) % thumbs.length].querySelector('img').getAttribute('src').replace('-sm.jpg', '.jpg');
   }
