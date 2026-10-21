@@ -462,8 +462,10 @@
       if (d && (d.success === true || d.success === 'true')) {
         cform.hidden = true; cdone.hidden = false; cform.reset();
       } else { throw new Error((d && d.message) || 'failed'); }
-    }).catch(function () {
-      cErr.textContent = T('formFailed'); cErr.hidden = false;
+    }).catch(function (err) {
+      var why = (err && err.message && err.message !== 'failed') ? ' (' + String(err.message).slice(0, 160) + ')' : '';
+      try { console.warn('Kontaktformular:', err); } catch (e) {}
+      cErr.textContent = T('formFailed') + why; cErr.hidden = false;
     }).then(function () { cSend.disabled = false; cSend.textContent = tr('Nachricht senden'); });
   });
   tiers.forEach(function (t) {
