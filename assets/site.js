@@ -207,7 +207,7 @@
     'Deine Nachricht wird über den Formular-Dienst Web3Forms an mein E-Mail-Postfach weitergeleitet.': ['Your message is forwarded to my inbox via the form service Web3Forms.', 'Votre message est transmis à ma boîte e-mail via le service de formulaires FormSubmit.'],
     'Danke!': ['Thank you!', 'Merci !'],
     'Deine Nachricht ist unterwegs. Ich melde mich bald bei dir.': ['Your message is on its way. I’ll get back to you soon.', 'Votre message est en route. Je vous réponds bientôt.'],
-    'Schreib mir deinen Namen und deine Adresse, damit ich dir die Autogrammkarte schicken kann.': ['Include your name and address so I can send you the autograph card.', 'Indiquez votre nom et votre adresse pour que je puisse vous envoyer la carte autographe.'],
+    'Schreib mir deinen Namen und deine Adresse, damit ich mich persönlich bei dir bedanken kann.': ['Include your name and address so I can thank you personally.', 'Indiquez votre nom et votre adresse pour que je puisse vous remercier personnellement.'],
     'Oder direkt an': ['Or write directly to', 'Ou directement à'],
     'Bezahlen': ['Payment', 'Paiement'],
     'Bank': ['Bank', 'Banque'],
