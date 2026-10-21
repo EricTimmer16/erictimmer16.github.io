@@ -1,0 +1,35 @@
+name: WKF-Ranking abgleichen
+
+# Läuft jeden Tag und holt Erics aktuelles Ranking von der WKF.
+# Hat sich etwas geändert, wird die Webseite automatisch aktualisiert.
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ranking
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ranking von der WKF holen und Seite anpassen
+        run: python3 scripts/update_ranking.py
+      - name: Änderungen speichern
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            MSG=$(python3 -c "import json;d=json.load(open('assets/ranking.json'));print(f\"Ranking automatisch aktualisiert: Nr. {d['rank']}, {d['points']} Punkte\")")
+            git config user.name "ranking-bot"
+            git config user.email "ranking-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "$MSG"
+            git push
+          else
+            echo "Keine Änderung, Seite ist aktuell."
+          fi
