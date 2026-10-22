@@ -252,7 +252,7 @@
     "Kontaktfenster": ["Contact window", "Fenêtre de contact"],
     "Wenn du mir über das Kontaktfenster schreibst, übermittle ich Name, E-Mail-Adresse, Thema und Nachricht über den Dienst Web3Forms an mein E-Mail-Postfach. Ich verwende diese Angaben nur, um dir zu antworten.": ["When you write to me via the contact window, your name, email address, topic and message are sent through the service Web3Forms to my inbox. I only use this information to reply to you.", "Lorsque tu m’écris via la fenêtre de contact, ton nom, ton adresse e-mail, le sujet et ton message sont transmis par le service Web3Forms à ma boîte e-mail. J’utilise ces informations uniquement pour te répondre."],
     "Gönnerclub": ["Supporters’ club", "Club des supporters"],
-    "Wenn du dem Gönnerclub beitrittst, brauche ich deinen Namen und deine Postadresse, um dir die Dankeskarte zu schicken. Die Zahlung erfolgt per TWINT oder Banküberweisung. Ich sehe dabei die Angaben, die dein Zahlungsdienst oder deine Bank mitliefert.": ["If you join the supporters’ club, I need your name and postal address to send you the thank-you card. Payment is made by TWINT or bank transfer. I see the details that your payment provider or bank passes on.", "Si tu rejoins le club des supporters, j’ai besoin de ton nom et de ton adresse postale pour t’envoyer la carte de remerciement. Le paiement se fait par TWINT ou virement bancaire. Je vois les informations que ton prestataire de paiement ou ta banque transmet."],
+    "Wenn du dem Gönnerclub beitrittst, gibst du im Anmeldeformular Vorname, Nachname, E-Mail-Adresse, Postadresse und freiwillig deine Telefonnummer an. Diese Angaben übermittle ich über den Dienst Web3Forms an mein E-Mail-Postfach und verwende sie nur, um mich bei dir zu bedanken und dir die Gönner-Updates zu schicken. Die Zahlung erfolgt per TWINT oder Banküberweisung. Ich sehe dabei die Angaben, die dein Zahlungsdienst oder deine Bank mitliefert.": ["If you join the supporters’ club, you enter your first name, last name, email address, postal address and, optionally, your phone number in the sign-up form. I forward these details to my email inbox via the service Web3Forms and use them only to thank you and to send you the supporter updates. Payment is made by TWINT or bank transfer. I see the details that your payment provider or bank passes on.", "Si tu rejoins le club des supporters, tu indiques dans le formulaire d’inscription ton prénom, ton nom, ton adresse e-mail, ton adresse postale et, facultativement, ton numéro de téléphone. Je transmets ces informations à ma boîte e-mail via le service Web3Forms et ne les utilise que pour te remercier et t’envoyer les nouvelles des supporters. Le paiement se fait par TWINT ou virement bancaire. Je vois les informations que ton prestataire de paiement ou ta banque transmet."],
     "Lokale Speicherung": ["Local storage", "Stockage local"],
     "Deine gewählte Sprache wird in deinem Browser gespeichert (Local Storage), damit sie beim nächsten Besuch erhalten bleibt. Das ist kein Cookie und wird nicht an mich übermittelt.": ["Your chosen language is stored in your browser (local storage) so that it is kept for your next visit. This is not a cookie and is not sent to me.", "La langue choisie est enregistrée dans ton navigateur (stockage local) afin d’être conservée lors de ta prochaine visite. Ce n’est pas un cookie et elle ne m’est pas transmise."],
     "Deine Rechte": ["Your rights", "Tes droits"],
@@ -360,7 +360,25 @@
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
     "Eric mit zwei Teamkollegen vor dem Turnierplakat, vorne die Medaillen": ["Eric with two teammates in front of the tournament banner, medals in the foreground", "Eric avec deux coéquipiers devant l’affiche du tournoi, les médailles au premier plan"],
-    "Archiv Eric Timmer": ["Eric Timmer’s archive", "Archives d’Eric Timmer"]
+    "Archiv Eric Timmer": ["Eric Timmer’s archive", "Archives d’Eric Timmer"],
+    "Angaben": ["Details", "Coordonnées"],
+    "Wähle oben eine Stufe, dann geht es hier weiter.": ["Choose a tier above, then continue here.", "Choisis un niveau ci-dessus, puis continue ici."],
+    "Angaben vervollständigen": ["Complete your details", "Compléter tes informations"],
+    "Herzlichen Dank für die Unterstützung! Damit ich mich persönlich bei dir bedanken kann, brauche ich ein paar Angaben.": ["Thank you so much for your support! So that I can thank you personally, I need a few details.", "Merci beaucoup pour ton soutien ! Pour pouvoir te remercier personnellement, j’ai besoin de quelques informations."],
+    "Vorname": ["First name", "Prénom"],
+    "Nachname": ["Last name", "Nom"],
+    "Adresse": ["Address", "Adresse"],
+    "Strasse, PLZ, Ort": ["Street, postcode, town", "Rue, code postal, localité"],
+    "Telefon (optional)": ["Phone (optional)", "Téléphone (facultatif)"],
+    "Ich möchte die Gönner-Updates erhalten (1–2 pro Jahr mit Resultaten und Foto).": ["I’d like to receive the supporter updates (1–2 a year with results and a photo).", "Je souhaite recevoir les nouvelles des supporters (1–2 par an avec résultats et photo)."],
+    "Mein Name darf auf der Webseite genannt werden.": ["My name may be mentioned on the website.", "Mon nom peut être mentionné sur le site."],
+    "Weiter zur Zahlung": ["Continue to payment", "Continuer vers le paiement"],
+    "Deine Angaben gehen über den Formular-Dienst Web3Forms direkt an mein E-Mail-Postfach.": ["Your details go straight to my email inbox via the form service Web3Forms.", "Tes informations arrivent directement dans ma boîte e-mail via le service de formulaires Web3Forms."],
+    "Bestellung abschliessen": ["Complete your order", "Finaliser la commande"],
+    "Betrag": ["Amount", "Montant"],
+    "Vermerk": ["Reference", "Référence"],
+    "Sobald dein Beitrag angekommen ist, melde ich mich persönlich bei dir.": ["As soon as your contribution has arrived, I’ll get in touch with you personally.", "Dès que ta contribution sera arrivée, je te contacterai personnellement."],
+    "Stufe ändern": ["Change tier", "Changer de niveau"]
   };
   var UI = {
     statement: {
@@ -382,6 +400,8 @@
     formMissing: { de: 'Bitte fülle Name, eine gültige E-Mail-Adresse und deine Nachricht aus.', en: 'Please fill in your name, a valid email address and your message.', fr: 'Veuillez indiquer votre nom, une adresse e-mail valide et votre message.' },
     formFailed: { de: 'Das hat leider nicht geklappt. Schreib mir direkt an e.timmer@gmx.ch.', en: 'Sorry, that didn’t work. Please write to me directly at e.timmer@gmx.ch.', fr: 'Désolé, cela n’a pas fonctionné. Écrivez-moi directement à e.timmer@gmx.ch.' },
     formMail: { de: 'Stattdessen im E-Mail-Programm öffnen', en: 'Open in your email app instead', fr: 'Ouvrir dans votre application e-mail' },
+    coThanks: { de: 'Danke, {n}! Deine Anmeldung ist bei mir angekommen. Zum Abschluss überweise bitte den Beitrag:', en: 'Thank you, {n}! Your sign-up has reached me. To finish, please transfer your contribution:', fr: 'Merci, {n} ! Ton inscription m’est bien parvenue. Pour terminer, merci de virer ta contribution :' },
+    coMissing: { de: 'Bitte fülle Vorname, Nachname, eine gültige E-Mail-Adresse und deine Adresse aus.', en: 'Please fill in your first name, last name, a valid email address and your address.', fr: 'Merci d’indiquer ton prénom, ton nom, une adresse e-mail valide et ton adresse.' },
     sending: { de: 'Wird gesendet …', en: 'Sending …', fr: 'Envoi …' },
     mailBody: {
       de: 'Hallo Eric\n\nIch möchte deinem Gönnerclub beitreten: {t}.\n\nName:\nAdresse:\n\nLiebe Grüsse',
@@ -402,7 +422,7 @@
     if (el.tagName === 'SCRIPT' || el.id === 'statement') return;
     var h = el.innerHTML.trim();
     if (Object.prototype.hasOwnProperty.call(D, h)) i18nText.push([el, h]);
-    ['alt', 'aria-label', 'data-sub'].forEach(function (a) {
+    ['alt', 'aria-label', 'data-sub', 'placeholder'].forEach(function (a) {
       var v = el.getAttribute(a);
       if (v && Object.prototype.hasOwnProperty.call(D, v)) i18nAttr.push([el, a, v]);
     });
@@ -564,12 +584,40 @@
 
   /* Gönnerclub */
   var tiers = Array.prototype.slice.call(document.querySelectorAll('.tier'));
-  var jsel = document.getElementById('jsel'), jmail = document.getElementById('jmail'), curTier = null;
+  var curTier = null;
+  var coGrid = document.getElementById('co-grid'), coEmpty = document.getElementById('co-empty'), coForm = document.getElementById('co-form'), coPay = document.getElementById('co-pay');
+  function setStep(n) {
+    Array.prototype.forEach.call(document.querySelectorAll('.co-steps li'), function (li) {
+      var s = +li.getAttribute('data-s');
+      li.classList.toggle('on', s === n); li.classList.toggle('done', s < n);
+    });
+  }
+  function tierData() {
+    var q = function (c) { return curTier.querySelector(c); };
+    return { name: q('.t-name').textContent, price: q('.t-price').textContent, per: q('.t-per').textContent, key: curTier.getAttribute('data-tier'), perks: q('.t-perk').innerHTML, img: q('.t-photo img') };
+  }
   function refreshJoin() {
-    if (!curTier || !jsel) return;
-    var label = curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')';
-    jsel.textContent = label;
-    jmail.setAttribute('aria-disabled', 'false');
+    if (!curTier || !coGrid) return;
+    var d = tierData();
+    coEmpty.hidden = true; coGrid.hidden = false;
+    document.getElementById('co-tier').textContent = d.name;
+    document.getElementById('co-price').textContent = d.price;
+    document.getElementById('co-per').textContent = d.per;
+    document.getElementById('co-perks').innerHTML = d.perks;
+    var img = document.getElementById('co-img');
+    if (d.img) { img.src = d.img.currentSrc || d.img.src; }
+    var amt = d.price.replace(/[^0-9]/g, '');
+    document.getElementById('co-amt').textContent = d.price;
+    document.getElementById('co-amt-cp').setAttribute('data-copy', amt);
+    document.getElementById('co-pub-ck').hidden = !(d.key === 'silber' || d.key === 'gold' || d.key === 'platin');
+    if (!coPay.hidden) fillPay();
+  }
+  function fullName() { return (document.getElementById('co-first').value + ' ' + document.getElementById('co-last').value).trim(); }
+  function fillPay() {
+    var ref = 'Gönnerclub, ' + fullName();
+    document.getElementById('co-ref').textContent = ref;
+    document.getElementById('co-ref-cp').setAttribute('data-copy', ref);
+    document.getElementById('co-thanks').textContent = T('coThanks').replace('{n}', document.getElementById('co-first').value.trim());
   }
   function tierLabel() {
     return curTier ? curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')' : '';
@@ -589,11 +637,6 @@
   function closeContact() { if (dlg.open) dlg.close(); }
   document.querySelectorAll('[data-contact]').forEach(function (el) {
     el.addEventListener('click', function (e) { e.preventDefault(); openContact(); });
-  });
-  if (jmail) jmail.addEventListener('click', function (e) {
-    e.preventDefault();
-    if (!curTier) return;
-    openContact('Gönnerclub', T('mailBody').replace('{t}', tierLabel()));
   });
   document.getElementById('cdx').addEventListener('click', closeContact);
   document.getElementById('cf-close').addEventListener('click', closeContact);
@@ -635,9 +678,55 @@
     t.addEventListener('click', function () {
       tiers.forEach(function (o) { o.setAttribute('aria-pressed', o === t ? 'true' : 'false'); });
       curTier = t;
+      if (coPay && !coPay.hidden) { coPay.hidden = true; coForm.hidden = false; }
       refreshJoin();
+      setStep(2);
+      var co = document.getElementById('checkout');
+      if (co) co.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+  var coChange = document.getElementById('co-change');
+  if (coChange) coChange.addEventListener('click', function () {
+    var g = document.getElementById('goenner'); if (g) g.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setStep(1);
+  });
+  if (coForm) {
+    var coErr = document.getElementById('co-err'), coSend = document.getElementById('co-send');
+    coForm.addEventListener('input', function () { coErr.hidden = true; });
+    coForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!curTier) return;
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var first = v('co-first'), last = v('co-last'), mail = v('co-mail'), adr = v('co-adr');
+      if (!first || !last || !adr || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) { coErr.textContent = T('coMissing'); coErr.hidden = false; return; }
+      var d = tierData(), name = first + ' ' + last;
+      var fields = {
+        Stufe: d.name, Betrag: d.price, Rhythmus: d.per, Name: name, 'E-Mail': mail, Adresse: adr,
+        Telefon: v('co-tel') || '–',
+        Gönner_Updates: document.getElementById('co-upd').checked ? 'Ja' : 'Nein',
+        Namensnennung_Webseite: document.getElementById('co-pub-ck').hidden ? '–' : (document.getElementById('co-pub').checked ? 'Ja' : 'Nein'),
+        Sprache: lang.toUpperCase()
+      };
+      var subj = 'Gönnerclub-Anmeldung: ' + d.name + ' (' + d.price + ') von ' + name;
+      coErr.hidden = true; coSend.disabled = true; coSend.textContent = T('sending');
+      var msg = Object.keys(fields).map(function (k) { return k.replace(/_/g, ' ') + ': ' + fields[k]; }).join('\n');
+      var payload = { access_key: '23bdc631-34a0-4bd0-be37-fd5a39ea0e4b', subject: subj, from_name: 'erictimmer.ch', name: name, email: mail, replyto: mail, message: msg, botcheck: document.getElementById('co-honey').value };
+      Object.keys(fields).forEach(function (k) { payload[k] = fields[k]; });
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (r) { return r.json(); }).then(function (res) {
+          if (!(res && (res.success === true || res.success === 'true'))) throw new Error((res && res.message) || 'failed');
+          coForm.hidden = true; coPay.hidden = false; fillPay(); setStep(3);
+          document.getElementById('checkout').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }).catch(function (err) {
+          try { console.warn('Gönnerclub-Anmeldung:', err); } catch (x) {}
+          coErr.textContent = T('formFailed') + ' ';
+          var a = document.createElement('a');
+          a.href = 'mailto:e.timmer@gmx.ch?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(msg);
+          a.textContent = T('formMail');
+          coErr.appendChild(a); coErr.hidden = false;
+        }).then(function () { coSend.disabled = false; coSend.textContent = tr('Weiter zur Zahlung'); });
+    });
+  }
 
   document.querySelectorAll('.payrow .cp').forEach(function (b) {
     b.addEventListener('click', function () {

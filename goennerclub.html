@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202610221224">
+<link rel="stylesheet" href="assets/site.css?v=202610221359">
 </head>
 <body data-page="Gönnerclub">
 <nav class="top" aria-label="Hauptnavigation">
@@ -107,23 +107,55 @@
         <button type="button" class="tier" data-tier="gold" aria-pressed="false"><span class="t-photo"><img src="images/em-frankfurt-2026/09-sm.jpg" width="820" height="547" alt="Eric jubelt nach einem Treffer" loading="lazy" decoding="async"></span><span class="t-name">Gold</span><span class="t-price">CHF 500</span><span class="t-per">pro Jahr</span><ul class="t-perk"><li>Mitglied im Gönnerclub</li><li>1–2 Updates pro Jahr mit Resultaten und Foto</li><li>Signierte Autogrammkarte</li><li>Nennung auf der Webseite (wenn gewünscht)</li><li>Signiertes Trikot oder Gi-Patch</li><li>Einladung zu einem Training mit mir</li></ul><span class="t-pick">Auswählen</span></button>
         <button type="button" class="tier" data-tier="platin" aria-pressed="false"><span class="t-photo"><img src="images/basel-open-masters-2026/06-sm.jpg" width="820" height="547" alt="Siegerehrung mit den Medaillengewinnern" loading="lazy" decoding="async"></span><span class="t-name">Platin</span><span class="t-price">CHF 1000</span><span class="t-per">pro Jahr</span><ul class="t-perk"><li>Mitglied im Gönnerclub</li><li>1–2 Updates pro Jahr mit Resultaten und Foto</li><li>Signierte Autogrammkarte</li><li>Nennung auf der Webseite (wenn gewünscht)</li><li>Signiertes Trikot oder Gi-Patch</li><li>Einladung zu einem Training mit mir</li><li>Einladung zu einem privaten Essen mit mir</li></ul><span class="t-pick">Auswählen</span></button>
       </div>
-            <div class="join">
-        <div>
-          <div class="j-k">Deine Wahl</div>
-          <div class="j-v" id="jsel">Wähle oben eine Stufe.</div>
-          <a class="btn" id="jmail" href="#kontakt" aria-disabled="true">Jetzt anmelden</a>
-          <p class="j-note">Schreib mir deinen Namen und deine Adresse, damit ich mich persönlich bei dir bedanken kann.</p>
-          <p class="j-note"><span>Oder direkt an</span> <b>e.timmer@gmx.ch</b></p>
-        </div>
-        <div>
-          <div class="j-k">Bezahlen</div>
-          <div id="pay">
+      <div class="co" id="checkout">
+        <ol class="co-steps" aria-label="Ablauf">
+          <li class="on" data-s="1"><b>1</b><em>Stufe wählen</em></li>
+          <li data-s="2"><b>2</b><em>Angaben</em></li>
+          <li data-s="3"><b>3</b><em>Bezahlen</em></li>
+        </ol>
+        <p class="co-empty" id="co-empty">Wähle oben eine Stufe, dann geht es hier weiter.</p>
+        <div class="co-grid" id="co-grid" hidden>
+          <div class="co-main">
+            <form id="co-form" novalidate>
+              <h3 class="co-h">Angaben vervollständigen</h3>
+              <p class="co-lead">Herzlichen Dank für die Unterstützung! Damit ich mich persönlich bei dir bedanken kann, brauche ich ein paar Angaben.</p>
+              <div class="co-row">
+                <label class="fl" for="co-first"><span>Vorname</span><input id="co-first" autocomplete="given-name" required></label>
+                <label class="fl" for="co-last"><span>Nachname</span><input id="co-last" autocomplete="family-name" required></label>
+              </div>
+              <label class="fl" for="co-mail"><span>E-Mail</span><input id="co-mail" type="email" autocomplete="email" required></label>
+              <label class="fl" for="co-adr"><span>Adresse</span><input id="co-adr" autocomplete="street-address" placeholder="Strasse, PLZ, Ort" required></label>
+              <label class="fl" for="co-tel"><span>Telefon (optional)</span><input id="co-tel" type="tel" autocomplete="tel"></label>
+              <label class="ck"><input type="checkbox" id="co-upd" checked><span>Ich möchte die Gönner-Updates erhalten (1–2 pro Jahr mit Resultaten und Foto).</span></label>
+              <label class="ck" id="co-pub-ck"><input type="checkbox" id="co-pub"><span>Mein Name darf auf der Webseite genannt werden.</span></label>
+              <input type="text" id="co-honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="cd-err" id="co-err" role="alert" hidden></p>
+              <button class="btn" type="submit" id="co-send">Weiter zur Zahlung</button>
+              <p class="co-priv"><span>Deine Angaben gehen über den Formular-Dienst Web3Forms direkt an mein E-Mail-Postfach.</span> <a href="datenschutz.html">Datenschutz</a></p>
+            </form>
+            <div id="co-pay" hidden>
+              <h3 class="co-h">Bestellung abschliessen</h3>
+              <p class="co-lead" id="co-thanks"></p>
+              <div id="pay">
+            <div class="payrow"><span class="pk">Betrag</span><b class="pv" id="co-amt"></b><button type="button" class="cp" id="co-amt-cp" data-copy="">Kopieren</button></div>
             <div class="payrow"><span class="pk">TWINT</span><b class="pv">078&nbsp;856&nbsp;80&nbsp;67</b><button type="button" class="cp" data-copy="0788568067">Kopieren</button></div>
             <div class="payrow"><span class="pk">IBAN</span><b class="pv">CH09&nbsp;0027&nbsp;4274 2058&nbsp;45M1&nbsp;D</b><button type="button" class="cp" data-copy="CH0900274274205845M1D">Kopieren</button></div>
             <div class="payrow"><span class="pk">Bank</span><b class="pv">UBS</b></div>
             <div class="payrow"><span class="pk">Kontoinhaber</span><b class="pv">Eric Timmer</b></div>
-            <p class="j-note">Vermerk: «Gönnerclub» und dein Name.</p>
+            <div class="payrow"><span class="pk">Vermerk</span><b class="pv" id="co-ref"></b><button type="button" class="cp" id="co-ref-cp" data-copy="">Kopieren</button></div>
+              </div>
+              <p class="co-lead" id="co-after">Sobald dein Beitrag angekommen ist, melde ich mich persönlich bei dir.</p>
+            </div>
           </div>
+          <aside class="co-sum" aria-live="polite">
+            <div class="co-photo"><img id="co-img" alt="" width="820" height="547"></div>
+            <div class="co-k">Deine Wahl</div>
+            <div class="co-tier" id="co-tier"></div>
+            <div class="co-price" id="co-price"></div>
+            <div class="co-per" id="co-per"></div>
+            <ul class="t-perk" id="co-perks"></ul>
+            <button type="button" class="co-change" id="co-change">Stufe ändern</button>
+          </aside>
         </div>
       </div>
     </div>
@@ -203,6 +235,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202610221224"></script>
+<script src="assets/site.js?v=202610221359"></script>
 </body>
 </html>
