@@ -480,6 +480,10 @@
     "Das Maskottchen, ein Tiger im Karate-Gi, in der Halle in Jakarta": ["The mascot, a tiger in a karate gi, in the arena in Jakarta", "La mascotte, un tigre en karaté-gi, dans la salle de Jakarta"],
     "Series A Jakarta 2022": ["Series A Jakarta 2022", "Series A Jakarta 2022"],
     "Karate 1 Series A, Jakarta, Indonesien, 2022": ["Karate 1 Series A, Jakarta, Indonesia, 2022", "Karate 1 Series A, Jakarta, Indonésie, 2022"],
+    "Siegerehrung an den Schweizermeisterschaften in Aarberg: vier Medaillengewinner auf dem Podest": ["Medal ceremony at the Swiss Championships in Aarberg: four medallists on the podium", "Remise des médailles aux Championnats de Suisse à Aarberg : quatre médaillés sur le podium"],
+    "Schweizermeisterschaften, Aarberg, 2019 · Schweizermeister": ["Swiss Championships, Aarberg, 2019 · Swiss champion", "Championnats de Suisse, Aarberg, 2019 · Champion suisse"],
+    "Schweizermeisterschaft 2019": ["Swiss Championships 2019", "Championnats de Suisse 2019"],
+    "Schweizermeister": ["Swiss champion", "Champion suisse"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -670,7 +674,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#sm2019': 'tab-sm19' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
