@@ -366,6 +366,14 @@
     "Eric sitzt konzentriert neben dem Coach in der roten Schweizer Jacke": ["Eric sitting focused next to his coach in the red Swiss jacket", "Eric assis, concentré, à côté de son coach en veste suisse rouge"],
     "Eric setzt einen hohen Fusstritt gegen seinen Gegner an": ["Eric launches a high kick at his opponent", "Eric place un coup de pied haut sur son adversaire"],
     "Eric und ein Teamkollege vor der Wand der 26. Senioren-Weltmeisterschaft in Budapest": ["Eric and a teammate in front of the wall of the 26th Senior World Championships in Budapest", "Eric et un coéquipier devant le mur des 26<sup>e</sup> Championnats du monde seniors à Budapest"],
+    "Junioren-EM 2023": ["Junior Euros 2023", "Euro juniors 2023"],
+    "Junioren-Europameisterschaft, Zypern, 2023": ["Junior European Championships, Cyprus, 2023", "Championnats d’Europe juniors, Chypre, 2023"],
+    "Swiss Karate Federation": ["Swiss Karate Federation", "Swiss Karate Federation"],
+    "Eric steht konzentriert mit EKF-Akkreditierung am Hals, im Hintergrund die Banner des Turniers in Zypern": ["Eric standing focused with his EKF accreditation around his neck, tournament banners from Cyprus behind him", "Eric debout, concentré, l’accréditation EKF autour du cou, les bannières du tournoi à Chypre en arrière-plan"],
+    "Eric in Kampfstellung gegenüber seinem Gegner aus Polen": ["Eric in fighting stance facing his Polish opponent", "Eric en garde face à son adversaire polonais"],
+    "Eric schreit seinen Kampfgeist heraus, sein Gegner liegt am Boden": ["Eric shouting out his fighting spirit while his opponent lies on the floor", "Eric crie son esprit de combat pendant que son adversaire est au sol"],
+    "Eric geht konzentriert auf die Matte, im Hintergrund weitere Athleten": ["Eric walking onto the mat, focused, other athletes behind him", "Eric entre concentré sur le tatami, d’autres athlètes en arrière-plan"],
+    "Eric setzt einen Fusstritt gegen seinen Gegner an": ["Eric launches a kick at his opponent", "Eric place un coup de pied sur son adversaire"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -529,7 +537,7 @@
     thumbs = Array.prototype.slice.call(panel.querySelectorAll('.gi'));
     if (galsub) galsub.innerHTML = panel.getAttribute('data-sub');
     var cid = panel.getAttribute('data-credit') || 'cr-kw';
-    ['cr-kw', 'cr-skf', 'cr-paris', 'cr-priv', 'cr-wm23'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
+    ['cr-kw', 'cr-skf', 'cr-paris', 'cr-priv', 'cr-wm23', 'cr-jem23'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
   }
   function centerTab(t) {
     var bar = t.parentNode, tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
@@ -556,7 +564,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
