@@ -392,6 +392,16 @@
     "Älter": ["Earlier", "Plus ancien"],
     "Neuer": ["Later", "Plus récent"],
     "Jahr wählen": ["Choose a year", "Choisir une année"],
+    "Basel Open Masters 2022": ["Basel Open Masters 2022", "Basel Open Masters 2022"],
+    "Basel Open Masters 2026": ["Basel Open Masters 2026", "Basel Open Masters 2026"],
+    "Basel Open Masters, 2022": ["Basel Open Masters, 2022", "Basel Open Masters, 2022"],
+    "Eric im hohen Fusstritt, sein Gegner mit blauem Gürtel weicht aus": ["Eric in a high kick while his blue-belt opponent dodges", "Eric dans un coup de pied haut pendant que son adversaire à ceinture bleue esquive"],
+    "Fusstritt zum Kopf, im Hintergrund die Länderflaggen der Halle": ["A kick to the head, the national flags of the hall in the background", "Un coup de pied à la tête, les drapeaux nationaux de la salle en arrière-plan"],
+    "Eric liegt nach einem Wurf am Boden, sein Gegner beugt sich über ihn": ["Eric on the floor after a throw, his opponent leaning over him", "Eric au sol après une projection, son adversaire penché sur lui"],
+    "Eric setzt im Ausfallschritt einen Fauststoss gegen seinen Gegner": ["Eric lands a punch from a lunge against his opponent", "Eric place un coup de poing en fente sur son adversaire"],
+    "Schlagabtausch: Eric weicht dem Angriff seines Gegners nach hinten aus": ["An exchange: Eric leans back out of his opponent’s attack", "Échange : Eric se penche en arrière pour esquiver l’attaque de son adversaire"],
+    "Eric im Fusstritt, sein Gegner kontert mit hohem Bein": ["Eric kicking while his opponent counters with a high leg", "Eric dans un coup de pied, son adversaire contre avec une jambe haute"],
+    "Eric schreit nach dem Punkt, in der weiten Halle mit den Länderflaggen": ["Eric shouting after scoring, in the wide hall with the national flags", "Eric crie après le point, dans la grande salle avec les drapeaux nationaux"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -582,7 +592,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
