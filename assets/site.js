@@ -751,3 +751,26 @@
   }
   if (start !== 'de') setLang(start, false);
 })();
+
+/* Menü nimmt beim Scrollen die Farbe des Bereichs darunter an */
+(function () {
+  var nav = document.querySelector('nav.top');
+  if (!nav) return;
+  var bands = [].slice.call(document.querySelectorAll('.band.dark, .band.contact'));
+  if (!bands.length) return;
+  var tone = '', ticking = false;
+  function update() {
+    ticking = false;
+    var half = window.innerWidth < 735 ? 40 : 60, y = nav.offsetHeight / 2, t = '';
+    for (var i = 0; i < bands.length; i++) {
+      var r = bands[i].getBoundingClientRect();
+      if (r.top + half < y && r.bottom - half > y) { t = bands[i].classList.contains('contact') ? 'red' : 'dark'; break; }
+    }
+    if (t !== tone) { tone = t; if (t) nav.setAttribute('data-tone', t); else nav.removeAttribute('data-tone'); }
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  window.addEventListener('load', req);
+  update();
+})();
