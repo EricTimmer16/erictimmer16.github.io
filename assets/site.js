@@ -378,7 +378,10 @@
     "Betrag": ["Amount", "Montant"],
     "Vermerk": ["Reference", "Référence"],
     "Sobald dein Beitrag angekommen ist, melde ich mich persönlich bei dir.": ["As soon as your contribution has arrived, I’ll get in touch with you personally.", "Dès que ta contribution sera arrivée, je te contacterai personnellement."],
-    "Stufe ändern": ["Change tier", "Changer de niveau"]
+    "Stufe ändern": ["Change tier", "Changer de niveau"],
+    "Ich möchte die Updates im WhatsApp-Kanal verfolgen (niemand sieht deine Nummer).": ["I’d like to follow the updates in the WhatsApp channel (nobody sees your number).", "Je souhaite suivre les nouvelles dans le canal WhatsApp (personne ne voit ton numéro)."],
+    "Zum WhatsApp-Kanal": ["To the WhatsApp channel", "Vers le canal WhatsApp"],
+    "Wenn du dem WhatsApp-Kanal beitrittst, gelten dafür die Datenschutzbestimmungen von WhatsApp (Meta). Als Kanal-Betreiber sehe ich deine Telefonnummer dabei nicht.": ["If you join the WhatsApp channel, WhatsApp’s (Meta’s) privacy terms apply. As the channel owner I do not see your phone number.", "Si tu rejoins le canal WhatsApp, les règles de confidentialité de WhatsApp (Meta) s’appliquent. En tant qu’administrateur du canal, je ne vois pas ton numéro de téléphone."]
   };
   var UI = {
     statement: {
@@ -704,6 +707,7 @@
         Stufe: d.name, Betrag: d.price, Rhythmus: d.per, Name: name, 'E-Mail': mail, Adresse: adr,
         Telefon: v('co-tel') || '–',
         Gönner_Updates: document.getElementById('co-upd').checked ? 'Ja' : 'Nein',
+        WhatsApp_Kanal: document.getElementById('co-wa-ck').checked ? 'Ja' : 'Nein',
         Namensnennung_Webseite: document.getElementById('co-pub-ck').hidden ? '–' : (document.getElementById('co-pub').checked ? 'Ja' : 'Nein'),
         Sprache: lang.toUpperCase()
       };
@@ -716,6 +720,7 @@
         .then(function (r) { return r.json(); }).then(function (res) {
           if (!(res && (res.success === true || res.success === 'true'))) throw new Error((res && res.message) || 'failed');
           coForm.hidden = true; coPay.hidden = false; fillPay(); setStep(3);
+          document.getElementById('co-wa').hidden = !document.getElementById('co-wa-ck').checked;
           document.getElementById('checkout').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }).catch(function (err) {
           try { console.warn('Gönnerclub-Anmeldung:', err); } catch (x) {}
