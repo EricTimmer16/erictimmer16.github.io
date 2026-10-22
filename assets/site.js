@@ -342,7 +342,10 @@
     "Weltmeisterschaft": ["World Championships", "Championnats du monde"],
     "WM-Quali": ["Worlds qualifier", "Qualif. mondiale"],
     "Quelle: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF-Kalender</a>, wird täglich abgeglichen. Änderungen vorbehalten.": ["Source: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF calendar</a>, checked daily. Subject to change.", "Source : <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">calendrier WKF</a>, mis à jour chaque jour. Sous réserve de modifications."],
-    "Turnierart": ["Tournament type", "Type de tournoi"]
+    "Turnierart": ["Tournament type", "Type de tournoi"],
+    "Persönliche Dankesnachricht per WhatsApp oder E-Mail": ["Personal thank-you message via WhatsApp or email", "Message de remerciement personnel par WhatsApp ou e-mail"],
+    "Einladung zu einem Training mit mir": ["Invitation to a training session with me", "Invitation à un entraînement avec moi"],
+    "Einladung zu einem privaten Essen mit mir": ["Invitation to a private dinner with me", "Invitation à un dîner privé avec moi"]
   };
   var UI = {
     statement: {
