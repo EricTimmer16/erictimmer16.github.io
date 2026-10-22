@@ -487,6 +487,9 @@
     "Siegerehrung an den Schweizermeisterschaften in Sursee 2020: Podest mit den ersten drei Plätzen": ["Medal ceremony at the 2020 Swiss Championships in Sursee: podium with the top three", "Remise des médailles aux Championnats de Suisse 2020 à Sursee : podium des trois premiers"],
     "Schweizermeisterschaften, Sursee, 2020 · Schweizermeister": ["Swiss Championships, Sursee, 2020 · Swiss champion", "Championnats de Suisse, Sursee, 2020 · Champion suisse"],
     "Schweizermeisterschaft 2020": ["Swiss Championships 2020", "Championnats de Suisse 2020"],
+    "Eric auf dem obersten Podestplatz mit dem Pokal, neben ihm der Zweitplatzierte mit der Silbermedaille, an den Schweizermeisterschaften in Sursee 2022": ["Eric on the top step of the podium holding the trophy, next to the runner-up with the silver medal, at the 2022 Swiss Championships in Sursee", "Eric sur la plus haute marche du podium avec le trophée, à côté du deuxième avec la médaille d’argent, aux Championnats de Suisse 2022 à Sursee"],
+    "Schweizermeisterschaften, Sursee, 2022 · Schweizermeister": ["Swiss Championships, Sursee, 2022 · Swiss champion", "Championnats de Suisse, Sursee, 2022 · Champion suisse"],
+    "Schweizermeisterschaft 2022": ["Swiss Championships 2022", "Championnats de Suisse 2022"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -677,7 +680,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
