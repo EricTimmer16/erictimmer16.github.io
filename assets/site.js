@@ -490,6 +490,15 @@
     "Eric auf dem obersten Podestplatz mit dem Pokal, neben ihm der Zweitplatzierte mit der Silbermedaille, an den Schweizermeisterschaften in Sursee 2022": ["Eric on the top step of the podium holding the trophy, next to the runner-up with the silver medal, at the 2022 Swiss Championships in Sursee", "Eric sur la plus haute marche du podium avec le trophée, à côté du deuxième avec la médaille d’argent, aux Championnats de Suisse 2022 à Sursee"],
     "Schweizermeisterschaften, Sursee, 2022 · Schweizermeister": ["Swiss Championships, Sursee, 2022 · Swiss champion", "Championnats de Suisse, Sursee, 2022 · Champion suisse"],
     "Schweizermeisterschaft 2022": ["Swiss Championships 2022", "Championnats de Suisse 2022"],
+    "Eric setzt im Kumite einen hohen Fusstritt gegen seinen Gegner an": ["Eric throws a high kick at his opponent in kumite", "Eric lance un coup de pied haut contre son adversaire en kumite"],
+    "Eric im Schweizer Gi mit blauen Schutzen, konzentrierter Blick auf den Gegner": ["Eric in the Swiss gi with blue gloves, eyes focused on his opponent", "Eric en karaté-gi suisse avec des protections bleues, le regard concentré sur son adversaire"],
+    "Eric wischt sich nach dem Kampf mit dem Handschuh übers Gesicht": ["Eric wipes his face with his glove after the bout", "Eric s’essuie le visage avec son gant après le combat"],
+    "Eric schreit nach einem Punkt seine Anspannung heraus, auf der Anzeigetafel SUI Timmer": ["Eric lets out a shout after scoring, SUI Timmer on the scoreboard", "Eric pousse un cri après un point, SUI Timmer au tableau d’affichage"],
+    "Eric ballt im Kampf die Faust, auf der Anzeigetafel steht es 3 zu 4": ["Eric clenches his fist mid-bout, the scoreboard reads 3 to 4", "Eric serre le poing en plein combat, le tableau affiche 3 à 4"],
+    "Eric im Kampf bei Gleichstand, 5 zu 5 mit zehn Sekunden auf der Uhr": ["Eric in a tied bout, 5 to 5 with ten seconds on the clock", "Eric en plein combat à égalité, 5 à 5 avec dix secondes au chrono"],
+    "Eric und sein Gegner umarmen sich nach dem Kampf": ["Eric and his opponent embrace after the bout", "Eric et son adversaire s’étreignent après le combat"],
+    "Basel Open Masters, 2024 · Kumite −60 kg": ["Basel Open Masters, 2024 · Kumite −60 kg", "Basel Open Masters, 2024 · Kumité −60 kg"],
+    "Basel Open Masters 2024": ["Basel Open Masters 2024", "Basel Open Masters 2024"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -680,7 +689,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22', '#basel2024': 'tab-bom24' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
