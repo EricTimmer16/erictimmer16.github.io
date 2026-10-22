@@ -410,6 +410,7 @@
     coThanks: { de: 'Danke, {n}! Deine Anmeldung ist bei mir angekommen. Zum Abschluss überweise bitte den Beitrag:', en: 'Thank you, {n}! Your sign-up has reached me. To finish, please transfer your contribution:', fr: 'Merci, {n} ! Ton inscription m’est bien parvenue. Pour terminer, merci de virer ta contribution :' },
     coMissing: { de: 'Bitte fülle Vorname, Nachname, eine gültige E-Mail-Adresse und deine Adresse aus.', en: 'Please fill in your first name, last name, a valid email address and your address.', fr: 'Merci d’indiquer ton prénom, ton nom, une adresse e-mail valide et ton adresse.' },
     gwDot: { de: 'Seite {n}', en: 'Page {n}', fr: 'Page {n}' },
+    calRank: { de: 'WKF-Weltrang Nr. {r} · {p} Punkte', en: 'WKF world rank no. {r} · {p} points', fr: 'Classement mondial WKF n° {r} · {p} points' },
     sending: { de: 'Wird gesendet …', en: 'Sending …', fr: 'Envoi …' },
     mailBody: {
       de: 'Hallo Eric\n\nIch möchte deinem Gönnerclub beitreten: {t}.\n\nName:\nAdresse:\n\nLiebe Grüsse',
@@ -629,6 +630,20 @@
   }
   function tierLabel() {
     return curTier ? curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')' : '';
+  }
+
+  /* Weltrang klein auf der Kalenderseite (Zahlen kommen aus assets/ranking.json, wird täglich aktualisiert) */
+  var rankEl = document.getElementById('cal-rank'), rankData = null;
+  function renderRank() {
+    if (!rankEl || !rankData) return;
+    rankEl.textContent = T('calRank').replace('{r}', rankData.rank).replace('{p}', rankData.points);
+    rankEl.hidden = false;
+  }
+  if (rankEl) {
+    fetch('assets/ranking.json?d=' + new Date().toISOString().slice(0, 10), { cache: 'no-cache' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d && d.rank && d.points) { rankData = d; renderRank(); } })
+      .catch(function () {});
   }
 
   /* Gönner-Wand: Namen aus assets/goenner.json, automatisch weiterschaltend und per Pfeil/Punkt bedienbar */
@@ -884,6 +899,7 @@
     if (curPanel && galsub) galsub.innerHTML = curPanel.getAttribute('data-sub');
     if (lb && !lb.hidden) show(cur);
     refreshJoin();
+    renderRank();
     if (gw.slides.length) Array.prototype.forEach.call(gw.dots.children, function (d, n) { d.setAttribute('aria-label', T('gwDot').replace('{n}', n + 1)); });
     renderCal();
     if (metaDesc) metaDesc.setAttribute('content', T('desc'));
