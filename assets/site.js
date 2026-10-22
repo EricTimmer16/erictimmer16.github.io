@@ -383,7 +383,9 @@
     "Zum WhatsApp-Kanal": ["To the WhatsApp channel", "Vers le canal WhatsApp"],
     "Wenn du dem WhatsApp-Kanal beitrittst, gelten dafür die Datenschutzbestimmungen von WhatsApp (Meta). Als Kanal-Betreiber sehe ich deine Telefonnummer dabei nicht.": ["If you join the WhatsApp channel, WhatsApp’s (Meta’s) privacy terms apply. As the channel owner I do not see your phone number.", "Si tu rejoins le canal WhatsApp, les règles de confidentialité de WhatsApp (Meta) s’appliquent. En tant qu’administrateur du canal, je ne vois pas ton numéro de téléphone."],
     "WhatsApp-Kanal": ["WhatsApp channel", "Canal WhatsApp"],
-    "So zahlst du per TWINT: In der TWINT-App auf «Senden» tippen, die Nummer eingeben, den Betrag und den Vermerk eintragen und bestätigen. Für die Banküberweisung nutzt du IBAN und Vermerk in deinem E-Banking.": ["How to pay with TWINT: in the TWINT app tap “Send”, enter the number, fill in the amount and the reference, and confirm. For a bank transfer, use the IBAN and the reference in your e-banking.", "Payer avec TWINT : dans l’appli TWINT, appuie sur « Envoyer », saisis le numéro, indique le montant et la référence, puis confirme. Pour un virement bancaire, utilise l’IBAN et la référence dans ton e-banking."]
+    "So zahlst du per TWINT: In der TWINT-App auf «Senden» tippen, die Nummer eingeben, den Betrag und den Vermerk eintragen und bestätigen. Für die Banküberweisung nutzt du IBAN und Vermerk in deinem E-Banking.": ["How to pay with TWINT: in the TWINT app tap “Send”, enter the number, fill in the amount and the reference, and confirm. For a bank transfer, use the IBAN and the reference in your e-banking.", "Payer avec TWINT : dans l’appli TWINT, appuie sur « Envoyer », saisis le numéro, indique le montant et la référence, puis confirme. Pour un virement bancaire, utilise l’IBAN et la référence dans ton e-banking."],
+    "Ich danke meinen Gönnerinnen und Gönnern von Herzen ♡": ["I thank my supporters from the bottom of my heart ♡", "Je remercie mes supporters de tout cœur ♡"],
+    "Gönnerinnen und Gönner": ["Supporters", "Supporters"]
   };
   var UI = {
     statement: {
@@ -407,6 +409,7 @@
     formMail: { de: 'Stattdessen im E-Mail-Programm öffnen', en: 'Open in your email app instead', fr: 'Ouvrir dans votre application e-mail' },
     coThanks: { de: 'Danke, {n}! Deine Anmeldung ist bei mir angekommen. Zum Abschluss überweise bitte den Beitrag:', en: 'Thank you, {n}! Your sign-up has reached me. To finish, please transfer your contribution:', fr: 'Merci, {n} ! Ton inscription m’est bien parvenue. Pour terminer, merci de virer ta contribution :' },
     coMissing: { de: 'Bitte fülle Vorname, Nachname, eine gültige E-Mail-Adresse und deine Adresse aus.', en: 'Please fill in your first name, last name, a valid email address and your address.', fr: 'Merci d’indiquer ton prénom, ton nom, une adresse e-mail valide et ton adresse.' },
+    gwDot: { de: 'Seite {n}', en: 'Page {n}', fr: 'Page {n}' },
     sending: { de: 'Wird gesendet …', en: 'Sending …', fr: 'Envoi …' },
     mailBody: {
       de: 'Hallo Eric\n\nIch möchte deinem Gönnerclub beitreten: {t}.\n\nName:\nAdresse:\n\nLiebe Grüsse',
@@ -628,6 +631,62 @@
     return curTier ? curTier.querySelector('.t-name').textContent + ' (' + curTier.querySelector('.t-price').textContent + ', ' + curTier.querySelector('.t-per').textContent + ')' : '';
   }
 
+  /* Gönner-Wand: Namen aus assets/goenner.json, automatisch weiterschaltend und per Pfeil/Punkt bedienbar */
+  var gw = { box: document.getElementById('gwall'), view: document.getElementById('gw-view'), dots: document.getElementById('gw-dots'),
+    prev: document.getElementById('gw-prev'), next: document.getElementById('gw-next'), names: [], slides: [], i: 0, timer: 0, hold: false };
+  function gwPer() { return window.innerWidth < 720 ? 3 : 5; }
+  function gwShow(n) {
+    if (!gw.slides.length) return;
+    gw.i = (n + gw.slides.length) % gw.slides.length;
+    gw.slides.forEach(function (el, k) { el.classList.toggle('on', k === gw.i); el.setAttribute('aria-hidden', k === gw.i ? 'false' : 'true'); });
+    Array.prototype.forEach.call(gw.dots.children, function (d, k) { d.setAttribute('aria-current', k === gw.i ? 'true' : 'false'); });
+  }
+  function gwStop() { if (gw.timer) { clearInterval(gw.timer); gw.timer = 0; } }
+  function gwPlay() {
+    gwStop();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || gw.slides.length < 2 || gw.hold) return;
+    gw.timer = setInterval(function () { if (!document.hidden) gwShow(gw.i + 1); }, 4500);
+  }
+  function gwBuild() {
+    if (!gw.box || !gw.names.length) return;
+    var per = gwPer(), keep = gw.i;
+    gw.view.innerHTML = ''; gw.dots.innerHTML = ''; gw.slides = [];
+    for (var a = 0; a < gw.names.length; a += per) {
+      var p = document.createElement('p'); p.className = 'gw-slide';
+      gw.names.slice(a, a + per).forEach(function (n) { var s = document.createElement('span'); s.textContent = n; p.appendChild(s); });
+      gw.view.appendChild(p); gw.slides.push(p);
+      var d = document.createElement('button'); d.type = 'button'; d.className = 'gw-dot';
+      d.setAttribute('aria-label', T('gwDot').replace('{n}', gw.slides.length));
+      (function (k) { d.addEventListener('click', function () { gwShow(k); gwPlay(); }); })(gw.slides.length - 1);
+      gw.dots.appendChild(d);
+    }
+    var many = gw.slides.length > 1;
+    gw.prev.hidden = gw.next.hidden = gw.dots.hidden = !many;
+    gwShow(Math.min(keep, gw.slides.length - 1));
+    gwPlay();
+  }
+  if (gw.box) {
+    fetch('assets/goenner.json?d=' + new Date().toISOString().slice(0, 10), { cache: 'no-cache' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        gw.names = (d && d.names || []).filter(function (n) { return typeof n === 'string' && n.trim(); });
+        if (!gw.names.length) return;
+        gw.box.hidden = false; gwBuild();
+      }).catch(function () {});
+    gw.prev.addEventListener('click', function () { gwShow(gw.i - 1); gwPlay(); });
+    gw.next.addEventListener('click', function () { gwShow(gw.i + 1); gwPlay(); });
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (ev) { gw.box.addEventListener(ev, function () { gw.hold = true; gwStop(); }, { passive: true }); });
+    ['mouseleave', 'focusout'].forEach(function (ev) { gw.box.addEventListener(ev, function () { gw.hold = false; gwPlay(); }); });
+    gw.box.addEventListener('touchend', function () { setTimeout(function () { gw.hold = false; gwPlay(); }, 6000); }, { passive: true });
+    gw.box.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') { gwShow(gw.i - 1); gwPlay(); } else if (e.key === 'ArrowRight') { gwShow(gw.i + 1); gwPlay(); } });
+    var sx = null;
+    gw.view.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    gw.view.addEventListener('touchend', function (e) { if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 40) { gwShow(gw.i + (dx < 0 ? 1 : -1)); gwPlay(); } }, { passive: true });
+    var lastPer = gwPer();
+    window.addEventListener('resize', function () { var n = gwPer(); if (n !== lastPer) { lastPer = n; gw.i = 0; gwBuild(); } });
+  }
+
   /* Kontaktfenster: Nachricht geht über Web3Forms direkt in Erics Postfach */
   var dlg = document.getElementById('cdlg'), cform = document.getElementById('cform'), cdone = document.getElementById('cf-done');
   var cErr = document.getElementById('cf-err'), cSend = document.getElementById('cf-send');
@@ -825,6 +884,7 @@
     if (curPanel && galsub) galsub.innerHTML = curPanel.getAttribute('data-sub');
     if (lb && !lb.hidden) show(cur);
     refreshJoin();
+    if (gw.slides.length) Array.prototype.forEach.call(gw.dots.children, function (d, n) { d.setAttribute('aria-label', T('gwDot').replace('{n}', n + 1)); });
     renderCal();
     if (metaDesc) metaDesc.setAttribute('content', T('desc'));
     var pg = document.body.getAttribute('data-page');
