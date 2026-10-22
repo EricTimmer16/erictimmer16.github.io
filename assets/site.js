@@ -412,6 +412,41 @@
     "Das Schweizer Team vor der Halle in Zadar": ["The Swiss team in front of the arena in Zadar", "L’équipe suisse devant la salle de Zadar"],
     "Eric in Kampfstellung gegenüber seinem Gegner, hinter ihnen das Banner der Senioren-Europameisterschaft": ["Eric in fighting stance facing his opponent, the senior European Championships banner behind them", "Eric en garde face à son adversaire, la bannière des Championnats d’Europe seniors derrière eux"],
     "Eric hält das SUI-Schild der 59. Europameisterschaft Zadar 2024": ["Eric holding the SUI sign of the 59th European Championships Zadar 2024", "Eric tient le panneau SUI des 59<sup>e</sup> Championnats d’Europe Zadar 2024"],
+    "EM Yerevan 2025": ["Euros Yerevan 2025", "Euro Erevan 2025"],
+    "60. Europameisterschaft, Yerevan, Armenien, Mai 2025": ["60th European Championships, Yerevan, Armenia, May 2025", "60<sup>e</sup> Championnats d’Europe, Erevan, Arménie, mai 2025"],
+    "Eric im Kampfanzug mit rotem Gürtel und Schweizer Wappen, ruhig vor dem Kampf": ["Eric in his competition gi with the red belt and Swiss crest, calm before the fight", "Eric en kimono de compétition avec la ceinture rouge et l’écusson suisse, calme avant le combat"],
+    "Eric grüsst vor seinem Kampf, auf der Anzeigetafel steht Frankreich": ["Eric bows before his fight, France on the scoreboard", "Eric salue avant son combat, la France s’affiche au tableau"],
+    "Eric im Kampf an der EM in Yerevan, im Hintergrund die Ränge der Halle": ["Eric in a bout at the Europeans in Yerevan, the stands of the arena behind him", "Eric en plein combat aux Championnats d’Europe à Erevan, les gradins de la salle en arrière-plan"],
+    "Eric, eine Teamkollegin und ein Teamkollege hinter dem Schweiz-Schild der 60. Europameisterschaft": ["Eric with a female and a male teammate behind the Switzerland sign of the 60th European Championships", "Eric avec une coéquipière et un coéquipier derrière le panneau Suisse des 60<sup>e</sup> Championnats d’Europe"],
+    "Eric und ein Teamkollege vor dem Banner der Europameisterschaft Yerevan 2025": ["Eric and a teammate in front of the banner of the European Championships Yerevan 2025", "Eric et un coéquipier devant la bannière des Championnats d’Europe Erevan 2025"],
+    "Eric und ein Teamkollege in den roten Jacken der Swiss Karate Federation vor dem Netz der Halle": ["Eric and a teammate in the red Swiss Karate Federation jackets in front of the arena net", "Eric et un coéquipier dans les vestes rouges de la Swiss Karate Federation devant le filet de la salle"],
+    "Das Schweizer Team im Fotorahmen der Europameisterschaft Yerevan 2025": ["The Swiss team in the photo frame of the European Championships Yerevan 2025", "L’équipe suisse dans le cadre photo des Championnats d’Europe Erevan 2025"],
+    "Das Schweizer Team posiert mit dem Maskottchen der Europameisterschaft": ["The Swiss team posing with the mascot of the European Championships", "L’équipe suisse pose avec la mascotte des Championnats d’Europe"],
+    "Selfie von Eric mit dem Maskottchen im Hotel": ["Eric taking a selfie with the mascot in the hotel", "Selfie d’Eric avec la mascotte à l’hôtel"],
+    "Das Maskottchen im Karate-Anzug mit schwarzem Gürtel streckt beide Daumen hoch": ["The mascot in a karate gi with a black belt gives two thumbs up", "La mascotte en kimono de karaté avec ceinture noire lève les deux pouces"],
+    "Selfie von Eric mit zwei Teamkollegen in der Halle, aufgenommen am 6. Mai 2025": ["Selfie of Eric with two teammates in the arena, taken on 6 May 2025", "Selfie d’Eric avec deux coéquipiers dans la salle, pris le 6 mai 2025"],
+    "Eric läuft sich lächelnd in der Trainingshalle ein": ["Eric smiling as he warms up in the training hall", "Eric s’échauffe en souriant dans la salle d’entraînement"],
+    "Eric übt im Training mit seinem Coach einen Fauststoss": ["Eric practising a punch with his coach in training", "Eric travaille un coup de poing avec son coach à l’entraînement"],
+    "Eric hört im Training aufmerksam auf die Anweisungen seines Coachs": ["Eric listening closely to his coach’s instructions in training", "Eric écoute attentivement les consignes de son coach à l’entraînement"],
+    "Eric im Training gegen eine Teamkollegin, die einen hohen Tritt ausführt": ["Eric in training against a teammate throwing a high kick", "Eric à l’entraînement face à une coéquipière qui place un coup de pied haut"],
+    "Eric zeigt im Training einen hohen Tritt gegen einen Teamkollegen": ["Eric throwing a high kick against a teammate in training", "Eric place un coup de pied haut contre un coéquipier à l’entraînement"],
+    "Eric und zwei Teamkolleginnen sitzen nach dem Training auf der Matte und lachen": ["Eric and two female teammates sitting on the mat laughing after training", "Eric et deux coéquipières assis sur le tapis en riant après l’entraînement"],
+    "Eric umarmt im Training einen Sparringspartner": ["Eric hugging a sparring partner in training", "Eric serre un partenaire d’entraînement dans ses bras"],
+    "Eric liegt mit geschlossenen Augen auf der blauen Matte": ["Eric lying on the blue mat with his eyes closed", "Eric allongé sur le tapis bleu, les yeux fermés"],
+    "Eric springt mit erhobenem Knie gegen seinen brasilianischen Gegner": ["Eric jumping with his knee raised against his Brazilian opponent", "Eric saute, genou levé, face à son adversaire brésilien"],
+    "Eric trifft seinen brasilianischen Gegner mit einem Fauststoss am Kopf": ["Eric lands a punch to the head of his Brazilian opponent", "Eric touche son adversaire brésilien à la tête d’un coup de poing"],
+    "Eric und sein brasilianischer Gegner begrüssen sich zu Beginn des Kampfes": ["Eric and his Brazilian opponent greeting each other at the start of the bout", "Eric et son adversaire brésilien se saluent au début du combat"],
+    "Eric weicht mit einer Drehung aus, sein Gegner schreit auf": ["Eric turns away from the attack while his opponent shouts", "Eric esquive en pivotant, son adversaire crie"],
+    "Eric trifft im Ausfallschritt mit der Faust, im Hintergrund der Kampfrichtertisch": ["Eric lunging with a punch, the judges’ table in the background", "Eric frappe du poing en fente, la table des juges en arrière-plan"],
+    "Eric schreit nach dem Punkt, die blauen Handschuhe vor dem Körper": ["Eric shouting after scoring, blue gloves in front of his body", "Eric crie après le point, les gants bleus devant le corps"],
+    "Eric trifft seinen französischen Gegner im Halbfinal mit einem hohen Tritt": ["Eric hits his French opponent with a high kick in the semi-final", "Eric touche son adversaire français d’un coup de pied haut en demi-finale"],
+    "Eric blickt nach oben, die Hand auf dem Schweizer Wappen": ["Eric looks up, hand on the Swiss crest", "Eric lève les yeux, la main sur l’écusson suisse"],
+    "Eric im Kampf um Bronze gegen seinen österreichischen Gegner": ["Eric in the bronze-medal bout against his Austrian opponent", "Eric dans le combat pour le bronze face à son adversaire autrichien"],
+    "Eric blickt mit den Handschuhen in den Händen zur Anzeigetafel": ["Eric looks up at the scoreboard, gloves in hand", "Eric regarde le tableau d’affichage, les gants en main"],
+    "Eric lächelt seinem Coach zu": ["Eric smiling at his coach", "Eric sourit à son coach"],
+    "Eric verfolgt konzentriert einen Kampf vom Rand der Matte aus": ["Eric watching a bout intently from the edge of the mat", "Eric suit un combat avec concentration depuis le bord du tatami"],
+    "Basel Open Masters 2025": ["Basel Open Masters 2025", "Basel Open Masters 2025"],
+    "Basel Open Masters, 2025 · Kumite −60 kg": ["Basel Open Masters, 2025 · Kumite −60 kg", "Basel Open Masters, 2025 · Kumité −60 kg"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -602,7 +637,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
