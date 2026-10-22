@@ -261,11 +261,11 @@ footer .wrap { display: grid; gap: 8px; }
 .band.dark .lead { color: var(--panel-muted); }
 .band.dark .lead b { color: var(--panel-fg); }
 .masonry { columns: 3 300px; column-gap: 14px; margin-top: 28px; }
-.tabs { display: inline-flex; gap: 4px; padding: 4px; margin-top: 44px; border-radius: 980px; background: rgba(255,255,255,.1); max-width: 100%; overflow-x: auto; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; margin-top: 44px; border-radius: 26px; background: rgba(255,255,255,.1); width: fit-content; max-width: 100%; }
 .tab { border: 0; cursor: pointer; white-space: nowrap; font: 500 15px var(--text); color: var(--panel-muted); background: transparent; padding: 9px 18px; border-radius: 980px; transition: background .3s var(--ease), color .3s; }
 .tab:hover { color: var(--panel-fg); }
 .tab[aria-selected="true"] { background: var(--panel-fg); color: var(--panel); }
-@media (max-width: 480px) { .tab { font-size: 13px; padding: 8px 12px; } }
+@media (max-width: 480px) { .tab { font-size: 13px; padding: 7px 11px; } }
 .gal-sub { margin-top: 18px; font-size: 15px; color: var(--panel-muted); }
 .masonry.fade { animation: lbIn .5s var(--ease); }
 .gi {
