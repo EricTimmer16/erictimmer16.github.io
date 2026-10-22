@@ -359,9 +359,9 @@
   };
   var UI = {
     statement: {
-      de: 'Mit sechs Jahren stand ich zum ersten Mal auf der Matte. Heute kämpfe ich für die *Schweiz* gegen die Besten der Welt. Neben meiner KV-Lehre, mit rund zehn Trainings pro Woche. Mein Ziel ist klar: *Europa-* und *Weltmeister* werden.',
-      en: 'I first stepped onto the mat at the age of six. Today I fight for *Switzerland* against the best in the world. Alongside my commercial apprenticeship, with around ten training sessions a week. My goal is clear: to become *European* and *World* *Champion.*',
-      fr: 'À six ans, je suis monté pour la première fois sur le tatami. Aujourd’hui, je combats pour la *Suisse* contre les meilleurs du monde. En parallèle de mon apprentissage commercial, avec une dizaine d’entraînements par semaine. Mon objectif est clair : devenir *champion* *d’Europe* et *du* *monde.*'
+      de: 'Mit sechs Jahren stand ich zum ersten Mal auf der Matte. Heute kämpfe ich für die *Schweiz* gegen die Besten der Welt. Neben meiner KV-Lehre, mit rund zehn Trainings pro Woche. Mein Ziel ist klar: ganz *an* *die* *Spitze.*',
+      en: 'I first stepped onto the mat at the age of six. Today I fight for *Switzerland* against the best in the world. Alongside my commercial apprenticeship, with around ten training sessions a week. My goal is clear: to reach the *top.*',
+      fr: 'À six ans, je suis monté pour la première fois sur le tatami. Aujourd’hui, je combats pour la *Suisse* contre les meilleurs du monde. En parallèle de mon apprentissage commercial, avec une dizaine d’entraînements par semaine. Mon objectif est clair : atteindre le *sommet.*'
     },
     foto: { de: 'Foto', en: 'Photo', fr: 'Photo' },
     ua: { de: 'u. a.', en: 'and others', fr: 'et autres' },
