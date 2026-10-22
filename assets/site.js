@@ -355,7 +355,12 @@
     "Ein Flug zu einem Turnier in Europa.": ["A flight to a tournament in Europe.", "Un vol pour un tournoi en Europe."],
     "Hotel und Reise für ein ganzes Turnierwochenende.": ["Hotel and travel for a whole tournament weekend.", "Hôtel et voyage pour tout un week-end de tournoi."],
     "Ein ganzes Turnier: Startgebühr, Reise und Hotel.": ["A whole tournament: entry fee, travel and hotel.", "Un tournoi complet : inscription, voyage et hôtel."],
-    "Richtwerte. Die tatsächlichen Kosten hängen vom Turnier und vom Reiseziel ab.": ["Rough guide values. Actual costs depend on the tournament and the destination.", "Valeurs indicatives. Les coûts réels dépendent du tournoi et de la destination."]
+    "Richtwerte. Die tatsächlichen Kosten hängen vom Turnier und vom Reiseziel ab.": ["Rough guide values. Actual costs depend on the tournament and the destination.", "Valeurs indicatives. Les coûts réels dépendent du tournoi et de la destination."],
+    "WM 2015": ["Worlds 2015", "Mondial 2015"],
+    "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
+    "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
+    "Eric mit zwei Teamkollegen vor dem Turnierplakat, vorne die Medaillen": ["Eric with two teammates in front of the tournament banner, medals in the foreground", "Eric avec deux coéquipiers devant l’affiche du tournoi, les médailles au premier plan"],
+    "Archiv Eric Timmer": ["Eric Timmer’s archive", "Archives d’Eric Timmer"]
   };
   var UI = {
     statement: {
@@ -485,7 +490,7 @@
     thumbs = Array.prototype.slice.call(panel.querySelectorAll('.gi'));
     if (galsub) galsub.innerHTML = panel.getAttribute('data-sub');
     var cid = panel.getAttribute('data-credit') || 'cr-kw';
-    ['cr-kw', 'cr-skf', 'cr-paris'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
+    ['cr-kw', 'cr-skf', 'cr-paris', 'cr-priv'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
   }
   function centerTab(t) {
     var bar = t.parentNode, tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
@@ -512,7 +517,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
