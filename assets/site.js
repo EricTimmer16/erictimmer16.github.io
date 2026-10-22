@@ -382,7 +382,8 @@
     "Ich möchte die Updates im WhatsApp-Kanal verfolgen (niemand sieht deine Nummer).": ["I’d like to follow the updates in the WhatsApp channel (nobody sees your number).", "Je souhaite suivre les nouvelles dans le canal WhatsApp (personne ne voit ton numéro)."],
     "Zum WhatsApp-Kanal": ["To the WhatsApp channel", "Vers le canal WhatsApp"],
     "Wenn du dem WhatsApp-Kanal beitrittst, gelten dafür die Datenschutzbestimmungen von WhatsApp (Meta). Als Kanal-Betreiber sehe ich deine Telefonnummer dabei nicht.": ["If you join the WhatsApp channel, WhatsApp’s (Meta’s) privacy terms apply. As the channel owner I do not see your phone number.", "Si tu rejoins le canal WhatsApp, les règles de confidentialité de WhatsApp (Meta) s’appliquent. En tant qu’administrateur du canal, je ne vois pas ton numéro de téléphone."],
-    "WhatsApp-Kanal": ["WhatsApp channel", "Canal WhatsApp"]
+    "WhatsApp-Kanal": ["WhatsApp channel", "Canal WhatsApp"],
+    "So zahlst du per TWINT: In der TWINT-App auf «Senden» tippen, die Nummer eingeben, den Betrag und den Vermerk eintragen und bestätigen. Für die Banküberweisung nutzt du IBAN und Vermerk in deinem E-Banking.": ["How to pay with TWINT: in the TWINT app tap “Send”, enter the number, fill in the amount and the reference, and confirm. For a bank transfer, use the IBAN and the reference in your e-banking.", "Payer avec TWINT : dans l’appli TWINT, appuie sur « Envoyer », saisis le numéro, indique le montant et la référence, puis confirme. Pour un virement bancaire, utilise l’IBAN et la référence dans ton e-banking."]
   };
   var UI = {
     statement: {
