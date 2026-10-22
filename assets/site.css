@@ -113,7 +113,7 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
   background: radial-gradient(closest-side, color-mix(in srgb, var(--red) 55%, transparent), transparent 70%);
   opacity: .55; pointer-events: none;
 }
-.panel-grid { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: end; }
+.panel-grid { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
 @media (max-width: 760px) { .panel-grid { grid-template-columns: 1fr; } }
 .panel .k { font-size: 17px; font-weight: 600; color: var(--panel-muted); }
 .rank-big { font-family: var(--font); font-weight: 700; font-size: clamp(120px, 22vw, 240px); line-height: .85; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; margin-top: 10px; }
