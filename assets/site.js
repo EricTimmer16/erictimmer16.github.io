@@ -447,6 +447,14 @@
     "Eric verfolgt konzentriert einen Kampf vom Rand der Matte aus": ["Eric watching a bout intently from the edge of the mat", "Eric suit un combat avec concentration depuis le bord du tatami"],
     "Basel Open Masters 2025": ["Basel Open Masters 2025", "Basel Open Masters 2025"],
     "Basel Open Masters, 2025 · Kumite −60 kg": ["Basel Open Masters, 2025 · Kumite −60 kg", "Basel Open Masters, 2025 · Kumité −60 kg"],
+    "Eric in Kata-Grundstellung mit braunem Gürtel, dahinter ein weiterer Teilnehmer": ["Eric in the kata ready stance with a brown belt, another competitor behind him", "Eric en position de départ de kata, ceinture marron, un autre participant derrière lui"],
+    "Das Schweizer Team mit Medaillen und Urkunden nach dem World Cup in Dublin": ["The Swiss team with medals and certificates after the World Cup in Dublin", "L’équipe suisse avec médailles et diplômes après la World Cup à Dublin"],
+    "Das Schweizer Team in der Halle in Dublin, vorne die Jüngeren kniend, hinten die Älteren stehend": ["The Swiss team in the hall in Dublin, the younger members kneeling in front, the older ones standing behind", "L’équipe suisse dans la salle à Dublin, les plus jeunes à genoux devant, les plus âgés debout derrière"],
+    "Das Schweizer Team vor den WSKF-Bannern, in der Mitte sitzt ein Betreuer im grünen Anzug": ["The Swiss team in front of the WSKF banners, a coach in a green gi sitting in the middle", "L’équipe suisse devant les bannières WSKF, un entraîneur en kimono vert assis au centre"],
+    "Ein Betreuer richtet Eric vor dem Start die Teamjacke": ["A team official adjusts Eric’s team jacket before the start", "Un encadrant ajuste la veste d’équipe d’Eric avant le départ"],
+    "WSKF World Cup 2018": ["WSKF World Cup 2018", "WSKF World Cup 2018"],
+    "WSKF World Cup, Dublin, Irland, Oktober 2018 · 3-facher Weltcup-Sieger": ["WSKF World Cup, Dublin, Ireland, October 2018 · 3-time World Cup winner", "WSKF World Cup, Dublin, Irlande, octobre 2018 · triple vainqueur de la World Cup"],
+    "Dreifacher Weltcup-Sieger an der WSKF World Cup in Dublin": ["Three-time World Cup winner at the WSKF World Cup in Dublin", "Triple vainqueur de la WSKF World Cup à Dublin"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -637,7 +645,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
