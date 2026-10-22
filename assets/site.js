@@ -381,7 +381,8 @@
     "Stufe ändern": ["Change tier", "Changer de niveau"],
     "Ich möchte die Updates im WhatsApp-Kanal verfolgen (niemand sieht deine Nummer).": ["I’d like to follow the updates in the WhatsApp channel (nobody sees your number).", "Je souhaite suivre les nouvelles dans le canal WhatsApp (personne ne voit ton numéro)."],
     "Zum WhatsApp-Kanal": ["To the WhatsApp channel", "Vers le canal WhatsApp"],
-    "Wenn du dem WhatsApp-Kanal beitrittst, gelten dafür die Datenschutzbestimmungen von WhatsApp (Meta). Als Kanal-Betreiber sehe ich deine Telefonnummer dabei nicht.": ["If you join the WhatsApp channel, WhatsApp’s (Meta’s) privacy terms apply. As the channel owner I do not see your phone number.", "Si tu rejoins le canal WhatsApp, les règles de confidentialité de WhatsApp (Meta) s’appliquent. En tant qu’administrateur du canal, je ne vois pas ton numéro de téléphone."]
+    "Wenn du dem WhatsApp-Kanal beitrittst, gelten dafür die Datenschutzbestimmungen von WhatsApp (Meta). Als Kanal-Betreiber sehe ich deine Telefonnummer dabei nicht.": ["If you join the WhatsApp channel, WhatsApp’s (Meta’s) privacy terms apply. As the channel owner I do not see your phone number.", "Si tu rejoins le canal WhatsApp, les règles de confidentialité de WhatsApp (Meta) s’appliquent. En tant qu’administrateur du canal, je ne vois pas ton numéro de téléphone."],
+    "WhatsApp-Kanal": ["WhatsApp channel", "Canal WhatsApp"]
   };
   var UI = {
     statement: {
