@@ -467,6 +467,19 @@
     "Alle Stationen von den ersten Trainings bis heute, Jahr für Jahr.": ["Every milestone from the first training sessions to today, year by year.", "Toutes les étapes, des premiers entraînements à aujourd’hui, année après année."],
     "Zur Karriere": ["See my career", "Voir ma carrière"],
     "Resultate und Rangliste ansehen": ["View results and ranking", "Voir les résultats et le classement"],
+    "Eric im Kumite beim Karate 1 Series A in Jakarta 2022 mit einem hohen Fusstritt gegen seinen Gegner": ["Eric in kumite at Karate 1 Series A in Jakarta 2022 with a high kick against his opponent", "Eric en kumite à la Karate 1 Series A de Jakarta 2022 avec un coup de pied haut contre son adversaire"],
+    "Eric im Duell mit einem indischen Gegner, auf der Anzeigetafel SUI gegen IND": ["Eric in a bout against an Indian opponent, SUI versus IND on the scoreboard", "Eric en duel contre un adversaire indien, SUI contre IND au tableau d’affichage"],
+    "Eric im Duell mit seinem Gegner aus Hongkong, der einen Fusstritt ansetzt": ["Eric in a bout with his opponent from Hong Kong, who throws a kick", "Eric en duel contre son adversaire de Hong Kong, qui lance un coup de pied"],
+    "Eric hört seinem Coach vor dem Kampf aufmerksam zu": ["Eric listens closely to his coach before the bout", "Eric écoute attentivement son coach avant le combat"],
+    "Eric und sein Coach sitzen am Mattenrand und verfolgen den Kampf": ["Eric and his coach sit at the edge of the mat watching the bout", "Eric et son coach sont assis au bord du tatami et suivent le combat"],
+    "Eric senkt den Kopf und sammelt sich im Gegenlicht": ["Eric lowers his head and composes himself in the backlight", "Eric baisse la tête et se concentre à contre-jour"],
+    "Eric blickt konzentriert zur Seite, im Hintergrund die Hallenlampen": ["Eric looks aside with focus, the arena lights behind him", "Eric regarde de côté, concentré, les lampes de la salle derrière lui"],
+    "Eric im Profil, ruhig und fokussiert vor dem Kampf": ["Eric in profile, calm and focused before the bout", "Eric de profil, calme et concentré avant le combat"],
+    "Eric im Seitenprofil im Warm-up-Bereich": ["Eric in side profile in the warm-up area", "Eric de profil dans la zone d’échauffement"],
+    "Eric schaut direkt in die Kamera, bereit für den nächsten Kampf": ["Eric looks straight into the camera, ready for his next bout", "Eric regarde droit vers l’objectif, prêt pour son prochain combat"],
+    "Das Maskottchen, ein Tiger im Karate-Gi, in der Halle in Jakarta": ["The mascot, a tiger in a karate gi, in the arena in Jakarta", "La mascotte, un tigre en karaté-gi, dans la salle de Jakarta"],
+    "Series A Jakarta 2022": ["Series A Jakarta 2022", "Series A Jakarta 2022"],
+    "Karate 1 Series A, Jakarta, Indonesien, 2022": ["Karate 1 Series A, Jakarta, Indonesia, 2022", "Karate 1 Series A, Jakarta, Indonésie, 2022"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -657,7 +670,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
