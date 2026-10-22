@@ -388,6 +388,10 @@
     "Eric blickt konzentriert zur Seite, im Hintergrund das Banner der Meisterschaft in Tbilisi": ["Eric looking to the side, focused, the championship banner from Tbilisi behind him", "Eric regarde sur le côté, concentré, la bannière du championnat de Tbilissi en arrière-plan"],
     "Eric dreht sich im Fusstritt zur Seite, im Hintergrund das WKF-Europa-Logo": ["Eric turning sideways into a kick, the European WKF logo in the background", "Eric pivote dans un coup de pied, le logo WKF Europe en arrière-plan"],
     "Eric mit angehobenem Knie im Angriff, im Hintergrund die Schweizer Fahne auf der Tribüne": ["Eric attacking with his knee raised, a Swiss flag in the stands behind him", "Eric à l’attaque, le genou levé, un drapeau suisse dans les tribunes derrière lui"],
+    "Fahr mit der Maus auf ein Jahr oder tippe darauf. Die Zeit läuft von rechts nach links zurück.": ["Hover over a year or tap it. Time runs back from right to left.", "Passe la souris sur une année ou touche-la. Le temps remonte de droite à gauche."],
+    "Älter": ["Earlier", "Plus ancien"],
+    "Neuer": ["Later", "Plus récent"],
+    "Jahr wählen": ["Choose a year", "Choisir une année"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -995,4 +999,49 @@
   window.addEventListener('resize', req);
   window.addEventListener('load', req);
   update();
+})();
+
+/* Zeitstrahl auf der Erfolge-Seite: Jahr anfahren oder antippen, dann zeigt sich, was passiert ist */
+(function () {
+  var tl = document.getElementById('tl'), sc = document.getElementById('tlscroll');
+  if (!tl || !sc) return;
+  var tabs = [].slice.call(tl.querySelectorAll('.tl-y')), older = document.getElementById('tlold'), newer = document.getElementById('tlnew');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  tl.classList.add('on');
+  function panel(t) { return document.getElementById(t.getAttribute('aria-controls')); }
+  function select(t, center, focus) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.classList.toggle('on', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1;
+      var p = panel(x); if (p) p.classList.toggle('sel', on);
+    });
+    if (center) sc.scrollTo({ left: t.offsetLeft - sc.clientWidth / 2 + t.offsetWidth / 2, behavior: reduce ? 'auto' : 'smooth' });
+    if (focus) t.focus({ preventScroll: true });
+  }
+  function edges() {
+    var max = sc.scrollWidth - sc.clientWidth;
+    if (older) older.disabled = sc.scrollLeft <= 2;
+    if (newer) newer.disabled = sc.scrollLeft >= max - 2;
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t, true, false); });
+    t.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') select(t, false, false); });
+    t.addEventListener('keydown', function (e) {
+      var j = i;
+      if (e.key === 'ArrowLeft') j = Math.max(0, i - 1);
+      else if (e.key === 'ArrowRight') j = Math.min(tabs.length - 1, i + 1);
+      else if (e.key === 'Home') j = 0;
+      else if (e.key === 'End') j = tabs.length - 1;
+      else return;
+      e.preventDefault(); select(tabs[j], true, true);
+    });
+  });
+  function step(dir) { sc.scrollBy({ left: dir * sc.clientWidth * 0.6, behavior: reduce ? 'auto' : 'smooth' }); }
+  if (older) older.addEventListener('click', function () { step(-1); });
+  if (newer) newer.addEventListener('click', function () { step(1); });
+  sc.addEventListener('scroll', edges, { passive: true });
+  window.addEventListener('resize', function () { edges(); });
+  function toEnd() { sc.scrollLeft = sc.scrollWidth; edges(); }
+  select(tabs[tabs.length - 1], false, false);
+  toEnd(); window.addEventListener('load', toEnd);
 })();

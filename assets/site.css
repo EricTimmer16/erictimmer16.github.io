@@ -703,3 +703,42 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 /* Weltrang klein auf der Kalenderseite */
 .cal-rank { display: inline-block; margin-top: 16px; padding: 6px 14px; border-radius: 980px; font-size: 13px; font-weight: 600; letter-spacing: .01em; color: var(--red); background: color-mix(in srgb, var(--red) 10%, transparent); }
 .cal-rank[hidden] { display: none; }
+
+/* Zeitstrahl (Erfolge): Gegenwart rechts, die Zeit läuft nach links zurück */
+.tl { margin-top: 48px; --step: 80px; }
+.tl-hint { margin: 0 0 18px; font-size: 15px; color: var(--muted); text-align: center; }
+.tl-bar { display: flex; align-items: center; gap: 10px; }
+.tl-scroll { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 34px, #000 calc(100% - 34px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 34px, #000 calc(100% - 34px), transparent); }
+.tl-scroll::-webkit-scrollbar { display: none; }
+.tl-track { position: relative; height: 88px; width: calc(17 * var(--step) + 96px); }
+.tl-track::before { content: ""; position: absolute; left: 0; right: 0; top: 17px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--faint) 0%, var(--faint) 55%, var(--red) 100%); }
+.tl-y { position: absolute; top: 0; left: calc(48px + var(--i) * var(--step)); width: 76px; margin-left: -38px; padding: 8px 0 0;
+  background: none; border: 0; font: inherit; color: var(--muted); text-align: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.tl-dot { display: block; width: 14px; height: 14px; margin: 3px auto 0; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted);
+  transition: transform .25s, background .25s, border-color .25s, box-shadow .25s; }
+.tl-y b { display: block; margin-top: 14px; font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; transition: color .25s; }
+.tl-y:hover .tl-dot, .tl-y:focus-visible .tl-dot { transform: scale(1.25); border-color: var(--red); }
+.tl-y:hover b { color: var(--fg); }
+.tl-y:focus-visible { outline: none; }
+.tl-y:focus-visible b { text-decoration: underline; text-underline-offset: 4px; }
+.tl-y.on .tl-dot { background: var(--red); border-color: var(--red); transform: scale(1.3); box-shadow: 0 0 0 6px color-mix(in srgb, var(--red) 20%, transparent); }
+.tl-y.on b { color: var(--red); }
+.tl-nav { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--faint); background: var(--card); color: var(--fg);
+  font: inherit; font-size: 22px; line-height: 1; cursor: pointer; transition: opacity .2s, transform .2s; }
+.tl-nav:hover:not(:disabled) { transform: scale(1.06); }
+.tl-nav:disabled { opacity: .3; cursor: default; }
+@media (max-width: 640px) { .tl { --step: 84px; } .tl-nav { display: none; } .tl-hint { font-size: 14px; } }
+
+.tl.on .years { margin-top: 18px; display: grid; }
+.tl.on .yr { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .35s, transform .35s, visibility 0s .35s;
+  border: 0; background: var(--card); border-radius: 28px; padding: 30px 34px; align-items: start; align-content: start; }
+.tl.on .yr.sel { opacity: 1; visibility: visible; transform: none; transition: opacity .35s, transform .35s; }
+.tl.on .yr:last-child { border: 0; }
+.tl.on .yr:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.tl.on .yr li { position: relative; padding-left: 20px; }
+.tl.on .yr li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+@media (max-width: 640px) { .tl.on .yr { padding: 24px 22px; } }
+@media (prefers-reduced-motion: reduce) { .tl.on .yr, .tl.on .yr.sel { transition: none; transform: none; } .tl-dot, .tl-y b { transition: none; } }
