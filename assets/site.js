@@ -455,6 +455,15 @@
     "WSKF World Cup 2018": ["WSKF World Cup 2018", "WSKF World Cup 2018"],
     "WSKF World Cup, Dublin, Irland, Oktober 2018 · 3-facher Weltcup-Sieger": ["WSKF World Cup, Dublin, Ireland, October 2018 · 3-time World Cup winner", "WSKF World Cup, Dublin, Irlande, octobre 2018 · triple vainqueur de la World Cup"],
     "Dreifacher Weltcup-Sieger an der WSKF World Cup in Dublin": ["Three-time World Cup winner at the WSKF World Cup in Dublin", "Triple vainqueur de la WSKF World Cup à Dublin"],
+    "Eric in der roten Swiss-Karate-Jacke vor der Sponsorenwand der Moscow Karate Universe 2024": ["Eric in the red Swiss Karate Federation jacket in front of the sponsor wall of Moscow Karate Universe 2024", "Eric dans la veste rouge de la Swiss Karate Federation devant le mur des sponsors de la Moscow Karate Universe 2024"],
+    "Eric und sein Coach legen sich vor der Sponsorenwand den Arm um die Schulter": ["Eric and his coach with their arms around each other in front of the sponsor wall", "Eric et son coach, le bras sur l’épaule, devant le mur des sponsors"],
+    "Eric und sein Coach sitzen nebeneinander in der Halle, im Hintergrund die Lichtshow": ["Eric and his coach sitting side by side in the arena, the light show behind them", "Eric et son coach assis côte à côte dans la salle, le show lumineux en arrière-plan"],
+    "Eric im blauen Shirt der Sport Academy Zürich vor der Sponsorenwand": ["Eric in the blue Sport Academy Zurich shirt in front of the sponsor wall", "Eric en t-shirt bleu de la Sport Academy Zurich devant le mur des sponsors"],
+    "Eric im Kampfanzug mit blauen Schutzen in der Aufwärmhalle, rund um ihn andere Kämpfer": ["Eric in his gi with blue protectors in the warm-up hall, other fighters around him", "Eric en kimono avec les protections bleues dans la salle d’échauffement, entouré d’autres combattants"],
+    "Selfie von Eric und seinem Coach am Flughafen in Istanbul auf dem Weg nach Moskau": ["Selfie of Eric and his coach at Istanbul airport on the way to Moscow", "Selfie d’Eric et de son coach à l’aéroport d’Istanbul en route pour Moscou"],
+    "Moscow Karate Universe 2024": ["Moscow Karate Universe 2024", "Moscow Karate Universe 2024"],
+    "Moscow Karate Universe, Moskau, Russland, November 2024": ["Moscow Karate Universe, Moscow, Russia, November 2024", "Moscow Karate Universe, Moscou, Russie, novembre 2024"],
+    "Moscow Karate Universe in Moskau, Russland": ["Moscow Karate Universe in Moscow, Russia", "Moscow Karate Universe à Moscou, Russie"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -645,7 +654,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
