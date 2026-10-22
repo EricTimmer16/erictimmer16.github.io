@@ -356,6 +356,16 @@
     "Hotel und Reise für ein ganzes Turnierwochenende.": ["Hotel and travel for a whole tournament weekend.", "Hôtel et voyage pour tout un week-end de tournoi."],
     "Ein ganzes Turnier: Startgebühr, Reise und Hotel.": ["A whole tournament: entry fee, travel and hotel.", "Un tournoi complet : inscription, voyage et hôtel."],
     "Richtwerte. Die tatsächlichen Kosten hängen vom Turnier und vom Reiseziel ab.": ["Rough guide values. Actual costs depend on the tournament and the destination.", "Valeurs indicatives. Les coûts réels dépendent du tournoi et de la destination."],
+    "WM Budapest 2023": ["World Champs Budapest 2023", "Mondial Budapest 2023"],
+    "26. Senioren-Weltmeisterschaft, Budapest, Oktober 2023 · Elite-Debüt": ["26th Senior World Championships, Budapest, October 2023 · senior debut", "26<sup>e</sup> Championnats du monde seniors, Budapest, octobre 2023 · débuts chez les seniors"],
+    "Swiss Karate Federation, Archiv Eric Timmer": ["Swiss Karate Federation, Eric Timmer’s archive", "Swiss Karate Federation, archives d’Eric Timmer"],
+    "Eric im Schweizer Gi steht dem Gegner aus Slowenien gegenüber, im Hintergrund das WKF-Banner": ["Eric in the Swiss gi facing his Slovenian opponent, the WKF banner behind them", "Eric en kimono suisse face à son adversaire slovène, la bannière WKF en arrière-plan"],
+    "Eric geht in den Angriff über, sein Gegner hebt das Bein, der Kampfrichter im Hintergrund": ["Eric moves in to attack as his opponent lifts a leg, the referee behind them", "Eric passe à l’attaque pendant que son adversaire lève la jambe, l’arbitre en arrière-plan"],
+    "Eric läuft konzentriert beim Einmarsch der Athleten durch die Halle": ["Eric walking through the arena, focused, during the athletes’ entrance", "Eric traverse la salle, concentré, lors de l’entrée des athlètes"],
+    "Eric wartet auf der Matte, vor ihm der Gegner von hinten in der riesigen Budapester Halle": ["Eric waiting on the mat, his opponent seen from behind in the huge Budapest arena", "Eric attend sur le tatami, son adversaire de dos dans l’immense salle de Budapest"],
+    "Eric sitzt konzentriert neben dem Coach in der roten Schweizer Jacke": ["Eric sitting focused next to his coach in the red Swiss jacket", "Eric assis, concentré, à côté de son coach en veste suisse rouge"],
+    "Eric setzt einen hohen Fusstritt gegen seinen Gegner an": ["Eric launches a high kick at his opponent", "Eric place un coup de pied haut sur son adversaire"],
+    "Eric und ein Teamkollege vor der Wand der 26. Senioren-Weltmeisterschaft in Budapest": ["Eric and a teammate in front of the wall of the 26th Senior World Championships in Budapest", "Eric et un coéquipier devant le mur des 26<sup>e</sup> Championnats du monde seniors à Budapest"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -519,7 +529,7 @@
     thumbs = Array.prototype.slice.call(panel.querySelectorAll('.gi'));
     if (galsub) galsub.innerHTML = panel.getAttribute('data-sub');
     var cid = panel.getAttribute('data-credit') || 'cr-kw';
-    ['cr-kw', 'cr-skf', 'cr-paris', 'cr-priv'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
+    ['cr-kw', 'cr-skf', 'cr-paris', 'cr-priv', 'cr-wm23'].forEach(function (id) { var c = document.getElementById(id); if (c) c.hidden = id !== cid; });
   }
   function centerTab(t) {
     var bar = t.parentNode, tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
@@ -546,7 +556,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
