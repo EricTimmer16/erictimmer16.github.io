@@ -131,6 +131,7 @@
     '5. Platz an der U21-Weltmeisterschaft in Venedig <span>· erstmals Top 10 U21</span>': ['5th place at the U21 World Championships in Venice <span>· first time in the U21 top 10</span>', '5<sup>e</sup> place aux Championnats du monde U21 à Venise <span>· premier top 10 U21</span>'],
     'U21-Europameisterschaft in Tbilisi, Georgien': ['U21 European Championships in Tbilisi, Georgia', 'Championnats d’Europe U21 à Tbilissi, Géorgie'],
     'U21-Europameisterschaft in Zypern': ['U21 European Championships in Cyprus', 'Championnats d’Europe U21 à Chypre'],
+    '9. Platz an der Europameisterschaft in Zadar, Kroatien': ['9th place at the European Championships in Zadar, Croatia', '9<sup>e</sup> place aux Championnats d’Europe à Zadar, Croatie'],
     'Europameisterschaft in Zadar, Kroatien': ['European Championships in Zadar, Croatia', 'Championnats d’Europe à Zadar, Croatie'],
     'Karate 1 Series A in Salzburg': ['Karate 1 Series A in Salzburg', 'Karate 1 Series A à Salzbourg'],
     'Internationales Trainingslager in Deutschland': ['International training camp in Germany', 'Camp d’entraînement international en Allemagne'],
@@ -402,6 +403,15 @@
     "Schlagabtausch: Eric weicht dem Angriff seines Gegners nach hinten aus": ["An exchange: Eric leans back out of his opponent’s attack", "Échange : Eric se penche en arrière pour esquiver l’attaque de son adversaire"],
     "Eric im Fusstritt, sein Gegner kontert mit hohem Bein": ["Eric kicking while his opponent counters with a high leg", "Eric dans un coup de pied, son adversaire contre avec une jambe haute"],
     "Eric schreit nach dem Punkt, in der weiten Halle mit den Länderflaggen": ["Eric shouting after scoring, in the wide hall with the national flags", "Eric crie après le point, dans la grande salle avec les drapeaux nationaux"],
+    "EM Zadar 2024": ["Euros Zadar 2024", "Euro Zadar 2024"],
+    "59. Europameisterschaft, Zadar, Kroatien, 2024 · 9. Platz": ["59th European Championships, Zadar, Croatia, 2024 · 9th place", "59<sup>e</sup> Championnats d’Europe, Zadar, Croatie, 2024 · 9<sup>e</sup> place"],
+    "Eric blickt konzentriert nach unten, hinter ihm die blaue Sponsorenwand": ["Eric looking down, focused, the blue sponsor wall behind him", "Eric regarde vers le bas, concentré, le mur bleu des sponsors derrière lui"],
+    "Eric schreit nach dem Punkt, die roten Handschuhe vor dem Körper": ["Eric shouting after a point, red gloves in front of his body", "Eric crie après le point, les gants rouges devant le corps"],
+    "Eric trifft seinen türkischen Gegner mit einem Fauststoss, im Hintergrund das Banner der 59. Europameisterschaft": ["Eric lands a punch on his Turkish opponent, the banner of the 59th European Championships behind them", "Eric touche son adversaire turc d’un coup de poing, la bannière des 59<sup>e</sup> Championnats d’Europe en arrière-plan"],
+    "Eric und sein Coach von hinten, beide blicken in die Halle von Zadar": ["Eric and his coach from behind, both looking out over the arena in Zadar", "Eric et son coach de dos, regardant tous deux la salle de Zadar"],
+    "Das Schweizer Team vor der Halle in Zadar": ["The Swiss team in front of the arena in Zadar", "L’équipe suisse devant la salle de Zadar"],
+    "Eric in Kampfstellung gegenüber seinem Gegner, hinter ihnen das Banner der Senioren-Europameisterschaft": ["Eric in fighting stance facing his opponent, the senior European Championships banner behind them", "Eric en garde face à son adversaire, la bannière des Championnats d’Europe seniors derrière eux"],
+    "Eric hält das SUI-Schild der 59. Europameisterschaft Zadar 2024": ["Eric holding the SUI sign of the 59th European Championships Zadar 2024", "Eric tient le panneau SUI des 59<sup>e</sup> Championnats d’Europe Zadar 2024"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -592,7 +602,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
