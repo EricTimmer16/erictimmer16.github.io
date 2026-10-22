@@ -345,7 +345,17 @@
     "Turnierart": ["Tournament type", "Type de tournoi"],
     "Persönliche Dankesnachricht per WhatsApp oder E-Mail": ["Personal thank-you message via WhatsApp or email", "Message de remerciement personnel par WhatsApp ou e-mail"],
     "Einladung zu einem Training mit mir": ["Invitation to a training session with me", "Invitation à un entraînement avec moi"],
-    "Einladung zu einem privaten Essen mit mir": ["Invitation to a private dinner with me", "Invitation à un dîner privé avec moi"]
+    "Einladung zu einem privaten Essen mit mir": ["Invitation to a private dinner with me", "Invitation à un dîner privé avec moi"],
+    "1–2 Updates pro Jahr mit Resultaten und Foto": ["1–2 updates a year with results and a photo", "1–2 nouvelles par an avec résultats et photo"],
+    "Wofür das Geld": ["What the money is for", "À quoi sert l’argent"],
+    "Das passiert mit deinem Beitrag.": ["This is what your contribution does.", "Voilà ce que ta contribution permet."],
+    "Als Spitzensportler neben der KV-Lehre trage ich viele Kosten selbst: Startgebühren, Reisen, Hotels und Ausrüstung. Dein Beitrag geht direkt dahin. Ein paar Beispiele:": ["As a top athlete alongside my commercial apprenticeship, I cover many costs myself: entry fees, travel, hotels and equipment. Your contribution goes straight there. A few examples:", "En tant que sportif d’élite en parallèle de mon apprentissage commercial, je prends en charge beaucoup de frais moi-même : frais d’inscription, voyages, hôtels et équipement. Ta contribution va directement là. Quelques exemples :"],
+    "Ein Teil der Anmeldung und der Reise zu einem Turnier.": ["Part of the entry and travel for a tournament.", "Une partie de l’inscription et du voyage pour un tournoi."],
+    "Die Startgebühr für ein internationales Turnier.": ["The entry fee for an international tournament.", "Les frais d’inscription pour un tournoi international."],
+    "Ein Flug zu einem Turnier in Europa.": ["A flight to a tournament in Europe.", "Un vol pour un tournoi en Europe."],
+    "Hotel und Reise für ein ganzes Turnierwochenende.": ["Hotel and travel for a whole tournament weekend.", "Hôtel et voyage pour tout un week-end de tournoi."],
+    "Ein ganzes Turnier: Startgebühr, Reise und Hotel.": ["A whole tournament: entry fee, travel and hotel.", "Un tournoi complet : inscription, voyage et hôtel."],
+    "Richtwerte. Die tatsächlichen Kosten hängen vom Turnier und vom Reiseziel ab.": ["Rough guide values. Actual costs depend on the tournament and the destination.", "Valeurs indicatives. Les coûts réels dépendent du tournoi et de la destination."]
   };
   var UI = {
     statement: {

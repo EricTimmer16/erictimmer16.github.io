@@ -626,3 +626,11 @@ nav.top[data-tone="red"] {
 }
 nav.top[data-tone="red"] .pill { background: #fff; color: #b00012; }
 nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; color: #b00012; }
+
+/* Gönnerclub: Wofür das Geld */
+.offer.use { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-top: 44px; }
+.offer.use > div { border-top-color: var(--red); }
+.offer.use .v { font-size: 34px; }
+@media (max-width: 800px) { .offer.use { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .offer.use { grid-template-columns: 1fr; } }
+.use-note { margin-top: 30px; font-size: 14px; color: var(--muted); }
