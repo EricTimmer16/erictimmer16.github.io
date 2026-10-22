@@ -374,6 +374,18 @@
     "Eric schreit seinen Kampfgeist heraus, sein Gegner liegt am Boden": ["Eric shouting out his fighting spirit while his opponent lies on the floor", "Eric crie son esprit de combat pendant que son adversaire est au sol"],
     "Eric geht konzentriert auf die Matte, im Hintergrund weitere Athleten": ["Eric walking onto the mat, focused, other athletes behind him", "Eric entre concentré sur le tatami, d’autres athlètes en arrière-plan"],
     "Eric setzt einen Fusstritt gegen seinen Gegner an": ["Eric launches a kick at his opponent", "Eric place un coup de pied sur son adversaire"],
+    "U21-EM Tbilisi 2024": ["U21 Euros Tbilisi 2024", "Euro U21 Tbilissi 2024"],
+    "U21-Europameisterschaft, Tbilisi, Februar 2024 · Kumite −60 kg": ["U21 European Championships, Tbilisi, February 2024 · Kumite −60 kg", "Championnats d’Europe U21, Tbilissi, février 2024 · Kumite −60 kg"],
+    "Eric steht konzentriert mit roten Handschuhen auf der Matte, die Zunge zwischen den Lippen": ["Eric standing focused on the mat in red gloves, tongue between his lips", "Eric debout, concentré, avec des gants rouges sur le tatami, la langue entre les lèvres"],
+    "Eric dreht sich mit offenem Mund um und schreit, hinter ihm die Anzeigetafel mit Schweiz gegen Norwegen": ["Eric turning around shouting, the scoreboard behind him showing Switzerland against Norway", "Eric se retourne en criant, derrière lui le tableau d’affichage Suisse contre Norvège"],
+    "Eric setzt im tiefen Ausfallschritt einen Fauststoss gegen seinen Gegner": ["Eric lands a punch from a deep lunge against his opponent", "Eric place un coup de poing en fente basse sur son adversaire"],
+    "Eric im Nahkampf mit seinem norwegischen Gegner vor der Bande von Gross Energy Group": ["Eric in close combat with his Norwegian opponent in front of the Gross Energy Group boards", "Eric au corps à corps avec son adversaire norvégien devant les panneaux Gross Energy Group"],
+    "Eric in tiefer Position im Kumite, auf der Anzeige 1:16 Minuten": ["Eric in a low stance in kumite, the clock showing 1:16", "Eric en position basse en kumite, le chrono affiche 1:16"],
+    "Eric holt mit einem hohen Fusstritt gegen seinen Gegner aus": ["Eric swings a high kick at his opponent", "Eric balance un coup de pied haut sur son adversaire"],
+    "Eric sitzt mit Mundschutz neben seinem Coach in der roten Schweizer Jacke": ["Eric sitting with his mouthguard in next to his coach in the red Swiss jacket", "Eric assis avec son protège-dents à côté de son coach en veste suisse rouge"],
+    "Eric blickt konzentriert zur Seite, im Hintergrund das Banner der Meisterschaft in Tbilisi": ["Eric looking to the side, focused, the championship banner from Tbilisi behind him", "Eric regarde sur le côté, concentré, la bannière du championnat de Tbilissi en arrière-plan"],
+    "Eric dreht sich im Fusstritt zur Seite, im Hintergrund das WKF-Europa-Logo": ["Eric turning sideways into a kick, the European WKF logo in the background", "Eric pivote dans un coup de pied, le logo WKF Europe en arrière-plan"],
+    "Eric mit angehobenem Knie im Angriff, im Hintergrund die Schweizer Fahne auf der Tribüne": ["Eric attacking with his knee raised, a Swiss flag in the stands behind him", "Eric à l’attaque, le genou levé, un drapeau suisse dans les tribunes derrière lui"],
     "WM 2015": ["Worlds 2015", "Mondial 2015"],
     "WSKF-Weltmeisterschaft, August 2015 · Vize-Weltmeister Kata U14": ["WSKF World Championships, August 2015 · World runner-up, kata U14", "Championnats du monde WSKF, août 2015 · Vice-champion du monde, kata U14"],
     "Der junge Eric zeigt seine Medaille, neben ihm ein Trainer in der Schweizer Jacke": ["Young Eric showing his medal, a coach in a Swiss jacket beside him", "Le jeune Eric montre sa médaille, un entraîneur en veste suisse à ses côtés"],
@@ -564,7 +576,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
