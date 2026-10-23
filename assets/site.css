@@ -945,3 +945,27 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 @media (prefers-reduced-motion: reduce) {
   .btn, .pill, .gw-btn, .sico, .gi, .hcard, a.partner, .xt, .tier, .tl-nav, .cal-chips button, .tab { transform: none !important; }
 }
+
+/* ---------- Menüleiste oben: Einträge kommen beim Darüberfahren nach vorne (23.10.2026) ----------
+   Menü-Links bekommen eine weiche Pille (Farbe passt sich hell/dunkel/rot an), heben sich an und
+   werden grösser; Name links, Sprachknöpfe und Menü-Knopf ebenso. Nur mit Maus. */
+.brand, .nav-links a, .lang button, .menu-btn {
+  transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1),
+              background-color .3s ease, color .3s ease, opacity .3s ease !important;
+}
+.brand { display: inline-block; }
+@media (min-width: 841px) {
+  .nav-links a { display: inline-block; padding: 6px 11px; margin: -6px -11px; border-radius: 980px; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .nav-links a:hover {
+    opacity: 1; transform: translate3d(0, -2px, 0) scale(1.08);
+    background: color-mix(in srgb, currentColor 9%, transparent);
+    box-shadow: 0 8px 18px -10px rgba(0,0,0,.35);
+  }
+  .brand:hover { transform: translate3d(0, -1px, 0) scale(1.05); }
+  .lang button:hover { transform: translate3d(0, -1px, 0) scale(1.1); }
+  .menu-btn:hover { transform: scale(1.12); background: color-mix(in srgb, currentColor 9%, transparent); }
+  .nav-links a:active, .brand:active, .lang button:active, .menu-btn:active { transform: scale(.96); transition-duration: .12s !important; }
+}
+@media (prefers-reduced-motion: reduce) { .brand, .nav-links a, .lang button, .menu-btn { transform: none !important; } }
