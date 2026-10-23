@@ -1,10 +1,49 @@
 {
- "_info": "Turniere der Swiss Karate Federation (Quelle: https://www.karate.ch/service/agenda/). Eric startet an allen Swiss Karate Leagues und an der Schweizermeisterschaft. NICHT enthalten: Ippon-Shobu-Turniere (Fujimura Cup, Ippon Shobu Schweizermeisterschaft), Talentsichtungstag, 6K-Event, Sitzungen. Neue Turniere hier eintragen (cat: swiss-league oder swiss-sm, Datum als JJJJ-MM-TT). Bis Ende 2027.",
+ "_info": "Turniere der Swiss Karate Federation und weitere Turniere von Hand (src: skf oder sportdata; cat: swiss-league, swiss-sm oder other) (Quelle: https://www.karate.ch/service/agenda/). Eric startet an allen Swiss Karate Leagues und an der Schweizermeisterschaft. NICHT enthalten: Ippon-Shobu-Turniere (Fujimura Cup, Ippon Shobu Schweizermeisterschaft), Talentsichtungstag, 6K-Event, Sitzungen. Neue Turniere hier eintragen (cat: swiss-league oder swiss-sm, Datum als JJJJ-MM-TT). Bis Ende 2027.",
  "events": [
-  {"name": "Schweizermeisterschaft Sursee", "city": "Sursee, Switzerland", "start": "2026-10-24", "end": "2026-10-25", "cat": "swiss-sm"},
-  {"name": "Swiss Karate League Kreuzlingen", "city": "Kreuzlingen, Switzerland", "start": "2027-03-20", "end": "2027-03-21", "cat": "swiss-league"},
-  {"name": "Swiss Karate League Biel", "city": "Biel, Switzerland", "start": "2027-05-01", "end": "2027-05-02", "cat": "swiss-league"},
-  {"name": "Swiss Karate League Züri Oberland", "city": "Züri Oberland, Switzerland", "start": "2027-09-04", "end": "2027-09-05", "cat": "swiss-league"},
-  {"name": "Schweizermeisterschaft Kriens", "city": "Kriens, Switzerland", "start": "2027-11-06", "end": "2027-11-07", "cat": "swiss-sm"}
+  {
+   "name": "Moscow Karate Universe International 2026",
+   "city": "Moscow, Russia",
+   "start": "2026-10-30",
+   "end": "2026-11-01",
+   "cat": "other",
+   "src": "sportdata",
+   "url": "https://www.sportdata.org/karate/set-online/veranstaltung_info_main.php?active_menu=calendar&vernr=10734"
+  },
+  {
+   "name": "Schweizermeisterschaft Sursee",
+   "city": "Sursee, Switzerland",
+   "start": "2026-10-24",
+   "end": "2026-10-25",
+   "cat": "swiss-sm"
+  },
+  {
+   "name": "Swiss Karate League Kreuzlingen",
+   "city": "Kreuzlingen, Switzerland",
+   "start": "2027-03-20",
+   "end": "2027-03-21",
+   "cat": "swiss-league"
+  },
+  {
+   "name": "Swiss Karate League Biel",
+   "city": "Biel, Switzerland",
+   "start": "2027-05-01",
+   "end": "2027-05-02",
+   "cat": "swiss-league"
+  },
+  {
+   "name": "Swiss Karate League Züri Oberland",
+   "city": "Züri Oberland, Switzerland",
+   "start": "2027-09-04",
+   "end": "2027-09-05",
+   "cat": "swiss-league"
+  },
+  {
+   "name": "Schweizermeisterschaft Kriens",
+   "city": "Kriens, Switzerland",
+   "start": "2027-11-06",
+   "end": "2027-11-07",
+   "cat": "swiss-sm"
+  }
  ]
 }

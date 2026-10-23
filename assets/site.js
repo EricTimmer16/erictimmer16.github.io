@@ -346,6 +346,7 @@
     "Weltmeisterschaft": ["World Championships", "Championnats du monde"],
     "WM-Quali": ["Worlds qualifier", "Qualif. mondiale"],
     "Swiss League": ["Swiss League", "Swiss League"],
+    "Weitere Turniere": ["Other tournaments", "Autres tournois"],
     "Schweizermeisterschaft": ["Swiss Championships", "Championnats de Suisse"],
     "Quelle: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF-Kalender</a>, wird täglich abgeglichen. Änderungen vorbehalten.": ["Source: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF calendar</a>, checked daily. Subject to change.", "Source : <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">calendrier WKF</a>, mis à jour chaque jour. Sous réserve de modifications."],
     "Quelle: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF-Kalender</a> (täglich abgeglichen) und <a href=\"https://www.karate.ch/service/agenda/\" target=\"_blank\" rel=\"noopener\">SKF-Agenda</a>. Änderungen vorbehalten.": ["Source: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF calendar</a> (checked daily) and <a href=\"https://www.karate.ch/service/agenda/\" target=\"_blank\" rel=\"noopener\">SKF agenda</a>. Subject to change.", "Source : <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">calendrier WKF</a> (mis à jour chaque jour) et <a href=\"https://www.karate.ch/service/agenda/\" target=\"_blank\" rel=\"noopener\">agenda SKF</a>. Sous réserve de modifications."],
@@ -548,6 +549,8 @@
     catWm: { de: 'Weltmeisterschaft', en: 'World Championships', fr: 'Championnats du monde' },
     catQuali: { de: 'WM-Quali', en: 'Worlds qualifier', fr: 'Qualif. mondiale' },
     catSwissLeague: { de: 'Swiss League', en: 'Swiss League', fr: 'Swiss League' },
+    catOther: { de: 'Weiteres Turnier', en: 'Other tournament', fr: 'Autre tournoi' },
+    calInfoOther: { de: 'Turnier-Info', en: 'Event info', fr: 'Infos tournoi' },
     catSwissSm: { de: 'Schweizermeisterschaft', en: 'Swiss Championships', fr: 'Championnats de Suisse' },
     calInfoSkf: { de: 'SKF-Info', en: 'SKF info', fr: 'Infos SKF' },
     calMe: { de: 'Ich bin am Start', en: 'I’m competing', fr: 'Je suis au départ' },
@@ -975,7 +978,7 @@
   /* Turnierkalender (Daten: assets/calendar.json, täglich von der WKF abgeglichen) */
   var CAL = null, calFail = false, calFilter = 'all';
   var CAL_LOC = { de: 'de-CH', en: 'en-GB', fr: 'fr-CH' };
-  var CAL_CAT = { 'series-a': 'catSeriesA', 'premier-league': 'catPremier', em: 'catEm', wm: 'catWm', quali: 'catQuali', 'swiss-league': 'catSwissLeague', 'swiss-sm': 'catSwissSm' };
+  var CAL_CAT = { 'series-a': 'catSeriesA', 'premier-league': 'catPremier', em: 'catEm', wm: 'catWm', quali: 'catQuali', 'swiss-league': 'catSwissLeague', 'swiss-sm': 'catSwissSm', other: 'catOther' };
   function calDate(s) { var a = s.split('-'); return new Date(+a[0], +a[1] - 1, +a[2]); }
   function calMon(d, style) { return d.toLocaleDateString(CAL_LOC[lang], { month: style }).replace(/\./g, ''); }
   function calDay(d) { return d.getDate() + (lang === 'de' ? '.' : ''); }
@@ -993,7 +996,7 @@
     astana: [51.17, 71.43], rabat: [34.02, -6.83], amman: [31.95, 35.93], salzburg: [47.81, 13.04], tangier: [35.77, -5.8],
     'milano bergamo': [45.55, 9.4], milano: [45.46, 9.19], milan: [45.46, 9.19], bergamo: [45.7, 9.67], madrid: [40.42, -3.7], paris: [48.86, 2.35],
     budapest: [47.5, 19.04], baku: [40.41, 49.87], cairo: [30.04, 31.24], dubai: [25.2, 55.27], tokyo: [35.68, 139.69], 'kuala lumpur': [3.14, 101.69],
-    sursee: [47.17, 8.11], kreuzlingen: [47.65, 9.18], biel: [47.14, 7.25], 'züri oberland': [47.3, 8.76], kriens: [47.03, 8.28], jakarta: [-6.2, 106.85], guadalajara: [20.67, -103.35], lima: [-12.05, -77.04], 'santiago de chile': [-33.45, -70.67], cairns: [-16.92, 145.77]
+    moscow: [55.75, 37.62], sursee: [47.17, 8.11], kreuzlingen: [47.65, 9.18], biel: [47.14, 7.25], 'züri oberland': [47.3, 8.76], kriens: [47.03, 8.28], jakarta: [-6.2, 106.85], guadalajara: [20.67, -103.35], lima: [-12.05, -77.04], 'santiago de chile': [-33.45, -70.67], cairns: [-16.92, 145.77]
   };
   var CTRY = { 'türkiye': 'Turkey', turkiye: 'Turkey', usa: 'United States of America', 'united states': 'United States of America', 'czech republic': 'Czechia', korea: 'South Korea', 'republic of korea': 'South Korea', uae: 'United Arab Emirates', 'bosnia and herzegovina': 'Bosnia and Herz.', 'dominican republic': 'Dominican Rep.', 'north macedonia': 'North Macedonia', 'hong kong': 'China', 'chinese taipei': 'Taiwan' };
   var EG = { A1: 1.340264, A2: -0.081106, A3: 0.000893, A4: 0.003796, M: Math.sqrt(3) / 2 };
@@ -1170,7 +1173,7 @@
         li.id = 'ev-' + e.id; li.setAttribute('data-ev', e.id);
         var d = calEl('div', 'ce-d');
         d.appendChild(calEl('b', '', a.getTime() === b.getTime() ? String(a.getDate()) : a.getDate() + '–' + b.getDate()));
-        d.appendChild(calEl('span', '', calMon(a, 'short')));
+        d.appendChild(calEl('span', '', calMon(a, 'short') + (a.getMonth() !== b.getMonth() ? '–' + calMon(b, 'short') : '')));
         var m = calEl('div', 'ce-m');
         var tags = calEl('div', 'ce-tags');
         tags.appendChild(calEl('span', 'ce-t c-' + e.cat, T(CAL_CAT[e.cat])));
@@ -1178,9 +1181,9 @@
         m.appendChild(tags);
         m.appendChild(calEl('h3', '', e.name));
         m.appendChild(calEl('p', '', (e.city ? e.city + ' · ' : '') + calRange(a, b)));
-        var go = calEl('a', 'go chev', T(e.src === 'skf' ? 'calInfoSkf' : 'calInfo'));
+        var go = calEl('a', 'go chev', T(e.src === 'skf' ? 'calInfoSkf' : e.src === 'sportdata' ? 'calInfoOther' : 'calInfo'));
         go.href = e.url; go.target = '_blank'; go.rel = 'noopener';
-        go.setAttribute('aria-label', T(e.src === 'skf' ? 'calInfoSkf' : 'calInfo') + ': ' + e.name);
+        go.setAttribute('aria-label', T(e.src === 'skf' ? 'calInfoSkf' : e.src === 'sportdata' ? 'calInfoOther' : 'calInfo') + ': ' + e.name);
         li.appendChild(d); li.appendChild(m); li.appendChild(go);
         ul.appendChild(li);
       });

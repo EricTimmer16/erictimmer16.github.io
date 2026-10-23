@@ -14,6 +14,17 @@
    "eric": true
   },
   {
+   "id": 820261030,
+   "cat": "other",
+   "name": "Moscow Karate Universe International 2026",
+   "city": "Moscow, Russia",
+   "start": "2026-10-30",
+   "end": "2026-11-01",
+   "url": "https://www.sportdata.org/karate/set-online/veranstaltung_info_main.php?active_menu=calendar&vernr=10734",
+   "src": "sportdata",
+   "eric": true
+  },
+  {
    "id": 459,
    "cat": "series-a",
    "name": "Karate One Series A Tbilisi",

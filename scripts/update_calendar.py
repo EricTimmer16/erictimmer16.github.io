@@ -173,7 +173,7 @@ def skf_events(today):
             continue
         out.append({"id": 800000000 + int(start.strftime("%Y%m%d")), "cat": e["cat"], "name": e["name"],
                     "city": e.get("city", ""), "start": start.isoformat(), "end": end.isoformat(),
-                    "url": e.get("url") or SKF_URL, "src": "skf", "eric": True})
+                    "url": e.get("url") or SKF_URL, "src": e.get("src", "skf"), "eric": True})
     return out
 
 
