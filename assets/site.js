@@ -1359,3 +1359,27 @@
     });
   }
 })();
+
+/* Schwebender roter Punkt, der der Maus folgt (nur mit Maus, nicht bei «Bewegung reduzieren") */
+(function () {
+  if (!window.matchMedia || !matchMedia('(hover: hover) and (pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var d = document.createElement('div');
+  d.className = 'cursor-dot'; d.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(d);
+  var x = 0, y = 0, cx = 0, cy = 0, running = false;
+  function loop() {
+    cx += (x - cx) * 0.14; cy += (y - cy) * 0.14;
+    d.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+    if (Math.abs(x - cx) > 0.2 || Math.abs(y - cy) > 0.2) requestAnimationFrame(loop); else running = false;
+  }
+  var hot = 'a, button, [role="button"], input, textarea, select, label, summary, .tl-y';
+  window.addEventListener('mousemove', function (e) {
+    x = e.clientX; y = e.clientY;
+    if (!d.classList.contains('on')) { cx = x; cy = y; d.classList.add('on'); }
+    d.classList.toggle('big', !!(e.target.closest && e.target.closest(hot)));
+    if (!running) { running = true; requestAnimationFrame(loop); }
+  }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', function () { d.classList.remove('on'); });
+  window.addEventListener('mousedown', function () { d.classList.add('press'); });
+  window.addEventListener('mouseup', function () { d.classList.remove('press'); });
+})();

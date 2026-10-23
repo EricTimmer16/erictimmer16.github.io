@@ -898,3 +898,20 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
   0% { transform: scale(1.04); } 20% { transform: translate(-6px, 3px) scale(1.02); } 40% { transform: translate(5px, -2px); }
   60% { transform: translate(-3px, 1px); } 80% { transform: translate(1px, 0); } 100% { transform: none; }
 }
+
+/* ---------- Schwebender Punkt bei der Maus (23.10.2026) ----------
+   Gedämpfter roter Punkt folgt der Maus mit leichter Verzögerung (site.js, ganz am Ende).
+   Über Links/Knöpfen wird er grösser und heller, beim Klicken kleiner.
+   Nur mit Maus (nicht auf Handy/Tablet) und nicht bei «Bewegung reduzieren». */
+.cursor-dot {
+  position: fixed; left: 0; top: 0; z-index: 999; pointer-events: none;
+  width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%;
+  background: color-mix(in srgb, var(--red) 50%, transparent);
+  box-shadow: 0 0 18px 2px color-mix(in srgb, var(--red) 28%, transparent);
+  opacity: 0; will-change: transform;
+  transition: opacity .3s var(--ease), width .3s var(--ease), height .3s var(--ease), margin .3s var(--ease), background .3s var(--ease);
+}
+.cursor-dot.on { opacity: 1; }
+.cursor-dot.big { width: 42px; height: 42px; margin: -21px 0 0 -21px; background: color-mix(in srgb, var(--red) 16%, transparent); }
+.cursor-dot.press { width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; }
+@media print { .cursor-dot { display: none; } }
