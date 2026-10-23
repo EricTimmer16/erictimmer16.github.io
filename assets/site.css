@@ -793,3 +793,51 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 .hcard.ph .big { margin-top: 6px; font-size: 64px; color: #fff; background: none; -webkit-text-fill-color: #fff; }
 .hcard.ph .big small { font-size: 18px; color: rgba(255,255,255,.8); -webkit-text-fill-color: rgba(255,255,255,.8); margin-top: 6px; }
 .hcard.ph .go, .hcard.ph .go::after { color: #fff; }
+
+/* ---------- Auftritt: Eröffnungs-Animation auf der Startseite (23.10.2026) ----------
+   Ablauf (ca. 2 s, einmal pro Seitenaufruf): rotes Licht glüht auf, Porträt wird von unten
+   aufgedeckt und zoomt leicht heraus, Name wird von links «aufgeschnitten» (roter Strich
+   fährt darunter durch), Lichtreflex über das Foto. Bei «Bewegung reduzieren» aus. */
+@keyframes heroGlow { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+@keyframes heroPhoto {
+  from { clip-path: inset(100% 0 0 0 round 24px); transform: scale(1.12); filter: saturate(.4) brightness(1.15); }
+  to   { clip-path: inset(0 0 0 0 round 24px); transform: none; filter: none; }
+}
+@keyframes heroName {
+  from { clip-path: inset(-.2em 100% -.3em -.2em); transform: translateX(-12px); }
+  to   { clip-path: inset(-.2em -.2em -.3em -.2em); transform: none; }
+}
+@keyframes heroStrike {
+  0%   { clip-path: inset(0 100% 0 0); }
+  55%  { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 0 100%); }
+}
+@keyframes heroSub { from { opacity: 0; filter: blur(10px); transform: translateY(10px); } to { opacity: 1; filter: none; transform: none; } }
+@keyframes heroSheen { from { background-position: 160% 0; } to { background-position: -60% 0; } }
+
+.hero-split::before { animation: heroGlow 1.8s var(--ease) both; }
+.hero .hs-photo { animation: none; }
+.hs-photo img { animation: heroPhoto 1.3s cubic-bezier(.2,.7,.1,1) .1s both; }
+.hs-photo::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; aspect-ratio: 4 / 5; border-radius: 24px; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.5) 50%, transparent 65%) no-repeat;
+  background-size: 250% 100%; background-position: 160% 0;
+  animation: heroSheen 1.1s var(--ease) 1.25s both;
+}
+.hero-split .hs-text > h1 { position: relative; width: fit-content; animation: heroName .7s cubic-bezier(.65,0,.35,1) .05s both; }
+.hero-split h1::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -.06em; height: 4px; border-radius: 2px;
+  background: var(--grad); clip-path: inset(0 0 0 100%);
+  animation: heroStrike 1.2s cubic-bezier(.65,0,.35,1) .15s both;
+}
+.hero-split .hs-text > .sub { animation: heroSub .9s var(--ease) .75s both; }
+.hero-split .hs-text > *:nth-child(4) { animation-delay: .85s; }
+.hero-split .hs-text > *:nth-child(5) { animation-delay: .95s; }
+.hero-split .hs-text > *:nth-child(6) { animation-delay: 1.05s; }
+@media (max-width: 860px) {
+  .hs-photo::after { aspect-ratio: 1 / 1; border-radius: 20px; }
+  @keyframes heroPhoto {
+    from { clip-path: inset(100% 0 0 0 round 20px); transform: scale(1.12); filter: saturate(.4) brightness(1.15); }
+    to   { clip-path: inset(0 0 0 0 round 20px); transform: none; filter: none; }
+  }
+}
