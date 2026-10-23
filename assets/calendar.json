@@ -35,24 +35,6 @@
    "eric": true
   },
   {
-   "id": 449,
-   "cat": "premier-league",
-   "name": "Karate One Premier League Istanbul",
-   "city": "Istanbul, Türkiye",
-   "start": "2027-01-29",
-   "end": "2027-01-31",
-   "url": "https://www.wkf.net/karate-one/championship/!/449/2027-karate-one-premier-league-istanbul"
-  },
-  {
-   "id": 460,
-   "cat": "premier-league",
-   "name": "Karate One Premier League Rome",
-   "city": "Rome, Italy",
-   "start": "2027-03-12",
-   "end": "2027-03-14",
-   "url": "https://www.wkf.net/karate-one/championship/!/460/2027-karate-one-premier-league-rome"
-  },
-  {
    "id": 820270320,
    "cat": "swiss-league",
    "name": "Swiss Karate League Kreuzlingen",
@@ -62,15 +44,6 @@
    "url": "https://www.karate.ch/service/agenda/",
    "src": "skf",
    "eric": true
-  },
-  {
-   "id": 467,
-   "cat": "em",
-   "name": "EKF Senior Championships Marseille",
-   "city": "Marseille, France",
-   "start": "2027-03-24",
-   "end": "2027-03-28",
-   "url": "https://www.wkf.net/continental-championships/championship/!/467/2027-ekf-senior-championships-marseille"
   },
   {
    "id": 452,
@@ -92,24 +65,6 @@
    "url": "https://www.karate.ch/service/agenda/",
    "src": "skf",
    "eric": true
-  },
-  {
-   "id": 450,
-   "cat": "premier-league",
-   "name": "Karate One Premier League Astana",
-   "city": "Astana, Kazakhstan",
-   "start": "2027-05-07",
-   "end": "2027-05-09",
-   "url": "https://www.wkf.net/karate-one/championship/!/450/2027-karate-one-premier-league-astana"
-  },
-  {
-   "id": 451,
-   "cat": "premier-league",
-   "name": "Karate One Premier League Rabat",
-   "city": "Rabat, Morocco",
-   "start": "2027-06-04",
-   "end": "2027-06-06",
-   "url": "https://www.wkf.net/karate-one/championship/!/451/2027-karate-one-premier-league-rabat"
   },
   {
    "id": 453,
@@ -143,15 +98,6 @@
    "eric": true
   },
   {
-   "id": 464,
-   "cat": "quali",
-   "name": "Senior World Championships - Qualification Phase Event",
-   "city": "Tangier, Morocco",
-   "start": "2027-10-08",
-   "end": "2027-10-10",
-   "url": "https://www.wkf.net/world-championships/championship/!/464/2027-senior-world-championships-qualification-phase-event"
-  },
-  {
    "id": 820271106,
    "cat": "swiss-sm",
    "name": "Schweizermeisterschaft Kriens",
@@ -161,15 +107,6 @@
    "url": "https://www.karate.ch/service/agenda/",
    "src": "skf",
    "eric": true
-  },
-  {
-   "id": 465,
-   "cat": "wm",
-   "name": "World Senior Championships - Final Phase Event",
-   "city": "Milano Bergamo, Italy",
-   "start": "2027-11-11",
-   "end": "2027-11-14",
-   "url": "https://www.wkf.net/world-championships/championship/!/465/2027-world-senior-championships-final-phase-event"
   }
  ]
 }

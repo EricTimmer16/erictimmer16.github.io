@@ -341,7 +341,7 @@
     "Weltkarte der Turniere": ["World map of tournaments", "Carte du monde des tournois"],
     "Die nächsten Turniere.": ["The next tournaments.", "Les prochains tournois."],
     "Ganzer Kalender": ["Full calendar", "Calendrier complet"],
-    "Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali. Dazu die Swiss Karate League und die Schweizermeisterschaft.": ["The key tournaments of the WKF season: Series A, Premier League, the European Championships, the World Championships and the worlds qualifier. Plus the Swiss Karate League and the Swiss Championships.", "Les tournois clés de la saison WKF : Series A, Premier League, championnats d’Europe, championnats du monde et qualification mondiale. S’y ajoutent la Swiss Karate League et les championnats de Suisse."],
+    "Hier kämpfe ich: Series A, Swiss Karate League und Schweizermeisterschaft.": ["Where I compete: Series A, Swiss Karate League and the Swiss Championships.", "Là où je combats : Series A, Swiss Karate League et championnats de Suisse."],
     "Alle": ["All", "Tous"],
     "Europameisterschaft": ["European Championships", "Championnats d’Europe"],
     "Weltmeisterschaft": ["World Championships", "Championnats du monde"],

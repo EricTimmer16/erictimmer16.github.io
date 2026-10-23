@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Holt den WKF-Turnierkalender und schreibt die wichtigen Turniere nach assets/calendar.json.
+"""Holt den WKF-Turnierkalender und schreibt die Turniere, bei denen Eric am Start ist, nach assets/calendar.json.
 
-Gefiltert werden nur: Karate 1 Series A, Karate 1 Premier League, Europameisterschaft
+Zur Auswahl stehen: Karate 1 Series A, Karate 1 Premier League, Europameisterschaft
 (EKF Senior), Senior-Weltmeisterschaft und die WM-Quali (Qualification Phase Event).
 Quelle: https://www.wkf.net/calendar (die Daten stehen schon im ausgelieferten HTML),
 Ort und genaues Datum kommen von der Detailseite jedes Turniers.
@@ -11,7 +11,7 @@ Schlägt etwas fehl oder sieht die Seite anders aus als erwartet, wird NICHTS ve
 Dazu kommen die Turniere der Swiss Karate Federation (Swiss Karate League, Schweizermeisterschaft)
 aus scripts/skf_events.json, alle mit «Ich bin am Start» (die SKF-Agenda ist nicht abrufbar, deshalb von Hand gepflegt).
 
-Turniere, bei denen Eric am Start ist: Turnier-Nummer (die Zahl in der WKF-Adresse nach «!/»)
+Nur Turniere, bei denen Eric am Start ist, kommen in den Kalender: Turnier-Nummer (die Zahl in der WKF-Adresse nach «!/»)
 in scripts/eric_am_start.txt eintragen, eine pro Zeile.
 """
 import datetime, html, json, pathlib, re, sys, time, urllib.request
@@ -146,8 +146,8 @@ def build(grid, today, fetch_detail):
     out = []
     for e in grid.values():
         cat = categorize(e["cat_path"], e["name"])
-        if not cat or e["end"] < today:
-            continue
+        if not cat or e["end"] < today or e["id"] not in marks:
+            continue  # nur Turniere, bei denen Eric am Start ist (scripts/eric_am_start.txt)
         city, start, end = fetch_detail(BASE + e["href"])
         start, end = start or e["start"], end or e["end"]
         if end < today:
