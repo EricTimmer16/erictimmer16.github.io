@@ -1001,3 +1001,37 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
   .ce .ce-link svg { position: absolute; top: 16px; right: 16px; width: 16px; height: 16px; color: var(--muted); }
   .ce .ce-tags { padding-right: 24px; }
 }
+
+/* ---------- Lebendiger Hintergrund (23.10.2026) ----------
+   Statt reinem Weiss/Schwarz: sanftes, langsam treibendes Licht in Rot/Orange («Aurora») hinter
+   der ganzen Seite plus ein feines Korn, damit die Fläche nicht steril wirkt. Liegt fest hinter
+   dem Inhalt (scrollt nicht mit); graue Bänder sind leicht durchsichtig, damit das Licht durchscheint.
+   Hell dezent, dunkel etwas kräftiger. Bei «Bewegung reduzieren» steht das Licht still. */
+html { background: var(--bg); --aur-a: 17%; --aur-b: 15%; --aur-c: 11%; --grain: .035; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) { --aur-a: 22%; --aur-b: 15%; --aur-c: 14%; --grain: .06; } }
+html[data-theme="dark"] { --aur-a: 22%; --aur-b: 15%; --aur-c: 14%; --grain: .06; }
+body { background: transparent; }
+html::before {
+  content: ""; position: fixed; inset: -25%; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(28% 32% at 22% 24%, color-mix(in srgb, var(--red-2) var(--aur-b), transparent), transparent 70%),
+    radial-gradient(32% 36% at 80% 40%, color-mix(in srgb, var(--red) var(--aur-a), transparent), transparent 70%),
+    radial-gradient(30% 30% at 30% 82%, color-mix(in srgb, var(--red) var(--aur-c), transparent), transparent 70%),
+    radial-gradient(24% 26% at 78% 86%, color-mix(in srgb, var(--red-2) var(--aur-c), transparent), transparent 70%);
+  animation: aurora 38s ease-in-out infinite alternate;
+  will-change: transform;
+}
+html::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: var(--grain);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@keyframes aurora {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  33%  { transform: translate3d(4%, -3%, 0) rotate(6deg) scale(1.06); }
+  66%  { transform: translate3d(-3%, 4%, 0) rotate(-4deg) scale(.97); }
+  100% { transform: translate3d(2%, 2%, 0) rotate(3deg) scale(1.04); }
+}
+/* graue Bänder durchscheinend, damit das Licht auch dort sichtbar ist */
+.band.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--tint-2) 70%, transparent) 0, color-mix(in srgb, var(--bg-alt) 62%, transparent) 480px) !important; }
+.band.alt + .band.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-alt) 62%, transparent) 0, color-mix(in srgb, var(--tint-2) 70%, transparent) 100%) !important; }
+@media (prefers-reduced-motion: reduce) { html::before { animation: none; } }
