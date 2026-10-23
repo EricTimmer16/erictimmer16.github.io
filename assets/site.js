@@ -1086,7 +1086,7 @@
     if (ev.eric) info.firstChild.appendChild(calEl('span', 'ce-t ce-me', T('calMe')));
     info.appendChild(calEl('h3', '', ev.name));
     info.appendChild(calEl('p', '', (ev.city ? ev.city + ' · ' : '') + calRange(a, b)));
-    var go = calEl('a', 'go chev', T('mapGo')); go.href = ev.url; go.target = '_blank'; go.rel = 'noopener';
+    var go = calEl('a', 'btn btn-sm', T('mapGo')); go.href = ev.url; go.target = '_blank'; go.rel = 'noopener';
     go.setAttribute('aria-label', T('mapGo') + ': ' + ev.name);
     info.appendChild(go);
   }
@@ -1360,33 +1360,6 @@
       if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', once); play(); }
     });
   }
-})();
-
-/* Schwebender roter Punkt, der der Maus folgt (nur mit Maus, nicht bei «Bewegung reduzieren»).
-   Zeitbasiert geglättet, damit er auf jedem Bildschirm (60/120 Hz) gleich weich schwebt. */
-(function () {
-  if (!window.matchMedia || !matchMedia('(hover: hover) and (pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var d = document.createElement('div');
-  d.className = 'cursor-dot'; d.setAttribute('aria-hidden', 'true'); d.appendChild(document.createElement('i'));
-  document.body.appendChild(d);
-  var x = 0, y = 0, cx = 0, cy = 0, last = 0, running = false;
-  function loop(t) {
-    var dt = last ? Math.min(t - last, 64) : 16.7; last = t;
-    var k = 1 - Math.pow(1 - 0.16, dt / 16.7);
-    cx += (x - cx) * k; cy += (y - cy) * k;
-    d.style.transform = 'translate3d(' + cx.toFixed(2) + 'px,' + cy.toFixed(2) + 'px,0)';
-    if (Math.abs(x - cx) > 0.1 || Math.abs(y - cy) > 0.1) requestAnimationFrame(loop); else { running = false; last = 0; }
-  }
-  var hot = 'a, button, [role="button"], input, textarea, select, label, summary, .tl-y, .gi';
-  window.addEventListener('mousemove', function (e) {
-    x = e.clientX; y = e.clientY;
-    if (!d.classList.contains('on')) { cx = x; cy = y; d.classList.add('on'); }
-    d.classList.toggle('big', !!(e.target.closest && e.target.closest(hot)));
-    if (!running) { running = true; requestAnimationFrame(loop); }
-  }, { passive: true });
-  document.documentElement.addEventListener('mouseleave', function () { d.classList.remove('on'); });
-  window.addEventListener('mousedown', function () { d.classList.add('press'); });
-  window.addEventListener('mouseup', function () { d.classList.remove('press'); });
 })();
 
 /* Nach dem Intro die Klasse «intro» entfernen, damit der Browser die Animations-Ebenen freigibt

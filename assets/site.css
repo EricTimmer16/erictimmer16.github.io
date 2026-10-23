@@ -899,27 +899,6 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
   75% { transform: translate3d(-1px, 0, 0); } 100% { transform: none; }
 }
 
-/* ---------- Schwebender Punkt bei der Maus (23.10.2026, überarbeitet) ----------
-   Äusseres Element folgt der Maus (site.js, zeitbasiert geglättet), inneres skaliert:
-   normal kleiner gedämpft-roter Punkt, über Klickbarem ein feiner Ring, beim Klicken kleiner.
-   Nur mit Maus, nicht bei «Bewegung reduzieren». */
-.cursor-dot { position: fixed; left: 0; top: 0; z-index: 999; pointer-events: none; width: 0; height: 0; will-change: transform; }
-.cursor-dot i {
-  position: absolute; left: -21px; top: -21px; width: 42px; height: 42px; border-radius: 50%;
-  background: color-mix(in srgb, var(--red) 50%, transparent);
-  box-shadow: 0 0 22px 4px color-mix(in srgb, var(--red) 22%, transparent), inset 0 0 0 0 transparent;
-  transform: scale(.34); opacity: 0;
-  transition: transform .5s cubic-bezier(.22,1,.36,1), opacity .35s ease, background-color .4s ease, box-shadow .4s ease;
-}
-.cursor-dot.on i { opacity: 1; }
-.cursor-dot.big i {
-  transform: scale(1); background: color-mix(in srgb, var(--red) 7%, transparent);
-  box-shadow: 0 0 0 0 transparent, inset 0 0 0 1.5px color-mix(in srgb, var(--red) 45%, transparent);
-}
-.cursor-dot.press i { transform: scale(.24); transition-duration: .15s; }
-.cursor-dot.big.press i { transform: scale(.82); }
-@media print { .cursor-dot { display: none; } }
-
 /* ---------- «Nach vorne kommen»: Klickbares hebt sich beim Darüberfahren sanft an (23.10.2026) ----------
    Gleiche weiche Bewegung für alle Knöpfe, Kacheln, Galerie-Bilder, Partner, Gönner-Stufen, Social-Icons.
    Beim Klicken drückt es sich kurz ein. Nur mit Maus. */
@@ -1035,3 +1014,12 @@ html::after {
 .band.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--tint-2) 70%, transparent) 0, color-mix(in srgb, var(--bg-alt) 62%, transparent) 480px) !important; }
 .band.alt + .band.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-alt) 62%, transparent) 0, color-mix(in srgb, var(--tint-2) 70%, transparent) 100%) !important; }
 @media (prefers-reduced-motion: reduce) { html::before { animation: none; } }
+
+/* ---------- Einheitliche Knöpfe (23.10.2026) ----------
+   Erics Wunsch: alles, worauf man klicken soll, sieht aus wie die blauen Pillen-Knöpfe
+   («Highlights ansehen»), nicht wie blauer Text mit «›». Frühere Textlinks (.go.chev) sind jetzt .btn. */
+.btn { gap: .4em; white-space: nowrap; }
+.btn:hover { color: #fff; }
+.btn-sm { min-height: 38px; padding: 0 18px; font-size: 15px; }
+.hcard .btn { align-self: flex-start; margin-top: 8px; position: relative; z-index: 1; }
+.map-info .btn { margin-top: 12px; }
