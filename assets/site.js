@@ -591,7 +591,9 @@
     "Wenn ich nicht trainiere, stehe ich am liebsten am Grill. Kochen ist mein Ausgleich, und als Sportler weiss ich gutes Essen besonders zu schätzen.": ["When I’m not training, you’ll most likely find me at the grill. Cooking is how I switch off, and as an athlete I really value good food.", "Quand je ne m’entraîne pas, on me trouve le plus souvent devant le grill. Cuisiner me permet de décompresser, et en tant que sportif j’apprécie particulièrement la bonne cuisine."],
     "Lehre bei Securitas": ["Apprenticeship at Securitas", "Apprentissage chez Securitas"],
     "Ich mache meine kaufmännische Lehre bei Securitas. Der Arbeitsalltag gibt mir Struktur und einen Blick über den Sport hinaus.": ["I’m doing my commercial apprenticeship at Securitas. Everyday work gives me structure and a view beyond sport.", "Je fais mon apprentissage commercial chez Securitas. Le quotidien professionnel me donne une structure et un regard au-delà du sport."],
-    "Lass uns vernetzen.": ["Let’s connect.", "Restons en contact."]
+    "Lass uns vernetzen.": ["Let’s connect.", "Restons en contact."],
+    "Familie": ["Family", "Famille"],
+    "Ich wohne zusammen mit meinem Vater und meiner Schwester in Sisseln. Zu Hause tanke ich auf, zwischen Training, Lehre und Turnieren.": ["I live with my father and my sister in Sisseln. Home is where I recharge between training, work and tournaments.", "J’habite avec mon père et ma sœur à Sisseln. C’est à la maison que je recharge les batteries, entre entraînements, apprentissage et tournois."]
   };
   var UI = {
     statement: {

@@ -1041,11 +1041,12 @@ html::after {
 @media (max-width: 560px) { .traits { grid-template-columns: 1fr; } }
 .about-story .story { margin-top: 36px; max-width: 46em; display: grid; gap: 18px; }
 .about-story .story p { margin: 0; font-size: clamp(18px, 2vw, 21px); line-height: 1.55; }
-.offmat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 48px; }
+.offmat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
 .om { background: var(--card); border-radius: 22px; padding: 28px 26px; display: grid; gap: 8px; align-content: start; }
 .om-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; background: color-mix(in srgb, var(--red) 12%, transparent); }
 .om h3 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; margin-top: 8px; }
 .om p { color: var(--muted); font-size: 16px; margin: 0; }
+@media (max-width: 1000px) { .offmat { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 700px) { .offmat { grid-template-columns: 1fr; } }
 .trait, .om, .sb > div { transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1); }
 @media (hover: hover) and (pointer: fine) {
