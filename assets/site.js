@@ -73,6 +73,7 @@
     'Eric Timmer konzentriert vor dem Kampf, Kopfhörer im Ohr': ['Eric Timmer focused before the bout, earphones in', 'Eric Timmer concentré avant le combat, écouteurs dans les oreilles'],
     'Eric fixiert seinen Gegner auf der Matte': ['Eric locks eyes on his opponent on the mat', 'Eric fixe son adversaire sur le tatami'],
     'Eric in Kampfstellung, die Hand auf Distanz zum Gegner': ['Eric in fighting stance, keeping his opponent at a distance', 'Eric en garde, à distance de son adversaire'],
+    'Eric ruft nach dem Kampf an der EM in Frankfurt': ['Eric shouts after his fight at the European Championships in Frankfurt', 'Eric crie après son combat aux championnats d’Europe à Francfort'],
     'Hoher Fusstritt von Eric': ['High kick by Eric', 'Coup de pied haut d’Eric'],
     'Eric trifft mit einem Fusstritt': ['Eric lands a kick', 'Eric touche d’un coup de pied'],
     'Eric bringt seinen Gegner zu Boden': ['Eric takes his opponent down', 'Eric amène son adversaire au sol'],
