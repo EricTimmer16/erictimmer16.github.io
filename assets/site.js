@@ -337,6 +337,7 @@
     "Gemeinde Sisseln": ["Municipality of Sisseln", "Commune de Sisseln"],
     "Kalender": ["Calendar", "Calendrier"],
     "Turnierkalender": ["Tournament calendar", "Calendrier des tournois"],
+    "Weltkarte der Turniere": ["World map of tournaments", "Carte du monde des tournois"],
     "Die nächsten Turniere.": ["The next tournaments.", "Les prochains tournois."],
     "Ganzer Kalender": ["Full calendar", "Calendrier complet"],
     "Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali.": ["The key tournaments of the WKF season: Series A, Premier League, the European Championships, the World Championships and the worlds qualifier.", "Les tournois clés de la saison WKF : Series A, Premier League, championnats d’Europe, championnats du monde et qualification mondiale."],
@@ -545,6 +546,10 @@
     catQuali: { de: 'WM-Quali', en: 'Worlds qualifier', fr: 'Qualif. mondiale' },
     calMe: { de: 'Ich bin am Start', en: 'I’m competing', fr: 'Je suis au départ' },
     calInfo: { de: 'WKF-Info', en: 'WKF info', fr: 'Infos WKF' },
+    mapHint: { de: 'Tippe auf einen Punkt oder ein Land, um zum Turnier zu springen.', en: 'Tap a dot or a country to jump to the tournament.', fr: 'Touche un point ou un pays pour aller au tournoi.' },
+    mapZoom: { de: 'Auf Turniere zoomen', en: 'Zoom to tournaments', fr: 'Zoomer sur les tournois' },
+    mapWorld: { de: 'Ganze Welt', en: 'Whole world', fr: 'Monde entier' },
+    mapGo: { de: 'Zum Turnier', en: 'To the tournament', fr: 'Vers le tournoi' },
     calEmpty: { de: 'Im Moment sind keine passenden Turniere im Kalender.', en: 'There are currently no matching tournaments in the calendar.', fr: 'Aucun tournoi correspondant n’est actuellement au calendrier.' },
     calFail: { de: 'Der Kalender konnte nicht geladen werden. Du findest ihn direkt bei der WKF: wkf.net/calendar', en: 'The calendar could not be loaded. You can find it directly at the WKF: wkf.net/calendar', fr: 'Le calendrier n’a pas pu être chargé. Tu le trouves directement chez la WKF : wkf.net/calendar' },
     formMissing: { de: 'Bitte fülle Name, eine gültige E-Mail-Adresse und deine Nachricht aus.', en: 'Please fill in your name, a valid email address and your message.', fr: 'Veuillez indiquer votre nom, une adresse e-mail valide et votre message.' },
@@ -974,6 +979,156 @@
     return calDay(a) + ' ' + calMon(a, 'short') + ' – ' + calDay(b) + ' ' + calMon(b, 'short') + ' ' + b.getFullYear();
   }
   function calEl(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  /* Weltkarte im Kalender (Karte: assets/worldmap.json, Equal-Earth-Projektion, Natural Earth) */
+  var MAP = null, mapReq = false, mapList = [], mapSel = null, mapZoomed = window.innerWidth < 700, mapVB = null, mapAnim = 0;
+  var CITY = {
+    tbilisi: [41.72, 44.79], istanbul: [41.01, 28.98], rome: [41.9, 12.5], roma: [41.9, 12.5], marseille: [43.3, 5.37], tarragona: [41.12, 1.25],
+    astana: [51.17, 71.43], rabat: [34.02, -6.83], amman: [31.95, 35.93], salzburg: [47.81, 13.04], tangier: [35.77, -5.8],
+    'milano bergamo': [45.55, 9.4], milano: [45.46, 9.19], milan: [45.46, 9.19], bergamo: [45.7, 9.67], madrid: [40.42, -3.7], paris: [48.86, 2.35],
+    budapest: [47.5, 19.04], baku: [40.41, 49.87], cairo: [30.04, 31.24], dubai: [25.2, 55.27], tokyo: [35.68, 139.69], 'kuala lumpur': [3.14, 101.69],
+    jakarta: [-6.2, 106.85], guadalajara: [20.67, -103.35], lima: [-12.05, -77.04], 'santiago de chile': [-33.45, -70.67], cairns: [-16.92, 145.77]
+  };
+  var CTRY = { 'türkiye': 'Turkey', turkiye: 'Turkey', usa: 'United States of America', 'united states': 'United States of America', 'czech republic': 'Czechia', korea: 'South Korea', 'republic of korea': 'South Korea', uae: 'United Arab Emirates', 'bosnia and herzegovina': 'Bosnia and Herz.', 'dominican republic': 'Dominican Rep.', 'north macedonia': 'North Macedonia', 'hong kong': 'China', 'chinese taipei': 'Taiwan' };
+  var EG = { A1: 1.340264, A2: -0.081106, A3: 0.000893, A4: 0.003796, M: Math.sqrt(3) / 2 };
+  function mapXY(lat, lon) {
+    var l = Math.asin(EG.M * Math.sin(lat * Math.PI / 180)), l2 = l * l, l6 = l2 * l2 * l2, lam = lon * Math.PI / 180;
+    var x = lam * Math.cos(l) / (EG.M * (EG.A1 + 3 * EG.A2 * l2 + l6 * (7 * EG.A3 + 9 * EG.A4 * l2)));
+    var y = l * (EG.A1 + EG.A2 * l2 + l6 * (EG.A3 + EG.A4 * l2));
+    return [MAP.k * x + MAP.tx, -MAP.k * y + MAP.ty];
+  }
+  function svgEl(tag, attrs) { var e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function mapCountry(e) {
+    var p = (e.city || '').split(','), c = (p[p.length - 1] || '').trim();
+    return CTRY[c.toLowerCase()] || c;
+  }
+  function mapPos(e) {
+    var p = (e.city || '').split(','), city = (p[0] || '').trim().toLowerCase();
+    if (CITY[city]) return mapXY(CITY[city][0], CITY[city][1]);
+    var path = MAP.paths[mapCountry(e)];
+    if (path) { var b = path.getBBox(); return [b.x + b.width / 2, b.y + b.height / 2]; }
+    return null;
+  }
+  function mapSetVB(x, y, w, h) {
+    mapVB = [x, y, w, h];
+    var svg = document.querySelector('#calmap svg'); if (!svg) return;
+    svg.setAttribute('viewBox', x + ' ' + y + ' ' + w + ' ' + h);
+    var px = svg.getBoundingClientRect().width || 480, u = w / px, d = Math.min(6, 3.2 + (MAP.w / w - 1) * 1.2);
+    Array.prototype.forEach.call(svg.querySelectorAll('.mk'), function (g) {
+      g.querySelector('.dot').setAttribute('r', (d * u).toFixed(2));
+      g.querySelector('.ring').setAttribute('r', ((d + 3.5) * u).toFixed(2));
+      g.querySelector('.hit').setAttribute('r', ((d > 4.5 ? d + 4 : d + 1.5) * u).toFixed(2));
+      g.querySelector('.dot').style.strokeWidth = (1.2 * u).toFixed(2);
+      g.querySelector('.ring').style.strokeWidth = (1.5 * u).toFixed(2);
+    });
+  }
+  function mapTarget() {
+    if (!mapZoomed || !mapList.length) return [0, 0, MAP.w, MAP.h];
+    var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    mapList.forEach(function (e) { var p = mapPos(e); if (p) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); } });
+    if (x0 > x1) return [0, 0, MAP.w, MAP.h];
+    var w = Math.max(x1 - x0 + 150, 260), h = w * MAP.h / MAP.w;
+    if (h < y1 - y0 + 90) { h = y1 - y0 + 90; w = h * MAP.w / MAP.h; }
+    var cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    var x = Math.min(Math.max(cx - w / 2, 0), MAP.w - w), y = Math.min(Math.max(cy - h / 2, 0), MAP.h - h);
+    return [x, y, w, h];
+  }
+  function mapAnimate(to) {
+    cancelAnimationFrame(mapAnim);
+    var from = mapVB || [0, 0, MAP.w, MAP.h], t0 = null, dur = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 450;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = dur ? Math.min((ts - t0) / dur, 1) : 1, q = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      mapSetVB(from[0] + (to[0] - from[0]) * q, from[1] + (to[1] - from[1]) * q, from[2] + (to[2] - from[2]) * q, from[3] + (to[3] - from[3]) * q);
+      if (p < 1) mapAnim = requestAnimationFrame(step);
+    }
+    mapAnim = requestAnimationFrame(step);
+  }
+  function mapSelect(id, scroll) {
+    mapSel = id;
+    var ev = null;
+    mapList.forEach(function (e) { if (e.id === id) ev = e; });
+    Array.prototype.forEach.call(document.querySelectorAll('.ce.sel'), function (n) { n.classList.remove('sel'); });
+    Array.prototype.forEach.call(document.querySelectorAll('#calmap .mk.sel, #calmap .cn.sel'), function (n) { n.classList.remove('sel'); });
+    var info = document.getElementById('mapinfo'); if (!info) return;
+    info.innerHTML = '';
+    if (!ev) { info.appendChild(calEl('p', 'mi-hint', T('mapHint'))); return; }
+    var li = document.getElementById('ev-' + ev.id); if (li) { li.classList.add('sel'); if (scroll) li.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' }); }
+    var g = document.querySelector('#calmap .mk[data-ev="' + ev.id + '"]'); if (g) g.classList.add('sel');
+    var cn = MAP.paths[mapCountry(ev)]; if (cn) cn.classList.add('sel');
+    var a = calDate(ev.start), b = calDate(ev.end);
+    info.appendChild(calEl('div', 'ce-tags')).appendChild(calEl('span', 'ce-t c-' + ev.cat, T(CAL_CAT[ev.cat])));
+    if (ev.eric) info.firstChild.appendChild(calEl('span', 'ce-t ce-me', T('calMe')));
+    info.appendChild(calEl('h3', '', ev.name));
+    info.appendChild(calEl('p', '', (ev.city ? ev.city + ' · ' : '') + calRange(a, b)));
+    var go = calEl('a', 'go chev', T('mapGo')); go.href = ev.url; go.target = '_blank'; go.rel = 'noopener';
+    go.setAttribute('aria-label', T('mapGo') + ': ' + ev.name);
+    info.appendChild(go);
+  }
+  function renderMap(list) {
+    mapList = list;
+    var box = document.getElementById('calmapbox'); if (!box) return;
+    if (!MAP) {
+      if (!mapReq) {
+        mapReq = true;
+        fetch('assets/worldmap.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
+          MAP = j; MAP.paths = {};
+          var svg = svgEl('svg', { viewBox: '0 0 ' + j.w + ' ' + j.h, role: 'group', 'aria-label': tr('Weltkarte der Turniere') });
+          var gc = svgEl('g', {});
+          j.c.forEach(function (c) { var p = svgEl('path', { d: c.d, 'class': 'cn' }); p.setAttribute('data-n', c.n); MAP.paths[c.n] = p; gc.appendChild(p); });
+          svg.appendChild(gc); svg.appendChild(svgEl('g', { id: 'mapmk' }));
+          document.getElementById('calmap').appendChild(svg);
+          mapVB = [0, 0, j.w, j.h];
+          renderMap(mapList);
+        }).catch(function () { box.hidden = true; });
+      }
+      return;
+    }
+    if (!list.length) { box.hidden = true; return; }
+    box.hidden = false;
+    Object.keys(MAP.paths).forEach(function (n) { MAP.paths[n].classList.remove('has', 'sel'); });
+    var gm = document.getElementById('mapmk'); gm.innerHTML = '';
+    var byCountry = {};
+    list.forEach(function (e) { var c = mapCountry(e); if (MAP.paths[c]) { MAP.paths[c].classList.add('has'); (byCountry[c] = byCountry[c] || []).push(e); } });
+    Object.keys(byCountry).forEach(function (c) {
+      var p = MAP.paths[c];
+      p.onclick = function () {
+        var arr = byCountry[c], i = 0;
+        arr.forEach(function (e, n) { if (e.id === mapSel) i = (n + 1) % arr.length; });
+        mapSelect(arr[i].id, true);
+      };
+    });
+    list.forEach(function (e) {
+      var pos = mapPos(e); if (!pos) return;
+      var g = svgEl('g', { 'class': 'mk' + (e.eric ? ' me' : ''), tabindex: '0', role: 'link', 'data-ev': e.id, 'aria-label': e.name + ', ' + (e.city || '') });
+      g.setAttribute('transform', 'translate(' + pos[0].toFixed(1) + ' ' + pos[1].toFixed(1) + ')');
+      g.appendChild(svgEl('circle', { 'class': 'hit', cx: 0, cy: 0 }));
+      g.appendChild(svgEl('circle', { 'class': 'ring', cx: 0, cy: 0 }));
+      g.appendChild(svgEl('circle', { 'class': 'dot', cx: 0, cy: 0 }));
+      g.addEventListener('click', function () { mapSelect(e.id, true); });
+      g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); mapSelect(e.id, true); } });
+      gm.appendChild(g);
+    });
+    var zb = document.getElementById('mapzoom');
+    zb.textContent = mapZoomed ? T('mapWorld') : T('mapZoom'); zb.setAttribute('aria-pressed', mapZoomed ? 'true' : 'false');
+    var tg = mapTarget(); mapSetVB(tg[0], tg[1], tg[2], tg[3]);
+    var still = list.some(function (e) { return e.id === mapSel; });
+    mapSelect(still ? mapSel : null, false);
+    Array.prototype.forEach.call(document.querySelectorAll('#cal .ce'), function (li) {
+      var id = +li.getAttribute('data-ev');
+      li.addEventListener('mouseenter', function () { var g = document.querySelector('#calmap .mk[data-ev="' + id + '"]'); if (g) g.classList.add('sel'); });
+      li.addEventListener('mouseleave', function () { var g = document.querySelector('#calmap .mk[data-ev="' + id + '"]'); if (g && id !== mapSel) g.classList.remove('sel'); });
+    });
+  }
+  (function () {
+    var zb = document.getElementById('mapzoom');
+    if (zb) zb.addEventListener('click', function () {
+      mapZoomed = !mapZoomed; zb.textContent = mapZoomed ? T('mapWorld') : T('mapZoom'); zb.setAttribute('aria-pressed', mapZoomed ? 'true' : 'false');
+      if (MAP) mapAnimate(mapTarget());
+    });
+    window.addEventListener('resize', function () { if (MAP && mapVB) mapSetVB(mapVB[0], mapVB[1], mapVB[2], mapVB[3]); });
+  })();
+
   function renderCal() {
     var boxes = Array.prototype.slice.call(document.querySelectorAll('#cal, #calnext'));
     if (!boxes.length) return;
@@ -985,7 +1140,7 @@
       var limit = +box.getAttribute('data-limit') || 0, grouped = !limit;
       var list = CAL.filter(function (e) { return calDate(e.end) >= today && (calFilter === 'all' || e.cat === calFilter || !grouped); });
       if (limit) list = list.slice(0, limit);
-      if (!list.length) { box.appendChild(calEl('p', 'cal-note', T('calEmpty'))); return; }
+      if (!list.length) { box.appendChild(calEl('p', 'cal-note', T('calEmpty'))); if (box.id === 'cal') renderMap(list); return; }
       var ul = calEl('ul', 'cal-list'), lastKey = '';
       list.forEach(function (e) {
         var a = calDate(e.start), b = calDate(e.end);
@@ -994,6 +1149,7 @@
           if (key !== lastKey) { lastKey = key; ul.appendChild(calEl('li', 'cal-mh', a.toLocaleDateString(CAL_LOC[lang], { month: 'long', year: 'numeric' }))); }
         }
         var li = calEl('li', 'ce' + (e.eric ? ' me' : ''));
+        li.id = 'ev-' + e.id; li.setAttribute('data-ev', e.id);
         var d = calEl('div', 'ce-d');
         d.appendChild(calEl('b', '', a.getTime() === b.getTime() ? String(a.getDate()) : a.getDate() + '–' + b.getDate()));
         d.appendChild(calEl('span', '', calMon(a, 'short')));
@@ -1011,6 +1167,7 @@
         ul.appendChild(li);
       });
       box.appendChild(ul);
+      if (box.id === 'cal') renderMap(list);
     });
   }
   (function () {

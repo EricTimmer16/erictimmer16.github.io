@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202610222107">
+<link rel="stylesheet" href="assets/site.css?v=202610231057">
 </head>
 <body data-page="Kalender">
 <nav class="top" aria-label="Hauptnavigation">
@@ -74,7 +74,13 @@
         <button type="button" data-f="wm" aria-pressed="false">Weltmeisterschaft</button>
         <button type="button" data-f="quali" aria-pressed="false">WM-Quali</button>
       </div>
-      <div id="cal" class="cal" aria-live="polite"><noscript><p class="cal-note"><a href="https://www.wkf.net/calendar" target="_blank" rel="noopener">wkf.net/calendar</a></p></noscript></div>
+      <div class="cal-layout">
+        <div id="cal" class="cal" aria-live="polite"><noscript><p class="cal-note"><a href="https://www.wkf.net/calendar" target="_blank" rel="noopener">wkf.net/calendar</a></p></noscript></div>
+        <aside class="cal-map r" id="calmapbox" aria-label="Weltkarte der Turniere" hidden style="--d:.18s">
+          <div class="map-wrap"><div id="calmap" class="map-svg"></div><button type="button" class="map-zoom" id="mapzoom" aria-pressed="false"></button></div>
+          <div class="map-info" id="mapinfo" aria-live="polite"></div>
+        </aside>
+      </div>
       <p class="cal-note">Quelle: <a href="https://www.wkf.net/calendar" target="_blank" rel="noopener">WKF-Kalender</a>, wird täglich abgeglichen. Änderungen vorbehalten.</p>
     </div>
   </section>
@@ -124,6 +130,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202610222107"></script>
+<script src="assets/site.js?v=202610231057"></script>
 </body>
 </html>

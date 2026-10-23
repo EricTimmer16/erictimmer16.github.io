@@ -743,3 +743,38 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 .tl.on .yr li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
 @media (max-width: 640px) { .tl.on .yr { padding: 24px 22px; } }
 @media (prefers-reduced-motion: reduce) { .tl.on .yr, .tl.on .yr.sel { transition: none; transform: none; } .tl-dot, .tl-y b { transition: none; } }
+
+/* Weltkarte im Turnierkalender */
+.cal-layout { display: grid; gap: 28px; }
+.cal-map { order: -1; }
+.cal-map[hidden] { display: none; }
+.map-wrap { position: relative; border-radius: 22px; background: var(--card); padding: 12px 12px 8px; overflow: hidden; }
+.band:not(.alt) .map-wrap { background: var(--bg-alt); }
+.map-svg svg { display: block; width: 100%; height: auto; }
+.map-svg .cn { fill: color-mix(in srgb, var(--muted) 24%, transparent); stroke: var(--card); stroke-width: .6; transition: fill .3s; }
+.band:not(.alt) .map-svg .cn { stroke: var(--bg-alt); }
+.map-svg .cn.has { fill: color-mix(in srgb, var(--red) 38%, transparent); cursor: pointer; }
+.map-svg .cn.has:hover, .map-svg .cn.sel { fill: color-mix(in srgb, var(--red) 62%, transparent); }
+.map-svg .mk { cursor: pointer; outline: none; }
+.map-svg .mk .dot { fill: var(--red); stroke: #fff; stroke-width: 1.4; transition: transform .2s; transform-box: fill-box; transform-origin: center; }
+.map-svg .mk.me .dot { fill: var(--red); stroke: var(--fg); }
+.map-svg .mk .hit { fill: transparent; }
+.map-svg .mk .ring { fill: none; stroke: var(--red); stroke-width: 1.6; opacity: 0; transition: opacity .2s; transform-box: fill-box; transform-origin: center; }
+.map-svg .mk:hover .dot, .map-svg .mk:focus-visible .dot, .map-svg .mk.sel .dot { transform: scale(1.35); }
+.map-svg .mk.sel .ring, .map-svg .mk:focus-visible .ring { opacity: 1; }
+.map-zoom { position: absolute; top: 14px; right: 14px; border: 0; cursor: pointer; font: 600 13px var(--text); padding: 7px 13px; border-radius: 980px; background: color-mix(in srgb, var(--fg) 10%, var(--card)); color: var(--fg); }
+.map-zoom:hover { background: color-mix(in srgb, var(--fg) 18%, var(--card)); }
+.map-info { margin-top: 14px; min-height: 72px; padding: 16px 20px; border-radius: 18px; background: var(--card); }
+.band:not(.alt) .map-info { background: var(--bg-alt); }
+.map-info .mi-hint { margin: 0; color: var(--muted); font-size: 15px; }
+.map-info h3 { margin: 6px 0 2px; font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+.map-info p { margin: 0; color: var(--muted); font-size: 15px; }
+.map-info .go { display: inline-block; margin-top: 10px; font-size: 15px; }
+.ce { scroll-margin-top: 96px; transition: box-shadow .3s, background .3s; }
+.ce.sel { box-shadow: inset 0 0 0 2px var(--red), 0 8px 28px color-mix(in srgb, var(--red) 22%, transparent); }
+@media (min-width: 980px) {
+  .cal-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+  .cal-map { order: 0; position: sticky; top: 92px; margin-top: 28px; }
+}
+@media (max-width: 979px) { .cal-layout { margin-top: 24px; } }
+@media (prefers-reduced-motion: reduce) { .map-svg .mk .dot, .map-svg .cn { transition: none; } }
