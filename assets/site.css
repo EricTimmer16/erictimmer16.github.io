@@ -969,3 +969,35 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
   .nav-links a:active, .brand:active, .lang button:active, .menu-btn:active { transform: scale(.96); transition-duration: .12s !important; }
 }
 @media (prefers-reduced-motion: reduce) { .brand, .nav-links a, .lang button, .menu-btn { transform: none !important; } }
+
+/* ---------- Turnierkalender: ganze Karte verlinkt (23.10.2026) ----------
+   Kein blauer «Info»-Link mehr; ein Klick irgendwo auf die Karte öffnet die Turnier-Webseite.
+   Rechts nur ein dezenter Pfeil, der beim Darüberfahren rot wird; die Karte kommt nach vorne. */
+.ce { position: relative; }
+.ce .ce-link {
+  display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+  color: var(--muted); background: color-mix(in srgb, var(--muted) 13%, transparent);
+  transition: color .3s ease, background-color .3s ease;
+}
+.ce .ce-link svg { transition: transform .5s cubic-bezier(.22,1,.36,1); }
+.ce .ce-link:hover { text-decoration: none; }
+.ce .ce-link::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 20px; }
+.ce:has(.ce-link:focus-visible) { outline: 2px solid var(--red); outline-offset: 3px; }
+.ce .ce-link:focus-visible { outline: none; }
+.ce:has(.ce-link) { transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1), background-color .3s ease !important; }
+@media (hover: hover) and (pointer: fine) {
+  .ce:has(.ce-link):hover {
+    transform: translate3d(0, -4px, 0) scale(1.012) !important;
+    box-shadow: 0 24px 48px -24px rgba(0,0,0,.35), 0 0 0 1px color-mix(in srgb, var(--red) 12%, transparent) !important;
+  }
+  .ce.me:has(.ce-link):hover { box-shadow: inset 0 0 0 2px var(--red), 0 24px 48px -24px rgba(0,0,0,.35) !important; }
+  .ce:has(.ce-link):hover .ce-link { color: #fff; background: var(--red); }
+  .ce:has(.ce-link):hover .ce-link svg { transform: translate3d(2px, -2px, 0); }
+  .ce:has(.ce-link):active { transform: scale(.985) !important; transition-duration: .12s !important; }
+}
+@media (max-width: 560px) {
+  .ce .ce-link { grid-row: 1; grid-column: 1; width: 0; height: 0; background: none; }
+  .ce .ce-d { grid-row: 1; grid-column: 1; } .ce .ce-m { grid-row: 1; grid-column: 2; }
+  .ce .ce-link svg { position: absolute; top: 16px; right: 16px; width: 16px; height: 16px; color: var(--muted); }
+  .ce .ce-tags { padding-right: 24px; }
+}

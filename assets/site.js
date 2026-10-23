@@ -1196,9 +1196,11 @@
         m.appendChild(tags);
         m.appendChild(calEl('h3', '', e.name));
         m.appendChild(calEl('p', '', (e.city ? e.city + ' · ' : '') + calRange(a, b)));
-        var go = calEl('a', 'go chev', T(e.src === 'skf' ? 'calInfoSkf' : e.src === 'sportdata' ? 'calInfoOther' : 'calInfo'));
+        /* Ganze Karte ist der Link (unsichtbare Fläche über der Karte), sichtbar nur ein dezenter Pfeil */
+        var go = calEl('a', 'ce-link');
         go.href = e.url; go.target = '_blank'; go.rel = 'noopener';
         go.setAttribute('aria-label', T(e.src === 'skf' ? 'calInfoSkf' : e.src === 'sportdata' ? 'calInfoOther' : 'calInfo') + ': ' + e.name);
+        go.innerHTML = '<svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14 14 6M7.5 6H14v6.5"/></svg>';
         li.appendChild(d); li.appendChild(m); li.appendChild(go);
         ul.appendChild(li);
       });
