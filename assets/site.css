@@ -94,13 +94,13 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; background: var(--link); color: #fff; padding: 0 22px; border-radius: 980px; font-size: 17px; line-height: 1; }
 .btn:hover { text-decoration: none; filter: brightness(1.08); }
 @keyframes rise { from { opacity: .25; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-.hero .hs-text > *, .hero .hs-photo { animation: rise 1.1s var(--ease) both; }
-.hero .hs-text > *:nth-child(2) { animation-delay: .08s; }
-.hero .hs-text > *:nth-child(3) { animation-delay: .16s; }
-.hero .hs-text > *:nth-child(4) { animation-delay: .24s; }
-.hero .hs-text > *:nth-child(5) { animation-delay: .32s; }
-.hero .hs-text > *:nth-child(6) { animation-delay: .4s; }
-.hero .hs-photo { animation-delay: .2s; }
+.intro .hero .hs-text > *, .intro .hero .hs-photo { animation: rise 1.1s var(--ease) both; }
+.intro .hero .hs-text > *:nth-child(2) { animation-delay: .08s; }
+.intro .hero .hs-text > *:nth-child(3) { animation-delay: .16s; }
+.intro .hero .hs-text > *:nth-child(4) { animation-delay: .24s; }
+.intro .hero .hs-text > *:nth-child(5) { animation-delay: .32s; }
+.intro .hero .hs-text > *:nth-child(6) { animation-delay: .4s; }
+.intro .hero .hs-photo { animation-delay: .2s; }
 
 /* produkt-panel: der Weltrang */
 .stage { padding-bottom: 40px; }
@@ -794,50 +794,80 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 .hcard.ph .big small { font-size: 18px; color: rgba(255,255,255,.8); -webkit-text-fill-color: rgba(255,255,255,.8); margin-top: 6px; }
 .hcard.ph .go, .hcard.ph .go::after { color: #fff; }
 
-/* ---------- Auftritt: Eröffnungs-Animation auf der Startseite (23.10.2026) ----------
-   Ablauf (ca. 2 s, einmal pro Seitenaufruf): rotes Licht glüht auf, Porträt wird von unten
-   aufgedeckt und zoomt leicht heraus, Name wird von links «aufgeschnitten» (roter Strich
-   fährt darunter durch), Lichtreflex über das Foto. Bei «Bewegung reduzieren» aus. */
-@keyframes heroGlow { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+/* ---------- Auftritt: Eröffnungs-Animation auf der Startseite (23.10.2026, verstärkt) ----------
+   Läuft, solange <html> die Klasse «intro» hat (setzt ein kleines Skript im <head> von index.html;
+   site.js startet sie neu bei Zurück-Navigation und wenn die Seite im Hintergrund-Tab geladen wurde).
+   Ablauf ca. 2,5 s: roter Lichtschnitt quer über den Hero, Licht hinter dem Porträt flammt auf,
+   Name wird rot «aufgeschnitten» und wird dann dunkel, Porträt fährt von unten hoch (s/w → Farbe),
+   Slogan aus der Unschärfe, Lichtreflex über das Foto. Bei «Bewegung reduzieren» aus. */
+@keyframes heroGlow {
+  0%   { opacity: 0; transform: scale(.55); }
+  50%  { opacity: 1; transform: scale(1.15); filter: brightness(1.5) saturate(1.4); }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes heroSlash {
+  0%   { clip-path: inset(0 100% 0 0); opacity: 1; }
+  55%  { clip-path: inset(0 0 0 0); opacity: 1; }
+  100% { clip-path: inset(0 0 0 0); opacity: 0; }
+}
 @keyframes heroPhoto {
-  from { clip-path: inset(100% 0 0 0 round 24px); transform: scale(1.12); filter: saturate(.4) brightness(1.15); }
-  to   { clip-path: inset(0 0 0 0 round 24px); transform: none; filter: none; }
+  0%   { clip-path: inset(100% 0 0 0 round 24px); transform: translateY(40px) scale(1.3); filter: grayscale(1) contrast(1.2) brightness(1.15); }
+  55%  { filter: grayscale(1) contrast(1.2) brightness(1.15); }
+  100% { clip-path: inset(0 0 0 0 round 24px); transform: none; filter: none; }
 }
 @keyframes heroName {
-  from { clip-path: inset(-.2em 100% -.3em -.2em); transform: translateX(-12px); }
-  to   { clip-path: inset(-.2em -.2em -.3em -.2em); transform: none; }
+  0%   { clip-path: inset(-.2em 100% -.35em -.2em); transform: translateX(-40px); color: var(--red); }
+  60%  { clip-path: inset(-.2em -.2em -.35em -.2em); transform: none; color: var(--red); }
+  100% { clip-path: inset(-.2em -.2em -.35em -.2em); transform: none; color: var(--fg); }
 }
 @keyframes heroStrike {
   0%   { clip-path: inset(0 100% 0 0); }
-  55%  { clip-path: inset(0 0 0 0); }
+  50%  { clip-path: inset(0 0 0 0); }
   100% { clip-path: inset(0 0 0 100%); }
 }
-@keyframes heroSub { from { opacity: 0; filter: blur(10px); transform: translateY(10px); } to { opacity: 1; filter: none; transform: none; } }
+@keyframes heroEyebrow { from { opacity: 0; letter-spacing: .6em; } to { opacity: 1; letter-spacing: .14em; } }
+@keyframes heroSub { from { opacity: 0; filter: blur(14px); transform: translateY(14px) scale(.96); } to { opacity: 1; filter: none; transform: none; } }
 @keyframes heroSheen { from { background-position: 160% 0; } to { background-position: -60% 0; } }
 
-.hero-split::before { animation: heroGlow 1.8s var(--ease) both; }
-.hero .hs-photo { animation: none; }
-.hs-photo img { animation: heroPhoto 1.3s cubic-bezier(.2,.7,.1,1) .1s both; }
+/* Grundzustand (ohne Animation = Endbild) */
+.hero-split::after {
+  content: ""; position: absolute; z-index: 3; left: -10%; right: -10%; top: 46%; height: 3px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--red-2) 30%, #fff 50%, var(--red) 70%, transparent);
+  box-shadow: 0 0 22px 4px color-mix(in srgb, var(--red) 55%, transparent);
+  transform: rotate(-9deg); opacity: 0;
+}
 .hs-photo::after {
   content: ""; position: absolute; top: 0; left: 0; right: 0; aspect-ratio: 4 / 5; border-radius: 24px; pointer-events: none;
-  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.5) 50%, transparent 65%) no-repeat;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.6) 50%, transparent 65%) no-repeat;
   background-size: 250% 100%; background-position: 160% 0;
-  animation: heroSheen 1.1s var(--ease) 1.25s both;
 }
-.hero-split .hs-text > h1 { position: relative; width: fit-content; animation: heroName .7s cubic-bezier(.65,0,.35,1) .05s both; }
-.hero-split h1::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: -.06em; height: 4px; border-radius: 2px;
-  background: var(--grad); clip-path: inset(0 0 0 100%);
-  animation: heroStrike 1.2s cubic-bezier(.65,0,.35,1) .15s both;
+.hero-split .hs-text > h1 { position: relative; width: fit-content; }
+.hero-split .hs-text > h1::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -.05em; height: 6px; border-radius: 3px;
+  background: var(--grad); box-shadow: 0 0 16px color-mix(in srgb, var(--red) 60%, transparent);
+  clip-path: inset(0 0 0 100%);
 }
-.hero-split .hs-text > .sub { animation: heroSub .9s var(--ease) .75s both; }
-.hero-split .hs-text > *:nth-child(4) { animation-delay: .85s; }
-.hero-split .hs-text > *:nth-child(5) { animation-delay: .95s; }
-.hero-split .hs-text > *:nth-child(6) { animation-delay: 1.05s; }
+
+/* Animation */
+.intro .hero-split::before { animation: heroGlow 1.9s var(--ease) both; }
+.intro .hero-split::after { animation: heroSlash .75s cubic-bezier(.7,0,.2,1) both; }
+.intro .hero .hs-photo { animation: none; }
+.intro .hs-photo img { animation: heroPhoto 1.5s cubic-bezier(.2,.7,.1,1) .15s both; }
+.intro .hs-photo::after { animation: heroSheen 1.1s var(--ease) 1.5s both; }
+.intro .hero-split .hs-text > .eyebrow { animation: heroEyebrow 1s var(--ease) .1s both; }
+.intro .hero-split .hs-text > h1 { animation: heroName 1.4s cubic-bezier(.65,0,.35,1) .35s both; }
+.intro .hero-split .hs-text > h1::after { animation: heroStrike 1.3s cubic-bezier(.65,0,.35,1) .4s both; }
+.intro .hero-split .hs-text > .sub { animation: heroSub 1s var(--ease) 1.05s both; }
+.intro .hero-split .hs-text > h1:nth-child(2) { animation-delay: .35s; }
+.intro .hero-split .hs-text > *:nth-child(4) { animation-delay: 1.2s; }
+.intro .hero-split .hs-text > *:nth-child(5) { animation-delay: 1.3s; }
+.intro .hero-split .hs-text > *:nth-child(6) { animation-delay: 1.4s; }
 @media (max-width: 860px) {
   .hs-photo::after { aspect-ratio: 1 / 1; border-radius: 20px; }
+  .hero-split::after { top: 30%; transform: rotate(-14deg); }
   @keyframes heroPhoto {
-    from { clip-path: inset(100% 0 0 0 round 20px); transform: scale(1.12); filter: saturate(.4) brightness(1.15); }
-    to   { clip-path: inset(0 0 0 0 round 20px); transform: none; filter: none; }
+    0%   { clip-path: inset(100% 0 0 0 round 20px); transform: translateY(40px) scale(1.3); filter: grayscale(1) contrast(1.2) brightness(1.15); }
+    55%  { filter: grayscale(1) contrast(1.2) brightness(1.15); }
+    100% { clip-path: inset(0 0 0 0 round 20px); transform: none; filter: none; }
   }
 }

@@ -1345,3 +1345,17 @@
   select(tabs[tabs.length - 1], false, false);
   toEnd(); window.addEventListener('load', toEnd);
 })();
+
+/* Eröffnungs-Animation der Startseite neu abspielen: bei Zurück-Navigation (Seite aus dem Cache)
+   und wenn die Seite in einem Hintergrund-Tab geladen wurde (dann erst beim ersten Anschauen). */
+(function () {
+  var h = document.documentElement;
+  if (!document.querySelector('.hero-split')) return;
+  function play() { h.classList.remove('intro'); void h.offsetWidth; h.classList.add('intro'); }
+  window.addEventListener('pageshow', function (e) { if (e.persisted) play(); });
+  if (document.visibilityState === 'hidden') {
+    document.addEventListener('visibilitychange', function once() {
+      if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', once); play(); }
+    });
+  }
+})();
