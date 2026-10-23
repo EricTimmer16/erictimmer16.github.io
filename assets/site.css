@@ -849,19 +849,18 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 }
 
 /* Animation */
-.intro .hero-split::before { animation: heroGlow 1.9s var(--ease) both; }
-.intro .hero-split::after { animation: heroSlash .75s cubic-bezier(.7,0,.2,1) both; }
+.intro .hero-split::before { animation: heroGlow 1.9s var(--ease) .35s both; }
 .intro .hero .hs-photo { animation: none; }
-.intro .hs-photo img { animation: heroPhoto 1.5s cubic-bezier(.2,.7,.1,1) .15s both; }
-.intro .hs-photo::after { animation: heroSheen 1.1s var(--ease) 1.5s both; }
-.intro .hero-split .hs-text > .eyebrow { animation: heroEyebrow 1s var(--ease) .1s both; }
-.intro .hero-split .hs-text > h1 { animation: heroName 1.4s cubic-bezier(.65,0,.35,1) .35s both; }
-.intro .hero-split .hs-text > h1::after { animation: heroStrike 1.3s cubic-bezier(.65,0,.35,1) .4s both; }
-.intro .hero-split .hs-text > .sub { animation: heroSub 1s var(--ease) 1.05s both; }
-.intro .hero-split .hs-text > h1:nth-child(2) { animation-delay: .35s; }
-.intro .hero-split .hs-text > *:nth-child(4) { animation-delay: 1.2s; }
-.intro .hero-split .hs-text > *:nth-child(5) { animation-delay: 1.3s; }
-.intro .hero-split .hs-text > *:nth-child(6) { animation-delay: 1.4s; }
+.intro .hs-photo img { animation: heroPhoto 1.5s cubic-bezier(.2,.7,.1,1) .55s both; }
+.intro .hs-photo::after { animation: heroSheen 1.1s var(--ease) 1.95s both; }
+.intro .hero-split .hs-text > .eyebrow { animation: heroEyebrow 1s var(--ease) .5s both; }
+.intro .hero-split .hs-text > h1 { animation: heroName 1.4s cubic-bezier(.65,0,.35,1) .75s both; }
+.intro .hero-split .hs-text > h1::after { animation: heroStrike 1.3s cubic-bezier(.65,0,.35,1) .8s both; }
+.intro .hero-split .hs-text > .sub { animation: heroSub 1s var(--ease) 1.45s both; }
+.intro .hero-split .hs-text > h1:nth-child(2) { animation-delay: .75s; }
+.intro .hero-split .hs-text > *:nth-child(4) { animation-delay: 1.6s; }
+.intro .hero-split .hs-text > *:nth-child(5) { animation-delay: 1.7s; }
+.intro .hero-split .hs-text > *:nth-child(6) { animation-delay: 1.8s; }
 @media (max-width: 860px) {
   .hs-photo::after { aspect-ratio: 1 / 1; border-radius: 20px; }
   .hero-split::after { top: 30%; transform: rotate(-14deg); }
@@ -870,4 +869,32 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
     55%  { filter: grayscale(1) contrast(1.2) brightness(1.15); }
     100% { clip-path: inset(0 0 0 0 round 20px); transform: none; filter: none; }
   }
+}
+
+/* ---------- Auftritt Teil 2: «Schnitt» über den ganzen Bildschirm (23.10.2026) ----------
+   Dunkle Fläche deckt kurz alles ab, ein glühender roter Strich schneidet sie schräg durch,
+   die zwei Hälften fliegen auseinander und geben die Seite frei; der Hero zuckt leicht («Treffer»).
+   Element .intro-cut steht direkt nach <body> in index.html. Nur ohne «Bewegung reduzieren». */
+.intro-cut { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .intro .intro-cut { display: block; position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
+  .intro-cut i { position: absolute; inset: 0; background: #0b0b0c; }
+  .intro-cut i:first-child { clip-path: polygon(0 0, 100% 0, 100% 38.6%, 0 62.6%); animation: cutUp .75s cubic-bezier(.7,0,.2,1) .4s both; }
+  .intro-cut i:nth-child(2) { clip-path: polygon(0 62%, 100% 38%, 100% 100%, 0 100%); animation: cutDown .75s cubic-bezier(.7,0,.2,1) .4s both; }
+  .intro-cut svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;
+    filter: drop-shadow(0 0 6px #ff453a) drop-shadow(0 0 22px #ff453a); animation: cutLine .9s .08s both; }
+  .intro-cut line { stroke: url(#cutGrad); stroke-width: 4px; stroke-linecap: round; }
+  .intro .hero-split .hs { animation: heroHit .45s ease-out .42s both; }
+}
+@keyframes cutUp { from { transform: none; } to { transform: translate(-4%, -72%); visibility: hidden; } }
+@keyframes cutDown { from { transform: none; } to { transform: translate(4%, 72%); visibility: hidden; } }
+@keyframes cutLine {
+  0%   { clip-path: inset(0 100% 0 0); animation-timing-function: cubic-bezier(.8,0,.2,1); }
+  36%  { clip-path: inset(0 0 0 0); opacity: 1; animation-timing-function: ease-out; }
+  48%  { clip-path: inset(0 0 0 0); opacity: 1; filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 44px #ff453a); }
+  100% { clip-path: inset(0 0 0 0); opacity: 0; visibility: hidden; }
+}
+@keyframes heroHit {
+  0% { transform: scale(1.04); } 20% { transform: translate(-6px, 3px) scale(1.02); } 40% { transform: translate(5px, -2px); }
+  60% { transform: translate(-3px, 1px); } 80% { transform: translate(1px, 0); } 100% { transform: none; }
 }
