@@ -484,6 +484,12 @@
     "Eric im Seitenprofil im Warm-up-Bereich": ["Eric in side profile in the warm-up area", "Eric de profil dans la zone d’échauffement"],
     "Eric schaut direkt in die Kamera, bereit für den nächsten Kampf": ["Eric looks straight into the camera, ready for his next bout", "Eric regarde droit vers l’objectif, prêt pour son prochain combat"],
     "Das Maskottchen, ein Tiger im Karate-Gi, in der Halle in Jakarta": ["The mascot, a tiger in a karate gi, in the arena in Jakarta", "La mascotte, un tigre en karaté-gi, dans la salle de Jakarta"],
+    "Schweizermeisterschaft 2025": ["Swiss Championships 2025", "Championnats de Suisse 2025"],
+    "Schweizermeisterschaften, Sursee, 2025 · Vize-Schweizermeister": ["Swiss Championships, Sursee, 2025 · Swiss runner-up", "Championnats de Suisse, Sursee, 2025 · Vice-champion suisse"],
+    "Eric ballt die Faust und ruft nach einem Punkt an der Schweizermeisterschaft in Sursee 2025": ["Eric clenches his fist and shouts after scoring at the Swiss Championships in Sursee 2025", "Eric serre le poing et crie après un point aux championnats de Suisse à Sursee 2025"],
+    "Schlagabtausch an der Schweizermeisterschaft: Eric im blauen Gürtel weicht dem Angriff seines Gegners aus": ["Exchange at the Swiss Championships: Eric, in the blue belt, evades his opponent’s attack", "Échange aux championnats de Suisse : Eric, ceinture bleue, esquive l’attaque de son adversaire"],
+    "Eric schliesst die Augen, sein Coach hält sein Gesicht und spricht vor dem Kampf mit ihm": ["Eric closes his eyes while his coach holds his face and talks to him before the bout", "Eric ferme les yeux pendant que son coach lui tient le visage et lui parle avant le combat"],
+    "Gruppenfoto des Teams mit den Trainern vor dem Sursee-2025-Banner": ["Team photo with the coaches in front of the Sursee 2025 banner", "Photo d’équipe avec les entraîneurs devant la bannière Sursee 2025"],
     "Series A Kuala Lumpur 2025": ["Series A Kuala Lumpur 2025", "Series A Kuala Lumpur 2025"],
     "Karate 1 Series A, Kuala Lumpur, Malaysia, Oktober 2025 · Mit Trainingslager": ["Karate 1 Series A, Kuala Lumpur, Malaysia, October 2025 · Incl. training camp", "Karate 1 Series A, Kuala Lumpur, Malaisie, octobre 2025 · Avec stage d’entraînement"],
     "Eric im Duell mit seinem Gegner vor der Kuala-Lumpur-2025-Wand beim Karate 1 Series A": ["Eric in a bout with his opponent in front of the Kuala Lumpur 2025 backdrop at the Karate 1 Series A", "Eric en combat contre son adversaire devant le fond Kuala Lumpur 2025 à la Karate 1 Series A"],
@@ -712,7 +718,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#kualalumpur2025': 'tab-kl25', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22', '#basel2024': 'tab-bom24' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#kualalumpur2025': 'tab-kl25', '#sm2025': 'tab-sm25', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22', '#basel2024': 'tab-bom24' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
