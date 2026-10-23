@@ -484,6 +484,14 @@
     "Eric im Seitenprofil im Warm-up-Bereich": ["Eric in side profile in the warm-up area", "Eric de profil dans la zone d’échauffement"],
     "Eric schaut direkt in die Kamera, bereit für den nächsten Kampf": ["Eric looks straight into the camera, ready for his next bout", "Eric regarde droit vers l’objectif, prêt pour son prochain combat"],
     "Das Maskottchen, ein Tiger im Karate-Gi, in der Halle in Jakarta": ["The mascot, a tiger in a karate gi, in the arena in Jakarta", "La mascotte, un tigre en karaté-gi, dans la salle de Jakarta"],
+    "Series A Kuala Lumpur 2025": ["Series A Kuala Lumpur 2025", "Series A Kuala Lumpur 2025"],
+    "Karate 1 Series A, Kuala Lumpur, Malaysia, Oktober 2025 · Mit Trainingslager": ["Karate 1 Series A, Kuala Lumpur, Malaysia, October 2025 · Incl. training camp", "Karate 1 Series A, Kuala Lumpur, Malaisie, octobre 2025 · Avec stage d’entraînement"],
+    "Eric im Duell mit seinem Gegner vor der Kuala-Lumpur-2025-Wand beim Karate 1 Series A": ["Eric in a bout with his opponent in front of the Kuala Lumpur 2025 backdrop at the Karate 1 Series A", "Eric en combat contre son adversaire devant le fond Kuala Lumpur 2025 à la Karate 1 Series A"],
+    "Eric in Kampfstellung vor der Sponsorenwand des Karate 1 Series A": ["Eric in fighting stance in front of the Karate 1 Series A sponsor wall", "Eric en garde devant le mur de sponsors de la Karate 1 Series A"],
+    "Eric in Nahaufnahme neben seinem Gegner auf der Matte": ["Close-up of Eric next to his opponent on the mat", "Gros plan sur Eric à côté de son adversaire sur le tapis"],
+    "Eric im Profil, ruhig und konzentriert vor dem Kampf, auf der Anzeigetafel SUI Timmer": ["Eric in profile, calm and focused before the bout, with SUI Timmer on the scoreboard", "Eric de profil, calme et concentré avant le combat, avec SUI Timmer sur le tableau d’affichage"],
+    "Eric im Sparring-Training in Malaysia, hinter ihm wartet die Trainingsgruppe": ["Eric sparring in training in Malaysia, with the training group waiting behind him", "Eric en sparring à l’entraînement en Malaisie, le groupe attend derrière lui"],
+    "Ein Trainer erklärt Eric im Trainingslager eine Übung, die Gruppe schaut zu": ["A coach explains an exercise to Eric at the training camp while the group watches", "Un coach explique un exercice à Eric au stage d’entraînement pendant que le groupe regarde"],
     "Series A Jakarta 2022": ["Series A Jakarta 2022", "Series A Jakarta 2022"],
     "Karate 1 Series A, Jakarta, Indonesien, 2022": ["Karate 1 Series A, Jakarta, Indonesia, 2022", "Karate 1 Series A, Jakarta, Indonésie, 2022"],
     "Siegerehrung an den Schweizermeisterschaften in Aarberg: vier Medaillengewinner auf dem Podest": ["Medal ceremony at the Swiss Championships in Aarberg: four medallists on the podium", "Remise des médailles aux Championnats de Suisse à Aarberg : quatre médaillés sur le podium"],
@@ -704,7 +712,7 @@
   var emgal = document.getElementById('emgal');
   if (emgal) useGallery(emgal);
   /* Galerie direkt mit einem Turnier öffnen: galerie.html#em / #basel / #skl / #paris / #wm */
-  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22', '#basel2024': 'tab-bom24' }[location.hash];
+  var hashTab = { '#em': 'tab-em', '#basel': 'tab-bom', '#skl': 'tab-skl', '#paris': 'tab-paris', '#wm': 'tab-wm', '#wm2015': 'tab-wm15', '#wm2023': 'tab-wm23', '#jem2023': 'tab-jem23', '#em2024': 'tab-em24', '#basel2022': 'tab-bom22', '#zadar2024': 'tab-emz24', '#yerevan2025': 'tab-emy25', '#basel2025': 'tab-bom25', '#wskf2018': 'tab-wc18', '#moskau2024': 'tab-mku24', '#jakarta2022': 'tab-jak22', '#kualalumpur2025': 'tab-kl25', '#sm2019': 'tab-sm19', '#sm2020': 'tab-sm20', '#sm2022': 'tab-sm22', '#basel2024': 'tab-bom24' }[location.hash];
   if (hashTab && document.getElementById(hashTab)) document.getElementById(hashTab).click();
 
   /* Foto-Lightbox */
