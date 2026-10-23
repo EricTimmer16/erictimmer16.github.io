@@ -1055,7 +1055,7 @@ html::after {
 
 /* ---------- Mentaltraining (ueber-mich.html#mental, 23.10.2026) ---------- */
 .mental { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
-.mental .mt-p { color: var(--panel-muted); font-size: 18px; line-height: 1.55; margin: 18px 0 0; max-width: 34em; }
+.mental .mt-p { color: var(--muted); font-size: 18px; line-height: 1.55; margin: 18px 0 0; max-width: 34em; }
 .mt-pts { list-style: none; padding: 0; margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .mt-pts li { padding: 9px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; background: color-mix(in srgb, var(--red) 18%, transparent); border: 1px solid color-mix(in srgb, var(--red) 45%, transparent); }
 .mt-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
@@ -1069,3 +1069,10 @@ html::after {
 @media (hover: hover) and (pointer: fine) { .mt-pics figure:hover img { transform: scale(1.03); } }
 @media (max-width: 900px) { .mental { grid-template-columns: 1fr; } }
 .tl-more { margin: 14px 0 0; }
+.band.dark .mental .mt-p { color: var(--panel-muted); }
+/* Physiotherapie (ueber-mich.html#physio): Fotos links, Hochformat-Fotos oben ausgerichtet */
+.mental-rev { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.mental-rev .mt-pics { order: -1; }
+#physio .mt-big img { object-position: 50% 22%; }
+#physio .mt-sm img { object-position: 50% 15%; }
+@media (max-width: 900px) { .mental-rev { grid-template-columns: 1fr; } .mental-rev .mt-pics { order: 0; } }
