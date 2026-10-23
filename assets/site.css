@@ -75,8 +75,8 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
 .nav-links a:hover { opacity: 1; text-decoration: none; }
 .pill { font-size: 12px; font-weight: 500; background: var(--red); color: #fff; padding: 5px 12px; border-radius: 980px; white-space: nowrap; }
 .pill:hover { text-decoration: none; filter: brightness(1.08); }
-@media (max-width: 1000px) { .nav-links { gap: 18px; } }
-@media (max-width: 840px) { .nav-links { display: none; } }
+@media (max-width: 1160px) { .nav-links { gap: 16px; } }
+@media (max-width: 1000px) { .nav-links { display: none; } }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 .lang { display: flex; gap: 2px; padding: 2px; border-radius: 980px; background: color-mix(in srgb, var(--muted) 16%, transparent); }
 .lang button { border: 0; background: transparent; cursor: pointer; font: 600 11px var(--text); letter-spacing: .05em; color: var(--muted); padding: 5px 9px; border-radius: 980px; transition: background .25s, color .25s; }
@@ -378,7 +378,7 @@ button.btn { border: 0; cursor: pointer; font: 400 17px var(--text); }
 nav.top.open .menu-btn .bars { display: none; }
 nav.top.open .menu-btn .x { display: block; }
 .nav-links .only-m { display: none; }
-@media (max-width: 840px) {
+@media (max-width: 1000px) {
   nav.top .wrap { position: relative; }
   .menu-btn { display: inline-flex; }
   .nav-right .pill { display: none; }
@@ -933,7 +933,7 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
               background-color .3s ease, color .3s ease, opacity .3s ease !important;
 }
 .brand { display: inline-block; }
-@media (min-width: 841px) {
+@media (min-width: 1001px) {
   .nav-links a { display: inline-block; padding: 6px 11px; margin: -6px -11px; border-radius: 980px; }
 }
 @media (hover: hover) and (pointer: fine) {
