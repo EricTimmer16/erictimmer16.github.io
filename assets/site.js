@@ -1360,19 +1360,22 @@
   }
 })();
 
-/* Schwebender roter Punkt, der der Maus folgt (nur mit Maus, nicht bei «Bewegung reduzieren") */
+/* Schwebender roter Punkt, der der Maus folgt (nur mit Maus, nicht bei «Bewegung reduzieren»).
+   Zeitbasiert geglättet, damit er auf jedem Bildschirm (60/120 Hz) gleich weich schwebt. */
 (function () {
   if (!window.matchMedia || !matchMedia('(hover: hover) and (pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var d = document.createElement('div');
-  d.className = 'cursor-dot'; d.setAttribute('aria-hidden', 'true');
+  d.className = 'cursor-dot'; d.setAttribute('aria-hidden', 'true'); d.appendChild(document.createElement('i'));
   document.body.appendChild(d);
-  var x = 0, y = 0, cx = 0, cy = 0, running = false;
-  function loop() {
-    cx += (x - cx) * 0.14; cy += (y - cy) * 0.14;
-    d.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
-    if (Math.abs(x - cx) > 0.2 || Math.abs(y - cy) > 0.2) requestAnimationFrame(loop); else running = false;
+  var x = 0, y = 0, cx = 0, cy = 0, last = 0, running = false;
+  function loop(t) {
+    var dt = last ? Math.min(t - last, 64) : 16.7; last = t;
+    var k = 1 - Math.pow(1 - 0.16, dt / 16.7);
+    cx += (x - cx) * k; cy += (y - cy) * k;
+    d.style.transform = 'translate3d(' + cx.toFixed(2) + 'px,' + cy.toFixed(2) + 'px,0)';
+    if (Math.abs(x - cx) > 0.1 || Math.abs(y - cy) > 0.1) requestAnimationFrame(loop); else { running = false; last = 0; }
   }
-  var hot = 'a, button, [role="button"], input, textarea, select, label, summary, .tl-y';
+  var hot = 'a, button, [role="button"], input, textarea, select, label, summary, .tl-y, .gi';
   window.addEventListener('mousemove', function (e) {
     x = e.clientX; y = e.clientY;
     if (!d.classList.contains('on')) { cx = x; cy = y; d.classList.add('on'); }
@@ -1382,4 +1385,13 @@
   document.documentElement.addEventListener('mouseleave', function () { d.classList.remove('on'); });
   window.addEventListener('mousedown', function () { d.classList.add('press'); });
   window.addEventListener('mouseup', function () { d.classList.remove('press'); });
+})();
+
+/* Nach dem Intro die Klasse «intro» entfernen, damit der Browser die Animations-Ebenen freigibt
+   (Endzustand = Normalzustand, es springt also nichts). */
+(function () {
+  var h = document.documentElement, tmr;
+  function arm() { clearTimeout(tmr); tmr = setTimeout(function () { if (document.visibilityState === 'visible') h.classList.remove('intro'); else arm(); }, 4500); }
+  if (h.classList.contains('intro')) arm();
+  new MutationObserver(function () { if (h.classList.contains('intro')) arm(); }).observe(h, { attributes: true, attributeFilter: ['class'] });
 })();
