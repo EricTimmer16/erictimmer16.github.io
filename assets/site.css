@@ -1052,3 +1052,20 @@ html::after {
 @media (hover: hover) and (pointer: fine) {
   .trait:hover, .om:hover, .sb > div:hover { transform: translate3d(0, -4px, 0) scale(1.015); box-shadow: 0 24px 48px -24px rgba(0,0,0,.3); }
 }
+
+/* ---------- Mentaltraining (ueber-mich.html#mental, 23.10.2026) ---------- */
+.mental { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.mental .mt-p { color: var(--panel-muted); font-size: 18px; line-height: 1.55; margin: 18px 0 0; max-width: 34em; }
+.mt-pts { list-style: none; padding: 0; margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.mt-pts li { padding: 9px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; background: color-mix(in srgb, var(--red) 18%, transparent); border: 1px solid color-mix(in srgb, var(--red) 45%, transparent); }
+.mt-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.mt-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mt-pics figure { margin: 0; border-radius: 22px; overflow: hidden; background: #111; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06); }
+.mt-pics img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.mt-big { grid-column: 1 / -1; aspect-ratio: 4 / 3; box-shadow: 0 30px 80px -30px color-mix(in srgb, var(--red) 55%, transparent) !important; }
+.mt-sm { aspect-ratio: 4 / 5; }
+.mt-a img { object-position: 50% 82%; }
+.mt-b img { object-position: 30% 60%; }
+@media (hover: hover) and (pointer: fine) { .mt-pics figure:hover img { transform: scale(1.03); } }
+@media (max-width: 900px) { .mental { grid-template-columns: 1fr; } }
+.tl-more { margin: 14px 0 0; }
