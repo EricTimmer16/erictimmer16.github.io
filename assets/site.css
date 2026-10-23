@@ -779,3 +779,17 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 }
 @media (max-width: 979px) { .cal-layout { margin-top: 24px; } }
 @media (prefers-reduced-motion: reduce) { .map-svg .mk .dot, .map-svg .cn { transition: none; } }
+
+/* Erfolge: Karten mit Favoritenbild statt rot/schwarzem Hintergrund */
+.hcard.ph { min-height: 580px; background: #111; color: #fff; box-shadow: 0 6px 26px rgba(0,0,0,.18); }
+.hcard.ph .hc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform 1.2s var(--ease); }
+.hcard.ph:hover .hc-img { transform: scale(1.05); }
+.hcard.ph::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 36%, rgba(0,0,0,.72) 62%, rgba(0,0,0,.92) 100%); }
+.hcard.ph > :not(.hc-img) { position: relative; z-index: 2; }
+.hcard.ph .when { color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.55); }
+.hcard.ph h3 { margin-top: auto; color: #fff; }
+.hcard.ph p { color: rgba(255,255,255,.86); font-size: 15px; line-height: 1.4; }
+.hcard.ph blockquote { color: #fff; font-size: 18px; }
+.hcard.ph .big { margin-top: 6px; font-size: 64px; color: #fff; background: none; -webkit-text-fill-color: #fff; }
+.hcard.ph .big small { font-size: 18px; color: rgba(255,255,255,.8); -webkit-text-fill-color: rgba(255,255,255,.8); margin-top: 6px; }
+.hcard.ph .go, .hcard.ph .go::after { color: #fff; }
