@@ -8,6 +8,9 @@ Ort und genaues Datum kommen von der Detailseite jedes Turniers.
 Läuft täglich per GitHub Action (.github/workflows/calendar.yml).
 Schlägt etwas fehl oder sieht die Seite anders aus als erwartet, wird NICHTS verändert.
 
+Dazu kommen die Turniere der Swiss Karate Federation (Swiss Karate League, Schweizermeisterschaft)
+aus scripts/skf_events.json, alle mit «Ich bin am Start» (die SKF-Agenda ist nicht abrufbar, deshalb von Hand gepflegt).
+
 Turniere, bei denen Eric am Start ist: Turnier-Nummer (die Zahl in der WKF-Adresse nach «!/»)
 in scripts/eric_am_start.txt eintragen, eine pro Zeile.
 """
@@ -17,6 +20,8 @@ BASE = "https://www.wkf.net"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "calendar.json"
 MARKS = ROOT / "scripts" / "eric_am_start.txt"
+SKF = ROOT / "scripts" / "skf_events.json"
+SKF_URL = "https://www.karate.ch/service/agenda/"
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
           "September", "October", "November", "December"]
 MONTH_NO = {m: i for i, m in enumerate(MONTHS, 1)}
@@ -156,6 +161,22 @@ def build(grid, today, fetch_detail):
     return out
 
 
+def skf_events(today):
+    """Swiss Karate League und Schweizermeisterschaft aus scripts/skf_events.json (von Hand gepflegt)."""
+    if not SKF.exists():
+        return []
+    out = []
+    for e in json.loads(SKF.read_text(encoding="utf-8")).get("events", []):
+        start = datetime.date.fromisoformat(e["start"])
+        end = datetime.date.fromisoformat(e.get("end") or e["start"])
+        if end < today:
+            continue
+        out.append({"id": 800000000 + int(start.strftime("%Y%m%d")), "cat": e["cat"], "name": e["name"],
+                    "city": e.get("city", ""), "start": start.isoformat(), "end": end.isoformat(),
+                    "url": e.get("url") or SKF_URL, "src": "skf", "eric": True})
+    return out
+
+
 def main():
     today = datetime.date.today()
     grid = parse_grid(fetch(BASE + "/calendar"))
@@ -172,6 +193,7 @@ def main():
     events = build(grid, today, fetch_detail)
     if not events:
         raise SystemExit("Keine passenden Turniere gefunden, nichts geändert")
+    events = sorted(events + skf_events(today), key=lambda x: (x["start"], x["id"]))
     old = None
     if OUT.exists():
         try:

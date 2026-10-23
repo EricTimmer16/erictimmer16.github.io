@@ -520,7 +520,7 @@ footer .fnav + .fnav { margin-top: -6px; }
 .ce-d span { display: block; margin-top: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
 .ce-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .ce-t { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 10px; border-radius: 980px; background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--muted); }
-.ce-t.c-em, .ce-t.c-wm, .ce-t.c-quali { background: color-mix(in srgb, var(--red) 14%, transparent); color: var(--red); }
+.ce-t.c-em, .ce-t.c-wm, .ce-t.c-quali, .ce-t.c-swiss-sm { background: color-mix(in srgb, var(--red) 14%, transparent); color: var(--red); }
 .ce-t.ce-me { background: var(--red); color: #fff; }
 .ce h3 { font-size: 19px; font-weight: 600; margin: 8px 0 2px; letter-spacing: -.01em; }
 .ce p { margin: 0; color: var(--muted); font-size: 15px; }
@@ -759,6 +759,7 @@ nav.top[data-tone="red"] .lang button[aria-pressed="true"] { background: #fff; c
 .map-svg .mk .dot { fill: var(--red); stroke: #fff; stroke-width: 1.4; transition: transform .2s; transform-box: fill-box; transform-origin: center; }
 .map-svg .mk.me .dot { fill: var(--red); stroke: var(--fg); }
 .map-svg .mk .hit { fill: transparent; }
+.map-svg .mk .cnt { fill: #fff; font: 700 10px var(--text); text-anchor: middle; pointer-events: none; }
 .map-svg .mk .ring { fill: none; stroke: var(--red); stroke-width: 1.6; opacity: 0; transition: opacity .2s; transform-box: fill-box; transform-origin: center; }
 .map-svg .mk:hover .dot, .map-svg .mk:focus-visible .dot, .map-svg .mk.sel .dot { transform: scale(1.35); }
 .map-svg .mk.sel .ring, .map-svg .mk:focus-visible .ring { opacity: 1; }

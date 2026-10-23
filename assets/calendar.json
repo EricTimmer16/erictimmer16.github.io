@@ -3,6 +3,17 @@
  "generated": "2026-10-22",
  "events": [
   {
+   "id": 820261024,
+   "cat": "swiss-sm",
+   "name": "Schweizermeisterschaft Sursee",
+   "city": "Sursee, Switzerland",
+   "start": "2026-10-24",
+   "end": "2026-10-25",
+   "url": "https://www.karate.ch/service/agenda/",
+   "src": "skf",
+   "eric": true
+  },
+  {
    "id": 459,
    "cat": "series-a",
    "name": "Karate One Series A Tbilisi",
@@ -31,6 +42,17 @@
    "url": "https://www.wkf.net/karate-one/championship/!/460/2027-karate-one-premier-league-rome"
   },
   {
+   "id": 820270320,
+   "cat": "swiss-league",
+   "name": "Swiss Karate League Kreuzlingen",
+   "city": "Kreuzlingen, Switzerland",
+   "start": "2027-03-20",
+   "end": "2027-03-21",
+   "url": "https://www.karate.ch/service/agenda/",
+   "src": "skf",
+   "eric": true
+  },
+  {
    "id": 467,
    "cat": "em",
    "name": "EKF Senior Championships Marseille",
@@ -47,6 +69,17 @@
    "start": "2027-04-16",
    "end": "2027-04-18",
    "url": "https://www.wkf.net/karate-one/championship/!/452/2027-karate-one-series-a-tarragona",
+   "eric": true
+  },
+  {
+   "id": 820270501,
+   "cat": "swiss-league",
+   "name": "Swiss Karate League Biel",
+   "city": "Biel, Switzerland",
+   "start": "2027-05-01",
+   "end": "2027-05-02",
+   "url": "https://www.karate.ch/service/agenda/",
+   "src": "skf",
    "eric": true
   },
   {
@@ -78,6 +111,17 @@
    "eric": true
   },
   {
+   "id": 820270904,
+   "cat": "swiss-league",
+   "name": "Swiss Karate League Züri Oberland",
+   "city": "Züri Oberland, Switzerland",
+   "start": "2027-09-04",
+   "end": "2027-09-05",
+   "url": "https://www.karate.ch/service/agenda/",
+   "src": "skf",
+   "eric": true
+  },
+  {
    "id": 454,
    "cat": "series-a",
    "name": "Karate One Series A Salzburg",
@@ -95,6 +139,17 @@
    "start": "2027-10-08",
    "end": "2027-10-10",
    "url": "https://www.wkf.net/world-championships/championship/!/464/2027-senior-world-championships-qualification-phase-event"
+  },
+  {
+   "id": 820271106,
+   "cat": "swiss-sm",
+   "name": "Schweizermeisterschaft Kriens",
+   "city": "Kriens, Switzerland",
+   "start": "2027-11-06",
+   "end": "2027-11-07",
+   "url": "https://www.karate.ch/service/agenda/",
+   "src": "skf",
+   "eric": true
   },
   {
    "id": 465,

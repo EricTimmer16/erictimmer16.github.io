@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202610231057">
+<link rel="stylesheet" href="assets/site.css?v=202610231109">
 </head>
 <body data-page="Kalender">
 <nav class="top" aria-label="Hauptnavigation">
@@ -64,7 +64,7 @@
     <div class="wrap">
       <div class="eyebrow r">Kalender</div>
       <h1 class="h-sec r" style="--d:.05s">Die nächsten Turniere.</h1>
-      <p class="lead r" style="--d:.1s">Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali.</p>
+      <p class="lead r" style="--d:.1s">Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali. Dazu die Swiss Karate League und die Schweizermeisterschaft.</p>
       <p class="cal-rank r" id="cal-rank" style="--d:.12s" hidden></p>
       <div class="cal-chips r" id="calchips" role="group" aria-label="Turnierart" style="--d:.14s">
         <button type="button" data-f="all" aria-pressed="true">Alle</button>
@@ -73,6 +73,8 @@
         <button type="button" data-f="em" aria-pressed="false">Europameisterschaft</button>
         <button type="button" data-f="wm" aria-pressed="false">Weltmeisterschaft</button>
         <button type="button" data-f="quali" aria-pressed="false">WM-Quali</button>
+        <button type="button" data-f="swiss-league" aria-pressed="false">Swiss League</button>
+        <button type="button" data-f="swiss-sm" aria-pressed="false">Schweizermeisterschaft</button>
       </div>
       <div class="cal-layout">
         <div id="cal" class="cal" aria-live="polite"><noscript><p class="cal-note"><a href="https://www.wkf.net/calendar" target="_blank" rel="noopener">wkf.net/calendar</a></p></noscript></div>
@@ -81,7 +83,7 @@
           <div class="map-info" id="mapinfo" aria-live="polite"></div>
         </aside>
       </div>
-      <p class="cal-note">Quelle: <a href="https://www.wkf.net/calendar" target="_blank" rel="noopener">WKF-Kalender</a>, wird täglich abgeglichen. Änderungen vorbehalten.</p>
+      <p class="cal-note">Quelle: <a href="https://www.wkf.net/calendar" target="_blank" rel="noopener">WKF-Kalender</a> (täglich abgeglichen) und <a href="https://www.karate.ch/service/agenda/" target="_blank" rel="noopener">SKF-Agenda</a>. Änderungen vorbehalten.</p>
     </div>
   </section>
 
@@ -130,6 +132,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202610231057"></script>
+<script src="assets/site.js?v=202610231109"></script>
 </body>
 </html>

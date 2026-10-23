@@ -340,12 +340,15 @@
     "Weltkarte der Turniere": ["World map of tournaments", "Carte du monde des tournois"],
     "Die nächsten Turniere.": ["The next tournaments.", "Les prochains tournois."],
     "Ganzer Kalender": ["Full calendar", "Calendrier complet"],
-    "Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali.": ["The key tournaments of the WKF season: Series A, Premier League, the European Championships, the World Championships and the worlds qualifier.", "Les tournois clés de la saison WKF : Series A, Premier League, championnats d’Europe, championnats du monde et qualification mondiale."],
+    "Die wichtigsten Turniere der WKF-Saison: Series A, Premier League, Europameisterschaft, Weltmeisterschaft und die WM-Quali. Dazu die Swiss Karate League und die Schweizermeisterschaft.": ["The key tournaments of the WKF season: Series A, Premier League, the European Championships, the World Championships and the worlds qualifier. Plus the Swiss Karate League and the Swiss Championships.", "Les tournois clés de la saison WKF : Series A, Premier League, championnats d’Europe, championnats du monde et qualification mondiale. S’y ajoutent la Swiss Karate League et les championnats de Suisse."],
     "Alle": ["All", "Tous"],
     "Europameisterschaft": ["European Championships", "Championnats d’Europe"],
     "Weltmeisterschaft": ["World Championships", "Championnats du monde"],
     "WM-Quali": ["Worlds qualifier", "Qualif. mondiale"],
+    "Swiss League": ["Swiss League", "Swiss League"],
+    "Schweizermeisterschaft": ["Swiss Championships", "Championnats de Suisse"],
     "Quelle: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF-Kalender</a>, wird täglich abgeglichen. Änderungen vorbehalten.": ["Source: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF calendar</a>, checked daily. Subject to change.", "Source : <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">calendrier WKF</a>, mis à jour chaque jour. Sous réserve de modifications."],
+    "Quelle: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF-Kalender</a> (täglich abgeglichen) und <a href=\"https://www.karate.ch/service/agenda/\" target=\"_blank\" rel=\"noopener\">SKF-Agenda</a>. Änderungen vorbehalten.": ["Source: <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">WKF calendar</a> (checked daily) and <a href=\"https://www.karate.ch/service/agenda/\" target=\"_blank\" rel=\"noopener\">SKF agenda</a>. Subject to change.", "Source : <a href=\"https://www.wkf.net/calendar\" target=\"_blank\" rel=\"noopener\">calendrier WKF</a> (mis à jour chaque jour) et <a href=\"https://www.karate.ch/service/agenda/\" target=\"_blank\" rel=\"noopener\">agenda SKF</a>. Sous réserve de modifications."],
     "Turnierart": ["Tournament type", "Type de tournoi"],
     "Persönliche Dankesnachricht per WhatsApp oder E-Mail": ["Personal thank-you message via WhatsApp or email", "Message de remerciement personnel par WhatsApp ou e-mail"],
     "Einladung zu einem Training mit mir": ["Invitation to a training session with me", "Invitation à un entraînement avec moi"],
@@ -544,6 +547,9 @@
     catEm: { de: 'Europameisterschaft', en: 'European Championships', fr: 'Championnats d’Europe' },
     catWm: { de: 'Weltmeisterschaft', en: 'World Championships', fr: 'Championnats du monde' },
     catQuali: { de: 'WM-Quali', en: 'Worlds qualifier', fr: 'Qualif. mondiale' },
+    catSwissLeague: { de: 'Swiss League', en: 'Swiss League', fr: 'Swiss League' },
+    catSwissSm: { de: 'Schweizermeisterschaft', en: 'Swiss Championships', fr: 'Championnats de Suisse' },
+    calInfoSkf: { de: 'SKF-Info', en: 'SKF info', fr: 'Infos SKF' },
     calMe: { de: 'Ich bin am Start', en: 'I’m competing', fr: 'Je suis au départ' },
     calInfo: { de: 'WKF-Info', en: 'WKF info', fr: 'Infos WKF' },
     mapHint: { de: 'Tippe auf einen Punkt oder ein Land, um zum Turnier zu springen.', en: 'Tap a dot or a country to jump to the tournament.', fr: 'Touche un point ou un pays pour aller au tournoi.' },
@@ -969,7 +975,7 @@
   /* Turnierkalender (Daten: assets/calendar.json, täglich von der WKF abgeglichen) */
   var CAL = null, calFail = false, calFilter = 'all';
   var CAL_LOC = { de: 'de-CH', en: 'en-GB', fr: 'fr-CH' };
-  var CAL_CAT = { 'series-a': 'catSeriesA', 'premier-league': 'catPremier', em: 'catEm', wm: 'catWm', quali: 'catQuali' };
+  var CAL_CAT = { 'series-a': 'catSeriesA', 'premier-league': 'catPremier', em: 'catEm', wm: 'catWm', quali: 'catQuali', 'swiss-league': 'catSwissLeague', 'swiss-sm': 'catSwissSm' };
   function calDate(s) { var a = s.split('-'); return new Date(+a[0], +a[1] - 1, +a[2]); }
   function calMon(d, style) { return d.toLocaleDateString(CAL_LOC[lang], { month: style }).replace(/\./g, ''); }
   function calDay(d) { return d.getDate() + (lang === 'de' ? '.' : ''); }
@@ -987,7 +993,7 @@
     astana: [51.17, 71.43], rabat: [34.02, -6.83], amman: [31.95, 35.93], salzburg: [47.81, 13.04], tangier: [35.77, -5.8],
     'milano bergamo': [45.55, 9.4], milano: [45.46, 9.19], milan: [45.46, 9.19], bergamo: [45.7, 9.67], madrid: [40.42, -3.7], paris: [48.86, 2.35],
     budapest: [47.5, 19.04], baku: [40.41, 49.87], cairo: [30.04, 31.24], dubai: [25.2, 55.27], tokyo: [35.68, 139.69], 'kuala lumpur': [3.14, 101.69],
-    jakarta: [-6.2, 106.85], guadalajara: [20.67, -103.35], lima: [-12.05, -77.04], 'santiago de chile': [-33.45, -70.67], cairns: [-16.92, 145.77]
+    sursee: [47.17, 8.11], kreuzlingen: [47.65, 9.18], biel: [47.14, 7.25], 'züri oberland': [47.3, 8.76], kriens: [47.03, 8.28], jakarta: [-6.2, 106.85], guadalajara: [20.67, -103.35], lima: [-12.05, -77.04], 'santiago de chile': [-33.45, -70.67], cairns: [-16.92, 145.77]
   };
   var CTRY = { 'türkiye': 'Turkey', turkiye: 'Turkey', usa: 'United States of America', 'united states': 'United States of America', 'czech republic': 'Czechia', korea: 'South Korea', 'republic of korea': 'South Korea', uae: 'United Arab Emirates', 'bosnia and herzegovina': 'Bosnia and Herz.', 'dominican republic': 'Dominican Rep.', 'north macedonia': 'North Macedonia', 'hong kong': 'China', 'chinese taipei': 'Taiwan' };
   var EG = { A1: 1.340264, A2: -0.081106, A3: 0.000893, A4: 0.003796, M: Math.sqrt(3) / 2 };
@@ -1020,6 +1026,7 @@
       g.querySelector('.hit').setAttribute('r', ((d > 4.5 ? d + 4 : d + 1.5) * u).toFixed(2));
       g.querySelector('.dot').style.strokeWidth = (1.2 * u).toFixed(2);
       g.querySelector('.ring').style.strokeWidth = (1.5 * u).toFixed(2);
+      var ct = g.querySelector('.cnt'); if (ct) { ct.style.fontSize = (d * 1.5 * u).toFixed(2) + 'px'; ct.style.display = d > 4.5 ? '' : 'none'; ct.setAttribute('y', (d * 0.52 * u).toFixed(2)); }
     });
   }
   function mapTarget() {
@@ -1054,7 +1061,7 @@
     info.innerHTML = '';
     if (!ev) { info.appendChild(calEl('p', 'mi-hint', T('mapHint'))); return; }
     var li = document.getElementById('ev-' + ev.id); if (li) { li.classList.add('sel'); if (scroll) li.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' }); }
-    var g = document.querySelector('#calmap .mk[data-ev="' + ev.id + '"]'); if (g) g.classList.add('sel');
+    var g = document.querySelector('#calmap .mk[data-evs*="|' + ev.id + '|"]'); if (g) g.classList.add('sel');
     var cn = MAP.paths[mapCountry(ev)]; if (cn) cn.classList.add('sel');
     var a = calDate(ev.start), b = calDate(ev.end);
     info.appendChild(calEl('div', 'ce-tags')).appendChild(calEl('span', 'ce-t c-' + ev.cat, T(CAL_CAT[ev.cat])));
@@ -1098,15 +1105,26 @@
         mapSelect(arr[i].id, true);
       };
     });
+    var groups = [];
     list.forEach(function (e) {
       var pos = mapPos(e); if (!pos) return;
-      var g = svgEl('g', { 'class': 'mk' + (e.eric ? ' me' : ''), tabindex: '0', role: 'link', 'data-ev': e.id, 'aria-label': e.name + ', ' + (e.city || '') });
-      g.setAttribute('transform', 'translate(' + pos[0].toFixed(1) + ' ' + pos[1].toFixed(1) + ')');
+      var hit = null;
+      groups.forEach(function (g) { if (!hit && g.c === mapCountry(e) && Math.hypot(g.x - pos[0], g.y - pos[1]) < 7) hit = g; });
+      if (hit) { hit.evs.push(e); hit.x = (hit.x * (hit.evs.length - 1) + pos[0]) / hit.evs.length; hit.y = (hit.y * (hit.evs.length - 1) + pos[1]) / hit.evs.length; }
+      else groups.push({ x: pos[0], y: pos[1], evs: [e], c: mapCountry(e) });
+    });
+    groups.forEach(function (gr) {
+      var ids = gr.evs.map(function (e) { return e.id; }), me = gr.evs.some(function (e) { return e.eric; });
+      var label = gr.evs.map(function (e) { return e.name + ', ' + (e.city || ''); }).join('; ');
+      var g = svgEl('g', { 'class': 'mk' + (me ? ' me' : ''), tabindex: '0', role: 'link', 'data-ev': ids[0], 'data-evs': '|' + ids.join('|') + '|', 'aria-label': label });
+      g.setAttribute('transform', 'translate(' + gr.x.toFixed(1) + ' ' + gr.y.toFixed(1) + ')');
       g.appendChild(svgEl('circle', { 'class': 'hit', cx: 0, cy: 0 }));
       g.appendChild(svgEl('circle', { 'class': 'ring', cx: 0, cy: 0 }));
       g.appendChild(svgEl('circle', { 'class': 'dot', cx: 0, cy: 0 }));
-      g.addEventListener('click', function () { mapSelect(e.id, true); });
-      g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); mapSelect(e.id, true); } });
+      if (ids.length > 1) { var tx = svgEl('text', { 'class': 'cnt', x: 0, y: 0 }); tx.textContent = ids.length; g.appendChild(tx); }
+      function pick() { var i = ids.indexOf(mapSel); mapSelect(ids[(i + 1) % ids.length], true); }
+      g.addEventListener('click', pick);
+      g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pick(); } });
       gm.appendChild(g);
     });
     var zb = document.getElementById('mapzoom');
@@ -1116,8 +1134,8 @@
     mapSelect(still ? mapSel : null, false);
     Array.prototype.forEach.call(document.querySelectorAll('#cal .ce'), function (li) {
       var id = +li.getAttribute('data-ev');
-      li.addEventListener('mouseenter', function () { var g = document.querySelector('#calmap .mk[data-ev="' + id + '"]'); if (g) g.classList.add('sel'); });
-      li.addEventListener('mouseleave', function () { var g = document.querySelector('#calmap .mk[data-ev="' + id + '"]'); if (g && id !== mapSel) g.classList.remove('sel'); });
+      li.addEventListener('mouseenter', function () { var g = document.querySelector('#calmap .mk[data-evs*="|' + id + '|"]'); if (g) g.classList.add('sel'); });
+      li.addEventListener('mouseleave', function () { var g = document.querySelector('#calmap .mk[data-evs*="|' + id + '|"]'); if (g && !(mapSel != null && g.getAttribute('data-evs').indexOf('|' + mapSel + '|') >= 0)) g.classList.remove('sel'); });
     });
   }
   (function () {
@@ -1160,9 +1178,9 @@
         m.appendChild(tags);
         m.appendChild(calEl('h3', '', e.name));
         m.appendChild(calEl('p', '', (e.city ? e.city + ' · ' : '') + calRange(a, b)));
-        var go = calEl('a', 'go chev', T('calInfo'));
+        var go = calEl('a', 'go chev', T(e.src === 'skf' ? 'calInfoSkf' : 'calInfo'));
         go.href = e.url; go.target = '_blank'; go.rel = 'noopener';
-        go.setAttribute('aria-label', T('calInfo') + ': ' + e.name);
+        go.setAttribute('aria-label', T(e.src === 'skf' ? 'calInfoSkf' : 'calInfo') + ': ' + e.name);
         li.appendChild(d); li.appendChild(m); li.appendChild(go);
         ul.appendChild(li);
       });
