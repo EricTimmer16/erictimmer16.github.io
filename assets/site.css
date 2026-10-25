@@ -1202,3 +1202,4 @@ nav.top.open .menu-btn.has-new::after { display: none; }
   .ig:hover .ig-cap { opacity: 1; transform: none; }
 }
 @media (max-width: 700px) { .ig-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } .ig { border-radius: 16px; } }
+.ig-cap { max-height: calc(54px + 4.05em); }
