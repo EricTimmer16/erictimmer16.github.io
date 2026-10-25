@@ -6,6 +6,13 @@
     {
       "date": "2026-10-25",
       "breaking": true,
+      "de": "Schweizer Meister 2026! Gold an der Schweizermeisterschaft in Sursee, Kumite Senior −60 kg",
+      "en": "Swiss Champion 2026! Gold at the Swiss Championships in Sursee, senior kumite −60 kg",
+      "fr": "Champion de Suisse 2026 ! L’or aux Championnats de Suisse à Sursee, kumite seniors −60 kg",
+      "link": "erfolge.html"
+    },
+    {
+      "date": "2026-10-25",
       "de": "Nächster Start: {next}",
       "en": "Next competition: {next}",
       "fr": "Prochaine compétition : {next}",
