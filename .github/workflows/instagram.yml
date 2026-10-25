@@ -1,0 +1,36 @@
+name: Instagram abgleichen
+
+# Läuft jeden Tag und holt Erics neuste Instagram-Beiträge über Behold (behold.so).
+# Hat sich etwas geändert, werden assets/instagram.json und images/instagram/ aktualisiert.
+on:
+  schedule:
+    - cron: "57 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Neuste Beiträge von Instagram (Behold) holen
+        run: python3 scripts/update_instagram.py
+      - name: Änderungen speichern
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            MSG="Instagram-Beiträge automatisch aktualisiert"
+            git config user.name "ranking-bot"
+            git config user.email "ranking-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "$MSG"
+            git pull --rebase
+            git push
+          else
+            echo "Keine Änderung, Seite ist aktuell."
+          fi

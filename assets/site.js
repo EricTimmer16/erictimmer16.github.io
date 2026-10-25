@@ -485,6 +485,9 @@
     "Schweizermeisterschaft 2025": ["Swiss Championships 2025", "Championnats de Suisse 2025"],
     "Schweizermeisterschaft 2026": ["Swiss Championships 2026", "Championnats de Suisse 2026"],
     "Neu auf der Seite": ["New on the site", "Nouveau sur le site"],
+    "Folge mir auf Instagram.": ["Follow me on Instagram.", "Suis-moi sur Instagram."],
+    "Training, Turniere und alles dazwischen.": ["Training, tournaments and everything in between.", "Entraînements, tournois et tout ce qu’il y a entre les deux."],
+    "@ericsskf folgen": ["Follow @ericsskf", "Suivre @ericsskf"],
     "Schweiz · Swiss Karate Federation": ["Switzerland · Swiss Karate Federation", "Suisse · Swiss Karate Federation"],
     "Zu Hause ganz vorne.": ["Out in front at home.", "Devant, à la maison."],
     "Meine Bilanz an den nationalen Turnieren des Schweizer Karateverbands: Schweizermeisterschaften, Swiss Karate League und Basel Open Masters.": ["My record at the Swiss Karate Federation’s national events: Swiss Championships, Swiss Karate League and Basel Open Masters.", "Mon bilan aux tournois nationaux de la Fédération suisse de karaté : championnats de Suisse, Swiss Karate League et Basel Open Masters."],
@@ -1484,6 +1487,29 @@
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (j) { if (j && j.results && j.results.length) { skf.data = j; renderSkf(); } })
       .catch(function () {});
+  }
+
+  /* Instagram auf der Startseite (Daten: assets/instagram.json, täglich über Behold geholt) */
+  var igGrid = document.getElementById('ig-grid');
+  if (igGrid) {
+    fetch('assets/instagram.json?d=' + new Date().toISOString().slice(0, 10), { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        var ps = (d && d.posts) || []; if (!ps.length) return;
+        ps.slice(0, 6).forEach(function (p) {
+          var a = document.createElement('a'); a.className = 'ig'; a.href = p.permalink; a.target = '_blank'; a.rel = 'noopener';
+          var im = document.createElement('img'); im.src = p.img; im.alt = p.caption ? p.caption.slice(0, 120) : 'Instagram'; im.loading = 'lazy'; im.decoding = 'async';
+          a.appendChild(im);
+          if (p.type === 'VIDEO' || p.type === 'CAROUSEL_ALBUM') {
+            var ic = document.createElement('span'); ic.className = 'ig-ic'; ic.setAttribute('aria-hidden', 'true');
+            ic.innerHTML = p.type === 'VIDEO' ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>' : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="13" height="13" rx="2.5"/><path d="M4 16V6.5A2.5 2.5 0 0 1 6.5 4H16"/></svg>';
+            a.appendChild(ic);
+          }
+          if (p.caption) { var c = document.createElement('span'); c.className = 'ig-cap'; c.textContent = p.caption; a.appendChild(c); }
+          igGrid.appendChild(a);
+        });
+        document.getElementById('instagram').hidden = false;
+      }).catch(function () {});
   }
 
   /* Sprache wechseln */
