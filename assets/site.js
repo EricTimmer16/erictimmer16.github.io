@@ -1336,16 +1336,33 @@
   var NB = { de: ['Neu', 'Ansehen'], en: ['New', 'View'], fr: ['Nouveau', 'Voir'] };
   function newsFresh(it, days) { var age = (new Date() - new Date(it.date + 'T00:00:00')) / 864e5; return age <= days && age >= -1; }
   function newsStrip(t) { return String(t).replace(/^(Neu|New|Nouveau)\s*:\s*/i, ''); }
+  /* Gelesene Meldungen (pro Besucher im Browser gemerkt): angeklickte Meldungen verschwinden aus Laufband,
+     «Das ist neu.» und Menü-Punkt; automatische Meldungen ({next}, {rank}) bleiben immer. */
+  function newsKey(it) { return it.date + '|' + (it.de || '').slice(0, 60); }
+  function newsAuto(it) { return /\{(next|rank)\}/.test(it.de || ''); }
+  var newsRead = {};
+  try { newsRead = JSON.parse(localStorage.getItem('newsRead') || '{}') || {}; } catch (e) { newsRead = {}; }
+  function newsIsRead(it) { return !newsAuto(it) && !!newsRead[newsKey(it)]; }
+  function newsMarkRead(key) {
+    if (!key) return;
+    newsRead[key] = 1;
+    try { localStorage.setItem('newsRead', JSON.stringify(newsRead)); } catch (e) {}
+    setTimeout(renderNews, 0);
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-nk]');
+    if (a) newsMarkRead(a.getAttribute('data-nk'));
+  });
   function renderNewsExtras() {
     var d = news.data; if (!d) return;
-    var all = (d.items || []).filter(function (it) { return newsFresh(it, d.max_tage || 120); });
+    var all = (d.items || []).filter(function (it) { return newsFresh(it, d.max_tage || 120) && !newsIsRead(it); });
     /* Karten */
     var box = document.getElementById('newscards');
     if (box) {
       var lim = +box.getAttribute('data-limit') || 3, cards = all.filter(function (it) { return it.img && it.link; }).slice(0, lim);
       box.innerHTML = '';
       cards.forEach(function (it) {
-        var a = document.createElement('a'); a.className = 'nc'; a.href = it.link;
+        var a = document.createElement('a'); a.className = 'nc'; a.href = it.link; a.setAttribute('data-nk', newsKey(it));
         var im = document.createElement('img'); im.src = it.img; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
         var body = document.createElement('div'); body.className = 'nc-b';
         var meta = document.createElement('div'); meta.className = 'nc-m';
@@ -1375,14 +1392,14 @@
     var today = new Date(), max = news.data.max_tage || 120, items = [];
     (news.data.items || []).forEach(function (it) {
       var age = (today - new Date(it.date + 'T00:00:00')) / 864e5;
-      if (age > max || age < -1) return;
+      if (age > max || age < -1 || newsIsRead(it)) return;
       var txt = it[lang] || it.de || '';
       if (txt.indexOf('{rank}') >= 0) { if (!news.rank) return; txt = txt.replace('{rank}', news.rank); }
       if (txt.indexOf('{next}') >= 0) {
         var n = newsNextText(); if (!n) return;
         if (n.charAt(0) === '\u0000') { txt = NW[lang][3] + n.slice(1); } else txt = txt.replace('{next}', n);
       }
-      items.push({ t: txt, l: it.link, b: !!it.breaking });
+      items.push({ t: txt, l: it.link, b: !!it.breaking, k: newsAuto(it) ? '' : newsKey(it) });
     });
     var track = news.el.querySelector('.nt-track');
     track.innerHTML = '';
@@ -1394,7 +1411,7 @@
       if (hide) g.setAttribute('aria-hidden', 'true');
       items.forEach(function (it) {
         var a = document.createElement(it.l ? 'a' : 'span'); a.className = 'nt-item' + (it.b ? ' hot' : '');
-        if (it.l) { a.href = it.l; if (hide) a.tabIndex = -1; }
+        if (it.l) { a.href = it.l; if (hide) a.tabIndex = -1; if (it.k) a.setAttribute('data-nk', it.k); }
         a.textContent = it.t;
         g.appendChild(a);
       });
