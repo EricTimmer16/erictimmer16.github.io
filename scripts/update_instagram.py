@@ -11,7 +11,7 @@ Ist FEED_URL leer oder schlägt etwas fehl, bleibt die Seite unverändert.
 """
 import json, pathlib, re, sys, time, urllib.request
 
-FEED_URL = ""  # z. B. "https://feeds.behold.so/XXXXXXXXXXXX"
+FEED_URL = "https://feeds.behold.so/pvzxmjA1UwxrMH4jIfBY"  # Behold-Feed «Webseite erictimmer.ch»
 MAX_POSTS = 6
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
