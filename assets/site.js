@@ -1293,6 +1293,89 @@
       .catch(function () { calFail = true; renderCal(); });
   })();
 
+  /* Laufband «Breaking News» (Daten: assets/news.json; {rank} aus ranking.json, {next} aus calendar.json) */
+  var NW = { de: ['Breaking News', 'Neuigkeiten', 'Laufband schliessen', 'Jetzt am Start: ', 'bis'], en: ['Breaking News', 'News', 'Close news ticker', 'Competing now: ', 'until'], fr: ['Dernière minute', 'Actualités', 'Fermer le bandeau', 'En compétition : ', 'jusqu’au'] };
+  var news = { el: null, data: null, rank: null, next: null };
+  function newsClosed() { try { return sessionStorage.getItem('newsOff') === '1'; } catch (e) { return false; } }
+  function newsNext(evs) {
+    var today = new Date().toISOString().slice(0, 10), best = null;
+    (evs || []).forEach(function (e) { if (e.eric && e.end >= today && (!best || e.start < best.start)) best = e; });
+    return best;
+  }
+  function newsNextText() {
+    var e = news.next; if (!e) return '';
+    var loc = CAL_LOC[lang], a = calDate(e.start), b = calDate(e.end), today = new Date().toISOString().slice(0, 10);
+    var city = String(e.city || '').split(',')[0];
+    var name = e.name + (city && e.name.indexOf(city) < 0 ? ' (' + city + ')' : '');
+    if (e.start <= today) return '\u0000' + name + ', ' + NW[lang][4] + ' ' + b.toLocaleDateString(loc, { day: 'numeric', month: 'long' });
+    var same = a.getMonth() === b.getMonth();
+    var d1 = a.toLocaleDateString(loc, same ? { day: 'numeric' } : { day: 'numeric', month: 'long' });
+    var d2 = b.toLocaleDateString(loc, { day: 'numeric', month: 'long', year: 'numeric' });
+    return name + ', ' + (e.start === e.end ? d2 : d1 + (lang === 'de' ? '' : ' ') + '–' + (lang === 'de' ? '' : ' ') + d2);
+  }
+  function renderNews() {
+    if (!news.el || !news.data) return;
+    var today = new Date(), max = news.data.max_tage || 120, items = [];
+    (news.data.items || []).forEach(function (it) {
+      var age = (today - new Date(it.date + 'T00:00:00')) / 864e5;
+      if (age > max || age < -1) return;
+      var txt = it[lang] || it.de || '';
+      if (txt.indexOf('{rank}') >= 0) { if (!news.rank) return; txt = txt.replace('{rank}', news.rank); }
+      if (txt.indexOf('{next}') >= 0) {
+        var n = newsNextText(); if (!n) return;
+        if (n.charAt(0) === '\u0000') { txt = NW[lang][3] + n.slice(1); } else txt = txt.replace('{next}', n);
+      }
+      items.push({ t: txt, l: it.link, b: !!it.breaking });
+    });
+    var track = news.el.querySelector('.nt-track');
+    track.innerHTML = '';
+    if (!items.length) { news.el.hidden = true; return; }
+    news.el.querySelector('.nt-badge span').textContent = NW[lang][0];
+    news.el.setAttribute('aria-label', NW[lang][1]);
+    news.el.querySelector('.nt-x').setAttribute('aria-label', NW[lang][2]);
+    function group(hide) {
+      var g = document.createElement('div'); g.className = 'nt-group';
+      if (hide) g.setAttribute('aria-hidden', 'true');
+      items.forEach(function (it) {
+        var a = document.createElement(it.l ? 'a' : 'span'); a.className = 'nt-item' + (it.b ? ' hot' : '');
+        if (it.l) { a.href = it.l; if (hide) a.tabIndex = -1; }
+        a.textContent = it.t;
+        g.appendChild(a);
+      });
+      return g;
+    }
+    track.appendChild(group(false)); track.appendChild(group(true));
+    news.el.hidden = false;
+    var w = track.firstChild.getBoundingClientRect().width;
+    track.style.setProperty('--nt-dur', Math.max(18, w / 70).toFixed(1) + 's');
+  }
+  (function () {
+    var nav = document.querySelector('nav.top');
+    if (!nav || newsClosed()) return;
+    var el = document.createElement('div');
+    el.className = 'newsticker'; el.hidden = true; el.setAttribute('role', 'region');
+    el.innerHTML = '<div class="nt-badge"><i></i><span>Breaking News</span></div><div class="nt-view"><div class="nt-track"></div></div><button type="button" class="nt-x"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l8 8M14 6l-8 8"/></svg></button>';
+    nav.appendChild(el);
+    news.el = el;
+    el.querySelector('.nt-x').addEventListener('click', function () {
+      el.hidden = true; try { sessionStorage.setItem('newsOff', '1'); } catch (e) {}
+    });
+    var day = new Date().toISOString().slice(0, 10);
+    function get(u) { return fetch(u + '?d=' + day, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+    Promise.all([
+      get('assets/news.json'),
+      get('assets/ranking.json').catch(function () { return null; }),
+      get('assets/calendar.json').catch(function () { return null; })
+    ]).then(function (r) {
+      if (!r[0] || r[0].aktiv === false) return;
+      news.data = r[0];
+      if (r[1] && r[1].rank) news.rank = r[1].rank;
+      if (r[2]) news.next = newsNext(r[2].events);
+      renderNews();
+    }).catch(function () {});
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(renderNews, 200); });
+  })();
+
   /* Sprache wechseln */
   var metaDesc = document.querySelector('meta[name="description"]');
   var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang button'));
@@ -1310,6 +1393,7 @@
     renderRank();
     if (gw.slides.length) Array.prototype.forEach.call(gw.dots.children, function (d, n) { d.setAttribute('aria-label', T('gwDot').replace('{n}', n + 1)); });
     renderCal();
+    renderNews();
     if (metaDesc) metaDesc.setAttribute('content', T('desc'));
     var pg = document.body.getAttribute('data-page');
     document.title = (pg ? tr(pg) + ' · ' : '') + 'Eric Timmer';
@@ -1359,7 +1443,7 @@
   var tone = '', ticking = false;
   function update() {
     ticking = false;
-    var half = window.innerWidth < 735 ? 40 : 60, y = nav.offsetHeight / 2, t = '';
+    var half = window.innerWidth < 735 ? 40 : 60, y = 26, t = '';
     for (var i = 0; i < bands.length; i++) {
       var r = bands[i].getBoundingClientRect();
       if (r.top + half < y && r.bottom - half > y) { t = bands[i].classList.contains('contact') ? 'red' : 'dark'; break; }

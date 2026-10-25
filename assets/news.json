@@ -1,0 +1,57 @@
+{
+  "_hilfe": "Laufband oben auf jeder Seite. Neue Meldung = neuer Block ganz oben in 'items'. Felder: date (JJJJ-MM-TT), de/en/fr (Text), link (optional). Meldungen mit 'breaking': true bekommen ein rotes BREAKING-Schild. Platzhalter: {rank} = aktueller Weltrang, {next} = nächstes Turnier, bei dem Eric am Start ist (beides automatisch). Meldungen älter als 'max_tage' werden ausgeblendet. Das Laufband ganz ausschalten: 'aktiv': false.",
+  "aktiv": true,
+  "max_tage": 120,
+  "items": [
+    {
+      "date": "2026-10-25",
+      "breaking": true,
+      "de": "Nächster Start: {next}",
+      "en": "Next competition: {next}",
+      "fr": "Prochaine compétition : {next}",
+      "link": "kalender.html"
+    },
+    {
+      "date": "2026-10-25",
+      "de": "Aktuell Nummer {rank} der Welt (WKF-Weltrangliste, Kumite −60 kg)",
+      "en": "Currently world number {rank} (WKF world ranking, kumite −60 kg)",
+      "fr": "Actuellement numéro {rank} mondial (classement WKF, kumite −60 kg)",
+      "link": "erfolge.html"
+    },
+    {
+      "date": "2026-10-23",
+      "de": "Neu: Mentaltraining mit Ray Popoola – der Kopf kämpft mit",
+      "en": "New: mental training with Ray Popoola – the mind fights too",
+      "fr": "Nouveau : préparation mentale avec Ray Popoola – la tête combat aussi",
+      "link": "ueber-mich.html#mental"
+    },
+    {
+      "date": "2026-10-23",
+      "de": "Neu: Seite «Über mich» mit Steckbrief und meiner Geschichte",
+      "en": "New: «About me» page with fact sheet and my story",
+      "fr": "Nouveau : page «À propos» avec fiche et mon histoire",
+      "link": "ueber-mich.html"
+    },
+    {
+      "date": "2026-10-23",
+      "de": "Neu: Physiotherapie mit Physio Henrich – mein Körper in guten Händen",
+      "en": "New: physiotherapy with Physio Henrich – my body in good hands",
+      "fr": "Nouveau : physiothérapie avec Physio Henrich – mon corps entre de bonnes mains",
+      "link": "ueber-mich.html#physio"
+    },
+    {
+      "date": "2026-10-22",
+      "de": "Galerie: Fotos von 15 Turnieren, von der WM 2015 bis zur EM 2026",
+      "en": "Gallery: photos from 15 tournaments, from the 2015 Worlds to the 2026 Europeans",
+      "fr": "Galerie : photos de 15 tournois, des Mondiaux 2015 à l’Euro 2026",
+      "link": "galerie.html"
+    },
+    {
+      "date": "2026-10-22",
+      "de": "Gönnerclub: Unterstütze meinen Weg an die Weltspitze – schon ab CHF 50",
+      "en": "Supporters’ club: back my road to the top – from CHF 50",
+      "fr": "Club des supporters : soutiens mon chemin vers le sommet – dès CHF 50",
+      "link": "goennerclub.html"
+    }
+  ]
+}
