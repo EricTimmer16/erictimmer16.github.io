@@ -135,7 +135,6 @@
     '9. Platz an der Europameisterschaft in Zadar, Kroatien': ['9th place at the European Championships in Zadar, Croatia', '9<sup>e</sup> place aux Championnats d’Europe à Zadar, Croatie'],
     'Europameisterschaft in Zadar, Kroatien': ['European Championships in Zadar, Croatia', 'Championnats d’Europe à Zadar, Croatie'],
     'Karate 1 Series A in Salzburg': ['Karate 1 Series A in Salzburg', 'Karate 1 Series A à Salzbourg'],
-    'Internationales Trainingslager in Deutschland': ['International training camp in Germany', 'Camp d’entraînement international en Allemagne'],
     'Elite-Weltmeisterschaft in Budapest': ['Senior World Championships in Budapest', 'Championnats du monde seniors à Budapest'],
     'EM-Debüt bei der Elite in Guadalajara, Spanien': ['Senior European Championships debut in Guadalajara, Spain', 'Débuts aux Championnats d’Europe seniors à Guadalajara, Espagne'],
     'Gleichzeitig im Junioren- und im Elite-Nationalkader': ['In the junior and senior national teams at the same time', 'Membre à la fois des cadres nationaux juniors et seniors'],
