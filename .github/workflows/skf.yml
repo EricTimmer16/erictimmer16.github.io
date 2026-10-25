@@ -1,0 +1,36 @@
+name: SKF-Profil abgleichen
+
+# Läuft jeden Tag und holt Erics Profil (Medaillen, Resultate, Kader) vom Schweizer
+# Karateverband (karate.ch). Hat sich etwas geändert, wird assets/skf.json aktualisiert.
+on:
+  schedule:
+    - cron: "47 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skf
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Profil von karate.ch holen
+        run: python3 scripts/update_skf.py
+      - name: Änderungen speichern
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            MSG=$(python3 -c "import json;d=json.load(open('assets/skf.json'));m=d['medals'];print(f\"SKF-Profil automatisch aktualisiert: {m['gold']} Gold, {m['silver']} Silber, {m['bronze']} Bronze, {m['starts']} Starts\")")
+            git config user.name "ranking-bot"
+            git config user.email "ranking-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "$MSG"
+            git pull --rebase
+            git push
+          else
+            echo "Keine Änderung, Seite ist aktuell."
+          fi

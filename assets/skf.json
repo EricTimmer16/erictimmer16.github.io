@@ -1,0 +1,161 @@
+{
+ "source": "https://www.karate.ch/nationalkader/athlet/timmer-eric/",
+ "club": "HAYABUSA KARATE DO BASEL",
+ "facts": {
+  "Disziplin": "KUMITE",
+  "Kaderstufe": "Elite",
+  "Swiss Olympic Card": "Elite - Bronze",
+  "Kaderjahre": "2023 – 2026",
+  "Jahrgang": "2003",
+  "Kategorie": "Männer",
+  "Förderpool": "Förderpool C"
+ },
+ "medals": {
+  "gold": 12,
+  "silver": 4,
+  "bronze": 3,
+  "starts": 20
+ },
+ "results": [
+  {
+   "place": 1,
+   "tournament": "Swiss Karate League Züri Oberland",
+   "category": "Male Kumite -60 Kg",
+   "date": "2026-09-05"
+  },
+  {
+   "place": 1,
+   "tournament": "International Basel Open Masters",
+   "category": "Male Kumite -60 Kg",
+   "date": "2026-08-29"
+  },
+  {
+   "place": 2,
+   "tournament": "3. Swiss Karate League 2026 – Zürich",
+   "category": "Male Kumite -60 Kg",
+   "date": "2026-06-27"
+  },
+  {
+   "place": 1,
+   "tournament": "2. Swiss Karate League 2026 Neuchâtel à Biel / Bienne",
+   "category": "Male Kumite -60 Kg",
+   "date": "2026-05-30"
+  },
+  {
+   "place": 2,
+   "tournament": "Schweizermeisterschaften / Championnat suisse 2025",
+   "category": "Male Kumite -60 Kg",
+   "date": "2025-11-22"
+  },
+  {
+   "place": 5,
+   "tournament": "15. International Basel Open Masters 2025",
+   "category": "Male Kumite -60 Kg",
+   "date": "2025-08-30"
+  },
+  {
+   "place": 3,
+   "tournament": "2. Swiss Karate League 2025",
+   "category": "Male Kumite -60 Kg",
+   "date": "2025-06-14"
+  },
+  {
+   "place": 1,
+   "tournament": "1. Swiss Karate League 2025",
+   "category": "Male Kumite -60 Kg",
+   "date": "2025-03-22"
+  },
+  {
+   "place": 1,
+   "tournament": "Schweizermeisterschaften / Championnat suisse 2024",
+   "category": "Male Kumite -60 Kg",
+   "date": "2024-10-26"
+  },
+  {
+   "place": 1,
+   "tournament": "3. Swiss Karate League 2024 - Neuchatel",
+   "category": "Male Kumite -60 Kg",
+   "date": "2024-09-07"
+  },
+  {
+   "place": 1,
+   "tournament": "2. Swiss Karate League 2024 - Burgdorf",
+   "category": "Male Kumite -60 Kg",
+   "date": "2024-06-15"
+  },
+  {
+   "place": 1,
+   "tournament": "1. Swiss Karate League 2024 - Wettingen",
+   "category": "Male Kumite -60 Kg",
+   "date": "2024-03-23"
+  },
+  {
+   "place": 1,
+   "tournament": "3. Swiss Karate League 2023 - Neuchâtel, Le Landeron",
+   "category": "Kumite Individual Male U21 -60",
+   "date": "2023-09-09"
+  },
+  {
+   "place": 3,
+   "tournament": "3. Swiss Karate League 2023 - Neuchâtel, Le Landeron",
+   "category": "Kumite Individual Male Seniors -67",
+   "date": "2023-09-09"
+  },
+  {
+   "place": 1,
+   "tournament": "2. Swiss Karate League 2023 - Burgdorf",
+   "category": "Kumite Individual Male U21 -60",
+   "date": "2023-06-10"
+  },
+  {
+   "place": 2,
+   "tournament": "2. Swiss Karate League 2023 - Burgdorf",
+   "category": "Kumite Individual Male Seniors -67",
+   "date": "2023-06-10"
+  },
+  {
+   "place": 1,
+   "tournament": "Schweizermeisterschaften / Championnat suisse 2022 - Sursee",
+   "category": "Kumite Individual Male Seniors -60",
+   "date": "2022-11-26"
+  },
+  {
+   "place": 1,
+   "tournament": "Schweizermeisterschaften / Championnat suisse 2022 - Sursee",
+   "category": "Kumite Individual Male U21 -60",
+   "date": "2022-11-26"
+  },
+  {
+   "place": 2,
+   "tournament": "2. Swiss Karate League 2022 - Neuchâtel",
+   "category": "Kumite Individual Male Seniors -67",
+   "date": "2022-09-10"
+  },
+  {
+   "place": 3,
+   "tournament": "2. Swiss Karate League 2022 - Neuchâtel",
+   "category": "Kumite Individual Male U21 -67",
+   "date": "2022-09-10"
+  }
+ ],
+ "history": [
+  {
+   "year": 2026,
+   "meta": "KUMITE · Elite · Elite - Bronze"
+  },
+  {
+   "year": 2025,
+   "meta": "KUMITE · Elite · Elite"
+  },
+  {
+   "year": 2024,
+   "meta": "KUMITE · Elite · Elite"
+  },
+  {
+   "year": 2023,
+   "meta": "KUMITE · Elite · Elite"
+  }
+ ],
+ "dan": "1. Dan Shotokan, SKU",
+ "checked": "2026-10-25"
+}

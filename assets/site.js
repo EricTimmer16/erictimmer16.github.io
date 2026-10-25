@@ -486,6 +486,11 @@
     "Schweizermeisterschaft 2025": ["Swiss Championships 2025", "Championnats de Suisse 2025"],
     "Schweizermeisterschaft 2026": ["Swiss Championships 2026", "Championnats de Suisse 2026"],
     "Neu auf der Seite": ["New on the site", "Nouveau sur le site"],
+    "Schweiz · Swiss Karate Federation": ["Switzerland · Swiss Karate Federation", "Suisse · Swiss Karate Federation"],
+    "Zu Hause ganz vorne.": ["Out in front at home.", "Devant, à la maison."],
+    "Meine Bilanz an den nationalen Turnieren des Schweizer Karateverbands: Schweizermeisterschaften, Swiss Karate League und Basel Open Masters.": ["My record at the Swiss Karate Federation’s national events: Swiss Championships, Swiss Karate League and Basel Open Masters.", "Mon bilan aux tournois nationaux de la Fédération suisse de karaté : championnats de Suisse, Swiss Karate League et Basel Open Masters."],
+    "Alle Resultate anzeigen": ["Show all results", "Voir tous les résultats"],
+    "Mein SKF-Profil": ["My SKF profile", "Mon profil SKF"],
     "Das ist neu.": ["What’s new.", "Les nouveautés."],
     "Schweizermeisterschaften, Sursee, Oktober 2026 · Schweizer Meister, Kumite Senior −60 kg": ["Swiss Championships, Sursee, October 2026 · Swiss Champion, senior kumite −60 kg", "Championnats de Suisse, Sursee, octobre 2026 · Champion de Suisse, kumite seniors −60 kg"],
     "Eric schreit seine Freude heraus nach einem Punkt im Final der Schweizermeisterschaft": ["Eric roars with joy after a point in the Swiss Championships final", "Eric crie sa joie après un point en finale des Championnats de Suisse"],
@@ -1424,6 +1429,64 @@
     var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(renderNews, 200); });
   })();
 
+  /* SKF-Bilanz auf erfolge.html (Daten: assets/skf.json, täglich von karate.ch abgeglichen) */
+  var SK = {
+    de: { g: 'Gold', s: 'Silber', b: 'Bronze', st: 'Starts', since: 'Nationalkader seit {y}', lvl: 'Kaderstufe {v}', card: 'Swiss Olympic Card {v}', all: 'Alle Resultate anzeigen', less: 'Weniger anzeigen', src: 'Quelle: Swiss Karate Federation (karate.ch), täglich abgeglichen', pl: 'Platz' },
+    en: { g: 'Gold', s: 'Silver', b: 'Bronze', st: 'Starts', since: 'National team since {y}', lvl: 'Squad level: {v}', card: 'Swiss Olympic Card {v}', all: 'Show all results', less: 'Show fewer', src: 'Source: Swiss Karate Federation (karate.ch), synced daily', pl: 'Place' },
+    fr: { g: 'Or', s: 'Argent', b: 'Bronze', st: 'Départs', since: 'Équipe nationale depuis {y}', lvl: 'Niveau : {v}', card: 'Swiss Olympic Card {v}', all: 'Voir tous les résultats', less: 'Voir moins', src: 'Source : Swiss Karate Federation (karate.ch), mise à jour quotidienne', pl: 'Place' }
+  };
+  var skf = { box: document.getElementById('skf'), data: null, open: false, n: 8 };
+  function skfCat(c) {
+    var m = String(c).match(/-\s*(\d+)/), u = /U21/i.test(c) ? 'U21 ' : '';
+    return m ? 'Kumite ' + u + '−' + m[1] + ' kg' : c;
+  }
+  function renderSkf() {
+    if (!skf.box || !skf.data) return;
+    var d = skf.data, t = SK[lang], md = d.medals || {}, f = d.facts || {};
+    var mbox = document.getElementById('skf-medals');
+    mbox.innerHTML = '';
+    [['g', md.gold, 'gold'], ['s', md.silver, 'silver'], ['b', md.bronze, 'bronze'], ['st', md.starts, 'start']].forEach(function (x) {
+      var el = document.createElement('div'); el.className = 'skf-m skf-' + x[2];
+      el.innerHTML = '<i aria-hidden="true"></i><b></b><span></span>';
+      el.querySelector('b').textContent = x[1] || 0; el.querySelector('span').textContent = t[x[0]];
+      mbox.appendChild(el);
+    });
+    var facts = [];
+    var yrs = (d.history || []).map(function (h) { return h.year; });
+    if (yrs.length) facts.push(t.since.replace('{y}', Math.min.apply(null, yrs)));
+    if (f['Kaderstufe']) facts.push(t.lvl.replace('{v}', f['Kaderstufe']));
+    if (f['Swiss Olympic Card']) facts.push(t.card.replace('{v}', String(f['Swiss Olympic Card']).split('-').pop().trim()));
+    if (d.dan) facts.push(d.dan.replace(/,\s*SKU$/, ''));
+    var fbox = document.getElementById('skf-facts'); fbox.innerHTML = '';
+    facts.forEach(function (x) { var s = document.createElement('span'); s.textContent = x; fbox.appendChild(s); });
+    var list = document.getElementById('skf-list'); list.innerHTML = '';
+    var rs = d.results || [];
+    rs.slice(0, skf.open ? rs.length : skf.n).forEach(function (r) {
+      var li = document.createElement('li'); li.className = 'skf-r' + (r.place && r.place <= 3 ? ' p' + r.place : '');
+      var pl = document.createElement('span'); pl.className = 'skf-pl'; pl.textContent = r.place ? r.place + '.' : '–'; pl.setAttribute('aria-label', t.pl + ' ' + (r.place || ''));
+      var mid = document.createElement('span'); mid.className = 'skf-t';
+      var nm = document.createElement('b'); nm.textContent = r.tournament;
+      var ct = document.createElement('small'); ct.textContent = skfCat(r.category);
+      mid.appendChild(nm); mid.appendChild(ct);
+      var dt = document.createElement('span'); dt.className = 'skf-d';
+      dt.textContent = calDate(r.date).toLocaleDateString(CAL_LOC[lang], { day: 'numeric', month: 'short', year: 'numeric' });
+      li.appendChild(pl); li.appendChild(mid); li.appendChild(dt); list.appendChild(li);
+    });
+    var btn = document.getElementById('skf-all');
+    btn.hidden = rs.length <= skf.n;
+    btn.textContent = skf.open ? t.less : t.all;
+    btn.setAttribute('aria-expanded', skf.open ? 'true' : 'false');
+    document.getElementById('skf-src').textContent = t.src;
+    skf.box.hidden = false;
+  }
+  if (skf.box) {
+    document.getElementById('skf-all').addEventListener('click', function () { skf.open = !skf.open; renderSkf(); });
+    fetch('assets/skf.json?d=' + new Date().toISOString().slice(0, 10), { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { if (j && j.results && j.results.length) { skf.data = j; renderSkf(); } })
+      .catch(function () {});
+  }
+
   /* Sprache wechseln */
   var metaDesc = document.querySelector('meta[name="description"]');
   var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang button'));
@@ -1442,6 +1505,7 @@
     if (gw.slides.length) Array.prototype.forEach.call(gw.dots.children, function (d, n) { d.setAttribute('aria-label', T('gwDot').replace('{n}', n + 1)); });
     renderCal();
     renderNews();
+    renderSkf();
     if (metaDesc) metaDesc.setAttribute('content', T('desc'));
     var pg = document.body.getAttribute('data-page');
     document.title = (pg ? tr(pg) + ' · ' : '') + 'Eric Timmer';

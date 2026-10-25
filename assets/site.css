@@ -1155,3 +1155,35 @@ nav.top.open .menu-btn.has-new::after { display: none; }
 @media (prefers-reduced-motion: reduce) { .nav-links a .nb, .menu-btn.has-new::after { animation: none; } }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nc { background: #1c1c1e; } }
 :root[data-theme="dark"] .nc { background: #1c1c1e; }
+
+/* ---------- SKF-Bilanz (erfolge.html #schweiz, Daten assets/skf.json) ---------- */
+.skf[hidden] { display: none; }
+.skf { margin-top: 44px; }
+.skf-medals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.skf-m { position: relative; border-radius: 22px; padding: 22px 22px 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; gap: 4px; overflow: hidden; }
+.skf-m i { width: 30px; height: 30px; border-radius: 50%; margin-bottom: 10px; background: var(--c); box-shadow: 0 0 22px -2px var(--c), inset 0 -3px 6px rgba(0,0,0,.25), inset 0 3px 6px rgba(255,255,255,.45); }
+.skf-m b { font-size: clamp(40px, 5vw, 58px); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--panel-fg); }
+.skf-m span { font-size: 15px; font-weight: 600; color: var(--panel-muted); }
+.skf-gold { --c: #f5c542; } .skf-silver { --c: #c9ced6; } .skf-bronze { --c: #d08a4f; }
+.skf-start { --c: #ff453a; }
+.skf-gold { background: linear-gradient(160deg, rgba(245,197,66,.16), rgba(255,255,255,.04) 60%); }
+.skf-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.skf-facts span { padding: 8px 14px; border-radius: 980px; background: rgba(255,255,255,.08); color: var(--panel-fg); font-size: 14px; font-weight: 600; }
+.skf-list { list-style: none; margin: 30px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.1); }
+.skf-r { display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 16px; padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,.1); animation: rise .45s var(--ease) both; }
+.skf-pl { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 15px; color: var(--panel-fg); background: rgba(255,255,255,.08); }
+.skf-r.p1 .skf-pl { background: #f5c542; color: #3a2a00; box-shadow: 0 0 18px -4px #f5c542; }
+.skf-r.p2 .skf-pl { background: #c9ced6; color: #23262b; }
+.skf-r.p3 .skf-pl { background: #d08a4f; color: #2d1607; }
+.skf-t { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.skf-t b { font-size: 17px; font-weight: 600; color: var(--panel-fg); }
+.skf-t small { font-size: 14px; color: var(--panel-muted); }
+.skf-d { font-size: 14px; color: var(--panel-muted); white-space: nowrap; }
+.skf-act { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.skf-src { margin-top: 18px; font-size: 13px; color: var(--panel-muted); }
+@media (max-width: 800px) { .skf-medals { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) {
+  .skf-r { grid-template-columns: 44px 1fr; gap: 12px; }
+  .skf-d { grid-column: 2; margin-top: -8px; }
+  .skf-pl { width: 36px; height: 36px; }
+}
