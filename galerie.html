@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202610251730">
+<link rel="stylesheet" href="assets/site.css?v=202610251740">
 </head>
 <body data-page="Galerie">
 <nav class="top" aria-label="Hauptnavigation">
@@ -67,7 +67,8 @@
       <h1 class="h-sec r" style="--d:.05s">Ganz nah dran.</h1>
       <p class="lead r" style="--d:.1s">Fotos von meinen Turnieren. <b>Zum Vergrössern auf ein Foto tippen.</b></p>
       <div class="tabs" role="tablist" aria-label="Turnier wählen">
-        <button type="button" role="tab" class="tab" id="tab-em" aria-selected="true" aria-controls="emgal">EM Frankfurt</button>
+        <button type="button" role="tab" class="tab" id="tab-sm26" aria-selected="true" aria-controls="sm26gal">Schweizermeisterschaft 2026</button>
+        <button type="button" role="tab" class="tab" id="tab-em" aria-selected="false" aria-controls="emgal">EM Frankfurt</button>
         <button type="button" role="tab" class="tab" id="tab-bom" aria-selected="false" aria-controls="bomgal">Basel Open Masters 2026</button>
         <button type="button" role="tab" class="tab" id="tab-skl" aria-selected="false" aria-controls="sklgal">SKL Gossau</button>
         <button type="button" role="tab" class="tab" id="tab-paris" aria-selected="false" aria-controls="parisgal">Quali Paris 2025</button>
@@ -90,8 +91,16 @@
         <button type="button" role="tab" class="tab" id="tab-wc18" aria-selected="false" aria-controls="wc18gal">WSKF World Cup 2018</button>
         <button type="button" role="tab" class="tab" id="tab-wm15" aria-selected="false" aria-controls="wm15gal">WM 2015</button>
       </div>
-      <p class="gal-sub" id="galsub">61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg</p>
-      <div class="masonry" id="emgal" role="tabpanel" aria-labelledby="tab-em" data-sub="61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg">
+      <p class="gal-sub" id="galsub">Schweizermeisterschaften, Sursee, Oktober 2026 · Schweizer Meister, Kumite Senior −60 kg</p>
+      <div class="masonry" id="sm26gal" role="tabpanel" aria-labelledby="tab-sm26" data-sub="Schweizermeisterschaften, Sursee, Oktober 2026 · Schweizer Meister, Kumite Senior −60 kg">
+        <button type="button" class="gi"><img src="images/sm-sursee-2026/01-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric schreit seine Freude heraus nach einem Punkt im Final der Schweizermeisterschaft"></button>
+        <button type="button" class="gi"><img src="images/sm-sursee-2026/02-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Hoher Fusstritt von Eric zum Kopf seines Gegners"></button>
+        <button type="button" class="gi"><img src="images/sm-sursee-2026/03-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric springt mit einem gestreckten Fusstritt auf seinen Gegner zu"></button>
+        <button type="button" class="gi"><img src="images/sm-sursee-2026/04-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric ballt nach einem Punkt die Fäuste und ruft"></button>
+        <button type="button" class="gi"><img src="images/sm-sursee-2026/05-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric mit rotem Gürtel jubelt auf der Matte"></button>
+        <button type="button" class="gi"><img src="images/sm-sursee-2026/06-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric geht konzentriert auf die Matte"></button>
+      </div>
+      <div class="masonry" id="emgal" role="tabpanel" aria-labelledby="tab-em" hidden data-sub="61. Europameisterschaft, Mai 2026 · Viertelfinal, Kumite −60 kg">
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/01-sm.jpg" width="547" height="820" loading="lazy" decoding="async" alt="Eric Timmer konzentriert vor dem Kampf, Kopfhörer im Ohr"></button>
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/02-sm.jpg" width="547" height="820" loading="lazy" decoding="async" alt="Eric fixiert seinen Gegner auf der Matte"></button>
         <button type="button" class="gi"><img src="images/em-frankfurt-2026/03-sm.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Eric in Kampfstellung, die Hand auf Distanz zum Gegner"></button>
@@ -366,6 +375,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202610251730"></script>
+<script src="assets/site.js?v=202610251740"></script>
 </body>
 </html>
