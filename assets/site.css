@@ -1097,7 +1097,7 @@ html::after {
 .nt-badge::after { content: ""; position: absolute; top: 0; right: -14px; bottom: 0; width: 14px; background: #111; clip-path: polygon(0 0, 100% 50%, 0 100%); }
 .nt-badge i { width: 8px; height: 8px; border-radius: 50%; background: #ff3b30; box-shadow: 0 0 0 0 rgba(255,59,48,.8); animation: ntPulse 1.4s infinite; }
 .nt-view { flex: 1; min-width: 0; overflow: hidden; display: flex; align-items: center; padding-left: 14px;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); }
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); padding-right: env(safe-area-inset-right, 0px); }
 .nt-track { display: flex; width: max-content; animation: ntRun var(--nt-dur, 40s) linear infinite; will-change: transform; }
 .newsticker:hover .nt-track, .newsticker:focus-within .nt-track { animation-play-state: paused; }
 .nt-group { display: flex; flex: none; }
@@ -1107,9 +1107,6 @@ a.nt-item:hover { color: #fff; text-decoration: underline; text-underline-offset
 .nt-item.hot::before { content: "NEU"; margin-right: 8px; padding: 2px 7px; border-radius: 980px; background: #fff; color: #d70015; font-size: 11px; font-weight: 800; letter-spacing: .06em; }
 html[lang="en"] .nt-item.hot::before { content: "NEW"; }
 html[lang="fr"] .nt-item.hot::before { content: "NOUVEAU"; }
-.nt-x { flex: none; width: 38px; display: grid; place-items: center; background: rgba(0,0,0,.18); color: #fff; border: 0; padding: 0; cursor: pointer; padding-right: env(safe-area-inset-right, 0px); }
-.nt-x svg { width: 15px; height: 15px; }
-.nt-x:hover { background: rgba(0,0,0,.32); }
 @keyframes ntRun { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 @keyframes ntPulse { 0% { box-shadow: 0 0 0 0 rgba(255,59,48,.8); } 70% { box-shadow: 0 0 0 9px rgba(255,59,48,0); } 100% { box-shadow: 0 0 0 0 rgba(255,59,48,0); } }
 @media (max-width: 600px) {

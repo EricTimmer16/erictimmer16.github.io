@@ -1309,7 +1309,6 @@
   /* Laufband «Breaking News» (Daten: assets/news.json; {rank} aus ranking.json, {next} aus calendar.json) */
   var NW = { de: ['Breaking News', 'Neuigkeiten', 'Laufband schliessen', 'Jetzt am Start: ', 'bis'], en: ['Breaking News', 'News', 'Close news ticker', 'Competing now: ', 'until'], fr: ['Dernière minute', 'Actualités', 'Fermer le bandeau', 'En compétition : ', 'jusqu’au'] };
   var news = { el: null, data: null, rank: null, next: null };
-  function newsClosed() { try { return sessionStorage.getItem('newsOff') === '1'; } catch (e) { return false; } }
   function newsNext(evs) {
     var today = new Date().toISOString().slice(0, 10), best = null;
     (evs || []).forEach(function (e) { if (e.eric && e.end >= today && (!best || e.start < best.start)) best = e; });
@@ -1345,7 +1344,6 @@
     if (!items.length) { news.el.hidden = true; return; }
     news.el.querySelector('.nt-badge span').textContent = NW[lang][0];
     news.el.setAttribute('aria-label', NW[lang][1]);
-    news.el.querySelector('.nt-x').setAttribute('aria-label', NW[lang][2]);
     function group(hide) {
       var g = document.createElement('div'); g.className = 'nt-group';
       if (hide) g.setAttribute('aria-hidden', 'true');
@@ -1364,15 +1362,12 @@
   }
   (function () {
     var nav = document.querySelector('nav.top');
-    if (!nav || newsClosed()) return;
+    if (!nav) return;
     var el = document.createElement('div');
     el.className = 'newsticker'; el.hidden = true; el.setAttribute('role', 'region');
-    el.innerHTML = '<div class="nt-badge"><i></i><span>Breaking News</span></div><div class="nt-view"><div class="nt-track"></div></div><button type="button" class="nt-x"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l8 8M14 6l-8 8"/></svg></button>';
+    el.innerHTML = '<div class="nt-badge"><i></i><span>Breaking News</span></div><div class="nt-view"><div class="nt-track"></div></div>';
     nav.appendChild(el);
     news.el = el;
-    el.querySelector('.nt-x').addEventListener('click', function () {
-      el.hidden = true; try { sessionStorage.setItem('newsOff', '1'); } catch (e) {}
-    });
     var day = new Date().toISOString().slice(0, 10);
     function get(u) { return fetch(u + '?d=' + day, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
     Promise.all([
