@@ -1,7 +1,8 @@
 {
-  "_hilfe": "Laufband oben auf jeder Seite. Neue Meldung = neuer Block ganz oben in 'items'. Felder: date (JJJJ-MM-TT), de/en/fr (Text), link (optional). Meldungen mit 'breaking': true bekommen ein rotes BREAKING-Schild. Platzhalter: {rank} = aktueller Weltrang, {next} = nächstes Turnier, bei dem Eric am Start ist (beides automatisch). Meldungen älter als 'max_tage' werden ausgeblendet. Das Laufband ganz ausschalten: 'aktiv': false.",
+  "_hilfe": "Laufband oben auf jeder Seite. Neue Meldung = neuer Block ganz oben in 'items'. Felder: date (JJJJ-MM-TT), de/en/fr (Text), link (optional). Meldungen mit 'breaking': true bekommen ein rotes BREAKING-Schild. Platzhalter: {rank} = aktueller Weltrang, {next} = nächstes Turnier, bei dem Eric am Start ist (beides automatisch). Meldungen älter als 'max_tage' werden ausgeblendet. Das Laufband ganz ausschalten: 'aktiv': false. 'img' (optional) = Bild für die Karte «Das ist neu.» auf der Startseite; dort erscheinen die 3 neusten Meldungen mit Bild. Meldungen mit 'breaking': true bekommen zusätzlich einen roten «Neu»-Punkt im Menü bei der verlinkten Seite, solange sie jünger als 'neu_tage' sind.",
   "aktiv": true,
   "max_tage": 120,
+  "neu_tage": 14,
   "items": [
     {
       "date": "2026-10-25",
@@ -9,7 +10,8 @@
       "de": "Schweizer Meister 2026! Gold an der Schweizermeisterschaft in Sursee, Kumite Senior −60 kg",
       "en": "Swiss Champion 2026! Gold at the Swiss Championships in Sursee, senior kumite −60 kg",
       "fr": "Champion de Suisse 2026 ! L’or aux Championnats de Suisse à Sursee, kumite seniors −60 kg",
-      "link": "galerie.html#sm2026"
+      "link": "galerie.html#sm2026",
+      "img": "images/sm-sursee-2026/01-sm.jpg"
     },
     {
       "date": "2026-10-25",
@@ -30,35 +32,40 @@
       "de": "Neu: Mentaltraining mit Ray Popoola – der Kopf kämpft mit",
       "en": "New: mental training with Ray Popoola – the mind fights too",
       "fr": "Nouveau : préparation mentale avec Ray Popoola – la tête combat aussi",
-      "link": "ueber-mich.html#mental"
+      "link": "ueber-mich.html#mental",
+      "img": "images/mental/01-sm.jpg"
     },
     {
       "date": "2026-10-23",
       "de": "Neu: Seite «Über mich» mit Steckbrief und meiner Geschichte",
       "en": "New: «About me» page with fact sheet and my story",
       "fr": "Nouveau : page «À propos» avec fiche et mon histoire",
-      "link": "ueber-mich.html"
+      "link": "ueber-mich.html",
+      "img": "images/portrait/eric-about-sm.jpg"
     },
     {
       "date": "2026-10-23",
       "de": "Neu: Physiotherapie mit Physio Henrich – mein Körper in guten Händen",
       "en": "New: physiotherapy with Physio Henrich – my body in good hands",
       "fr": "Nouveau : physiothérapie avec Physio Henrich – mon corps entre de bonnes mains",
-      "link": "ueber-mich.html#physio"
+      "link": "ueber-mich.html#physio",
+      "img": "images/physio/02-sm.jpg"
     },
     {
       "date": "2026-10-22",
-      "de": "Galerie: Fotos von 15 Turnieren, von der WM 2015 bis zur EM 2026",
-      "en": "Gallery: photos from 15 tournaments, from the 2015 Worlds to the 2026 Europeans",
-      "fr": "Galerie : photos de 15 tournois, des Mondiaux 2015 à l’Euro 2026",
-      "link": "galerie.html"
+      "de": "Galerie: Fotos von über 20 Turnieren, von der WM 2015 bis zur Schweizermeisterschaft 2026",
+      "en": "Gallery: photos from more than 20 tournaments, from the 2015 Worlds to the 2026 Swiss Championships",
+      "fr": "Galerie : photos de plus de 20 tournois, des Mondiaux 2015 aux Championnats de Suisse 2026",
+      "link": "galerie.html",
+      "img": "images/em-frankfurt-2026/04-sm.jpg"
     },
     {
       "date": "2026-10-22",
       "de": "Gönnerclub: Unterstütze meinen Weg an die Weltspitze – schon ab CHF 50",
       "en": "Supporters’ club: back my road to the top – from CHF 50",
       "fr": "Club des supporters : soutiens mon chemin vers le sommet – dès CHF 50",
-      "link": "goennerclub.html"
+      "link": "goennerclub.html",
+      "img": "images/goennerclub-banner.jpg"
     }
   ]
 }

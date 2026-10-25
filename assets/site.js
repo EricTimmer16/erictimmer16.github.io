@@ -485,6 +485,8 @@
     "Das Maskottchen, ein Tiger im Karate-Gi, in der Halle in Jakarta": ["The mascot, a tiger in a karate gi, in the arena in Jakarta", "La mascotte, un tigre en karaté-gi, dans la salle de Jakarta"],
     "Schweizermeisterschaft 2025": ["Swiss Championships 2025", "Championnats de Suisse 2025"],
     "Schweizermeisterschaft 2026": ["Swiss Championships 2026", "Championnats de Suisse 2026"],
+    "Neu auf der Seite": ["New on the site", "Nouveau sur le site"],
+    "Das ist neu.": ["What’s new.", "Les nouveautés."],
     "Schweizermeisterschaften, Sursee, Oktober 2026 · Schweizer Meister, Kumite Senior −60 kg": ["Swiss Championships, Sursee, October 2026 · Swiss Champion, senior kumite −60 kg", "Championnats de Suisse, Sursee, octobre 2026 · Champion de Suisse, kumite seniors −60 kg"],
     "Eric schreit seine Freude heraus nach einem Punkt im Final der Schweizermeisterschaft": ["Eric roars with joy after a point in the Swiss Championships final", "Eric crie sa joie après un point en finale des Championnats de Suisse"],
     "Hoher Fusstritt von Eric zum Kopf seines Gegners": ["Eric’s high kick to his opponent’s head", "Coup de pied haut d’Eric à la tête de son adversaire"],
@@ -1325,7 +1327,45 @@
     var d2 = b.toLocaleDateString(loc, { day: 'numeric', month: 'long', year: 'numeric' });
     return name + ', ' + (e.start === e.end ? d2 : d1 + (lang === 'de' ? '' : ' ') + '–' + (lang === 'de' ? '' : ' ') + d2);
   }
+  /* Startseite «Das ist neu.» (Karten) und «Neu»-Punkte im Menü, beides aus assets/news.json */
+  var NB = { de: ['Neu', 'Ansehen'], en: ['New', 'View'], fr: ['Nouveau', 'Voir'] };
+  function newsFresh(it, days) { var age = (new Date() - new Date(it.date + 'T00:00:00')) / 864e5; return age <= days && age >= -1; }
+  function newsStrip(t) { return String(t).replace(/^(Neu|New|Nouveau)\s*:\s*/i, ''); }
+  function renderNewsExtras() {
+    var d = news.data; if (!d) return;
+    var all = (d.items || []).filter(function (it) { return newsFresh(it, d.max_tage || 120); });
+    /* Karten */
+    var box = document.getElementById('newscards');
+    if (box) {
+      var lim = +box.getAttribute('data-limit') || 3, cards = all.filter(function (it) { return it.img && it.link; }).slice(0, lim);
+      box.innerHTML = '';
+      cards.forEach(function (it) {
+        var a = document.createElement('a'); a.className = 'nc'; a.href = it.link;
+        var im = document.createElement('img'); im.src = it.img; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+        var body = document.createElement('div'); body.className = 'nc-b';
+        var meta = document.createElement('div'); meta.className = 'nc-m';
+        if (it.breaking && newsFresh(it, d.neu_tage || 14)) { var tg = document.createElement('span'); tg.className = 'nc-new'; tg.textContent = NB[lang][0]; meta.appendChild(tg); }
+        var dt = document.createElement('span'); dt.textContent = calDate(it.date).toLocaleDateString(CAL_LOC[lang], { day: 'numeric', month: 'long', year: 'numeric' }); meta.appendChild(dt);
+        var h = document.createElement('h3'); h.textContent = newsStrip(it[lang] || it.de);
+        var go = document.createElement('span'); go.className = 'btn btn-sm'; go.textContent = NB[lang][1];
+        body.appendChild(meta); body.appendChild(h); body.appendChild(go);
+        a.appendChild(im); a.appendChild(body); box.appendChild(a);
+      });
+      var sec = box.closest('section'); if (sec) sec.hidden = !cards.length;
+    }
+    /* «Neu»-Punkte im Menü und in der Fusszeile */
+    var pages = {};
+    all.forEach(function (it) { if (it.breaking && it.link && newsFresh(it, d.neu_tage || 14)) pages[it.link.split('#')[0]] = true; });
+    document.querySelectorAll('.nav-links a[href], .xt[href]').forEach(function (a) {
+      var pg = a.getAttribute('href').split('#')[0], old = a.querySelector('.nb');
+      if (old) old.remove();
+      if (pages[pg]) { var b = document.createElement('span'); b.className = 'nb'; b.textContent = NB[lang][0]; a.appendChild(b); a.classList.add('has-new'); }
+      else a.classList.remove('has-new');
+    });
+    var mb = document.getElementById('menubtn'); if (mb) mb.classList.toggle('has-new', Object.keys(pages).length > 0);
+  }
   function renderNews() {
+    renderNewsExtras();
     if (!news.el || !news.data) return;
     var today = new Date(), max = news.data.max_tage || 120, items = [];
     (news.data.items || []).forEach(function (it) {

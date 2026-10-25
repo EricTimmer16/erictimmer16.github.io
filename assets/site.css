@@ -1122,3 +1122,36 @@ html[lang="fr"] .nt-item.hot::before { content: "NOUVEAU"; }
 }
 nav.top .wrap { position: relative; z-index: 2; }
 html { scroll-padding-top: 96px; }
+
+/* ---------- Startseite «Das ist neu.» und «Neu»-Punkte im Menü ---------- */
+.news-home { padding-block: 72px 40px; }
+.news-home[hidden] { display: none; }
+.ncards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+.nc { position: relative; display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: var(--bg); color: var(--fg); text-decoration: none;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--faint) 80%, transparent), 0 22px 44px -28px rgba(0,0,0,.35); transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1); }
+.nc:hover { text-decoration: none; color: var(--fg); }
+.nc img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 30%; display: block; }
+.nc-b { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 24px; flex: 1; }
+.nc-b h3 { font-size: 21px; font-weight: 700; line-height: 1.22; letter-spacing: -0.01em; flex: 1; }
+.nc-b .btn { align-self: flex-start; margin-top: 4px; }
+.nc-m { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted, #6e6e73); font-weight: 500; }
+.nc-new { background: linear-gradient(90deg, var(--red), #ff6a1f); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 980px; }
+.nc:first-child { box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 70%, transparent), 0 26px 50px -26px color-mix(in srgb, var(--red) 55%, transparent); }
+@media (hover: hover) and (pointer: fine) { .nc:hover { transform: translate3d(0, -6px, 0) scale(1.02); } }
+@media (max-width: 900px) { .ncards { grid-template-columns: 1fr 1fr; } .nc:nth-child(3) { display: none; } }
+@media (max-width: 600px) { .ncards { grid-template-columns: 1fr; } .nc:nth-child(3) { display: flex; } .news-home { padding-block: 56px 24px; } }
+
+/* Menü: roter Punkt bei Seiten mit Neuigkeit */
+.nav-links a.has-new { position: relative; }
+.nav-links a .nb { position: absolute; top: -3px; right: -9px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); font-size: 0; box-shadow: 0 0 0 0 rgba(255,59,48,.7); animation: ntPulse 1.6s infinite; }
+.menu-btn.has-new { position: relative; }
+.menu-btn.has-new::after { content: ""; position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); animation: ntPulse 1.6s infinite; }
+nav.top.open .menu-btn.has-new::after { display: none; }
+@media (max-width: 1000px) {
+  nav.top.open .nav-links a .nb { position: static; display: inline-block; width: auto; height: auto; margin-left: 10px; vertical-align: 4px; padding: 3px 9px; border-radius: 980px; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; animation: none; background: linear-gradient(90deg, var(--red), #ff6a1f); }
+}
+/* Kacheln «Entdecke mehr» */
+.xt .nb { position: absolute; top: 18px; left: 18px; z-index: 2; padding: 4px 10px; border-radius: 980px; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: linear-gradient(90deg, var(--red), #ff6a1f); }
+@media (prefers-reduced-motion: reduce) { .nav-links a .nb, .menu-btn.has-new::after { animation: none; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nc { background: #1c1c1e; } }
+:root[data-theme="dark"] .nc { background: #1c1c1e; }
