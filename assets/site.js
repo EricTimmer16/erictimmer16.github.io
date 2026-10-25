@@ -1314,7 +1314,7 @@
   })();
 
   /* Laufband «Breaking News» (Daten: assets/news.json; {rank} aus ranking.json, {next} aus calendar.json) */
-  var NW = { de: ['Breaking News', 'Neuigkeiten', 'Laufband schliessen', 'Jetzt am Start: ', 'bis'], en: ['Breaking News', 'News', 'Close news ticker', 'Competing now: ', 'until'], fr: ['Dernière minute', 'Actualités', 'Fermer le bandeau', 'En compétition en ce moment : ', 'jusqu’au'] };
+  var NW = { de: ['Breaking News', 'Neuigkeiten', 'Laufband schliessen', 'Jetzt am Start: ', 'bis', 'Du bist auf dem neusten Stand. Neue Meldungen erscheinen hier.'], en: ['Breaking News', 'News', 'Close news ticker', 'Competing now: ', 'until', 'You’re all caught up. New updates will appear here.'], fr: ['Dernière minute', 'Actualités', 'Fermer le bandeau', 'En compétition en ce moment : ', 'jusqu’au', 'Tu es à jour. Les nouvelles infos apparaîtront ici.'] };
   var news = { el: null, data: null, rank: null, next: null };
   function newsNext(evs) {
     var today = new Date().toISOString().slice(0, 10), best = null;
@@ -1406,9 +1406,15 @@
     });
     var track = news.el.querySelector('.nt-track');
     track.innerHTML = '';
-    if (!items.length) { news.el.hidden = true; return; }
     news.el.querySelector('.nt-badge span').textContent = NW[lang][0];
     news.el.setAttribute('aria-label', NW[lang][1]);
+    if (!items.length) {
+      /* Alles angeklickt: Band bleibt sichtbar, steht still und sagt das */
+      var done = document.createElement('div'); done.className = 'nt-group'; done.innerHTML = '<span class="nt-item nt-ok"></span>';
+      done.firstChild.textContent = NW[lang][5];
+      track.appendChild(done); track.classList.add('nt-done'); news.el.hidden = false; return;
+    }
+    track.classList.remove('nt-done');
     function group(hide) {
       var g = document.createElement('div'); g.className = 'nt-group';
       if (hide) g.setAttribute('aria-hidden', 'true');
