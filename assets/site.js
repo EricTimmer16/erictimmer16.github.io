@@ -1337,7 +1337,7 @@
   function newsFresh(it, days) { var age = (new Date() - new Date(it.date + 'T00:00:00')) / 864e5; return age <= days && age >= -1; }
   function newsStrip(t) { return String(t).replace(/^(Neu|New|Nouveau)\s*:\s*/i, ''); }
   /* Gelesene Meldungen (pro Besucher im Browser gemerkt): angeklickte Meldungen verschwinden aus Laufband,
-     «Das ist neu.» und Menü-Punkt; automatische Meldungen ({next}, {rank}) bleiben immer. */
+     «Das ist neu.» und Menü-Punkt. Automatische Meldungen ({next}, {rank}) kommen zurück, sobald sich Turnier oder Rang ändert. */
   function newsKey(it) { return it.date + '|' + (it.de || '').slice(0, 60); }
   function newsAuto(it) { return /\{(next|rank)\}/.test(it.de || ''); }
   var newsRead = {};
@@ -1393,13 +1393,16 @@
     (news.data.items || []).forEach(function (it) {
       var age = (today - new Date(it.date + 'T00:00:00')) / 864e5;
       if (age > max || age < -1 || newsIsRead(it)) return;
+      var k = newsAuto(it) ? '' : newsKey(it);
       var txt = it[lang] || it.de || '';
-      if (txt.indexOf('{rank}') >= 0) { if (!news.rank) return; txt = txt.replace('{rank}', news.rank); }
+      if (txt.indexOf('{rank}') >= 0) { if (!news.rank) return; txt = txt.replace('{rank}', news.rank); k = 'auto-rank|' + news.rank; }
       if (txt.indexOf('{next}') >= 0) {
         var n = newsNextText(); if (!n) return;
+        k = 'auto-next|' + news.next.id + '|' + (n.charAt(0) === '\u0000' ? 'now' : 'soon');
         if (n.charAt(0) === '\u0000') { txt = NW[lang][3] + n.slice(1); } else txt = txt.replace('{next}', n);
       }
-      items.push({ t: txt, l: it.link, b: !!it.breaking, k: newsAuto(it) ? '' : newsKey(it) });
+      if (k && newsRead[k]) return;
+      items.push({ t: txt, l: it.link, b: !!it.breaking, k: k });
     });
     var track = news.el.querySelector('.nt-track');
     track.innerHTML = '';
