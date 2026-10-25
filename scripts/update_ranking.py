@@ -78,7 +78,7 @@ def apply(text, rank, points, bouts, today):
         (r"\d+<sup>e(?:r)?</sup>( place\. Et ce n’est pas fini\.)", rf"{rank}<sup>{fr_ord}</sup>\g<1>"),
         (r"(Nr\. )\d+( der Welt)", rf"\g<1>{rank}\g<2>"),
         (r"(No\. )\d+( in the world)", rf"\g<1>{rank}\g<2>"),
-        (r"(n° )\d+( mondial)", rf"\g<1>{rank}\g<2>"),
+        (r"([nN]° )\d+( mondial)", rf"\g<1>{rank}\g<2>"),
         (r"(Heute: Nr\. )\d+", rf"\g<1>{rank}"),
         (r"(Today: No\. )\d+", rf"\g<1>{rank}"),
         (r"(Aujourd’hui : n° )\d+", rf"\g<1>{rank}"),
@@ -87,13 +87,13 @@ def apply(text, rank, points, bouts, today):
         # Punkte + Stand
         (r"\d[\d’.,\u202f]* Ranglistenpunkte · Stand [^<'\"]+?\d{4}", f"{num(points, 'de')} Ranglistenpunkte · Stand {de_m}"),
         (r"\d[\d’.,\u202f]* ranking points · as of [A-Za-z]+ \d{4}", f"{num(points, 'en')} ranking points · as of {en_m}"),
-        (r"\d[\d’.,\u202f]* points au classement · état [^'<\"]+?\d{4}", f"{num(points, 'fr')} points au classement · état {fr_m}"),
+        (r"\d[\d’.,\u202f]* points au classement · (?:état|mise à jour :) [^'<\"]+?\d{4}", f"{num(points, 'fr')} points au classement · mise à jour : {fr_m}"),
         # Kämpfe
         (r'(data-to=")\d+(">)\d+(</span> (?:Kämpfe|bouts|combats))', rf"\g<1>{bouts}\g<2>{bouts}\g<3>"),
         # Fusszeile
         (r"(WKF-Athletenprofil \(Stand )[^)]+?\d{4}(\))", rf"\g<1>{de_m}\g<2>"),
         (r"(WKF athlete profile \(as of )[^)]+?\d{4}(\))", rf"\g<1>{en_m}\g<2>"),
-        (r"(profil d’athlète WKF \(état )[^)]+?\d{4}(\))", rf"\g<1>{fr_m}\g<2>"),
+        (r"(profil d’athlète WKF \()(?:état|mise à jour :) [^)]+?\d{4}(\))", rf"\g<1>mise à jour : {fr_m}\g<2>"),
         # Rang-Marker (JS + CSS)
         (r"(el === tb\) me\.style\.left = ')\d+(%')", rf"\g<1>{pos}\g<2>"),
         (r"(läuft beim Einblenden von 100 auf )\d+", rf"\g<1>{rank}"),

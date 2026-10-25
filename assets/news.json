@@ -9,7 +9,7 @@
       "breaking": true,
       "de": "Schweizer Meister 2026! Gold an der Schweizermeisterschaft in Sursee, Kumite Senior −60 kg",
       "en": "Swiss Champion 2026! Gold at the Swiss Championships in Sursee, senior kumite −60 kg",
-      "fr": "Champion de Suisse 2026 ! L’or aux Championnats de Suisse à Sursee, kumite seniors −60 kg",
+      "fr": "Champion de Suisse 2026 ! L’or aux Championnats de Suisse à Sursee, kumité seniors −60 kg",
       "link": "galerie.html#sm2026",
       "img": "images/sm-sursee-2026/01-sm.jpg"
     },
@@ -24,7 +24,7 @@
       "date": "2026-10-25",
       "de": "Aktuell Nummer {rank} der Welt (WKF-Weltrangliste, Kumite −60 kg)",
       "en": "Currently world number {rank} (WKF world ranking, kumite −60 kg)",
-      "fr": "Actuellement numéro {rank} mondial (classement WKF, kumite −60 kg)",
+      "fr": "Actuellement numéro {rank} mondial (classement WKF, kumité −60 kg)",
       "link": "erfolge.html"
     },
     {
@@ -38,8 +38,8 @@
     {
       "date": "2026-10-23",
       "de": "Neu: Seite «Über mich» mit Steckbrief und meiner Geschichte",
-      "en": "New: «About me» page with fact sheet and my story",
-      "fr": "Nouveau : page «À propos» avec fiche et mon histoire",
+      "en": "New: “About me” page with my fact sheet and my story",
+      "fr": "Nouveau : page « À propos » avec ma fiche d’identité et mon histoire",
       "link": "ueber-mich.html",
       "img": "images/portrait/eric-about-sm.jpg"
     },
@@ -62,8 +62,8 @@
     {
       "date": "2026-10-22",
       "de": "Gönnerclub: Unterstütze meinen Weg an die Weltspitze – schon ab CHF 50",
-      "en": "Supporters’ club: back my road to the top – from CHF 50",
-      "fr": "Club des supporters : soutiens mon chemin vers le sommet – dès CHF 50",
+      "en": "Supporters’ club: support my journey to the top – from CHF 50",
+      "fr": "Club des supporters : soutenez mon parcours vers le sommet – dès CHF 50",
       "link": "goennerclub.html",
       "img": "images/goennerclub-banner.jpg"
     }
