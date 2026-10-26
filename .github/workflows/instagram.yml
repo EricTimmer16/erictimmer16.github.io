@@ -1,10 +1,12 @@
 name: Instagram abgleichen
 
-# Läuft jeden Tag und holt Erics neuste Instagram-Beiträge über Behold (behold.so).
+# Läuft jede Stunde und holt Erics neuste Instagram-Beiträge über Behold (behold.so).
 # Hat sich etwas geändert, werden assets/instagram.json und images/instagram/ aktualisiert.
+# Stündlich = ca. 720 Abrufe pro Monat (Behold-Gratisplan erlaubt 1200).
+# Behold selbst holt im Gratisplan nur einmal pro Tag neu von Instagram, im Starter-Plan stündlich.
 on:
   schedule:
-    - cron: "57 4 * * *"
+    - cron: "23 * * * *"
   workflow_dispatch:
 
 permissions:

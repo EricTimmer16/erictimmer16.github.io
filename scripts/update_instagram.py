@@ -2,7 +2,7 @@
 """Holt Erics neuste Instagram-Beiträge über Behold (behold.so) und legt sie auf der Webseite ab.
 
 Behold verbindet sich mit dem Instagram-Konto @ericsskf und stellt einen JSON-Feed bereit.
-Dieses Skript lädt den Feed einmal pro Tag (GitHub Action .github/workflows/instagram.yml),
+Dieses Skript lädt den Feed jede Stunde (GitHub Action .github/workflows/instagram.yml),
 speichert die Bilder in images/instagram/ und die Angaben in assets/instagram.json.
 Die Webseite lädt dadurch nichts direkt von Instagram oder Behold.
 
