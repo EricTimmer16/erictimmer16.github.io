@@ -1,18 +1,7 @@
 {
  "source": "https://www.wkf.net/calendar",
- "generated": "2026-10-22",
+ "generated": "2026-10-26",
  "events": [
-  {
-   "id": 820261024,
-   "cat": "swiss-sm",
-   "name": "Schweizermeisterschaft Sursee",
-   "city": "Sursee, Switzerland",
-   "start": "2026-10-24",
-   "end": "2026-10-25",
-   "url": "https://www.karate.ch/service/agenda/",
-   "src": "skf",
-   "eric": true
-  },
   {
    "id": 820261030,
    "cat": "other",
