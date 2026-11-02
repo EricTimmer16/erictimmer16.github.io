@@ -1208,3 +1208,82 @@ nav.top.open .menu-btn.has-new::after { display: none; }
 .nt-done .nt-ok::after { content: none; }
 .nt-done .nt-ok::before { content: "✓"; margin-right: 10px; font-weight: 800; }
 .newsticker:has(.nt-done) .nt-view { -webkit-mask-image: none; mask-image: none; }
+
+/* ---------- Jurt-Stil (02.11.2026) ----------
+   Angelehnt an jurtpentathlon.ch: kräftige Grossbuchstaben-Schrift (Archivo 900) für Name, Titel und
+   grosse Zahlen, Rubriken mit roter Linie, Slogan-Band, langsamer Zoom im Hero-Foto, hüpfender
+   Scroll-Pfeil, Karten mit roter Glut beim Darüberfahren, «Partner werden» leuchtet alle 6 s kurz auf,
+   weichere Einblend-Bewegung. Blaue Pillen-Knöpfe, Eröffnungs-Animation und Laufband bleiben. */
+:root { --display: "Archivo", "Helvetica Neue", Arial, sans-serif; --out: cubic-bezier(.16,1,.3,1); }
+
+/* Schrift: Titel in kräftigen Grossbuchstaben */
+.hero-split h1, .h-sec, .brand { font-family: var(--display); font-weight: 900; text-transform: uppercase; }
+.h-sec { font-size: clamp(34px, 5.4vw, 60px); line-height: .94; letter-spacing: -0.025em; }
+.hero-split h1 { font-size: clamp(58px, 9.4vw, 124px); line-height: .88; letter-spacing: -0.03em; }
+.hero-split h1 .h1-b { color: var(--red); }
+.hero-split h1 .h1-a, .hero-split h1 .h1-b { display: block; }
+.brand { font-size: 18px; letter-spacing: -0.01em; }
+.brand::after { content: "."; color: var(--red); }
+.rank-big, .hcard .big, .yr .y, .tier .t-price, .offer .v, .co-price, .pf .v { font-family: var(--display); font-weight: 900; letter-spacing: -0.03em; }
+.xt-h { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 22px; line-height: 1.02; letter-spacing: -0.01em; }
+
+/* Menü: kleine, gesperrte Grossbuchstaben */
+.nav-links { font-size: 11px; }
+.nav-links a { text-transform: uppercase; font-weight: 600; letter-spacing: .07em; }
+.pill { text-transform: uppercase; font-weight: 700; letter-spacing: .06em; font-size: 11px; padding: 6px 13px; }
+
+/* Rubrik über dem Titel: rote Linie + gesperrte Grossbuchstaben */
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: color-mix(in srgb, currentColor 62%, transparent); margin-bottom: 16px; }
+.eyebrow::before { content: ""; display: inline-block; width: 32px; height: 2px; margin-right: 14px; vertical-align: .3em; background: var(--grad); border-radius: 2px; }
+.hero-split .eyebrow { font-size: 12px; }
+
+/* Einblenden beim Scrollen: weicher, wie bei Jurt */
+.r { transition: opacity .9s var(--out), transform .9s var(--out); transition-delay: var(--d, 0s); }
+.r.pre { transform: translateY(28px); }
+
+/* Hero-Foto: langsamer Zoom (Rahmen .hs-pic schneidet ab) */
+.hs-pic { display: block; overflow: hidden; border-radius: 24px; box-shadow: 0 34px 80px -18px color-mix(in srgb, var(--red) 45%, transparent); transform: translateZ(0); }
+.hs-pic img { box-shadow: none; border-radius: 0; }
+.intro .hs-pic { overflow: visible; box-shadow: none; }
+.intro .hs-pic img { border-radius: 24px; box-shadow: 0 34px 80px -18px color-mix(in srgb, var(--red) 45%, transparent); }
+@keyframes heroDrift { from { transform: scale(1); } to { transform: scale(1.08) translateY(-1.5%); } }
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.intro) .hs-pic img { animation: heroDrift 24s ease-in-out infinite alternate; will-change: transform; }
+}
+@media (max-width: 860px) { .hs-pic, .intro .hs-pic img { border-radius: 20px; } }
+
+/* Scroll-Pfeil unten im Hero */
+.scroll-hint { display: flex; justify-content: center; margin-top: clamp(24px, 4vw, 48px); color: var(--muted); pointer-events: none; }
+.scroll-hint svg { width: 22px; height: 22px; animation: scrollHint 2.2s ease-in-out infinite; }
+@keyframes scrollHint { 0%, 100% { opacity: .35; transform: translateY(0); } 50% { opacity: 1; transform: translateY(10px); } }
+@media (max-width: 860px) { .scroll-hint { display: none; } }
+
+/* Slogan-Band (Startseite) */
+.slogan { overflow: hidden; color: #fff; padding-block: 18px; background: linear-gradient(90deg, #a3000f, var(--red) 35%, #ff3b30 70%, #ff6a1f);
+  box-shadow: 0 24px 60px -30px color-mix(in srgb, var(--red) 80%, transparent); }
+.sl-track { display: flex; width: max-content; animation: slRun 38s linear infinite; will-change: transform; }
+.sl-group { display: flex; flex: none; align-items: center; }
+.sl-group span { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: .02em; white-space: nowrap; }
+.sl-group span::after { content: "●"; font-size: .45em; vertical-align: .45em; margin: 0 .9em; opacity: .7; }
+@keyframes slRun { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+
+/* Karten: rote Glut beim Darüberfahren */
+@media (hover: hover) and (pointer: fine) {
+  .xt:hover, .hcard:hover, .tier:hover, a.partner:hover { box-shadow: 0 30px 80px -22px color-mix(in srgb, var(--red) 50%, transparent), 0 0 0 1px color-mix(in srgb, var(--red) 12%, transparent) !important; }
+  .gi:hover { box-shadow: 0 24px 60px -20px color-mix(in srgb, var(--red) 55%, transparent) !important; }
+}
+
+/* «Partner werden»: leuchtet alle 6 s kurz rot auf */
+@keyframes attn { 0%, 62%, 100% { box-shadow: 0 0 0 0 transparent; } 78% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--red) 35%, transparent), 0 10px 30px -6px color-mix(in srgb, var(--red) 60%, transparent); } }
+@media (prefers-reduced-motion: no-preference) { .btn.attn:not(:hover):not(:focus-visible) { animation: attn 6s ease-in-out 3s infinite; } }
+
+@media (prefers-reduced-motion: reduce) { .sl-track, .scroll-hint svg { animation: none; } }
+/* Menü in Grossbuchstaben ist breiter: Menüleiste darf breiter sein als der Inhalt (wie bei Jurt),
+   bei knappem Platz engere Abstände. In DE/EN/FR von 1001 bis 1500 px geprüft. */
+@media (min-width: 1001px) { nav.top .wrap { max-width: 1280px; } }
+.nav-links { gap: 20px; }
+.nav-links a { letter-spacing: .05em; white-space: nowrap; }
+@media (max-width: 1280px) { .nav-links { gap: 15px; } .nav-links a { letter-spacing: .03em; } }
+@media (max-width: 1160px) { .nav-links { gap: 12px; font-size: 10.5px; } .nav-links a { letter-spacing: .02em; } .brand { font-size: 16px; } .nav-right { gap: 8px; } }
+nav.top.open .nav-links a { letter-spacing: 0; }
+@media (min-width: 1001px) and (max-width: 1060px) { .nav-links { gap: 10px; } .nav-links a { letter-spacing: 0; } .lang button { padding: 5px 7px; } }
