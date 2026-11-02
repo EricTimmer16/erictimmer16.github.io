@@ -17,6 +17,10 @@
     "Ich bin Eric, Karateka aus Sisseln. Viertelfinal an der Europameisterschaft 2026, Nummer 52 der Welt. Mein nächstes Ziel: <b>die Top 32</b>.": ["I’m Eric, a karateka from Sisseln. Quarter-finalist at the 2026 European Championships, world number 52. My next goal: <b>the top 32</b>.", "Je suis Eric, karatéka de Sisseln. Quart de finale aux Championnats d’Europe 2026, numéro 52 mondial. Mon prochain objectif : <b>le top 32</b>."],
     "Highlights ansehen": ["See the highlights", "Voir les temps forts"],
     "Partner werden": ["Become a partner", "Devenir partenaire"],
+    "Weltrang": ["World ranking", "Rang mondial"],
+    "Kämpfe international": ["International bouts", "Combats internationaux"],
+    "SKF-Goldmedaillen": ["SKF gold medals", "Médailles d’or SKF"],
+    "Jahre Karate": ["Years of karate", "Années de karaté"],
     "WKF-Weltrangliste · Elite Kumite −60 kg": ["WKF World Ranking · Senior Kumite −60 kg", "Classement mondial WKF · Kumité seniors −60 kg"],
     "Nr.": ["No.", "N°"],
     "840 Ranglistenpunkte · Stand November 2026": ["840 ranking points · as of November 2026", "840 points au classement · mise à jour : novembre 2026"],
@@ -1601,7 +1605,7 @@
 (function () {
   var nav = document.querySelector('nav.top');
   if (!nav) return;
-  var bands = [].slice.call(document.querySelectorAll('.band.dark, .band.contact'));
+  var bands = [].slice.call(document.querySelectorAll('.hero-full, .band.dark, .band.contact'));
   if (!bands.length) return;
   var tone = '', ticking = false;
   function update() {
@@ -1609,7 +1613,8 @@
     var half = window.innerWidth < 735 ? 40 : 60, y = 26, t = '';
     for (var i = 0; i < bands.length; i++) {
       var r = bands[i].getBoundingClientRect();
-      if (r.top + half < y && r.bottom - half > y) { t = bands[i].classList.contains('contact') ? 'red' : 'dark'; break; }
+      var hf = bands[i].classList.contains('hero-full');
+      if (r.top + (hf ? 0 : half) <= y && r.bottom - half > y) { t = hf ? 'hero' : bands[i].classList.contains('contact') ? 'red' : 'dark'; break; }
     }
     if (t !== tone) { tone = t; if (t) nav.setAttribute('data-tone', t); else nav.removeAttribute('data-tone'); }
   }
@@ -1686,4 +1691,36 @@
   function arm() { clearTimeout(tmr); tmr = setTimeout(function () { if (document.visibilityState === 'visible') h.classList.remove('intro'); else arm(); }, 4500); }
   if (h.classList.contains('intro')) arm();
   new MutationObserver(function () { if (h.classList.contains('intro')) arm(); }).observe(h, { attributes: true, attributeFilter: ['class'] });
+})();
+
+/* Jurt-Stil (02.11.2026): Hero-Foto liegt unter der Menüleiste (Höhe inkl. Laufband → --hdr),
+   Zahlen-Kacheln auf der Startseite zählen hoch (Werte aus ranking.json und skf.json) */
+(function () {
+  var nav = document.querySelector('nav.top'), hero = document.querySelector('.hero-full');
+  if (nav && hero) {
+    var setH = function () { document.documentElement.style.setProperty('--hdr', nav.offsetHeight + 'px'); };
+    setH();
+    if (window.ResizeObserver) new ResizeObserver(setH).observe(nav); else window.addEventListener('resize', setH);
+  }
+  var cnts = [].slice.call(document.querySelectorAll('.cnt[data-k]'));
+  if (!cnts.length) return;
+  var day = new Date().toISOString().slice(0, 10);
+  var vals = { years: new Date().getFullYear() - 2009 };
+  function j(u) { return fetch(u + '?d=' + day, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function run(el) {
+    var to = +el.getAttribute('data-to') || +el.textContent || 0;
+    if (reduce) { el.textContent = to; return; }
+    var t0 = null, dur = 1600;
+    function step(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4); el.textContent = Math.round(to * e); if (p < 1) requestAnimationFrame(step); }
+    el.textContent = '0'; requestAnimationFrame(step);
+  }
+  Promise.all([j('assets/ranking.json'), j('assets/skf.json')]).then(function (r) {
+    if (r[0]) { vals.rank = r[0].rank; vals.bouts = r[0].bouts; }
+    if (r[1] && r[1].medals) vals.gold = r[1].medals.gold;
+    cnts.forEach(function (el) { var v = vals[el.getAttribute('data-k')]; if (v != null) { el.setAttribute('data-to', v); el.textContent = v; } });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }); }, { threshold: .6 });
+    cnts.forEach(function (el) { io.observe(el); });
+  });
 })();

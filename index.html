@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202611021830">
+<link rel="stylesheet" href="assets/site.css?v=202611021900">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Eric Timmer", "url": "https://erictimmer.ch/", "image": "https://erictimmer.ch/images/portrait/eric-portrait.jpg", "jobTitle": "Karateka", "description": "Schweizer Karateka, Kumite −60 kg, Mitglied des Nationalkaders.", "address": {"@type": "PostalAddress", "addressLocality": "Sisseln", "addressRegion": "AG", "addressCountry": "CH"}, "sameAs": ["https://www.instagram.com/ericsskf/", "https://www.facebook.com/eric.timmer.313", "https://www.linkedin.com/in/eric-timmer-43140928b", "https://www.wkf.net/athletes/!/SUI02254"]}</script>
 <script>document.documentElement.classList.add("intro")</script>
 </head>
@@ -63,34 +63,39 @@
 
 <main id="top">
 
-<!-- HERO -->
-  <section class="hero hero-split">
+<!-- HERO (Jurt-Stil: Vollbild-Foto schwarz-weiss, Name gross darüber) -->
+  <section class="hero hero-split hero-full" id="hero">
+    <div class="hf-bg" aria-hidden="true"><img src="images/em-frankfurt-2026/05.jpg" srcset="images/em-frankfurt-2026/05-sm.jpg 820w, images/em-frankfurt-2026/05.jpg 1800w" sizes="100vw" width="1800" height="1200" alt="" fetchpriority="high" decoding="async"></div>
     <div class="wrap hs">
       <div class="hs-text">
         <div class="eyebrow">Karate · Kumite −60 kg · Schweizer Nationalkader</div>
         <h1><span class="h1-a">Eric</span> <span class="h1-b">Timmer</span></h1>
         <div class="sub">Präzision statt Kraft.</div>
-        <p class="lead">Ich bin Eric, Karateka aus Sisseln. Viertelfinal an der Europameisterschaft 2026, Nummer 52 der Welt. Mein nächstes Ziel: <b>die Top 32</b>.</p>
         <div class="ctas">
           <a class="btn" href="erfolge.html">Highlights ansehen</a>
-          <a class="btn attn" href="partner.html">Partner werden</a>
+          <a class="btn btn-o" href="partner.html">Partner werden</a>
+          <a class="btn btn-o attn" href="goennerclub.html">Gönnerclub</a>
         </div>
-        <p class="hs-meta">Sisseln AG · Jahrgang 2003 · Kaufmann EFZ in Ausbildung</p>
       </div>
-      <figure class="hs-photo">
-        <span class="hs-pic"><img src="images/portrait/eric-portrait.jpg" srcset="images/portrait/eric-portrait-sm.jpg 640w, images/portrait/eric-portrait.jpg 1100w" sizes="(max-width: 860px) 100vw, 480px" width="1100" height="1650" alt="Eric Timmer im Dress der Swiss Karate Federation" fetchpriority="high" decoding="async"></span>
-        <figcaption>Foto: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a></figcaption>
-      </figure>
     </div>
+    <p class="hf-cr">Foto: <a href="https://foto-kjetil.ch" target="_blank" rel="noopener">Kjetil Waber</a></p>
     <div class="scroll-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg></div>
   </section>
-<!-- SLOGAN-BAND -->
+<!-- SLOGAN-BAND + ZAHLEN -->
+  <section class="stats-band">
   <div class="slogan" aria-hidden="true">
     <div class="sl-track">
       <div class="sl-group"><span>Präzision statt Kraft.</span><span>Kumite −60 kg</span><span>Schweizer Nationalkader</span><span>Schweizer Meister 2026</span><span>Swiss Karate Federation</span><span>Präzision statt Kraft.</span><span>Kumite −60 kg</span><span>Schweizer Nationalkader</span><span>Schweizer Meister 2026</span><span>Swiss Karate Federation</span></div>
       <div class="sl-group"><span>Präzision statt Kraft.</span><span>Kumite −60 kg</span><span>Schweizer Nationalkader</span><span>Schweizer Meister 2026</span><span>Swiss Karate Federation</span><span>Präzision statt Kraft.</span><span>Kumite −60 kg</span><span>Schweizer Nationalkader</span><span>Schweizer Meister 2026</span><span>Swiss Karate Federation</span></div>
     </div>
   </div>
+    <div class="wrap stats">
+      <div class="stat r"><div class="sv"><span class="cnt" data-k="rank">52</span></div><div class="sk">Weltrang</div></div>
+      <div class="stat r" style="--d:.06s"><div class="sv"><span class="cnt" data-k="bouts">69</span></div><div class="sk">Kämpfe international</div></div>
+      <div class="stat r" style="--d:.12s"><div class="sv"><span class="cnt" data-k="gold">12</span></div><div class="sk">SKF-Goldmedaillen</div></div>
+      <div class="stat r" style="--d:.18s"><div class="sv"><span class="cnt" data-k="years">17</span></div><div class="sk">Jahre Karate</div></div>
+    </div>
+  </section>
 <!-- NEU -->
   <section class="band news-home" id="neu" hidden>
     <div class="wrap">
@@ -221,7 +226,7 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202611021830"></script>
+<script src="assets/site.js?v=202611021900"></script>
 <script data-goatcounter="https://erictimmer.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

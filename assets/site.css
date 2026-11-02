@@ -1287,3 +1287,84 @@ nav.top.open .menu-btn.has-new::after { display: none; }
 @media (max-width: 1160px) { .nav-links { gap: 12px; font-size: 10.5px; } .nav-links a { letter-spacing: .02em; } .brand { font-size: 16px; } .nav-right { gap: 8px; } }
 nav.top.open .nav-links a { letter-spacing: 0; }
 @media (min-width: 1001px) and (max-width: 1060px) { .nav-links { gap: 10px; } .nav-links a { letter-spacing: 0; } .lang button { padding: 5px 7px; } }
+
+/* ---------- Jurt-Stil Teil 2 (02.11.2026): «mach es so wie ihre Webseite» ----------
+   Startseite: Vollbild-Hero mit Schwarz-Weiss-Foto unter der (durchsichtigen) Menüleiste, Name riesig in Weiss,
+   eckige Knöpfe (rot gefüllt / weiss umrandet), danach rotes Slogan-Band, das in die Zahlen-Kacheln ausläuft.
+   Alle Seiten: eckige rote Knöpfe in Grossbuchstaben (ersetzt die blauen Pillen), Karten mit 16 px Rundung. */
+
+/* Knöpfe wie bei Jurt */
+.btn { background: var(--red); color: #fff; border-radius: 2px; min-height: 50px; padding: 0 28px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; border: 1px solid transparent; }
+.btn-sm { min-height: 40px; padding: 0 18px; font-size: 11px; }
+.btn-o { background: transparent; color: var(--fg); border-color: color-mix(in srgb, var(--fg) 55%, transparent); }
+.btn-o:hover { border-color: var(--fg); filter: none; }
+.band.contact .btn { background: #fff; color: #b00012; }
+.pill { border-radius: 2px; padding: 9px 16px; letter-spacing: .1em; }
+.lang, .lang button { border-radius: 2px; }
+.nav-links a[aria-current="page"] { color: var(--red); }
+@media (min-width: 1001px) { .nav-links a { border-radius: 2px; } }
+.xt, .hcard, .nc, .tier { border-radius: 16px; }
+
+/* Menüleiste über dem Hero: durchsichtig, weisse Schrift */
+nav.top[data-tone="hero"] {
+  --fg: #fff; --muted: rgba(255,255,255,.75); --faint: rgba(255,255,255,.25); --bg: rgba(255,255,255,.16); --nav: transparent;
+  background: linear-gradient(rgba(0,0,0,.5), transparent); border-bottom-color: transparent;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+nav.top[data-tone="hero"] .nav-links a[aria-current="page"] { color: #fff; }
+
+/* Vollbild-Hero */
+.hero-full {
+  --fg: #fff; --muted: rgba(255,255,255,.78);
+  position: relative; z-index: 0; isolation: isolate; overflow: clip; color: #fff; text-align: left;
+  min-height: 100svh; margin-top: calc(-1 * var(--hdr, 52px)); padding: calc(var(--hdr, 52px) + 40px) 0 90px;
+  display: flex; align-items: center; background: #0b0b0c;
+}
+.hero-full::before { display: none; }
+.hero-full .hs { display: block; width: 100%; }
+.hf-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hf-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%; filter: grayscale(1) contrast(1.08) brightness(.82); animation: heroDrift 24s ease-in-out infinite alternate; will-change: transform; }
+.hf-bg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.55) 42%, rgba(0,0,0,.12) 75%, rgba(0,0,0,.25) 100%),
+              linear-gradient(0deg, rgba(0,0,0,.75) 0%, transparent 35%), linear-gradient(180deg, rgba(0,0,0,.45) 0%, transparent 22%); }
+.hero-full .eyebrow { color: rgba(255,255,255,.75); }
+.hero-full h1 { font-size: clamp(64px, 12.5vw, 196px); line-height: .84; letter-spacing: -0.035em; margin-top: 6px; }
+.hero-full h1 .h1-a, .hero-full h1 .h1-b { color: #fff; }
+.hero-full .sub { background: none; -webkit-text-fill-color: currentColor; color: rgba(255,255,255,.85); font-family: var(--text); font-size: clamp(13px, 1.3vw, 16px); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; margin-top: 28px; }
+.hero-full .ctas { justify-content: flex-start; gap: 14px; margin-top: 40px; }
+.hero-full .btn-o { color: #fff; border-color: rgba(255,255,255,.55); }
+.hero-full .btn-o:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+.hero-full .hs-text > h1::after { height: 8px; }
+.hf-cr { position: absolute; right: max(22px, env(safe-area-inset-right, 0px)); bottom: 18px; margin: 0; font-size: 11px; color: rgba(255,255,255,.55); }
+.hf-cr a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.hero-full .scroll-hint { position: absolute; left: 0; right: 0; bottom: 22px; margin: 0; color: #fff; display: flex; }
+@media (max-width: 860px) {
+  .hf-bg img { object-position: 74% 30%; }
+  .hf-bg::after { background: linear-gradient(0deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.55) 55%, rgba(0,0,0,.35) 100%); }
+  .hero-full { align-items: flex-end; padding-bottom: 70px; }
+  .hero-full .ctas { flex-direction: column; align-items: stretch; }
+  .hero-full .hs-text > * { max-width: none; }
+}
+/* Eröffnung: «Schnitt» bleibt, Name endet weiss */
+.intro .hero-full .hs-text > .sub { animation-name: heroSub; }
+
+/* Slogan-Band läuft in die Zahlen-Kacheln aus */
+.stats-band { position: relative; padding-bottom: 40px;
+  background: linear-gradient(180deg, #d70015 0, #d70015 70px, color-mix(in srgb, #d70015 55%, transparent) 130px, color-mix(in srgb, #d70015 10%, transparent) 260px, transparent 380px); }
+.stats-band .slogan { box-shadow: none; background: linear-gradient(90deg, #a3000f, #d70015 40%, #e8121f); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 46px; }
+@media (min-width: 1001px) { .stats { max-width: 1280px; } }
+.stat { background: var(--card); border-radius: 16px; padding: 34px 32px 30px; box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 24px 60px -28px color-mix(in srgb, var(--red) 45%, transparent); }
+.stat .sv { font-family: var(--display); font-weight: 900; font-size: clamp(48px, 5.4vw, 72px); line-height: .9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--fg); }
+.stat .sk { margin-top: 16px; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: color-mix(in srgb, #4a5a7a 80%, var(--fg)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stat .sk { color: #9aa6bf; } }
+@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); gap: 12px; } .stat { padding: 24px 20px; } }
+
+@media (prefers-reduced-motion: reduce) { .hf-bg img { animation: none; } }
+/* Feinschliff: Wasserzeichen unten im Foto abschneiden, Hero breiter, Rot läuft sauber aus */
+.hf-bg img { position: absolute; left: 0; top: 0; height: 122%; object-position: 62% 32%; transform-origin: 60% 30%; }
+.hero-full .wrap { max-width: 1280px; }
+.hero-full h1 { font-size: clamp(64px, 11vw, 172px); }
+.stats-band { padding-bottom: 120px; margin-bottom: -40px; }
+@media (max-width: 860px) { .hf-bg img { height: 118%; object-position: 74% 20%; } }
+@media (max-width: 860px) { .hf-bg img { object-position: 70% 0%; height: 112%; } }
