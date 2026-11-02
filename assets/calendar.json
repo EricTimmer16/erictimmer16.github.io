@@ -1,18 +1,7 @@
 {
  "source": "https://www.wkf.net/calendar",
- "generated": "2026-10-26",
+ "generated": "2026-11-02",
  "events": [
-  {
-   "id": 820261030,
-   "cat": "other",
-   "name": "Moscow Karate Universe International 2026",
-   "city": "Moscow, Russia",
-   "start": "2026-10-30",
-   "end": "2026-11-01",
-   "url": "https://www.sportdata.org/karate/set-online/veranstaltung_info_main.php?active_menu=calendar&vernr=10734",
-   "src": "sportdata",
-   "eric": true
-  },
   {
    "id": 459,
    "cat": "series-a",
