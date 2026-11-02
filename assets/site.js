@@ -17,6 +17,23 @@
     "Ich bin Eric, Karateka aus Sisseln. Viertelfinal an der Europameisterschaft 2026, Nummer 52 der Welt. Mein nächstes Ziel: <b>die Top 32</b>.": ["I’m Eric, a karateka from Sisseln. Quarter-finalist at the 2026 European Championships, world number 52. My next goal: <b>the top 32</b>.", "Je suis Eric, karatéka de Sisseln. Quart de finale aux Championnats d’Europe 2026, numéro 52 mondial. Mon prochain objectif : <b>le top 32</b>."],
     "Highlights ansehen": ["See the highlights", "Voir les temps forts"],
     "Partner werden": ["Become a partner", "Devenir partenaire"],
+    "Film": ["Film", "Film"],
+    "Mein Weg.<br><span class=\"red\">In Bewegung.</span>": ["My journey.<br><span class=\"red\">In motion.</span>", "Mon parcours.<br><span class=\"red\">En mouvement.</span>"],
+    "Ausschnitte aus Training und Turnieren, direkt von meinem Instagram.": ["Clips from training and competitions, straight from my Instagram.", "Des extraits d’entraînements et de compétitions, directement depuis mon Instagram."],
+    "Mai 2026": ["May 2026", "Mai 2026"],
+    "Oktober 2025": ["October 2025", "Octobre 2025"],
+    "September 2026": ["September 2026", "Septembre 2026"],
+    "September 2025": ["September 2025", "Septembre 2025"],
+    "3 Wochen bis zur EM.": ["3 weeks to the Europeans.", "À 3 semaines des championnats d’Europe."],
+    "WM-Quali Paris 2025.": ["Worlds qualifier, Paris 2025.", "Qualification mondiale, Paris 2025."],
+    "Mein Top-Video.": ["My top video.", "Ma vidéo phare."],
+    "Fokus vor dem Kampf.": ["Focus before the fight.", "Concentration avant le combat."],
+    "Letzte Series A des Jahres.": ["Last Series A of the year.", "Dernière Series A de l’année."],
+    "Karate oder Hip-Hop?": ["Karate or hip-hop?", "Karaté ou hip-hop ?"],
+    "Das Video wird erst beim Antippen von Instagram geladen. Dabei gelten die Datenschutzregeln von Instagram.": ["The video only loads from Instagram when you tap it. Instagram’s privacy rules then apply.", "La vidéo n’est chargée depuis Instagram que lorsque vous la touchez. Les règles de confidentialité d’Instagram s’appliquent alors."],
+    "Alle Videos auf Instagram": ["All videos on Instagram", "Toutes les vidéos sur Instagram"],
+    "Videos von Instagram": ["Videos from Instagram", "Vidéos Instagram"],
+    "Auf der Startseite zeige ich Videos von meinem Instagram-Konto. Das Video wird erst geladen, wenn du es antippst. Erst dann wird eine Verbindung zu Instagram (Meta Platforms Ireland Ltd., Irland) aufgebaut. Dabei erhält Instagram unter anderem deine IP-Adresse und kann Cookies setzen. Es gilt die Datenschutzerklärung von Instagram.": ["On the home page I show videos from my Instagram account. A video only loads when you tap it. Only then is a connection made to Instagram (Meta Platforms Ireland Ltd., Ireland). Instagram then receives, among other things, your IP address and may set cookies. Instagram’s privacy policy applies.", "Sur la page d’accueil, je montre des vidéos de mon compte Instagram. Une vidéo n’est chargée que lorsque vous la touchez. C’est seulement à ce moment qu’une connexion est établie avec Instagram (Meta Platforms Ireland Ltd., Irlande). Instagram reçoit alors notamment votre adresse IP et peut déposer des cookies. La politique de confidentialité d’Instagram s’applique."],
     "Weltrang": ["World ranking", "Rang mondial"],
     "Kämpfe international": ["International bouts", "Combats internationaux"],
     "SKF-Goldmedaillen": ["SKF gold medals", "Médailles d’or SKF"],
@@ -1723,4 +1740,21 @@
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }); }, { threshold: .6 });
     cnts.forEach(function (el) { io.observe(el); });
   });
+})();
+
+/* Film: Reels von Instagram, erst nach Klick laden (Datenschutz, wie bei jurtpentathlon.ch) */
+(function () {
+  var dlg = document.getElementById('reeldlg'), fr = document.getElementById('reelframe');
+  if (!dlg || !fr) return;
+  function close() { fr.innerHTML = ''; if (dlg.open) dlg.close(); }
+  [].forEach.call(document.querySelectorAll('.reel[data-reel]'), function (b) {
+    b.addEventListener('click', function () {
+      var id = b.getAttribute('data-reel');
+      fr.innerHTML = '<iframe src="https://www.instagram.com/reel/' + id + '/embed/" title="Instagram-Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="eager"></iframe>';
+      if (dlg.showModal) dlg.showModal(); else window.open('https://www.instagram.com/reel/' + id + '/', '_blank', 'noopener');
+    });
+  });
+  document.getElementById('reelx').addEventListener('click', close);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+  dlg.addEventListener('close', function () { fr.innerHTML = ''; });
 })();
