@@ -30,10 +30,8 @@
     "Fokus vor dem Kampf.": ["Focus before the fight.", "Concentration avant le combat."],
     "Letzte Series A des Jahres.": ["Last Series A of the year.", "Dernière Series A de l’année."],
     "Karate oder Hip-Hop?": ["Karate or hip-hop?", "Karaté ou hip-hop ?"],
-    "Das Video wird erst beim Antippen von Instagram geladen. Dabei gelten die Datenschutzregeln von Instagram.": ["The video only loads from Instagram when you tap it. Instagram’s privacy rules then apply.", "La vidéo n’est chargée depuis Instagram que lorsque vous la touchez. Les règles de confidentialité d’Instagram s’appliquent alors."],
+    "Die Videos öffnen sich auf Instagram.": ["The videos open on Instagram.", "Les vidéos s’ouvrent sur Instagram."],
     "Alle Videos auf Instagram": ["All videos on Instagram", "Toutes les vidéos sur Instagram"],
-    "Videos von Instagram": ["Videos from Instagram", "Vidéos Instagram"],
-    "Auf der Startseite zeige ich Videos von meinem Instagram-Konto. Das Video wird erst geladen, wenn du es antippst. Erst dann wird eine Verbindung zu Instagram (Meta Platforms Ireland Ltd., Irland) aufgebaut. Dabei erhält Instagram unter anderem deine IP-Adresse und kann Cookies setzen. Es gilt die Datenschutzerklärung von Instagram.": ["On the home page I show videos from my Instagram account. A video only loads when you tap it. Only then is a connection made to Instagram (Meta Platforms Ireland Ltd., Ireland). Instagram then receives, among other things, your IP address and may set cookies. Instagram’s privacy policy applies.", "Sur la page d’accueil, je montre des vidéos de mon compte Instagram. Une vidéo n’est chargée que lorsque vous la touchez. C’est seulement à ce moment qu’une connexion est établie avec Instagram (Meta Platforms Ireland Ltd., Irlande). Instagram reçoit alors notamment votre adresse IP et peut déposer des cookies. La politique de confidentialité d’Instagram s’applique."],
     "Weltrang": ["World ranking", "Rang mondial"],
     "Kämpfe international": ["International bouts", "Combats internationaux"],
     "SKF-Goldmedaillen": ["SKF gold medals", "Médailles d’or SKF"],
@@ -1742,19 +1740,3 @@
   });
 })();
 
-/* Film: Reels von Instagram, erst nach Klick laden (Datenschutz, wie bei jurtpentathlon.ch) */
-(function () {
-  var dlg = document.getElementById('reeldlg'), fr = document.getElementById('reelframe');
-  if (!dlg || !fr) return;
-  function close() { fr.innerHTML = ''; if (dlg.open) dlg.close(); }
-  [].forEach.call(document.querySelectorAll('.reel[data-reel]'), function (b) {
-    b.addEventListener('click', function () {
-      var id = b.getAttribute('data-reel');
-      fr.innerHTML = '<iframe src="https://www.instagram.com/reel/' + id + '/embed/" title="Instagram-Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="eager"></iframe>';
-      if (dlg.showModal) dlg.showModal(); else window.open('https://www.instagram.com/reel/' + id + '/', '_blank', 'noopener');
-    });
-  });
-  document.getElementById('reelx').addEventListener('click', close);
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
-  dlg.addEventListener('close', function () { fr.innerHTML = ''; });
-})();
