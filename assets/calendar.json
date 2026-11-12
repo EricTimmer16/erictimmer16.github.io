@@ -1,6 +1,6 @@
 {
  "source": "https://www.wkf.net/calendar",
- "generated": "2026-11-02",
+ "generated": "2026-11-12",
  "events": [
   {
    "id": 459,
@@ -70,8 +70,8 @@
    "cat": "series-a",
    "name": "Karate One Series A Salzburg",
    "city": "Salzburg, Austria",
-   "start": "2027-09-17",
-   "end": "2027-09-19",
+   "start": "2027-09-24",
+   "end": "2027-09-26",
    "url": "https://www.wkf.net/karate-one/championship/!/454/2027-karate-one-series-a-salzburg",
    "eric": true
   },
