@@ -1396,3 +1396,14 @@ a.reel:hover { text-decoration: none; color: #fff; }
 .reel-frame iframe { display: block; width: 100%; height: min(760px, 88vh); border: 0; }
 .reel-x { position: absolute; top: -46px; right: 0; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
 .reel-x:hover { background: rgba(255,255,255,.26); }
+
+/* Barrierefreiheit: Kontraste (13.11.2026) */
+.lang button:not([aria-pressed="true"]) { color: color-mix(in srgb, var(--muted) 78%, var(--fg)); }
+.ce-t { color: color-mix(in srgb, var(--muted) 72%, var(--fg)); }
+.prose .pr-p a { text-decoration: underline; text-underline-offset: 2px; }
+/* Dunkelmodus: weisse Schrift auf Rot braucht ein dunkleres Rot, damit sie gut lesbar bleibt */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) :is(.pill, .btn, .ce-t.ce-me, .co-steps li.on b, .reel-play) { --red: #d70015; }
+}
+:root[data-theme="dark"] :is(.pill, .btn, .ce-t.ce-me, .co-steps li.on b, .reel-play) { --red: #d70015; }
+.ce-t.c-em, .ce-t.c-wm, .ce-t.c-quali, .ce-t.c-swiss-sm { background: color-mix(in srgb, var(--red) 10%, transparent); color: color-mix(in srgb, var(--red) 82%, var(--fg)); }
