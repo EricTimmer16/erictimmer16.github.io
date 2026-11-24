@@ -24,17 +24,6 @@
    "date": "2026-10-26"
   },
   {
-   "id": "17908729098490011",
-   "permalink": "https://www.instagram.com/reel/DdCNlQ0shqO/",
-   "type": "VIDEO",
-   "reel": false,
-   "img": "images/instagram/17908729098490011.webp",
-   "w": 394,
-   "h": 700,
-   "caption": "🏆🦿📈\n\n🎥 @foto.kjetil",
-   "date": "2026-09-08"
-  },
-  {
    "id": "18094980950426590",
    "permalink": "https://www.instagram.com/p/Dc8XvXIjDiU/",
    "type": "CAROUSEL_ALBUM",
@@ -66,6 +55,17 @@
    "h": 700,
    "caption": "13th Athletes Day ✨\n\nGreat Networking experience as always🤩\n\n📸 @athletes_network",
    "date": "2026-06-03"
+  },
+  {
+   "id": "18000535253760553",
+   "permalink": "https://www.instagram.com/p/DY39brcDDlf/",
+   "type": "CAROUSEL_ALBUM",
+   "reel": false,
+   "img": "images/instagram/18000535253760553.webp",
+   "w": 700,
+   "h": 467,
+   "caption": "I have never been in a mental state like this before.\nThis championship was more than just a competition for me it was proof of how far I’ve come mentally, physically and emotionally.\n\nAfter all the ups and downs throughout this preparation phase, I’m truly grateful to have such an incredible Dad ❤️",
+   "date": "2026-05-28"
   }
  ]
 }
